@@ -37,27 +37,29 @@ npm run preview
 
 Serves `site/` at http://localhost:3000 via `npx serve`.
 
-## Deploy (GitHub git-based)
+## Deploy (Wrangler CLI)
 
-This repo is connected to the Cloudflare Pages project, so **every push to `main` auto-deploys**.
+Deploys go straight to the Cloudflare Pages project `thepriceofgermany` with one command:
 
 ```bash
-git add -A
-git commit -m "Add new post"
-git push
+npm run deploy
 ```
 
-Cloudflare Pages settings (set once in the dashboard):
-- Framework preset: **None**
-- Build command: **(leave empty)**
-- Build output directory: **`site`**
+That regenerates the sitemap and runs `wrangler pages deploy site`. First time on a new
+machine you need `npx wrangler login` once (browser login). The GitHub repo
+(`github.com/thepriceofgermany/thepriceofgermany`) is kept as version history/backup;
+pushing to it does NOT auto-deploy, `npm run deploy` is what publishes.
+
+Cloudflare serves clean URLs: `/renting-in-germany-vs-usa.html` redirects to
+`/renting-in-germany-vs-usa`. Canonical tags, the sitemap, and internal links all use the
+extensionless form.
 
 ## Adding a new post
 
 1. Add `site/<slug>.html` (copy an existing post as a template, keep the design tokens and fonts).
-2. Add a matching report card in the `#reports` grid of `site/index.html`.
-3. Regenerate the sitemap: `npm run sitemap`
-4. Commit and push.
+2. Add a matching report card in the `#reports` grid of `site/index.html`. Link to the clean URL (`/<slug>`, no `.html`).
+3. Deploy: `npm run deploy` (this regenerates the sitemap automatically).
+4. Optionally commit + push to GitHub for version history.
 
 ## Content / style rules
 

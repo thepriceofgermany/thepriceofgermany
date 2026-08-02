@@ -15,7 +15,8 @@ const pages = fs.readdirSync(SITE)
   .sort((a, b) => (a === 'index.html' ? -1 : b === 'index.html' ? 1 : a.localeCompare(b)));
 
 const urls = pages.map(f => {
-  const loc = f === 'index.html' ? `${BASE}/` : `${BASE}/${f}`;
+  // Cloudflare Pages serves clean URLs (/x.html is redirected to /x), so emit extensionless.
+  const loc = f === 'index.html' ? `${BASE}/` : `${BASE}/${f.replace(/\.html$/, '')}`;
   const priority = f === 'index.html' ? '1.0' : '0.8';
   return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <priority>${priority}</priority>\n  </url>`;
 }).join('\n');
