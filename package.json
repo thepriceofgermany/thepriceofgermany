@@ -5,6 +5,7 @@
   "description": "Companion static site for The Price of Germany YouTube channel",
   "type": "module",
   "scripts": {
+    "new-post": "node scripts/new-post.mjs",
     "sitemap": "node scripts/build-sitemap.mjs",
     "preview": "npx serve site",
     "deploy": "npm run sitemap && npx wrangler pages deploy site --project-name thepriceofgermany --branch main --commit-dirty=true"

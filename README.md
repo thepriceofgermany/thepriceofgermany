@@ -56,11 +56,31 @@ extensionless form.
 
 ## Adding a new post
 
+### Easy way: the scaffolder
+
+```bash
+npm run new-post
+```
+
+It asks for the slug, title, category, publish date, YouTube video, and a short hook, then:
+- creates `site/<slug>.html` from the post template (all styling/SEO/footer included),
+- adds the report card at the **top** of the homepage grid (newest first), with the right `data-cat` and date,
+- adds a new filter chip automatically **if the category is new**.
+
+Then you just:
+1. Edit `site/<slug>.html` and fill the article body from the video's transcript (no em dashes; affiliate box + disclosure where relevant).
+2. `npm run deploy`
+3. Push to GitHub (GitHub Desktop) to back it up.
+
+### Manual way (if you prefer)
+
 1. Add `site/<slug>.html` (copy an existing post as a template, keep the design tokens and fonts).
-2. Add a matching report card in the `#reports` grid of `site/index.html`. Link to the clean URL (`/<slug>`, no `.html`), give it a `data-cat="<category>"` (so the filter picks it up), and in the `.tag-compare` row put the publish/creation date (format `Mon D, YYYY`, e.g. `Aug 1, 2026`) in place of the old "USA vs. Germany" label.
-3. Keep the grid ordered newest first (newest card at the top of the grid).
-4. Deploy: `npm run deploy` (this regenerates the sitemap automatically).
-5. Optionally commit + push to GitHub for version history (GitHub Desktop, since terminal auth isn't set up).
+2. Add a matching report card in the `#reports` grid of `site/index.html`. Link to the clean URL (`/<slug>`, no `.html`), give it a `data-cat="<category>"`, and put the publish date (format `Mon D, YYYY`) in the `.tag-compare` row.
+3. If the category is new, also add a `<button class="chip" data-filter="<category>">Label</button>` to `.filter-bar`.
+4. Keep the grid ordered newest first (newest card at the top).
+5. `npm run deploy`, then push to GitHub.
+
+**Categories** live as a lowercase key in three matching places: the card's `data-cat`, the filter chip's `data-filter`, and (as a label) the post header eyebrow. Reuse an existing key (housing, childcare, insurance, relocation, salary, culture) or invent a new one, the scaffolder wires up the chip for new keys.
 
 ## Content / style rules
 
