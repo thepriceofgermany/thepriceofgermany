@@ -57,9 +57,10 @@ extensionless form.
 ## Adding a new post
 
 1. Add `site/<slug>.html` (copy an existing post as a template, keep the design tokens and fonts).
-2. Add a matching report card in the `#reports` grid of `site/index.html`. Link to the clean URL (`/<slug>`, no `.html`).
-3. Deploy: `npm run deploy` (this regenerates the sitemap automatically).
-4. Optionally commit + push to GitHub for version history.
+2. Add a matching report card in the `#reports` grid of `site/index.html`. Link to the clean URL (`/<slug>`, no `.html`), give it a `data-cat="<category>"` (so the filter picks it up), and in the `.tag-compare` row put the publish/creation date (format `Mon D, YYYY`, e.g. `Aug 1, 2026`) in place of the old "USA vs. Germany" label.
+3. Keep the grid ordered newest first (newest card at the top of the grid).
+4. Deploy: `npm run deploy` (this regenerates the sitemap automatically).
+5. Optionally commit + push to GitHub for version history (GitHub Desktop, since terminal auth isn't set up).
 
 ## Content / style rules
 
