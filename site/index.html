@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Price of Germany: Real Cost-of-Living Comparisons, USA vs. Germany</title>
+<meta name="description" content="An American expat in Germany breaks down what things actually cost, including rent, healthcare, groceries, and taxes, dollar for dollar, euro for euro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://thepriceofgermany.com/">
+<meta property="og:url" content="https://thepriceofgermany.com/">
+<style>
+  :root {
+    --cream: #FDF8F0;
+    --paper: #FFFDF6;
+    --ink: #23262B;
+    --ink-soft: #5B5F66;
+    --coral: #FF5A5F;
+    --coral-dark: #E1454A;
+    --teal: #1FA6A0;
+    --teal-dark: #14807B;
+    --yellow: #FFC857;
+    --line: #E7E0D2;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  a { color: inherit; }
+
+  .shell { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------------- NAV ---------------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(253, 248, 240, 0.88);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo .tag {
+    background: var(--coral);
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    font-size: 14.5px;
+    font-weight: 500;
+  }
+  .nav-links a { text-decoration: none; color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    background: var(--ink);
+    color: #fff !important;
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  @media (max-width: 640px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+  }
+
+  /* ---------------- HERO ---------------- */
+  header.hero {
+    padding: 64px 0 56px;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .hero-text { flex: 1; min-width: 0; text-align: center; max-width: 640px; }
+  .hero-character {
+    flex-shrink: 0;
+    width: 220px;
+    margin-top: 8px;
+  }
+  .hero-character img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 18px 22px rgba(35, 38, 43, 0.16));
+    animation: bob 4.5s ease-in-out infinite;
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+    50% { transform: translateY(-10px) rotate(1.5deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-character img { animation: none; }
+  }
+  @media (max-width: 760px) {
+    .hero-character { width: 168px; }
+  }
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    background: rgba(31, 166, 160, 0.1);
+    border: 1px solid rgba(31, 166, 160, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.04;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  h1 .hl { position: relative; display: inline-block; }
+  h1 .hl::after {
+    content: "";
+    position: absolute;
+    left: -2px; right: -2px; bottom: 4px;
+    height: 0.3em;
+    background: var(--yellow);
+    z-index: -1;
+    transform: skewX(-6deg);
+  }
+  .hero p.sub {
+    max-width: 560px;
+    margin: 0 auto 34px;
+    font-size: clamp(1.02rem, 2vw, 1.18rem);
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 13px 26px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary {
+    background: var(--coral);
+    color: #fff !important;
+    box-shadow: 0 4px 0 var(--coral-dark);
+  }
+  .btn-primary:hover { transform: translateY(-2px); }
+  .btn-primary:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--coral-dark); }
+  .btn-outline {
+    background: transparent;
+    border: 1.5px solid var(--ink);
+    color: var(--ink) !important;
+  }
+  .btn-outline:hover { background: var(--ink); color: #fff !important; }
+
+  /* exchange strip */
+  .strip {
+    margin-top: 56px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    letter-spacing: 0.02em;
+  }
+  .strip span { white-space: nowrap; }
+  .strip .sep { color: var(--line); }
+
+  /* ---------------- REPORTS GRID ---------------- */
+  section.reports { padding: 20px 0 72px; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .section-head h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin: 0;
+  }
+  .section-head .note {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+  }
+
+  .tag-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 20px 20px;
+    position: relative;
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .tag-card:hover {
+    transform: translateY(-3px) rotate(-0.4deg);
+    border-color: var(--coral);
+    box-shadow: 0 8px 18px rgba(35,38,43,0.08);
+  }
+  .tag-hole {
+    position: absolute;
+    top: -8px;
+    left: 22px;
+    width: 16px;
+    height: 16px;
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: 50%;
+  }
+  .tag-card:hover .tag-hole { border-color: var(--coral); }
+  .tag-topic {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .tag-card h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+    line-height: 1.25;
+  }
+  .tag-card p {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0 0 18px;
+  }
+  .tag-compare {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    border-top: 1.5px dashed var(--line);
+    padding-top: 12px;
+  }
+  .tag-compare .status {
+    color: var(--coral-dark);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .placeholder-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 2px 7px;
+    border-radius: 999px;
+  }
+
+  /* ---------------- ABOUT ---------------- */
+  section.about {
+    padding: 60px 0 72px;
+  }
+  .about-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 20px;
+    padding: 44px;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  @media (max-width: 560px) {
+    .about-card { grid-template-columns: 1fr; text-align: center; padding: 32px 24px; }
+    .avatar { margin: 0 auto; }
+  }
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(160deg, var(--yellow), var(--coral));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 4px solid var(--paper);
+    box-shadow: 0 0 0 2px var(--line);
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transform: scale(1.6) translateY(6px);
+  }
+  .about-card h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+  }
+  .about-card p {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ---------------- FOOTER ---------------- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 36px 0 44px;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-inner .brand {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+  .footer-links { display: flex; gap: 20px; font-size: 13.5px; }
+  .footer-links a { text-decoration: none; color: var(--ink-soft); }
+  .footer-links a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">The Price of Germany <span class="tag">$ → €</span></a>
+      <div class="nav-links">
+        <a href="#reports">Reports</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">Watch on YouTube</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="shell">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow">Cost-of-living show</span>
+          <h1>What things <span class="hl">actually</span> cost<br>in Germany</h1>
+          <p class="sub">An American who's lived in Germany for over a decade, breaking down the real numbers: rent, healthcare, groceries, taxes, dollar for dollar, euro for euro.</p>
+        </div>
+        <div class="hero-character">
+          <img src="assets/justin.png" alt="Justin, host of The Price of Germany" width="480" height="600">
+        </div>
+        <div class="ctas">
+          <a class="btn btn-primary" href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">Watch on YouTube</a>
+          <a class="btn btn-outline" href="#reports">Browse reports</a>
+        </div>
+      </div>
+      <div class="strip">
+        <span>RENT</span><span class="sep">·</span>
+        <span>HEALTHCARE</span><span class="sep">·</span>
+        <span>GROCERIES</span><span class="sep">·</span>
+        <span>TAXES</span><span class="sep">·</span>
+        <span>CHILDCARE</span><span class="sep">·</span>
+        <span>TRANSIT</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="reports" id="reports">
+    <div class="shell">
+      <div class="section-head">
+        <h2>Latest reports</h2>
+        <span class="note">ONE POST PER VIDEO</span>
+      </div>
+      <div class="grid">
+
+        <a class="tag-card" href="/renting-in-germany-vs-usa.html">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Housing</span>
+          <h3>Renting in Germany vs. USA: Why Your Rent Never Changes</h3>
+          <p>Cold rent vs. warm rent, deposit caps, broker fees, and the rent brake law that makes a 14% jump illegal in most of Germany.</p>
+          <div class="tag-compare">
+            <span>USA vs. Germany</span>
+            <span class="status">READ →</span>
+          </div>
+        </a>
+
+        <a class="tag-card" href="/daycare-in-germany-vs-usa.html">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Childcare</span>
+          <h3>"Free" Daycare in Germany? The Real Cost, State by State</h3>
+          <p>Sarah in Austin pays $420 every two weeks. Lukas in Berlin pays €23 a month. What parents actually pay across all 16 German states.</p>
+          <div class="tag-compare">
+            <span>USA vs. Germany</span>
+            <span class="status">READ →</span>
+          </div>
+        </a>
+
+        <a class="tag-card" href="/insurance-in-germany-vs-usa.html">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Insurance</span>
+          <h3>This Cheap German Insurance Could Save You From Bankruptcy</h3>
+          <p>Why personal liability insurance costs 50 to 80 euros a year in Germany and covers up to 50 million euros, versus a $100,000 renter's policy in the US.</p>
+          <div class="tag-compare">
+            <span>USA vs. Germany</span>
+            <span class="status">READ →</span>
+          </div>
+        </a>
+
+        <a class="tag-card" href="/moving-to-germany-cost.html">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Relocation</span>
+          <h3>What Moving to Germany Actually Costs: $8,000 vs. $19,000</h3>
+          <p>The real line-by-line breakdown: blocked account, health insurance, shipping, deposits, and the hidden setup costs nobody budgets for.</p>
+          <div class="tag-compare">
+            <span>USA vs. Germany</span>
+            <span class="status">READ →</span>
+          </div>
+        </a>
+
+        <a class="tag-card" href="/emotional-tax-germany.html">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Culture</span>
+          <h3>The Emotional Tax of Living in Germany</h3>
+          <p>What German directness actually costs in chronic stress and strained relationships, and the €0 fix that's been sitting there the whole time.</p>
+          <div class="tag-compare">
+            <span>USA vs. Germany</span>
+            <span class="status">READ →</span>
+          </div>
+        </a>
+
+        <a class="tag-card" href="/salary-in-germany-vs-usa.html">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Salary</span>
+          <h3>The German Salary Trap: Why Your Gross Pay Is A Lie</h3>
+          <p>A real €75,000 payslip broken down line by line, and why Mike's 53% take-home isn't as far behind Sarah's 77% in Texas as it looks.</p>
+          <div class="tag-compare">
+            <span>USA vs. Germany</span>
+            <span class="status">READ →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="shell">
+      <div class="about-card">
+        <div class="avatar"><img src="assets/justin.png" alt="Justin, host of The Price of Germany"></div>
+        <div>
+          <h2>Hi, I'm Justin</h2>
+          <p>I'm an American who's called Germany home for over 12 years. This channel, and this blog, exist for one reason: to show you exactly what things cost here, with real numbers instead of guesses, so you can decide for yourself if it's worth it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span class="brand">thepriceofgermany.com</span>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">YouTube</a>
+        <a href="#reports">Reports</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

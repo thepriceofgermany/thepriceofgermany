@@ -1,0 +1,11 @@
+{
+  "name": "thepriceofgermany",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Companion static site for The Price of Germany YouTube channel",
+  "type": "module",
+  "scripts": {
+    "sitemap": "node scripts/build-sitemap.mjs",
+    "preview": "npx serve site"
+  }
+}
