@@ -237,11 +237,38 @@
     letter-spacing: 0.04em;
   }
 
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+  .chip {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 15px;
+    cursor: pointer;
+    transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  }
+  .chip:hover { border-color: var(--coral); color: var(--ink); }
+  .chip.active {
+    background: var(--coral);
+    border-color: var(--coral);
+    color: #fff;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 22px;
   }
+  .tag-card[hidden] { display: none; }
 
   .tag-card {
     background: var(--paper);
@@ -440,9 +467,18 @@
         <h2>Latest reports</h2>
         <span class="note">ONE POST PER VIDEO</span>
       </div>
+      <div class="filter-bar" role="group" aria-label="Filter reports by category">
+        <button class="chip active" type="button" data-filter="all">All</button>
+        <button class="chip" type="button" data-filter="housing">Housing</button>
+        <button class="chip" type="button" data-filter="childcare">Childcare</button>
+        <button class="chip" type="button" data-filter="insurance">Insurance</button>
+        <button class="chip" type="button" data-filter="relocation">Relocation</button>
+        <button class="chip" type="button" data-filter="salary">Salary</button>
+        <button class="chip" type="button" data-filter="culture">Culture</button>
+      </div>
       <div class="grid">
 
-        <a class="tag-card" href="/renting-in-germany-vs-usa">
+        <a class="tag-card" data-cat="housing" href="/renting-in-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Housing</span>
           <h3>Renting in Germany vs. USA: Why Your Rent Never Changes</h3>
@@ -453,7 +489,7 @@
           </div>
         </a>
 
-        <a class="tag-card" href="/daycare-in-germany-vs-usa">
+        <a class="tag-card" data-cat="childcare" href="/daycare-in-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Childcare</span>
           <h3>"Free" Daycare in Germany? The Real Cost, State by State</h3>
@@ -464,7 +500,7 @@
           </div>
         </a>
 
-        <a class="tag-card" href="/insurance-in-germany-vs-usa">
+        <a class="tag-card" data-cat="insurance" href="/insurance-in-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Insurance</span>
           <h3>This Cheap German Insurance Could Save You From Bankruptcy</h3>
@@ -475,7 +511,7 @@
           </div>
         </a>
 
-        <a class="tag-card" href="/moving-to-germany-cost">
+        <a class="tag-card" data-cat="relocation" href="/moving-to-germany-cost">
           <span class="tag-hole"></span>
           <span class="tag-topic">Relocation</span>
           <h3>What Moving to Germany Actually Costs: $8,000 vs. $19,000</h3>
@@ -486,7 +522,7 @@
           </div>
         </a>
 
-        <a class="tag-card" href="/emotional-tax-germany">
+        <a class="tag-card" data-cat="culture" href="/emotional-tax-germany">
           <span class="tag-hole"></span>
           <span class="tag-topic">Culture</span>
           <h3>The Emotional Tax of Living in Germany</h3>
@@ -497,7 +533,7 @@
           </div>
         </a>
 
-        <a class="tag-card" href="/salary-in-germany-vs-usa">
+        <a class="tag-card" data-cat="salary" href="/salary-in-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Salary</span>
           <h3>The German Salary Trap: Why Your Gross Pay Is A Lie</h3>
@@ -535,5 +571,20 @@
     </div>
   </footer>
 
+<script>
+  (function () {
+    var chips = document.querySelectorAll('.filter-bar .chip');
+    var cards = document.querySelectorAll('.grid .tag-card');
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var f = chip.getAttribute('data-filter');
+        chips.forEach(function (c) { c.classList.toggle('active', c === chip); });
+        cards.forEach(function (card) {
+          card.hidden = !(f === 'all' || card.getAttribute('data-cat') === f);
+        });
+      });
+    });
+  })();
+</script>
 </body>
 </html>
