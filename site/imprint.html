@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imprint (Impressum): The Price of Germany</title>
+<meta name="description" content="Imprint (Impressum) and legal contact information for The Price of Germany.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://thepriceofgermany.com/imprint">
+<meta property="og:url" content="https://thepriceofgermany.com/imprint">
+<style>
+  :root {
+    --cream: #FDF8F0;
+    --paper: #FFFDF6;
+    --ink: #23262B;
+    --ink-soft: #5B5F66;
+    --coral: #FF5A5F;
+    --coral-dark: #E1454A;
+    --teal: #1FA6A0;
+    --teal-dark: #14807B;
+    --yellow: #FFC857;
+    --line: #E7E0D2;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  a { color: inherit; }
+
+  .shell { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------------- NAV ---------------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(253, 248, 240, 0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo .tag {
+    background: var(--coral);
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .back-link { font-size: 13.5px; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
+  .back-link:hover { color: var(--ink); }
+
+  /* ---------------- ARTICLE HEADER ---------------- */
+  header.post-head { padding: 56px 0 32px; }
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    background: rgba(31, 166, 160, 0.1);
+    border: 1px solid rgba(31, 166, 160, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.08;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .dek { font-size: 1.1rem; color: var(--ink-soft); line-height: 1.6; margin: 0; max-width: 620px; }
+
+  /* ---------------- VIDEO EMBED ---------------- */
+  .video-wrap {
+    margin: 32px 0 8px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--line);
+    box-shadow: 0 2px 0 var(--line);
+    position: relative;
+    padding-top: 56.25%;
+    background: #000;
+  }
+  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ---------------- ARTICLE BODY ---------------- */
+  article { padding: 24px 0 64px; }
+  article h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 46px 0 16px;
+    letter-spacing: -0.005em;
+  }
+  article p { font-size: 16.5px; line-height: 1.75; margin: 0 0 18px; color: var(--ink); }
+  article p.lede { font-size: 1.15rem; color: var(--ink); }
+  article strong { color: var(--ink); }
+
+  .payslip {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 26px 0;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .payslip .compare-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .payslip-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    font-size: 13.5px;
+    padding: 9px 0;
+    border-top: 1.5px dashed var(--line);
+    gap: 12px;
+  }
+  .payslip-row:first-of-type { border-top: none; }
+  .payslip-row .label { color: var(--ink-soft); font-size: 12.5px; }
+  .payslip-row .value { font-weight: 700; color: var(--coral-dark); text-align: right; white-space: nowrap; }
+  .payslip-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1.5px solid var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .payslip-total .value { color: var(--teal-dark); }
+
+  .compare {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 26px 0;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .compare .compare-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .compare-row2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    padding: 9px 0;
+    border-top: 1.5px dashed var(--line);
+  }
+  .compare-row2:first-of-type { border-top: none; }
+  .compare-row2 .country { color: var(--ink-soft); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 10px; }
+  .compare-row2 .value { font-weight: 700; text-align: right; }
+  .compare-row2.us .value { color: var(--coral-dark); }
+  .compare-row2.de .value { color: var(--teal-dark); }
+
+  .rec-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 22px 20px;
+    margin: 30px 0;
+    position: relative;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .rec-hole {
+    position: absolute; top: -8px; left: 22px;
+    width: 16px; height: 16px;
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: 50%;
+  }
+  .rec-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--coral-dark);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .rec-card h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; }
+  .rec-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
+  .rec-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--coral); color: #fff !important; text-decoration: none;
+    font-weight: 600; font-size: 14px; padding: 10px 20px; border-radius: 8px;
+    box-shadow: 0 3px 0 var(--coral-dark);
+  }
+  .rec-btn:hover { transform: translateY(-1px); }
+
+  .action-list { list-style: none; margin: 0 0 18px; padding: 0; counter-reset: action; }
+  .action-list li { counter-increment: action; display: flex; gap: 16px; padding: 16px 0; border-top: 1.5px dashed var(--line); }
+  .action-list li:first-child { border-top: none; }
+  .action-list li::before {
+    content: counter(action);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--coral);
+    flex-shrink: 0;
+    width: 28px;
+  }
+  .action-list p { margin: 0; font-size: 15.5px; line-height: 1.65; }
+
+  blockquote {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--ink);
+    border-left: 4px solid var(--yellow);
+    padding: 4px 0 4px 22px;
+    margin: 34px 0;
+  }
+
+  .disclosure {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    margin-top: 40px;
+    line-height: 1.6;
+  }
+  .disclaimer {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  /* ---------------- FOOTER ---------------- */
+  footer { border-top: 1px solid var(--line); padding: 36px 0 44px; }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    max-width: 760px; margin: 0 auto; padding: 0 24px;
+  }
+  .footer-inner .brand { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--ink-soft); }
+  .footer-links { display: flex; gap: 20px; font-size: 13.5px; }
+  .footer-links a { text-decoration: none; color: var(--ink-soft); }
+  .footer-links a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">The Price of Germany <span class="tag">$ → €</span></a>
+      <a class="back-link" href="/#reports">All reports</a>
+    </div>
+  </nav>
+
+  <header class="post-head">
+    <div class="shell">
+      <span class="eyebrow">Legal</span>
+      <h1>Imprint</h1>
+      <p class="dek">Information pursuant to &sect; 5 DDG (Impressum).</p>
+    </div>
+  </header>
+
+  <article>
+    <div class="shell">
+
+      <h2>Provider</h2>
+      <p>
+        Justin Espada<br>
+        Address on request<br>
+        Germany
+      </p>
+
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:justinespada@outlook.com">justinespada@outlook.com</a></p>
+
+      <h2>Responsible for content pursuant to &sect; 18 (2) MStV</h2>
+      <p>Justin Espada (address as above)</p>
+
+      <h2>Affiliate disclosure</h2>
+      <p>This website contains affiliate and sponsor links. If you click one and make a purchase, we may earn a commission at no additional cost to you. These commissions help support the channel and this site. This does not influence which products or services are covered.</p>
+
+      <h2>Liability for content</h2>
+      <p>As a service provider, we are responsible for our own content on these pages in accordance with general laws. We are not obligated to monitor transmitted or stored third-party information, or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general laws remain unaffected.</p>
+
+      <h2>Liability for links</h2>
+      <p>Our site contains links to external third-party websites over whose content we have no control. We accept no liability for this external content. The respective provider or operator of the linked pages is always responsible for their content. Linked pages were checked for possible legal violations at the time of linking, and no unlawful content was recognizable.</p>
+
+      <h2>Consumer dispute resolution</h2>
+      <p>We are neither willing nor obligated to participate in dispute resolution proceedings before a consumer arbitration board (Verbraucherschlichtungsstelle).</p>
+
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="brand">thepriceofgermany.com</span>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">YouTube</a>
+        <a href="/#reports">All reports</a>
+        <a href="/#about">About</a>
+        <a href="/imprint">Imprint</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
