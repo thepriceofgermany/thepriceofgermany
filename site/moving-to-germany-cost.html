@@ -99,6 +99,23 @@
 
   /* ---------------- ARTICLE HEADER ---------------- */
   header.post-head { padding: 56px 0 32px; }
+  .post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .post-meta .eyebrow { margin-bottom: 0; }
+  .post-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
   .eyebrow {
     font-family: 'Space Mono', monospace;
     font-size: 11.5px;
@@ -335,7 +352,7 @@
 
   <header class="post-head">
     <div class="shell">
-      <span class="eyebrow">Relocation report</span>
+      <div class="post-meta"><span class="eyebrow">Relocation report</span><span class="post-date">Jul 29, 2026</span></div>
       <h1>What Moving to Germany Actually Costs: $8,000 vs. $19,000</h1>
       <p class="dek">Everyone budgets for the plane ticket. Almost nobody budgets for the blocked account, the three-month deposit, the broadcasting fee, or the empty kitchen. Dana thought moving to Germany would cost $8,000. Six weeks later she'd spent closer to $19,000, and none of it was a scam.</p>
 

@@ -101,6 +101,23 @@
   header.post-head {
     padding: 56px 0 32px;
   }
+  .post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .post-meta .eyebrow { margin-bottom: 0; }
+  .post-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
   .eyebrow {
     font-family: 'Space Mono', monospace;
     font-size: 11.5px;
@@ -347,7 +364,7 @@
 
   <header class="post-head">
     <div class="shell">
-      <span class="eyebrow">Housing report</span>
+      <div class="post-meta"><span class="eyebrow">Housing report</span><span class="post-date">Jul 27, 2026</span></div>
       <h1>Renting in Germany vs. USA: Why Your Rent Never Changes</h1>
       <p class="dek">Jake in Austin just got hit with a 14% rent increase. Lena in Germany hasn't seen her rent move in five years. Same continent, completely different rules, and it's not about luck.</p>
 

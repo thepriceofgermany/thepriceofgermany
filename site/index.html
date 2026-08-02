@@ -114,25 +114,50 @@
   .hero-text { flex: 1; min-width: 0; text-align: center; max-width: 640px; }
   .hero-character {
     flex-shrink: 0;
-    width: 220px;
     margin-top: 8px;
-  }
-  .hero-character img {
     width: 100%;
+  }
+  .hero-stage {
+    position: relative;
+    width: min(660px, 94vw);
+    height: clamp(320px, 46vw, 440px);
+    margin: 0 auto;
+  }
+  .hero-stage .justin {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: clamp(160px, 30vw, 220px);
     height: auto;
     display: block;
+    z-index: 2;
     filter: drop-shadow(0 18px 22px rgba(35, 38, 43, 0.16));
     animation: bob 4.5s ease-in-out infinite;
   }
+  .hero-stage .float {
+    position: absolute;
+    height: auto;
+    z-index: 1;
+    filter: drop-shadow(0 8px 12px rgba(35, 38, 43, 0.14));
+    animation: floaty 6s ease-in-out infinite;
+  }
+  .f-money    { top: 2%;   left: 4%;   width: clamp(58px, 12vw, 96px);  animation-delay: 0s;   }
+  .f-houses   { top: 6%;   right: 2%;  width: clamp(76px, 16vw, 128px); animation-delay: -1.2s; }
+  .f-umbrella { top: 38%;  left: 0%;   width: clamp(62px, 13vw, 104px); animation-delay: -2.4s; }
+  .f-kita     { top: 40%;  right: 0%;  width: clamp(72px, 15vw, 118px); animation-delay: -3s;   }
+  .f-book     { bottom: 2%; left: 7%;  width: clamp(62px, 13vw, 104px); animation-delay: -1.8s; }
+  .f-key      { bottom: 6%; right: 6%; width: clamp(64px, 13vw, 106px); animation-delay: -3.6s; }
   @keyframes bob {
-    0%, 100% { transform: translateY(0) rotate(-1.5deg); }
-    50% { transform: translateY(-10px) rotate(1.5deg); }
+    0%, 100% { transform: translateX(-50%) translateY(0) rotate(-1.5deg); }
+    50% { transform: translateX(-50%) translateY(-10px) rotate(1.5deg); }
+  }
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
   }
   @media (prefers-reduced-motion: reduce) {
-    .hero-character img { animation: none; }
-  }
-  @media (max-width: 760px) {
-    .hero-character { width: 168px; }
+    .hero-stage .justin, .hero-stage .float { animation: none; }
   }
   .eyebrow {
     font-family: 'Space Mono', monospace;
@@ -443,7 +468,15 @@
           <p class="sub">An American who's lived in Germany for over a decade, breaking down the real numbers: rent, healthcare, groceries, taxes, dollar for dollar, euro for euro.</p>
         </div>
         <div class="hero-character">
-          <img src="assets/justin.png" alt="Justin, host of The Price of Germany" width="480" height="600">
+          <div class="hero-stage">
+            <img class="justin" src="assets/justin-nobg.png" alt="Justin, host of The Price of Germany" width="480" height="600">
+            <img class="float f-money" src="assets/objects/obj-money.png" alt="" aria-hidden="true" loading="lazy">
+            <img class="float f-houses" src="assets/objects/obj-houses.png" alt="" aria-hidden="true" loading="lazy">
+            <img class="float f-umbrella" src="assets/objects/obj-umbrella.png" alt="" aria-hidden="true" loading="lazy">
+            <img class="float f-kita" src="assets/objects/obj-kita.png" alt="" aria-hidden="true" loading="lazy">
+            <img class="float f-book" src="assets/objects/obj-book.png" alt="" aria-hidden="true" loading="lazy">
+            <img class="float f-key" src="assets/objects/obj-key.png" alt="" aria-hidden="true" loading="lazy">
+          </div>
         </div>
         <div class="ctas">
           <a class="btn btn-primary" href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">Watch on YouTube</a>
@@ -552,7 +585,7 @@
   <section class="about" id="about">
     <div class="shell">
       <div class="about-card">
-        <div class="avatar"><img src="assets/justin.png" alt="Justin, host of The Price of Germany"></div>
+        <div class="avatar"><img src="assets/justin-nobg.png" alt="Justin, host of The Price of Germany"></div>
         <div>
           <h2>Hi, I'm Justin</h2>
           <p>I'm an American who's called Germany home for over 12 years. This channel, and this blog, exist for one reason: to show you exactly what things cost here, with real numbers instead of guesses, so you can decide for yourself if it's worth it.</p>
