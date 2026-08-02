@@ -1,37 +1,48 @@
-/* The Price of Germany - cookie consent gate for Google Analytics.
-   GA (gtag.js) is NOT loaded until the visitor clicks Accept. The choice is
-   stored in localStorage so the banner only shows once. */
+/* The Price of Germany - Google Analytics with Consent Mode v2.
+   The tag loads on every page (so it's detectable), but starts in cookieless
+   "denied" mode. It flips to full tracking only after the visitor clicks Accept.
+   The choice is stored in localStorage so the banner shows once. */
 (function () {
   var GA_ID = 'G-HZNTDSSVP4';
   var KEY = 'tpog-consent'; // 'granted' | 'denied'
+
+  function stored() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function store(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  var choice = stored();
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   window.gtag = gtag;
 
-  function loadGA() {
-    if (window.__tpogGA) return;
-    window.__tpogGA = true;
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-    document.head.appendChild(s);
-    gtag('js', new Date());
-    gtag('config', GA_ID);
-  }
+  // Consent Mode: default everything denied (no cookies) until the visitor opts in.
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: choice === 'granted' ? 'granted' : 'denied',
+    wait_for_update: 500
+  });
 
-  function stored() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
-  function store(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  // Load gtag.js on every page load so the tag is present and detectable.
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', GA_ID);
 
-  var choice = stored();
-  if (choice === 'granted') { loadGA(); return; }
-  if (choice === 'denied') { return; }
+  // Already decided: no banner. (Consent already reflects the stored choice above.)
+  if (choice === 'granted' || choice === 'denied') return;
 
-  // No choice yet: show the banner.
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', showBanner);
   } else {
     showBanner();
+  }
+
+  function grant() {
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    store('granted');
   }
 
   function showBanner() {
@@ -64,7 +75,7 @@
     document.body.appendChild(bar);
 
     bar.querySelector('.tpog-accept').addEventListener('click', function () {
-      store('granted'); loadGA(); bar.remove();
+      grant(); bar.remove();
     });
     bar.querySelector('.tpog-decline').addEventListener('click', function () {
       store('denied'); bar.remove();
