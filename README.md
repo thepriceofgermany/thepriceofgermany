@@ -56,7 +56,19 @@ extensionless form.
 
 ## Adding a new post
 
-### Easy way: the scaffolder
+### Easiest way: Post Studio (a GUI)
+
+Double-click **`Post Studio.command`** in the project folder (or run `npm run studio`). A form opens in your browser where you fill in the title, category, date, YouTube video, a one-line card blurb, and paste the article body. Click **Publish** and it:
+- writes `site/<slug>.html` from the template,
+- adds the homepage card at the top of the grid + a new category chip if needed,
+- regenerates the sitemap and commits,
+- and, if the "Deploy live" box is ticked, deploys to the site.
+
+Then open GitHub Desktop and click **Push origin** to back it up.
+
+Body formatting in the paste box: a blank line starts a new paragraph, `## ` at the start of a line makes a section heading, `**bold**`, `[text](url)` for links, and `[[AFFILIATE]]` on its own line drops in the affiliate box (filled from the Affiliate fields). Em dashes are stripped automatically.
+
+### Command-line scaffolder
 
 ```bash
 npm run new-post
