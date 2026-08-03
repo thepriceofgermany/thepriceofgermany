@@ -10,5 +10,8 @@
     "sitemap": "node scripts/build-sitemap.mjs",
     "preview": "npx serve site",
     "deploy": "npm run sitemap && npx wrangler pages deploy site --project-name thepriceofgermany --branch main --commit-dirty=true"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.115.0"
   }
 }

@@ -68,6 +68,8 @@ Then open GitHub Desktop and click **Push origin** to back it up.
 
 Body formatting in the paste box: a blank line starts a new paragraph, `## ` at the start of a line makes a section heading, `**bold**`, `[text](url)` for links, and `[[AFFILIATE]]` on its own line drops in the affiliate box (filled from the Affiliate fields). Em dashes are stripped automatically.
 
+**Auto-format from transcript (AI):** paste the raw video transcript into the Article body box and click **✨ Auto-format from transcript**. It sends the transcript to Claude (`claude-opus-5`), which adds section headings, bolds the key numbers, and places the affiliate box, then fills the box with the result for you to review before Publish. One-time setup: paste your Anthropic API key into the **AI key** field at the top and click **Save key** (stored in `.studio-key`, which is gitignored; never committed). Costs about a cent per post. The plain paste-formatting above still works without a key.
+
 ### Command-line scaffolder
 
 ```bash
