@@ -77,13 +77,16 @@ try {
   post = post.split(T.video).join(vid);                         // thumbnail + embed + iframe src
   post = post.split(T.slug).join(slug);                          // canonical + og:url
   post = post.split(T.title).join(text(title));                  // <title>, og:title, JSON-LD name, iframe title, h1
-  post = post.replace(/(<meta name="description" content=")[^"]*(">)/, `$1${attr(metaDesc)}$2`);
-  post = post.replace(/(<meta property="og:description" content=")[^"]*(">)/, `$1${attr(metaDesc)}$2`);
-  post = post.replace(/("description":\s*")[^"]*(")/, `$1${attr(metaDesc)}$2`);
-  post = post.replace(/(<span class="eyebrow">)[^<]*(<\/span>)/, `$1${text(label)} report$2`);
-  post = post.replace(/(<span class="post-date">)[^<]*(<\/span>)/, `$1${date}$2`);
-  post = post.replace(/<p class="dek">[\s\S]*?<\/p>/, `<p class="dek">${text(hook)}</p>`);
-  post = post.replace(/<article>[\s\S]*?<\/article>/, `<article>
+  // NOTE: use replacement FUNCTIONS, not template strings. A template string in
+  // the 2nd arg treats "$1" (e.g. inside a price like "$1,297") as a capture-group
+  // backreference and corrupts the output.
+  post = post.replace(/(<meta name="description" content=")[^"]*(">)/, (m, a, b) => a + attr(metaDesc) + b);
+  post = post.replace(/(<meta property="og:description" content=")[^"]*(">)/, (m, a, b) => a + attr(metaDesc) + b);
+  post = post.replace(/("description":\s*")[^"]*(")/, (m, a, b) => a + attr(metaDesc) + b);
+  post = post.replace(/(<span class="eyebrow">)[^<]*(<\/span>)/, (m, a, b) => a + text(label) + ' report' + b);
+  post = post.replace(/(<span class="post-date">)[^<]*(<\/span>)/, (m, a, b) => a + date + b);
+  post = post.replace(/<p class="dek">[\s\S]*?<\/p>/, () => `<p class="dek">${text(hook)}</p>`);
+  post = post.replace(/<article>[\s\S]*?<\/article>/, () => `<article>
     <div class="shell">
 
       <p class="lede">${text(hook)}</p>
@@ -120,14 +123,14 @@ try {
             <span class="status">READ &rarr;</span>
           </div>
         </a>`;
-  index = index.replace(/(<div class="grid">\n)/, `$1\n${card}\n`);
+  index = index.replace(/<div class="grid">\n/, (m) => `${m}\n${card}\n`);
 
   // ---- add a filter chip if this category is new ----
   let addedChip = false;
   if (!new RegExp(`data-filter="${catKey}"`).test(index)) {
     index = index.replace(
       /(<div class="filter-bar"[\s\S]*?)(\n\s*<\/div>\s*\n\s*<div class="grid">)/,
-      `$1\n        <button class="chip" type="button" data-filter="${catKey}">${text(label)}</button>$2`
+      (m, a, b) => a + `\n        <button class="chip" type="button" data-filter="${catKey}">${text(label)}</button>` + b
     );
     addedChip = true;
   }
