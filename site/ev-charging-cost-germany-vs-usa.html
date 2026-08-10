@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics (loaded only after cookie consent) -->
+<script src="/assets/consent.js" defer></script>
+<title>I Paid $50 to Charge My EV in Germany. My Friend Paid $11 in Texas.</title>
+<meta name="description" content="Mike charged his Tesla near Austin for $11. I charged a comparable amount off the Autobahn and paid nearly $50. Same car, wildly different bill.">
+<meta property="og:title" content="I Paid $50 to Charge My EV in Germany. My Friend Paid $11 in Texas.">
+<meta property="og:description" content="Mike charged his Tesla near Austin for $11. I charged a comparable amount off the Autobahn and paid nearly $50. Same car, wildly different bill.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "I Paid $50 to Charge My EV in Germany. My Friend Paid $11 in Texas.",
+  "description": "Mike charged his Tesla near Austin for $11. I charged a comparable amount off the Autobahn and paid nearly $50. Same car, wildly different bill.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/jyVJw3apcAg/maxresdefault.jpg",
+  "embedUrl": "https://www.youtube.com/embed/jyVJw3apcAg"
+}
+</script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://thepriceofgermany.com/ev-charging-cost-germany-vs-usa">
+<meta property="og:url" content="https://thepriceofgermany.com/ev-charging-cost-germany-vs-usa">
+<style>
+  :root {
+    --cream: #FDF8F0;
+    --paper: #FFFDF6;
+    --ink: #23262B;
+    --ink-soft: #5B5F66;
+    --coral: #FF5A5F;
+    --coral-dark: #E1454A;
+    --teal: #1FA6A0;
+    --teal-dark: #14807B;
+    --yellow: #FFC857;
+    --line: #E7E0D2;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  a { color: inherit; }
+
+  .shell { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------------- NAV ---------------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(253, 248, 240, 0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo .tag {
+    background: var(--coral);
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .back-link { font-size: 13.5px; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
+  .back-link:hover { color: var(--ink); }
+
+  /* ---------------- ARTICLE HEADER ---------------- */
+  header.post-head { padding: 56px 0 32px; }
+  .post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .post-meta .eyebrow { margin-bottom: 0; }
+  .post-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    background: rgba(31, 166, 160, 0.1);
+    border: 1px solid rgba(31, 166, 160, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.08;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .dek { font-size: 1.1rem; color: var(--ink-soft); line-height: 1.6; margin: 0; max-width: 620px; }
+
+  /* ---------------- VIDEO EMBED ---------------- */
+  .video-wrap {
+    margin: 32px 0 8px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--line);
+    box-shadow: 0 2px 0 var(--line);
+    position: relative;
+    padding-top: 56.25%;
+    background: #000;
+  }
+  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ---------------- ARTICLE BODY ---------------- */
+  article { padding: 24px 0 64px; }
+  article h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 46px 0 16px;
+    letter-spacing: -0.005em;
+  }
+  article p { font-size: 16.5px; line-height: 1.75; margin: 0 0 18px; color: var(--ink); }
+  article p.lede { font-size: 1.15rem; color: var(--ink); }
+  article strong { color: var(--ink); }
+
+  .payslip {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 26px 0;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .payslip .compare-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .payslip-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    font-size: 13.5px;
+    padding: 9px 0;
+    border-top: 1.5px dashed var(--line);
+    gap: 12px;
+  }
+  .payslip-row:first-of-type { border-top: none; }
+  .payslip-row .label { color: var(--ink-soft); font-size: 12.5px; }
+  .payslip-row .value { font-weight: 700; color: var(--coral-dark); text-align: right; white-space: nowrap; }
+  .payslip-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1.5px solid var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .payslip-total .value { color: var(--teal-dark); }
+
+  .compare {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 26px 0;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .compare .compare-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .compare-row2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    padding: 9px 0;
+    border-top: 1.5px dashed var(--line);
+  }
+  .compare-row2:first-of-type { border-top: none; }
+  .compare-row2 .country { color: var(--ink-soft); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 10px; }
+  .compare-row2 .value { font-weight: 700; text-align: right; }
+  .compare-row2.us .value { color: var(--coral-dark); }
+  .compare-row2.de .value { color: var(--teal-dark); }
+
+  .rec-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 22px 20px;
+    margin: 30px 0;
+    position: relative;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .rec-hole {
+    position: absolute; top: -8px; left: 22px;
+    width: 16px; height: 16px;
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: 50%;
+  }
+  .rec-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--coral-dark);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .rec-card h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; }
+  .rec-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
+  .rec-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--coral); color: #fff !important; text-decoration: none;
+    font-weight: 600; font-size: 14px; padding: 10px 20px; border-radius: 8px;
+    box-shadow: 0 3px 0 var(--coral-dark);
+  }
+  .rec-btn:hover { transform: translateY(-1px); }
+
+  .action-list { list-style: none; margin: 0 0 18px; padding: 0; counter-reset: action; }
+  .action-list li { counter-increment: action; display: flex; gap: 16px; padding: 16px 0; border-top: 1.5px dashed var(--line); }
+  .action-list li:first-child { border-top: none; }
+  .action-list li::before {
+    content: counter(action);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--coral);
+    flex-shrink: 0;
+    width: 28px;
+  }
+  .action-list p { margin: 0; font-size: 15.5px; line-height: 1.65; }
+
+  blockquote {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--ink);
+    border-left: 4px solid var(--yellow);
+    padding: 4px 0 4px 22px;
+    margin: 34px 0;
+  }
+
+  .disclosure {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    margin-top: 40px;
+    line-height: 1.6;
+  }
+  .disclaimer {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  /* ---------------- FOOTER ---------------- */
+  footer { border-top: 1px solid var(--line); padding: 36px 0 44px; }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    max-width: 760px; margin: 0 auto; padding: 0 24px;
+  }
+  .footer-inner .brand { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--ink-soft); }
+  .footer-links { display: flex; gap: 20px; font-size: 13.5px; }
+  .footer-links a { text-decoration: none; color: var(--ink-soft); }
+  .footer-links a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">The Price of Germany <span class="tag">$ → €</span></a>
+      <a class="back-link" href="/#reports">All reports</a>
+    </div>
+  </nav>
+
+  <header class="post-head">
+    <div class="shell">
+      <div class="post-meta"><span class="eyebrow">Cost of Living report</span><span class="post-date">Aug 8, 2026</span></div>
+      <h1>I Paid $50 to Charge My EV in Germany. My Friend Paid $11 in Texas.</h1>
+      <p class="dek">Mike charged his Tesla near Austin for $11. I charged a comparable amount off the Autobahn and paid nearly $50. Same car, wildly different bill.</p>
+
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/jyVJw3apcAg" title="I Paid $50 to Charge My EV in Germany. My Friend Paid $11 in Texas." allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </header>
+
+  <article>
+    <div class="shell">
+
+      <p class="lede">Mike charged his Tesla near Austin for $11. I charged a comparable amount off the Autobahn and paid nearly $50. Same car, wildly different bill.</p>
+
+      <p>It's a Tuesday afternoon outside Austin, Texas. Mike pulls his Model 3 up to a supercharger, taps his phone twice, and starts scrolling while the screen ticks past 40 kilowatt hours. He barely glances at the total: <strong>$11</strong>. Less than a fast food meal.</p>
+
+      <p>5,000 miles away, at a rest stop just off the Autobahn outside Frankfurt, I'm doing the exact same thing. Plug in, wait, glance at the screen. Except for a comparable charge, the number climbing on my screen works out to nearly <strong>$50</strong>.</p>
+
+      <p>If you ever assumed that charging an electric car in Europe is basically free because gas over here costs $7 or $8 a gallon, I get it. That's the story everyone tells. But charging isn't gas. It runs through a completely different set of prices, taxes, and network rules. So today I'm showing you the actual receipt, because what I paid this week genuinely surprised me.</p>
+
+      <p>I'm Justin, and I've lived in Germany for over 12 years now. This channel is about the cost nobody puts on a postcard: the real numbers, not the guesses.</p>
+
+      <h2>The myth vs. the reality</h2>
+      <p>Here's the myth: gas is expensive in Europe, so electricity for your car must be cheap. Obvious upgrade.</p>
+
+      <p>Here's the reality: on public fast chargers, Germany is often not cheaper than the US. In a lot of real world cases, it's close to double.</p>
+
+      <p>Before the comments come for me, let's steelman the other side, because there's a real case here. Germany's public charging network is dense, especially along the Autobahn. Every charger, by law, has to let you pay by card with no subscription and no app required, something a lot of US networks still don't guarantee everywhere. And gasoline here is still brutally expensive, so even pricey electricity usually beats it. All of that is true. It just doesn't mean charging itself is cheap. Those are two different questions.</p>
+
+      <h2>Public fast charging: where the gap is biggest</h2>
+      <p>Start with public fast charging, because that's where the biggest gap is. In the US, Tesla superchargers average somewhere around $0.30 to $0.45 per kilowatt hour depending on the state: pricier in California or the Northeast, cheaper in low cost states.</p>
+
+      <p>In Germany, the two biggest fast charging networks, <strong>IONITY</strong> and <strong>EnBW</strong>, charge walk-up customers with no subscription anywhere from $0.59 to $0.79 per kilowatt hour, and that's before tax.</p>
+
+      <div class="compare">
+        <div class="compare-title">Public fast charging, walk-up, per kWh</div>
+        <div class="compare-row us"><span class="country">USA</span><span class="value">$0.30 to $0.45 (Tesla supercharger average, varies by state)</span></div>
+        <div class="compare-row de"><span class="country">Germany</span><span class="value">$0.59 to $0.79 before 19% VAT (IONITY / EnBW, no subscription)</span></div>
+      </div>
+
+      <h2>This week's actual bill</h2>
+      <p>Which brings me to this week's actual bill. I plugged in at a public fast charger and paid $0.63 per kilowatt hour, plus 19% value added tax on top. That works out to about <strong>$0.75 a kilowatt hour</strong> once the tax hits.</p>
+
+      <p>Compare that to a US supercharger at the high end, say $0.58, and I still paid nearly 50% more. Compare it to the US average, and I paid almost double.</p>
+
+      <p>Now the honest caveat, and this is where subscriptions come in. Sign up for a monthly plan and the per kilowatt hour price drops hard. IONITY's subscription brings the price down from $0.79 to around $0.35, for about 13 euros a month. EnBW has a similar deal. So a driver who plans ahead and pays a monthly fee can get close to, or even beat, US supercharger pricing. But that's the problem nobody puts in the headline: the price you pay if you just plug in and go, no subscription, is dramatically higher here.</p>
+
+      <h2>Home charging tells a similar story</h2>
+      <p>Home charging tells a similar story, just with smaller numbers. The average German household pays somewhere around $0.32 to $0.37 per kilowatt hour for electricity, and some pay as much as $0.42 on the basic default utility rate. In the US, the national average residential rate is under $0.19 per kilowatt hour.</p>
+
+      <p>Even charging overnight in your own garage, Germans are typically paying close to double what Americans pay before anyone gets near a public charger.</p>
+
+      <p>Part of that gap is tax. Germany layers 19% value added tax onto essentially every retail electricity purchase, public or private, on top of some of the highest grid and network fees in Europe. In the US, tax on electricity is usually lower or doesn't apply the same way, and it's typically baked into the posted price rather than added visibly at checkout.</p>
+
+      <h2>Real numbers on a real trip</h2>
+      <p>Say you need to add 200 miles of range. At a typical US supercharger that's roughly 57 kilowatt hours at around $0.45, so call it $26. At a German fast charger paying walk-up like I did this week, that same 200 miles costs around $49. Even on EnBW's discounted subscription plan, you're still around $51. There's no version of this where the US public charging bill comes out higher.</p>
+
+      <div class="compare">
+        <div class="compare-title">Adding 200 miles of range at a fast charger</div>
+        <div class="compare-row us"><span class="country">USA</span><span class="value">About $26 (roughly 57 kWh at ~$0.45)</span></div>
+        <div class="compare-row de"><span class="country">Germany</span><span class="value">Around $49 walk-up, still about $51 on a discounted subscription</span></div>
+      </div>
+
+      <p>Zoom out to a full month. An average driver covering 1,000 miles, charging mostly at home, needs around 285 kilowatt hours. In the US, at the national average rate, that's about $54. In Germany, at the average household rate, that's roughly 97 euros, call it just over $112. Lean on public fast charging instead of home charging for the same distance and the German number climbs even higher, while the US gap stays comparatively small.</p>
+
+      <div class="compare">
+        <div class="compare-title">A full month, 1,000 miles, charging mostly at home</div>
+        <div class="compare-row us"><span class="country">USA</span><span class="value">About $54 (around 285 kWh at the national average rate)</span></div>
+        <div class="compare-row de"><span class="country">Germany</span><span class="value">Roughly 97 euros, just over $112</span></div>
+      </div>
+
+      <h2>But it still beats German gas</h2>
+      <p>Here's where it gets interesting though. None of that makes an EV a bad deal in Germany, because the number you're actually replacing isn't the American electricity bill, it's German gasoline. Gas here regularly runs $6 to $7 a gallon. So even at double the American charging price, an EV in Germany usually still beats driving a gas car per mile.</p>
+
+      <p>The US just has a bigger cheap fuel cushion on both sides, cheap gas and cheap electricity, so the financial case for going electric is a smaller margin than it is over here. Cheaper than gas, yes. Cheaper than American electrons, no.</p>
+
+      <p>And if you're actually bringing a car onto German roads, charging costs are only part of the bill. You are legally required to carry car insurance here too, and getting quoted as a foreigner isn't always straightforward.</p>
+
+      <div class="rec-card">
+        <span class="rec-hole"></span>
+        <span class="rec-label">Recommended</span>
+        <h3>Sorting out German car insurance as an expat</h3>
+        <p>Getting a car insured here as a foreigner isn't always straightforward, so this is one of the questions I get asked about constantly. I work with a broker who specializes in getting expats set up fast without losing your no-claims history from back home.</p>
+        <a class="rec-btn" href="https://tidd.ly/4bBrJ4X" target="_blank" rel="noopener sponsored">Get set up with AXA &rarr;</a>
+      </div>
+
+      <h2>Same car, wildly different bill</h2>
+      <p>So back to Mike and me. Mike paid $11 and didn't think twice. I paid the equivalent of around $50 for a comparable session, taxes included, on a network with no subscription. Same technology, same car, wildly different bill. For once, this is one of those cases where the postcard version of Europe, cheap, green, effortless, doesn't hold up against the actual receipt.</p>
+
+      <h2>Four tips for driving electric in Germany</h2>
+      <ol class="action-list">
+        <li><p><strong>Get a charging subscription before you first hit the road.</strong> 13 euros a month can cut your per kilowatt hour cost nearly in half, which pays for itself fast if you use public chargers at all.</p></li>
+        <li><p><strong>Charge at home whenever you can.</strong> Even at the German household rate, it's still far cheaper than any public fast charger.</p></li>
+        <li><p><strong>Stop comparing German charging to American prices.</strong> Compare it to German gas prices instead, because that's the trade-off that actually decides whether an EV makes sense here.</p></li>
+        <li><p><strong>Check a network comparison app before a long drive.</strong> Prices vary enough between operators that picking the right charger can save you real money on a single trip.</p></li>
+      </ol>
+
+      <p>Mike's still out there tapping his phone, not thinking about it. I've started checking the price screen before I plug in every single time. That's Germany for you: not always the cheapest story, just a different one. And one more cost nobody puts on a postcard.</p>
+
+      <p><em>This article contains affiliate links. If you buy or sign up through them, I may earn a small commission at no extra cost to you, which helps support the channel. It doesn't change what I recommend.</em></p>
+
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="brand">thepriceofgermany.com</span>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">YouTube</a>
+        <a href="/#reports">All reports</a>
+        <a href="/#about">About</a>
+        <a href="/imprint">Imprint</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
