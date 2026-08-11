@@ -173,6 +173,7 @@ function buildPost(d) {
   post = post.replace(/(<meta name="description" content=")[^"]*(">)/, (m, a, b) => a + escAttr(metaDesc) + b);
   post = post.replace(/(<meta property="og:description" content=")[^"]*(">)/, (m, a, b) => a + escAttr(metaDesc) + b);
   post = post.replace(/("description":\s*")[^"]*(")/, (m, a, b) => a + escAttr(metaDesc) + b);
+  post = post.replace(/("uploadDate":\s*")[^"]*(")/, (m, a, b) => a + d.date + b);  // VideoObject uploadDate (Google requires it)
   post = post.replace(/(<span class="eyebrow">)[^<]*(<\/span>)/, (m, a, b) => a + escText(label) + ' report' + b);
   post = post.replace(/(<span class="post-date">)[^<]*(<\/span>)/, (m, a, b) => a + date + b);
   post = post.replace(/<p class="dek">[\s\S]*?<\/p>/, () => `<p class="dek">${inline(hook)}</p>`);

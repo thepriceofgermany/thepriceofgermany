@@ -83,6 +83,7 @@ try {
   post = post.replace(/(<meta name="description" content=")[^"]*(">)/, (m, a, b) => a + attr(metaDesc) + b);
   post = post.replace(/(<meta property="og:description" content=")[^"]*(">)/, (m, a, b) => a + attr(metaDesc) + b);
   post = post.replace(/("description":\s*")[^"]*(")/, (m, a, b) => a + attr(metaDesc) + b);
+  post = post.replace(/("uploadDate":\s*")[^"]*(")/, (m, a, b) => a + dateIso + b);  // VideoObject uploadDate (Google requires it)
   post = post.replace(/(<span class="eyebrow">)[^<]*(<\/span>)/, (m, a, b) => a + text(label) + ' report' + b);
   post = post.replace(/(<span class="post-date">)[^<]*(<\/span>)/, (m, a, b) => a + date + b);
   post = post.replace(/<p class="dek">[\s\S]*?<\/p>/, () => `<p class="dek">${text(hook)}</p>`);
