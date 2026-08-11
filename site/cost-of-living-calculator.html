@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics (loaded only after cookie consent) -->
+<script src="/assets/consent.js" defer></script>
+<title>US vs Germany Cost of Living Calculator: Compare 40 Cities | The Price of Germany</title>
+<meta name="description" content="Pick a US city and a German city and see a real, category-by-category cost-of-living comparison: rent, groceries, healthcare, transport, utilities, and estimated take-home pay on your salary.">
+<meta property="og:title" content="US vs Germany Cost of Living Calculator">
+<meta property="og:description" content="Compare rent, groceries, healthcare, transport, utilities, and net take-home pay between any US city and any German city.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://thepriceofgermany.com/cost-of-living-calculator">
+<meta property="og:url" content="https://thepriceofgermany.com/cost-of-living-calculator">
+<style>
+  :root {
+    --cream: #FDF8F0;
+    --paper: #FFFDF6;
+    --ink: #23262B;
+    --ink-soft: #5B5F66;
+    --coral: #FF5A5F;
+    --coral-dark: #E1454A;
+    --teal: #1FA6A0;
+    --teal-dark: #14807B;
+    --yellow: #FFC857;
+    --line: #E7E0D2;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+  a { color: inherit; }
+  .shell { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------------- NAV ---------------- */
+  nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(253, 248, 240, 0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 820px; margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.05rem;
+    text-decoration: none; display: flex; align-items: center; gap: 8px;
+  }
+  .logo .tag {
+    background: var(--coral); color: #fff; font-family: 'Space Mono', monospace;
+    font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px;
+  }
+  .back-link { font-size: 13.5px; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
+  .back-link:hover { color: var(--ink); }
+
+  /* ---------------- HEADER ---------------- */
+  header.tool-head { padding: 52px 0 8px; }
+  .eyebrow {
+    font-family: 'Space Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--teal-dark);
+    background: rgba(31, 166, 160, 0.1); border: 1px solid rgba(31, 166, 160, 0.25);
+    padding: 6px 14px; border-radius: 999px; display: inline-block; margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Fredoka', sans-serif; font-weight: 700;
+    font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.08; margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  h1 .hl { position: relative; display: inline-block; }
+  h1 .hl::after {
+    content: ""; position: absolute; left: -2px; right: -2px; bottom: 4px;
+    height: 0.3em; background: var(--yellow); z-index: -1; transform: skewX(-6deg);
+  }
+  .dek { font-size: 1.1rem; color: var(--ink-soft); line-height: 1.6; margin: 0; max-width: 640px; }
+  .intro { padding: 8px 0 6px; }
+  .intro p { font-size: 16.5px; line-height: 1.75; margin: 0 0 16px; }
+
+  /* ---------------- CONTROLS ---------------- */
+  .calc-form {
+    background: var(--paper); border: 1.5px solid var(--line); border-radius: 16px;
+    padding: 22px 22px 20px; margin: 20px 0 8px; box-shadow: 0 2px 0 var(--line);
+  }
+  .field-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .field { flex: 1; min-width: 200px; }
+  .field label {
+    display: block; font-family: 'Space Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 7px;
+  }
+  .field label .flag { font-size: 13px; }
+  select, .salary-input {
+    width: 100%; font-family: 'Work Sans', sans-serif; font-size: 15.5px; font-weight: 500;
+    color: var(--ink); background: var(--cream); border: 1.5px solid var(--line);
+    border-radius: 10px; padding: 12px 14px; appearance: none;
+  }
+  select:focus, .salary-input:focus { outline: none; border-color: var(--coral); }
+  .select-wrap { position: relative; }
+  .select-wrap::after {
+    content: "▾"; position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    color: var(--ink-soft); pointer-events: none; font-size: 12px;
+  }
+  .salary-row { margin-top: 16px; display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
+  .salary-field { flex: 1; min-width: 200px; }
+  .salary-hint { font-size: 12.5px; color: var(--ink-soft); margin: 6px 0 0; }
+  .copy-btn {
+    font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 13.5px; cursor: pointer;
+    background: transparent; border: 1.5px solid var(--ink); color: var(--ink);
+    padding: 12px 18px; border-radius: 10px; white-space: nowrap;
+  }
+  .copy-btn:hover { background: var(--ink); color: #fff; }
+
+  /* ---------------- RESULTS ---------------- */
+  #calc-results { padding: 8px 0 0; }
+  .cat-block { padding: 10px 0 6px; }
+  .cat-block h2 {
+    font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.45rem;
+    margin: 34px 0 10px; letter-spacing: -0.005em;
+  }
+  .cat-blurb { font-size: 14.5px; color: var(--ink-soft); line-height: 1.6; margin: 0 0 14px; }
+  .cat-note { font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; margin: 14px 0 0; }
+
+  .headline {
+    background: var(--paper); border: 1.5px solid var(--line); border-radius: 16px;
+    padding: 24px 24px 20px; margin: 6px 0 8px; box-shadow: 0 2px 0 var(--line);
+  }
+  .headline-line { font-family: 'Fredoka', sans-serif; font-weight: 500; font-size: 1.3rem; line-height: 1.4; margin: 0 0 10px; }
+  .headline-line strong { color: var(--coral-dark); font-weight: 700; }
+  .headline-sub { font-size: 14.5px; color: var(--ink-soft); line-height: 1.65; margin: 0; }
+  .headline-sub strong { color: var(--teal-dark); }
+
+  /* three-column compare box */
+  .cmp {
+    background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px;
+    padding: 18px 22px; margin: 18px 0; box-shadow: 0 2px 0 var(--line); overflow-x: auto;
+  }
+  .cmp-head, .cmp-line {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 12px; align-items: baseline;
+  }
+  .cmp-line { padding: 10px 0; border-top: 1.5px dashed var(--line); }
+  .cmp-head {
+    padding-bottom: 10px; border-bottom: 1.5px solid var(--ink);
+    font-family: 'Space Mono', monospace;
+  }
+  .cmp-title {
+    font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .cmp-us, .cmp-de { font-family: 'Space Mono', monospace; font-size: 13.5px; font-weight: 700; text-align: right; }
+  .cmp-us { color: var(--coral-dark); }
+  .cmp-de { color: var(--teal-dark); }
+  .cmp-us.head, .cmp-de.head { font-size: 11px; letter-spacing: 0.04em; }
+  .cmp-label { font-size: 13px; color: var(--ink-soft); }
+
+  .context-list { margin: 6px 0 0; padding-left: 20px; }
+  .context-list li { font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 8px; }
+
+  /* payslip (net pay) reused from post pages */
+  .payslip-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 18px 0; }
+  @media (max-width: 620px) { .payslip-pair { grid-template-columns: 1fr; } }
+  .payslip {
+    background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px;
+    padding: 20px 20px; box-shadow: 0 2px 0 var(--line);
+  }
+  .payslip .compare-title {
+    font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-soft); margin-bottom: 12px;
+  }
+  .payslip-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: 'Space Mono', monospace; padding: 8px 0; border-top: 1.5px dashed var(--line); gap: 10px;
+  }
+  .payslip-row:first-of-type { border-top: none; }
+  .payslip-row .label { color: var(--ink-soft); font-size: 11.5px; }
+  .payslip-row .value { font-weight: 700; color: var(--coral-dark); text-align: right; white-space: nowrap; font-size: 12.5px; }
+  .payslip-total {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: 'Space Mono', monospace; margin-top: 8px; padding-top: 10px;
+    border-top: 1.5px solid var(--ink); font-size: 13px; font-weight: 700;
+  }
+  .payslip-total .value { color: var(--teal-dark); }
+  .salary-empty { text-align: center; }
+  .salary-empty p { color: var(--ink-soft); font-size: 14.5px; margin: 0; }
+
+  /* affiliate rec-card reused from post pages */
+  .rec-card {
+    background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px;
+    padding: 22px 22px 20px; margin: 22px 0 8px; position: relative; box-shadow: 0 2px 0 var(--line);
+  }
+  .rec-hole {
+    position: absolute; top: -8px; left: 22px; width: 16px; height: 16px;
+    background: var(--cream); border: 1.5px solid var(--line); border-radius: 50%;
+  }
+  .rec-label {
+    font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--coral-dark); margin-bottom: 8px; display: block;
+  }
+  .rec-card h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; }
+  .rec-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
+  .rec-btn {
+    display: inline-flex; align-items: center; gap: 6px; background: var(--coral);
+    color: #fff !important; text-decoration: none; font-weight: 600; font-size: 14px;
+    padding: 10px 20px; border-radius: 8px; box-shadow: 0 3px 0 var(--coral-dark);
+  }
+  .rec-btn:hover { transform: translateY(-1px); }
+  .disclosure {
+    font-family: 'Space Mono', monospace; font-size: 11.5px; color: var(--ink-soft);
+    border-top: 1px solid var(--line); padding-top: 14px; margin: 6px 0 18px; line-height: 1.6;
+  }
+
+  /* methodology + popular */
+  .methodology, .popular {
+    background: var(--paper); border: 1.5px solid var(--line); border-radius: 16px;
+    padding: 24px 24px; margin: 30px 0; box-shadow: 0 2px 0 var(--line);
+  }
+  .methodology h2, .popular h2 {
+    font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.3rem; margin: 0 0 12px;
+  }
+  .methodology p { font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); margin: 0 0 12px; }
+  .methodology .attr { font-family: 'Space Mono', monospace; font-size: 11.5px; color: var(--ink-soft); }
+  .popular ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 560px) { .popular ul { grid-template-columns: 1fr; } }
+  .popular a {
+    text-decoration: none; color: var(--ink); font-size: 14px; font-weight: 500;
+    padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 10px; display: block;
+  }
+  .popular a:hover { border-color: var(--coral); }
+
+  /* ---------------- FOOTER ---------------- */
+  footer { border-top: 1px solid var(--line); padding: 36px 0 44px; margin-top: 20px; }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    max-width: 820px; margin: 0 auto; padding: 0 24px;
+  }
+  .footer-inner .brand { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--ink-soft); }
+  .footer-links { display: flex; gap: 20px; font-size: 13.5px; }
+  .footer-links a { text-decoration: none; color: var(--ink-soft); }
+  .footer-links a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">The Price of Germany <span class="tag">$ → €</span></a>
+      <a class="back-link" href="/#reports">All reports</a>
+    </div>
+  </nav>
+
+  <header class="tool-head">
+    <div class="shell">
+      <span class="eyebrow">Interactive tool</span>
+      <h1>US vs Germany <span class="hl">cost of living</span> calculator</h1>
+      <p class="dek">Pick the US city you know and a German city you are curious about. You will get a real, category-by-category breakdown: rent, groceries, healthcare, transport, utilities, and estimated take-home pay on your own salary.</p>
+    </div>
+  </header>
+
+  <section class="intro">
+    <div class="shell">
+      <p>Most cost-of-living comparisons give you one vague number and call it a day. This one does not. It breaks the move down the way you would actually feel it: what you pay for a one-bedroom, what a full grocery cart costs, what healthcare really runs when it is a separate bill versus built into your paycheck, and how much of a gross salary you actually keep on each side of the Atlantic. The headline number is shareable, but the categories underneath it are where the real story lives.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="shell">
+      <form class="calc-form" id="calc-form">
+        <div class="field-row">
+          <div class="field">
+            <label for="sel-from"><span class="flag">🇺🇸</span> Your US city</label>
+            <div class="select-wrap"><select id="sel-from" aria-label="Your US city"></select></div>
+          </div>
+          <div class="field">
+            <label for="sel-to"><span class="flag">🇩🇪</span> Compare to German city</label>
+            <div class="select-wrap"><select id="sel-to" aria-label="Compare to German city"></select></div>
+          </div>
+        </div>
+        <div class="salary-row">
+          <div class="salary-field">
+            <label for="salary">Gross annual salary (optional, for take-home pay)</label>
+            <input class="salary-input" id="salary" type="number" inputmode="numeric" min="0" step="1000" placeholder="e.g. 75000">
+            <p class="salary-hint">Entered as US dollars for the US side and euros for the German side, so you compare the same headline number.</p>
+          </div>
+          <button type="button" class="copy-btn" id="copy-link">Copy share link</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="shell">
+      <!-- CALC:DEFAULT start -->
+      <div id="calc-results">
+<section class="cat-block headline" id="cat-headline"><p class="headline-line">A single person’s core monthly essentials cost <strong>$3,797</strong> in New York and about <strong>$1,704</strong> (€1,578) in Berlin.</p><p class="headline-sub">Living in Berlin costs <strong>about 55% less</strong> for the same rent-plus-groceries-plus-transport-plus-utilities basket. Healthcare and take-home pay differ structurally and are broken out below.</p></section>
+<section class="cat-block" id="cat-taxes"><h2>Taxes and net income</h2><p class="cat-blurb">Enter a gross annual salary and see estimated take-home pay in each place. This is the category that surprises Americans the most: German gross pay looks similar, but a much larger slice comes off the top, most of it mandatory insurance rather than tax.</p><div class="cmp salary-empty"><p>Enter a gross annual salary above to see estimated take-home pay in New York (USD) and Berlin (EUR).</p></div><div class="rec-card"><span class="rec-hole"></span><span class="rec-label">Recommended</span><h3>File your US taxes from abroad</h3><p>Americans in Germany still owe a US tax return every year, and it is easy to get wrong. This is the expat-focused filing service I would point you to for the Foreign Earned Income Exclusion, foreign tax credits, and staying compliant with the IRS from overseas.</p><a class="rec-btn" href="https://app.myexpattaxes.com/wizard?ref=fwefphge" target="_blank" rel="noopener sponsored">File with MyExpatTaxes →</a></div><div class="disclosure">DISCLOSURE: The link above is an affiliate link. If you sign up through it, I may earn a commission at no extra cost to you, it helps support the site.</div></section>
+<section class="cat-block" id="cat-housing"><h2>Housing</h2><p class="cat-blurb">Monthly rent for a one-bedroom in the city center, a one-bedroom outside the center, and a three-bedroom family apartment. German figures are cold rent (Kaltmiete), before heating and utilities.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">Monthly rent</span><span class="cmp-us head">New York</span><span class="cmp-de head">Berlin</span></div><div class="cmp-line"><span class="cmp-label">1-bed, city center</span><span class="cmp-us">$3,900</span><span class="cmp-de">€1,300</span></div><div class="cmp-line"><span class="cmp-label">1-bed, outside center</span><span class="cmp-us">$2,900</span><span class="cmp-de">€1,000</span></div><div class="cmp-line"><span class="cmp-label">3-bed family</span><span class="cmp-us">$6,800</span><span class="cmp-de">€2,200</span></div></div></section>
+<section class="cat-block" id="cat-groceries"><h2>Groceries</h2><p class="cat-blurb">Estimated monthly grocery spend for a single person and for a family of four, buying a normal mix of staples and fresh food.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">Monthly groceries</span><span class="cmp-us head">New York</span><span class="cmp-de head">Berlin</span></div><div class="cmp-line"><span class="cmp-label">Single person</span><span class="cmp-us">$450</span><span class="cmp-de">€280</span></div><div class="cmp-line"><span class="cmp-label">Family of four</span><span class="cmp-us">$1,100</span><span class="cmp-de">€700</span></div></div></section>
+<section class="cat-block" id="cat-healthcare"><h2>Healthcare</h2><p class="cat-blurb">The structural difference matters more than the number. In the US this is a separate, variable cost outside your paycheck: a premium plus a deductible when you actually get sick. In Germany public health insurance is about 14.6 percent of gross income, split between you and your employer, and it is already taken out before your net pay lands.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">What you pay directly</span><span class="cmp-us head">New York</span><span class="cmp-de head">Berlin</span></div><div class="cmp-line"><span class="cmp-label">Monthly premium</span><span class="cmp-us">$560</span><span class="cmp-de">Built into payroll</span></div><div class="cmp-line"><span class="cmp-label">Annual deductible</span><span class="cmp-us">$2,500</span><span class="cmp-de">None</span></div></div><p class="cat-note">In New York, that premium is money out of pocket on top of your paycheck, and the deductible is what you owe before insurance pays much of anything. In Berlin, public health insurance is about 14.6 percent of gross income, split with your employer, so it is already deducted before your net pay lands.</p></section>
+<section class="cat-block" id="cat-transport"><h2>Transportation</h2><p class="cat-blurb">Owning and running a car (insurance, fuel, registration, upkeep, averaged monthly) versus a monthly public-transit pass. In Germany the Deutschlandticket covers nationwide regional and local transit for one flat monthly price.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">Getting around</span><span class="cmp-us head">New York</span><span class="cmp-de head">Berlin</span></div><div class="cmp-line"><span class="cmp-label">Car ownership (all-in)</span><span class="cmp-us">$900/mo</span><span class="cmp-de">€450/mo</span></div><div class="cmp-line"><span class="cmp-label">Monthly transit pass</span><span class="cmp-us">$132</span><span class="cmp-de">€58 (Deutschlandticket)</span></div></div></section>
+<section class="cat-block" id="cat-utilities"><h2>Utilities</h2><p class="cat-blurb">Electricity, heating, and home internet for a typical apartment. German electricity is among the most expensive in Europe, which narrows the gap most Americans expect here.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">Monthly utilities</span><span class="cmp-us head">New York</span><span class="cmp-de head">Berlin</span></div><div class="cmp-line"><span class="cmp-label">Electricity</span><span class="cmp-us">$160</span><span class="cmp-de">€110</span></div><div class="cmp-line"><span class="cmp-label">Heating</span><span class="cmp-us">$90</span><span class="cmp-de">€90</span></div><div class="cmp-line"><span class="cmp-label">Home internet</span><span class="cmp-us">$65</span><span class="cmp-de">€40</span></div></div></section>
+<section class="cat-block" id="cat-context"><h2>Context notes</h2><ul class="context-list"><li>Figures are monthly unless stated, in local currency, converted at €1 ≈ $1.08 (rate set 2026-08-11).</li><li>These are informed estimates anchored to published indices and city rent data, not invoices. New York last checked 2026-08, Berlin last checked 2026-08.</li><li>German public health insurance bundles things Americans often pay extra for: no separate premium bill, no deductible, and dependents are covered on one contribution.</li><li>Net-pay figures use a simplified single-filer 2026 model and will differ from your real payslip. Always run a real offer through a proper calculator before you accept it.</li></ul></section>
+      </div>
+      <!-- CALC:DEFAULT end -->
+    </div>
+  </section>
+
+  <section>
+    <div class="shell">
+      <div class="methodology">
+        <h2>How these numbers are estimated</h2>
+        <p>Every figure here is an informed estimate, not an invoice. We anchor each category to published cost-of-living indices and to real city rent data, then review the outliers by hand so a cheap city reads cheap and an expensive one reads expensive. US figures are in dollars, German figures in euros, and the headline converts between them at a fixed rate set on the data date. Each city carries the month it was last checked, shown in the context notes, because prices go stale.</p>
+        <p>The take-home pay figures use a simplified 2026 single-filer tax model: US federal brackets plus FICA plus an effective state and local rate, and German income tax plus the solidarity surcharge plus the mandatory social-insurance contributions. They will not match your exact payslip, so treat them as a realistic ballpark and always run a real offer through a proper calculator before you accept it.</p>
+        <p class="attr">Data sources: WhereNext (CC BY 4.0), Destatis, U.S. Bureau of Labor Statistics and Census.</p>
+      </div>
+
+      <div class="popular">
+        <h2>Popular comparisons</h2>
+        <ul>
+          <li><a href="/cost-of-living-calculator?from=new-york-ny&amp;to=berlin">New York vs Berlin</a></li>
+          <li><a href="/cost-of-living-calculator?from=san-francisco-ca&amp;to=munich">San Francisco vs Munich</a></li>
+          <li><a href="/cost-of-living-calculator?from=chicago-il&amp;to=leipzig">Chicago vs Leipzig</a></li>
+          <li><a href="/cost-of-living-calculator?from=san-francisco-ca&amp;to=berlin">San Francisco vs Berlin</a></li>
+          <li><a href="/cost-of-living-calculator?from=new-york-ny&amp;to=munich">New York vs Munich</a></li>
+          <li><a href="/cost-of-living-calculator?from=chicago-il&amp;to=berlin">Chicago vs Berlin</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="brand">thepriceofgermany.com</span>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">YouTube</a>
+        <a href="/#reports">All reports</a>
+        <a href="/cost-of-living-calculator">Calculator</a>
+        <a href="/imprint">Imprint</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/calc-render.js" defer></script>
+  <script src="/assets/calculator.js" defer></script>
+</body>
+</html>

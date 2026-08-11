@@ -1,0 +1,2180 @@
+{
+  "meta": {
+    "usdPerEur": 1.08,
+    "attribution": "WhereNext (CC BY 4.0), Destatis, U.S. BLS and Census",
+    "generated": "2026-08-11",
+    "note": "All figures are monthly unless stated, in local currency (US = USD, Germany = EUR), and are informed estimates rounded for readability, not invoices. They are anchored to published cost-of-living indices and city rent data, then reviewed by hand. Each city carries the month it was last checked. Net-pay figures come from a simplified 2026 tax model and are estimates.",
+    "basketCategories": [
+      "housing",
+      "groceries",
+      "transport",
+      "utilities"
+    ]
+  },
+  "categories": [
+    {
+      "id": "headline",
+      "label": "Headline",
+      "blurb": "One shareable top-line: what a comparable single-person month of essentials costs in each city, converted to one currency."
+    },
+    {
+      "id": "housing",
+      "label": "Housing",
+      "blurb": "Monthly rent for a one-bedroom in the city center, a one-bedroom outside the center, and a three-bedroom family apartment. German figures are cold rent (Kaltmiete), before heating and utilities."
+    },
+    {
+      "id": "groceries",
+      "label": "Groceries",
+      "blurb": "Estimated monthly grocery spend for a single person and for a family of four, buying a normal mix of staples and fresh food."
+    },
+    {
+      "id": "healthcare",
+      "label": "Healthcare",
+      "blurb": "The structural difference matters more than the number. In the US this is a separate, variable cost outside your paycheck: a premium plus a deductible when you actually get sick. In Germany public health insurance is about 14.6 percent of gross income, split between you and your employer, and it is already taken out before your net pay lands."
+    },
+    {
+      "id": "transport",
+      "label": "Transportation",
+      "blurb": "Owning and running a car (insurance, fuel, registration, upkeep, averaged monthly) versus a monthly public-transit pass. In Germany the Deutschlandticket covers nationwide regional and local transit for one flat monthly price."
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities",
+      "blurb": "Electricity, heating, and home internet for a typical apartment. German electricity is among the most expensive in Europe, which narrows the gap most Americans expect here."
+    },
+    {
+      "id": "taxes",
+      "label": "Taxes and net income",
+      "blurb": "Enter a gross annual salary and see estimated take-home pay in each place. This is the category that surprises Americans the most: German gross pay looks similar, but a much larger slice comes off the top, most of it mandatory insurance rather than tax."
+    },
+    {
+      "id": "context",
+      "label": "Context notes",
+      "blurb": "Plain-language caveats: the currency date, what is an estimate, and the things that do not translate one to one."
+    }
+  ],
+  "usCities": {
+    "new-york-ny": {
+      "name": "New York",
+      "state": "NY",
+      "stateLocalRate": 0.075,
+      "housing": {
+        "center1br": 3900,
+        "outside1br": 2900,
+        "family3br": 6800
+      },
+      "groceriesSingle": 450,
+      "groceriesFamily": 1100,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 560,
+        "deductible": 2500
+      },
+      "transport": {
+        "carMonthly": 900,
+        "transitPass": 132
+      },
+      "utilities": {
+        "electricity": 160,
+        "heating": 90,
+        "internet": 65
+      },
+      "colIndex": 100,
+      "lastVerified": "2026-08"
+    },
+    "los-angeles-ca": {
+      "name": "Los Angeles",
+      "state": "CA",
+      "stateLocalRate": 0.06,
+      "housing": {
+        "center1br": 3000,
+        "outside1br": 2400,
+        "family3br": 4800
+      },
+      "groceriesSingle": 375,
+      "groceriesFamily": 938,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 518,
+        "deductible": 2499
+      },
+      "transport": {
+        "carMonthly": 776,
+        "transitPass": 98
+      },
+      "utilities": {
+        "electricity": 121,
+        "heating": 83,
+        "internet": 61
+      },
+      "colIndex": 110,
+      "lastVerified": "2026-08"
+    },
+    "san-francisco-ca": {
+      "name": "San Francisco",
+      "state": "CA",
+      "stateLocalRate": 0.06,
+      "housing": {
+        "center1br": 3300,
+        "outside1br": 2600,
+        "family3br": 5800
+      },
+      "groceriesSingle": 480,
+      "groceriesFamily": 1150,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 520,
+        "deductible": 2200
+      },
+      "transport": {
+        "carMonthly": 850,
+        "transitPass": 98
+      },
+      "utilities": {
+        "electricity": 130,
+        "heating": 60,
+        "internet": 70
+      },
+      "colIndex": 96,
+      "lastVerified": "2026-08"
+    },
+    "san-jose-ca": {
+      "name": "San Jose",
+      "state": "CA",
+      "stateLocalRate": 0.06,
+      "housing": {
+        "center1br": 3450,
+        "outside1br": 2760,
+        "family3br": 5520
+      },
+      "groceriesSingle": 397,
+      "groceriesFamily": 994,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 539,
+        "deductible": 2472
+      },
+      "transport": {
+        "carMonthly": 786,
+        "transitPass": 108
+      },
+      "utilities": {
+        "electricity": 129,
+        "heating": 88,
+        "internet": 61
+      },
+      "colIndex": 117,
+      "lastVerified": "2026-08"
+    },
+    "sacramento-ca": {
+      "name": "Sacramento",
+      "state": "CA",
+      "stateLocalRate": 0.055,
+      "housing": {
+        "center1br": 2025,
+        "outside1br": 1620,
+        "family3br": 3240
+      },
+      "groceriesSingle": 326,
+      "groceriesFamily": 816,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 472,
+        "deductible": 2556
+      },
+      "transport": {
+        "carMonthly": 754,
+        "transitPass": 77
+      },
+      "utilities": {
+        "electricity": 106,
+        "heating": 72,
+        "internet": 60
+      },
+      "colIndex": 96,
+      "lastVerified": "2026-08"
+    },
+    "bakersfield-ca": {
+      "name": "Bakersfield",
+      "state": "CA",
+      "stateLocalRate": 0.05,
+      "housing": {
+        "center1br": 1425,
+        "outside1br": 1140,
+        "family3br": 2280
+      },
+      "groceriesSingle": 296,
+      "groceriesFamily": 741,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 444,
+        "deductible": 2591
+      },
+      "transport": {
+        "carMonthly": 741,
+        "transitPass": 63
+      },
+      "utilities": {
+        "electricity": 96,
+        "heating": 65,
+        "internet": 59
+      },
+      "colIndex": 87,
+      "lastVerified": "2026-08"
+    },
+    "riverside-ca": {
+      "name": "Riverside",
+      "state": "CA",
+      "stateLocalRate": 0.055,
+      "housing": {
+        "center1br": 1950,
+        "outside1br": 1560,
+        "family3br": 3120
+      },
+      "groceriesSingle": 323,
+      "groceriesFamily": 807,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 469,
+        "deductible": 2560
+      },
+      "transport": {
+        "carMonthly": 752,
+        "transitPass": 75
+      },
+      "utilities": {
+        "electricity": 104,
+        "heating": 71,
+        "internet": 60
+      },
+      "colIndex": 95,
+      "lastVerified": "2026-08"
+    },
+    "murrieta-ca": {
+      "name": "Murrieta",
+      "state": "CA",
+      "stateLocalRate": 0.055,
+      "housing": {
+        "center1br": 2100,
+        "outside1br": 1680,
+        "family3br": 3360
+      },
+      "groceriesSingle": 330,
+      "groceriesFamily": 825,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 476,
+        "deductible": 2552
+      },
+      "transport": {
+        "carMonthly": 756,
+        "transitPass": 78
+      },
+      "utilities": {
+        "electricity": 107,
+        "heating": 73,
+        "internet": 60
+      },
+      "colIndex": 97,
+      "lastVerified": "2026-08"
+    },
+    "oakland-ca": {
+      "name": "Oakland",
+      "state": "CA",
+      "stateLocalRate": 0.06,
+      "housing": {
+        "center1br": 2850,
+        "outside1br": 2280,
+        "family3br": 4560
+      },
+      "groceriesSingle": 368,
+      "groceriesFamily": 919,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 511,
+        "deductible": 2508
+      },
+      "transport": {
+        "carMonthly": 772,
+        "transitPass": 95
+      },
+      "utilities": {
+        "electricity": 119,
+        "heating": 81,
+        "internet": 60
+      },
+      "colIndex": 108,
+      "lastVerified": "2026-08"
+    },
+    "san-diego-ca": {
+      "name": "San Diego",
+      "state": "CA",
+      "stateLocalRate": 0.06,
+      "housing": {
+        "center1br": 3075,
+        "outside1br": 2460,
+        "family3br": 4920
+      },
+      "groceriesSingle": 379,
+      "groceriesFamily": 947,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 522,
+        "deductible": 2494
+      },
+      "transport": {
+        "carMonthly": 777,
+        "transitPass": 100
+      },
+      "utilities": {
+        "electricity": 123,
+        "heating": 84,
+        "internet": 61
+      },
+      "colIndex": 111,
+      "lastVerified": "2026-08"
+    },
+    "chicago-il": {
+      "name": "Chicago",
+      "state": "IL",
+      "stateLocalRate": 0.0495,
+      "housing": {
+        "center1br": 2200,
+        "outside1br": 1650,
+        "family3br": 3600
+      },
+      "groceriesSingle": 400,
+      "groceriesFamily": 980,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 480,
+        "deductible": 2600
+      },
+      "transport": {
+        "carMonthly": 750,
+        "transitPass": 75
+      },
+      "utilities": {
+        "electricity": 110,
+        "heating": 90,
+        "internet": 60
+      },
+      "colIndex": 78,
+      "lastVerified": "2026-08"
+    },
+    "miami-fl": {
+      "name": "Miami",
+      "state": "FL",
+      "stateLocalRate": 0,
+      "housing": {
+        "center1br": 2850,
+        "outside1br": 2280,
+        "family3br": 4560
+      },
+      "groceriesSingle": 368,
+      "groceriesFamily": 919,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 511,
+        "deductible": 2508
+      },
+      "transport": {
+        "carMonthly": 772,
+        "transitPass": 95
+      },
+      "utilities": {
+        "electricity": 119,
+        "heating": 81,
+        "internet": 60
+      },
+      "colIndex": 108,
+      "lastVerified": "2026-08"
+    },
+    "washington-dc": {
+      "name": "Washington",
+      "state": "DC",
+      "stateLocalRate": 0.075,
+      "housing": {
+        "center1br": 2775,
+        "outside1br": 2220,
+        "family3br": 4440
+      },
+      "groceriesSingle": 364,
+      "groceriesFamily": 910,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 507,
+        "deductible": 2512
+      },
+      "transport": {
+        "carMonthly": 771,
+        "transitPass": 93
+      },
+      "utilities": {
+        "electricity": 118,
+        "heating": 80,
+        "internet": 60
+      },
+      "colIndex": 107,
+      "lastVerified": "2026-08"
+    },
+    "alexandria-va": {
+      "name": "Alexandria",
+      "state": "VA",
+      "stateLocalRate": 0.05,
+      "housing": {
+        "center1br": 2400,
+        "outside1br": 1920,
+        "family3br": 3840
+      },
+      "groceriesSingle": 345,
+      "groceriesFamily": 863,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 490,
+        "deductible": 2534
+      },
+      "transport": {
+        "carMonthly": 762,
+        "transitPass": 85
+      },
+      "utilities": {
+        "electricity": 112,
+        "heating": 76,
+        "internet": 60
+      },
+      "colIndex": 102,
+      "lastVerified": "2026-08"
+    },
+    "boston-ma": {
+      "name": "Boston",
+      "state": "MA",
+      "stateLocalRate": 0.05,
+      "housing": {
+        "center1br": 3225,
+        "outside1br": 2580,
+        "family3br": 5160
+      },
+      "groceriesSingle": 386,
+      "groceriesFamily": 966,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 529,
+        "deductible": 2486
+      },
+      "transport": {
+        "carMonthly": 781,
+        "transitPass": 103
+      },
+      "utilities": {
+        "electricity": 125,
+        "heating": 85,
+        "internet": 61
+      },
+      "colIndex": 114,
+      "lastVerified": "2026-08"
+    },
+    "cambridge-ma": {
+      "name": "Cambridge",
+      "state": "MA",
+      "stateLocalRate": 0.05,
+      "housing": {
+        "center1br": 3300,
+        "outside1br": 2640,
+        "family3br": 5280
+      },
+      "groceriesSingle": 390,
+      "groceriesFamily": 975,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 532,
+        "deductible": 2481
+      },
+      "transport": {
+        "carMonthly": 782,
+        "transitPass": 105
+      },
+      "utilities": {
+        "electricity": 126,
+        "heating": 86,
+        "internet": 61
+      },
+      "colIndex": 115,
+      "lastVerified": "2026-08"
+    },
+    "hartford-ct": {
+      "name": "Hartford",
+      "state": "CT",
+      "stateLocalRate": 0.05,
+      "housing": {
+        "center1br": 1725,
+        "outside1br": 1380,
+        "family3br": 2760
+      },
+      "groceriesSingle": 311,
+      "groceriesFamily": 779,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 458,
+        "deductible": 2574
+      },
+      "transport": {
+        "carMonthly": 747,
+        "transitPass": 70
+      },
+      "utilities": {
+        "electricity": 101,
+        "heating": 69,
+        "internet": 59
+      },
+      "colIndex": 92,
+      "lastVerified": "2026-08"
+    },
+    "stamford-ct": {
+      "name": "Stamford",
+      "state": "CT",
+      "stateLocalRate": 0.055,
+      "housing": {
+        "center1br": 2625,
+        "outside1br": 2100,
+        "family3br": 4200
+      },
+      "groceriesSingle": 356,
+      "groceriesFamily": 891,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 500,
+        "deductible": 2521
+      },
+      "transport": {
+        "carMonthly": 767,
+        "transitPass": 90
+      },
+      "utilities": {
+        "electricity": 115,
+        "heating": 79,
+        "internet": 60
+      },
+      "colIndex": 105,
+      "lastVerified": "2026-08"
+    },
+    "newark-nj": {
+      "name": "Newark",
+      "state": "NJ",
+      "stateLocalRate": 0.05,
+      "housing": {
+        "center1br": 2325,
+        "outside1br": 1860,
+        "family3br": 3720
+      },
+      "groceriesSingle": 341,
+      "groceriesFamily": 853,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 486,
+        "deductible": 2538
+      },
+      "transport": {
+        "carMonthly": 761,
+        "transitPass": 83
+      },
+      "utilities": {
+        "electricity": 110,
+        "heating": 75,
+        "internet": 60
+      },
+      "colIndex": 100,
+      "lastVerified": "2026-08"
+    },
+    "jersey-city-nj": {
+      "name": "Jersey City",
+      "state": "NJ",
+      "stateLocalRate": 0.055,
+      "housing": {
+        "center1br": 3000,
+        "outside1br": 2400,
+        "family3br": 4800
+      },
+      "groceriesSingle": 375,
+      "groceriesFamily": 938,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 518,
+        "deductible": 2499
+      },
+      "transport": {
+        "carMonthly": 776,
+        "transitPass": 98
+      },
+      "utilities": {
+        "electricity": 121,
+        "heating": 83,
+        "internet": 61
+      },
+      "colIndex": 110,
+      "lastVerified": "2026-08"
+    },
+    "seattle-wa": {
+      "name": "Seattle",
+      "state": "WA",
+      "stateLocalRate": 0,
+      "housing": {
+        "center1br": 2775,
+        "outside1br": 2220,
+        "family3br": 4440
+      },
+      "groceriesSingle": 364,
+      "groceriesFamily": 910,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 507,
+        "deductible": 2512
+      },
+      "transport": {
+        "carMonthly": 771,
+        "transitPass": 93
+      },
+      "utilities": {
+        "electricity": 118,
+        "heating": 80,
+        "internet": 60
+      },
+      "colIndex": 107,
+      "lastVerified": "2026-08"
+    },
+    "renton-wa": {
+      "name": "Renton",
+      "state": "WA",
+      "stateLocalRate": 0,
+      "housing": {
+        "center1br": 2175,
+        "outside1br": 1740,
+        "family3br": 3480
+      },
+      "groceriesSingle": 334,
+      "groceriesFamily": 835,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 479,
+        "deductible": 2547
+      },
+      "transport": {
+        "carMonthly": 757,
+        "transitPass": 80
+      },
+      "utilities": {
+        "electricity": 108,
+        "heating": 74,
+        "internet": 60
+      },
+      "colIndex": 98,
+      "lastVerified": "2026-08"
+    },
+    "portland-or": {
+      "name": "Portland",
+      "state": "OR",
+      "stateLocalRate": 0.085,
+      "housing": {
+        "center1br": 2100,
+        "outside1br": 1680,
+        "family3br": 3360
+      },
+      "groceriesSingle": 330,
+      "groceriesFamily": 825,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 476,
+        "deductible": 2552
+      },
+      "transport": {
+        "carMonthly": 756,
+        "transitPass": 78
+      },
+      "utilities": {
+        "electricity": 107,
+        "heating": 73,
+        "internet": 60
+      },
+      "colIndex": 97,
+      "lastVerified": "2026-08"
+    },
+    "baltimore-md": {
+      "name": "Baltimore",
+      "state": "MD",
+      "stateLocalRate": 0.065,
+      "housing": {
+        "center1br": 1875,
+        "outside1br": 1500,
+        "family3br": 3000
+      },
+      "groceriesSingle": 319,
+      "groceriesFamily": 797,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 465,
+        "deductible": 2565
+      },
+      "transport": {
+        "carMonthly": 751,
+        "transitPass": 73
+      },
+      "utilities": {
+        "electricity": 103,
+        "heating": 70,
+        "internet": 60
+      },
+      "colIndex": 94,
+      "lastVerified": "2026-08"
+    },
+    "philadelphia-pa": {
+      "name": "Philadelphia",
+      "state": "PA",
+      "stateLocalRate": 0.068,
+      "housing": {
+        "center1br": 2025,
+        "outside1br": 1620,
+        "family3br": 3240
+      },
+      "groceriesSingle": 326,
+      "groceriesFamily": 816,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 472,
+        "deductible": 2556
+      },
+      "transport": {
+        "carMonthly": 754,
+        "transitPass": 77
+      },
+      "utilities": {
+        "electricity": 106,
+        "heating": 72,
+        "internet": 60
+      },
+      "colIndex": 96,
+      "lastVerified": "2026-08"
+    },
+    "minneapolis-mn": {
+      "name": "Minneapolis",
+      "state": "MN",
+      "stateLocalRate": 0.068,
+      "housing": {
+        "center1br": 1875,
+        "outside1br": 1500,
+        "family3br": 3000
+      },
+      "groceriesSingle": 319,
+      "groceriesFamily": 797,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 465,
+        "deductible": 2565
+      },
+      "transport": {
+        "carMonthly": 751,
+        "transitPass": 73
+      },
+      "utilities": {
+        "electricity": 103,
+        "heating": 70,
+        "internet": 60
+      },
+      "colIndex": 94,
+      "lastVerified": "2026-08"
+    },
+    "denver-co": {
+      "name": "Denver",
+      "state": "CO",
+      "stateLocalRate": 0.044,
+      "housing": {
+        "center1br": 2175,
+        "outside1br": 1740,
+        "family3br": 3480
+      },
+      "groceriesSingle": 334,
+      "groceriesFamily": 835,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 479,
+        "deductible": 2547
+      },
+      "transport": {
+        "carMonthly": 757,
+        "transitPass": 80
+      },
+      "utilities": {
+        "electricity": 108,
+        "heating": 74,
+        "internet": 60
+      },
+      "colIndex": 98,
+      "lastVerified": "2026-08"
+    },
+    "honolulu-hi": {
+      "name": "Honolulu",
+      "state": "HI",
+      "stateLocalRate": 0.079,
+      "housing": {
+        "center1br": 2775,
+        "outside1br": 2220,
+        "family3br": 4440
+      },
+      "groceriesSingle": 364,
+      "groceriesFamily": 910,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 507,
+        "deductible": 2512
+      },
+      "transport": {
+        "carMonthly": 771,
+        "transitPass": 93
+      },
+      "utilities": {
+        "electricity": 118,
+        "heating": 80,
+        "internet": 60
+      },
+      "colIndex": 107,
+      "lastVerified": "2026-08"
+    },
+    "las-vegas-nv": {
+      "name": "Las Vegas",
+      "state": "NV",
+      "stateLocalRate": 0,
+      "housing": {
+        "center1br": 1725,
+        "outside1br": 1380,
+        "family3br": 2760
+      },
+      "groceriesSingle": 311,
+      "groceriesFamily": 779,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 458,
+        "deductible": 2574
+      },
+      "transport": {
+        "carMonthly": 747,
+        "transitPass": 70
+      },
+      "utilities": {
+        "electricity": 101,
+        "heating": 69,
+        "internet": 59
+      },
+      "colIndex": 92,
+      "lastVerified": "2026-08"
+    },
+    "phoenix-az": {
+      "name": "Phoenix",
+      "state": "AZ",
+      "stateLocalRate": 0.025,
+      "housing": {
+        "center1br": 1800,
+        "outside1br": 1440,
+        "family3br": 2880
+      },
+      "groceriesSingle": 315,
+      "groceriesFamily": 788,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 462,
+        "deductible": 2569
+      },
+      "transport": {
+        "carMonthly": 749,
+        "transitPass": 72
+      },
+      "utilities": {
+        "electricity": 102,
+        "heating": 70,
+        "internet": 60
+      },
+      "colIndex": 93,
+      "lastVerified": "2026-08"
+    },
+    "providence-ri": {
+      "name": "Providence",
+      "state": "RI",
+      "stateLocalRate": 0.045,
+      "housing": {
+        "center1br": 1875,
+        "outside1br": 1500,
+        "family3br": 3000
+      },
+      "groceriesSingle": 319,
+      "groceriesFamily": 797,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 465,
+        "deductible": 2565
+      },
+      "transport": {
+        "carMonthly": 751,
+        "transitPass": 73
+      },
+      "utilities": {
+        "electricity": 103,
+        "heating": 70,
+        "internet": 60
+      },
+      "colIndex": 94,
+      "lastVerified": "2026-08"
+    },
+    "buffalo-ny": {
+      "name": "Buffalo",
+      "state": "NY",
+      "stateLocalRate": 0.055,
+      "housing": {
+        "center1br": 1425,
+        "outside1br": 1140,
+        "family3br": 2280
+      },
+      "groceriesSingle": 296,
+      "groceriesFamily": 741,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 444,
+        "deductible": 2591
+      },
+      "transport": {
+        "carMonthly": 741,
+        "transitPass": 63
+      },
+      "utilities": {
+        "electricity": 96,
+        "heating": 65,
+        "internet": 59
+      },
+      "colIndex": 87,
+      "lastVerified": "2026-08"
+    },
+    "rochester-ny": {
+      "name": "Rochester",
+      "state": "NY",
+      "stateLocalRate": 0.055,
+      "housing": {
+        "center1br": 1425,
+        "outside1br": 1140,
+        "family3br": 2280
+      },
+      "groceriesSingle": 296,
+      "groceriesFamily": 741,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 444,
+        "deductible": 2591
+      },
+      "transport": {
+        "carMonthly": 741,
+        "transitPass": 63
+      },
+      "utilities": {
+        "electricity": 96,
+        "heating": 65,
+        "internet": 59
+      },
+      "colIndex": 87,
+      "lastVerified": "2026-08"
+    },
+    "albany-ny": {
+      "name": "Albany",
+      "state": "NY",
+      "stateLocalRate": 0.055,
+      "housing": {
+        "center1br": 1575,
+        "outside1br": 1260,
+        "family3br": 2520
+      },
+      "groceriesSingle": 304,
+      "groceriesFamily": 760,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 451,
+        "deductible": 2582
+      },
+      "transport": {
+        "carMonthly": 744,
+        "transitPass": 67
+      },
+      "utilities": {
+        "electricity": 98,
+        "heating": 67,
+        "internet": 59
+      },
+      "colIndex": 89,
+      "lastVerified": "2026-08"
+    },
+    "new-orleans-la": {
+      "name": "New Orleans",
+      "state": "LA",
+      "stateLocalRate": 0.0325,
+      "housing": {
+        "center1br": 1725,
+        "outside1br": 1380,
+        "family3br": 2760
+      },
+      "groceriesSingle": 311,
+      "groceriesFamily": 779,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 458,
+        "deductible": 2574
+      },
+      "transport": {
+        "carMonthly": 747,
+        "transitPass": 70
+      },
+      "utilities": {
+        "electricity": 101,
+        "heating": 69,
+        "internet": 59
+      },
+      "colIndex": 92,
+      "lastVerified": "2026-08"
+    },
+    "detroit-mi": {
+      "name": "Detroit",
+      "state": "MI",
+      "stateLocalRate": 0.06,
+      "housing": {
+        "center1br": 1350,
+        "outside1br": 1080,
+        "family3br": 2160
+      },
+      "groceriesSingle": 293,
+      "groceriesFamily": 732,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 440,
+        "deductible": 2596
+      },
+      "transport": {
+        "carMonthly": 739,
+        "transitPass": 62
+      },
+      "utilities": {
+        "electricity": 95,
+        "heating": 65,
+        "internet": 59
+      },
+      "colIndex": 86,
+      "lastVerified": "2026-08"
+    },
+    "cleveland-oh": {
+      "name": "Cleveland",
+      "state": "OH",
+      "stateLocalRate": 0.05,
+      "housing": {
+        "center1br": 1275,
+        "outside1br": 1020,
+        "family3br": 2040
+      },
+      "groceriesSingle": 289,
+      "groceriesFamily": 723,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 437,
+        "deductible": 2600
+      },
+      "transport": {
+        "carMonthly": 737,
+        "transitPass": 60
+      },
+      "utilities": {
+        "electricity": 94,
+        "heating": 64,
+        "internet": 59
+      },
+      "colIndex": 85,
+      "lastVerified": "2026-08"
+    },
+    "st-louis-mo": {
+      "name": "St. Louis",
+      "state": "MO",
+      "stateLocalRate": 0.055,
+      "housing": {
+        "center1br": 1350,
+        "outside1br": 1080,
+        "family3br": 2160
+      },
+      "groceriesSingle": 293,
+      "groceriesFamily": 732,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 440,
+        "deductible": 2596
+      },
+      "transport": {
+        "carMonthly": 739,
+        "transitPass": 62
+      },
+      "utilities": {
+        "electricity": 95,
+        "heating": 65,
+        "internet": 59
+      },
+      "colIndex": 86,
+      "lastVerified": "2026-08"
+    },
+    "pittsburgh-pa": {
+      "name": "Pittsburgh",
+      "state": "PA",
+      "stateLocalRate": 0.04,
+      "housing": {
+        "center1br": 1500,
+        "outside1br": 1200,
+        "family3br": 2400
+      },
+      "groceriesSingle": 300,
+      "groceriesFamily": 751,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 447,
+        "deductible": 2587
+      },
+      "transport": {
+        "carMonthly": 742,
+        "transitPass": 65
+      },
+      "utilities": {
+        "electricity": 97,
+        "heating": 66,
+        "internet": 59
+      },
+      "colIndex": 88,
+      "lastVerified": "2026-08"
+    },
+    "milwaukee-wi": {
+      "name": "Milwaukee",
+      "state": "WI",
+      "stateLocalRate": 0.053,
+      "housing": {
+        "center1br": 1500,
+        "outside1br": 1200,
+        "family3br": 2400
+      },
+      "groceriesSingle": 300,
+      "groceriesFamily": 751,
+      "healthcare": {
+        "model": "private",
+        "premiumMonthly": 447,
+        "deductible": 2587
+      },
+      "transport": {
+        "carMonthly": 742,
+        "transitPass": 65
+      },
+      "utilities": {
+        "electricity": 97,
+        "heating": 66,
+        "internet": 59
+      },
+      "colIndex": 88,
+      "lastVerified": "2026-08"
+    }
+  },
+  "deCities": {
+    "berlin": {
+      "name": "Berlin",
+      "housing": {
+        "center1br": 1300,
+        "outside1br": 1000,
+        "family3br": 2200
+      },
+      "groceriesSingle": 280,
+      "groceriesFamily": 700,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 450,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 110,
+        "heating": 90,
+        "internet": 40
+      },
+      "colIndex": 74,
+      "lastVerified": "2026-08"
+    },
+    "munich": {
+      "name": "Munich",
+      "housing": {
+        "center1br": 1700,
+        "outside1br": 1350,
+        "family3br": 2900
+      },
+      "groceriesSingle": 300,
+      "groceriesFamily": 760,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 470,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 115,
+        "heating": 95,
+        "internet": 40
+      },
+      "colIndex": 88,
+      "lastVerified": "2026-08"
+    },
+    "frankfurt-am-main": {
+      "name": "Frankfurt am Main",
+      "housing": {
+        "center1br": 1485,
+        "outside1br": 1155,
+        "family3br": 2393
+      },
+      "groceriesSingle": 273,
+      "groceriesFamily": 668,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 421,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 106,
+        "heating": 86,
+        "internet": 38
+      },
+      "colIndex": 101,
+      "lastVerified": "2026-08"
+    },
+    "hamburg": {
+      "name": "Hamburg",
+      "housing": {
+        "center1br": 1350,
+        "outside1br": 1050,
+        "family3br": 2175
+      },
+      "groceriesSingle": 267,
+      "groceriesFamily": 653,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 419,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 104,
+        "heating": 84,
+        "internet": 38
+      },
+      "colIndex": 99,
+      "lastVerified": "2026-08"
+    },
+    "cologne": {
+      "name": "Cologne",
+      "housing": {
+        "center1br": 1215,
+        "outside1br": 945,
+        "family3br": 1958
+      },
+      "groceriesSingle": 261,
+      "groceriesFamily": 639,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 418,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 102,
+        "heating": 82,
+        "internet": 38
+      },
+      "colIndex": 97,
+      "lastVerified": "2026-08"
+    },
+    "dusseldorf": {
+      "name": "Dusseldorf",
+      "housing": {
+        "center1br": 1260,
+        "outside1br": 980,
+        "family3br": 2030
+      },
+      "groceriesSingle": 263,
+      "groceriesFamily": 644,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 418,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 102,
+        "heating": 83,
+        "internet": 38
+      },
+      "colIndex": 98,
+      "lastVerified": "2026-08"
+    },
+    "stuttgart": {
+      "name": "Stuttgart",
+      "housing": {
+        "center1br": 1395,
+        "outside1br": 1085,
+        "family3br": 2248
+      },
+      "groceriesSingle": 269,
+      "groceriesFamily": 658,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 420,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 105,
+        "heating": 85,
+        "internet": 38
+      },
+      "colIndex": 100,
+      "lastVerified": "2026-08"
+    },
+    "dortmund": {
+      "name": "Dortmund",
+      "housing": {
+        "center1br": 855,
+        "outside1br": 665,
+        "family3br": 1378
+      },
+      "groceriesSingle": 245,
+      "groceriesFamily": 599,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 414,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 95,
+        "heating": 77,
+        "internet": 38
+      },
+      "colIndex": 91,
+      "lastVerified": "2026-08"
+    },
+    "leipzig": {
+      "name": "Leipzig",
+      "housing": {
+        "center1br": 800,
+        "outside1br": 620,
+        "family3br": 1300
+      },
+      "groceriesSingle": 260,
+      "groceriesFamily": 640,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 420,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 105,
+        "heating": 85,
+        "internet": 38
+      },
+      "colIndex": 62,
+      "lastVerified": "2026-08"
+    },
+    "dresden": {
+      "name": "Dresden",
+      "housing": {
+        "center1br": 855,
+        "outside1br": 665,
+        "family3br": 1378
+      },
+      "groceriesSingle": 245,
+      "groceriesFamily": 599,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 414,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 95,
+        "heating": 77,
+        "internet": 38
+      },
+      "colIndex": 91,
+      "lastVerified": "2026-08"
+    },
+    "nuremberg": {
+      "name": "Nuremberg",
+      "housing": {
+        "center1br": 1080,
+        "outside1br": 840,
+        "family3br": 1740
+      },
+      "groceriesSingle": 255,
+      "groceriesFamily": 624,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 417,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 99,
+        "heating": 80,
+        "internet": 38
+      },
+      "colIndex": 95,
+      "lastVerified": "2026-08"
+    },
+    "hannover": {
+      "name": "Hannover",
+      "housing": {
+        "center1br": 990,
+        "outside1br": 770,
+        "family3br": 1595
+      },
+      "groceriesSingle": 251,
+      "groceriesFamily": 614,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 416,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 98,
+        "heating": 79,
+        "internet": 38
+      },
+      "colIndex": 93,
+      "lastVerified": "2026-08"
+    },
+    "bremen": {
+      "name": "Bremen",
+      "housing": {
+        "center1br": 945,
+        "outside1br": 735,
+        "family3br": 1523
+      },
+      "groceriesSingle": 249,
+      "groceriesFamily": 609,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 415,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 97,
+        "heating": 78,
+        "internet": 38
+      },
+      "colIndex": 92,
+      "lastVerified": "2026-08"
+    },
+    "bonn": {
+      "name": "Bonn",
+      "housing": {
+        "center1br": 1125,
+        "outside1br": 875,
+        "family3br": 1813
+      },
+      "groceriesSingle": 257,
+      "groceriesFamily": 629,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 417,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 100,
+        "heating": 81,
+        "internet": 38
+      },
+      "colIndex": 95,
+      "lastVerified": "2026-08"
+    },
+    "mannheim": {
+      "name": "Mannheim",
+      "housing": {
+        "center1br": 1035,
+        "outside1br": 805,
+        "family3br": 1667
+      },
+      "groceriesSingle": 253,
+      "groceriesFamily": 619,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 416,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 98,
+        "heating": 80,
+        "internet": 38
+      },
+      "colIndex": 94,
+      "lastVerified": "2026-08"
+    },
+    "heidelberg": {
+      "name": "Heidelberg",
+      "housing": {
+        "center1br": 1260,
+        "outside1br": 980,
+        "family3br": 2030
+      },
+      "groceriesSingle": 263,
+      "groceriesFamily": 644,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 418,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 102,
+        "heating": 83,
+        "internet": 38
+      },
+      "colIndex": 98,
+      "lastVerified": "2026-08"
+    },
+    "karlsruhe": {
+      "name": "Karlsruhe",
+      "housing": {
+        "center1br": 1035,
+        "outside1br": 805,
+        "family3br": 1667
+      },
+      "groceriesSingle": 253,
+      "groceriesFamily": 619,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 416,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 98,
+        "heating": 80,
+        "internet": 38
+      },
+      "colIndex": 94,
+      "lastVerified": "2026-08"
+    },
+    "freiburg-im-breisgau": {
+      "name": "Freiburg im Breisgau",
+      "housing": {
+        "center1br": 1215,
+        "outside1br": 945,
+        "family3br": 1958
+      },
+      "groceriesSingle": 261,
+      "groceriesFamily": 639,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 418,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 102,
+        "heating": 82,
+        "internet": 38
+      },
+      "colIndex": 97,
+      "lastVerified": "2026-08"
+    },
+    "munster": {
+      "name": "Munster",
+      "housing": {
+        "center1br": 1080,
+        "outside1br": 840,
+        "family3br": 1740
+      },
+      "groceriesSingle": 255,
+      "groceriesFamily": 624,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 417,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 99,
+        "heating": 80,
+        "internet": 38
+      },
+      "colIndex": 95,
+      "lastVerified": "2026-08"
+    },
+    "wiesbaden": {
+      "name": "Wiesbaden",
+      "housing": {
+        "center1br": 1215,
+        "outside1br": 945,
+        "family3br": 1958
+      },
+      "groceriesSingle": 261,
+      "groceriesFamily": 639,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 418,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 102,
+        "heating": 82,
+        "internet": 38
+      },
+      "colIndex": 97,
+      "lastVerified": "2026-08"
+    },
+    "mainz": {
+      "name": "Mainz",
+      "housing": {
+        "center1br": 1170,
+        "outside1br": 910,
+        "family3br": 1885
+      },
+      "groceriesSingle": 259,
+      "groceriesFamily": 634,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 417,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 101,
+        "heating": 82,
+        "internet": 38
+      },
+      "colIndex": 96,
+      "lastVerified": "2026-08"
+    },
+    "augsburg": {
+      "name": "Augsburg",
+      "housing": {
+        "center1br": 1080,
+        "outside1br": 840,
+        "family3br": 1740
+      },
+      "groceriesSingle": 255,
+      "groceriesFamily": 624,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 417,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 99,
+        "heating": 80,
+        "internet": 38
+      },
+      "colIndex": 95,
+      "lastVerified": "2026-08"
+    },
+    "bielefeld": {
+      "name": "Bielefeld",
+      "housing": {
+        "center1br": 855,
+        "outside1br": 665,
+        "family3br": 1378
+      },
+      "groceriesSingle": 245,
+      "groceriesFamily": 599,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 414,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 95,
+        "heating": 77,
+        "internet": 38
+      },
+      "colIndex": 91,
+      "lastVerified": "2026-08"
+    },
+    "aachen": {
+      "name": "Aachen",
+      "housing": {
+        "center1br": 945,
+        "outside1br": 735,
+        "family3br": 1523
+      },
+      "groceriesSingle": 249,
+      "groceriesFamily": 609,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 415,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 97,
+        "heating": 78,
+        "internet": 38
+      },
+      "colIndex": 92,
+      "lastVerified": "2026-08"
+    },
+    "erlangen": {
+      "name": "Erlangen",
+      "housing": {
+        "center1br": 1125,
+        "outside1br": 875,
+        "family3br": 1813
+      },
+      "groceriesSingle": 257,
+      "groceriesFamily": 629,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 417,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 100,
+        "heating": 81,
+        "internet": 38
+      },
+      "colIndex": 95,
+      "lastVerified": "2026-08"
+    },
+    "regensburg": {
+      "name": "Regensburg",
+      "housing": {
+        "center1br": 1125,
+        "outside1br": 875,
+        "family3br": 1813
+      },
+      "groceriesSingle": 257,
+      "groceriesFamily": 629,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 417,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 100,
+        "heating": 81,
+        "internet": 38
+      },
+      "colIndex": 95,
+      "lastVerified": "2026-08"
+    },
+    "darmstadt": {
+      "name": "Darmstadt",
+      "housing": {
+        "center1br": 1170,
+        "outside1br": 910,
+        "family3br": 1885
+      },
+      "groceriesSingle": 259,
+      "groceriesFamily": 634,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 417,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 101,
+        "heating": 82,
+        "internet": 38
+      },
+      "colIndex": 96,
+      "lastVerified": "2026-08"
+    },
+    "ulm": {
+      "name": "Ulm",
+      "housing": {
+        "center1br": 1080,
+        "outside1br": 840,
+        "family3br": 1740
+      },
+      "groceriesSingle": 255,
+      "groceriesFamily": 624,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 417,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 99,
+        "heating": 80,
+        "internet": 38
+      },
+      "colIndex": 95,
+      "lastVerified": "2026-08"
+    },
+    "kiel": {
+      "name": "Kiel",
+      "housing": {
+        "center1br": 945,
+        "outside1br": 735,
+        "family3br": 1523
+      },
+      "groceriesSingle": 249,
+      "groceriesFamily": 609,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 415,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 97,
+        "heating": 78,
+        "internet": 38
+      },
+      "colIndex": 92,
+      "lastVerified": "2026-08"
+    },
+    "essen": {
+      "name": "Essen",
+      "housing": {
+        "center1br": 855,
+        "outside1br": 665,
+        "family3br": 1378
+      },
+      "groceriesSingle": 245,
+      "groceriesFamily": 599,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 414,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 95,
+        "heating": 77,
+        "internet": 38
+      },
+      "colIndex": 91,
+      "lastVerified": "2026-08"
+    },
+    "duisburg": {
+      "name": "Duisburg",
+      "housing": {
+        "center1br": 765,
+        "outside1br": 595,
+        "family3br": 1233
+      },
+      "groceriesSingle": 241,
+      "groceriesFamily": 589,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 413,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 94,
+        "heating": 76,
+        "internet": 38
+      },
+      "colIndex": 89,
+      "lastVerified": "2026-08"
+    },
+    "bochum": {
+      "name": "Bochum",
+      "housing": {
+        "center1br": 810,
+        "outside1br": 630,
+        "family3br": 1305
+      },
+      "groceriesSingle": 243,
+      "groceriesFamily": 594,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 414,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 95,
+        "heating": 77,
+        "internet": 38
+      },
+      "colIndex": 90,
+      "lastVerified": "2026-08"
+    },
+    "wuppertal": {
+      "name": "Wuppertal",
+      "housing": {
+        "center1br": 810,
+        "outside1br": 630,
+        "family3br": 1305
+      },
+      "groceriesSingle": 243,
+      "groceriesFamily": 594,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 414,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 95,
+        "heating": 77,
+        "internet": 38
+      },
+      "colIndex": 90,
+      "lastVerified": "2026-08"
+    },
+    "braunschweig": {
+      "name": "Braunschweig",
+      "housing": {
+        "center1br": 900,
+        "outside1br": 700,
+        "family3br": 1450
+      },
+      "groceriesSingle": 247,
+      "groceriesFamily": 604,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 415,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 96,
+        "heating": 78,
+        "internet": 38
+      },
+      "colIndex": 92,
+      "lastVerified": "2026-08"
+    },
+    "potsdam": {
+      "name": "Potsdam",
+      "housing": {
+        "center1br": 1260,
+        "outside1br": 980,
+        "family3br": 2030
+      },
+      "groceriesSingle": 263,
+      "groceriesFamily": 644,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 418,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 102,
+        "heating": 83,
+        "internet": 38
+      },
+      "colIndex": 98,
+      "lastVerified": "2026-08"
+    },
+    "rostock": {
+      "name": "Rostock",
+      "housing": {
+        "center1br": 900,
+        "outside1br": 700,
+        "family3br": 1450
+      },
+      "groceriesSingle": 247,
+      "groceriesFamily": 604,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 415,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 96,
+        "heating": 78,
+        "internet": 38
+      },
+      "colIndex": 92,
+      "lastVerified": "2026-08"
+    },
+    "konstanz": {
+      "name": "Konstanz",
+      "housing": {
+        "center1br": 1305,
+        "outside1br": 1015,
+        "family3br": 2103
+      },
+      "groceriesSingle": 265,
+      "groceriesFamily": 648,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 419,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 103,
+        "heating": 84,
+        "internet": 38
+      },
+      "colIndex": 98,
+      "lastVerified": "2026-08"
+    },
+    "tubingen": {
+      "name": "Tubingen",
+      "housing": {
+        "center1br": 1215,
+        "outside1br": 945,
+        "family3br": 1958
+      },
+      "groceriesSingle": 261,
+      "groceriesFamily": 639,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 418,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 102,
+        "heating": 82,
+        "internet": 38
+      },
+      "colIndex": 97,
+      "lastVerified": "2026-08"
+    },
+    "offenbach-am-main": {
+      "name": "Offenbach am Main",
+      "housing": {
+        "center1br": 1125,
+        "outside1br": 875,
+        "family3br": 1813
+      },
+      "groceriesSingle": 257,
+      "groceriesFamily": 629,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 417,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 100,
+        "heating": 81,
+        "internet": 38
+      },
+      "colIndex": 95,
+      "lastVerified": "2026-08"
+    },
+    "ingolstadt": {
+      "name": "Ingolstadt",
+      "housing": {
+        "center1br": 1170,
+        "outside1br": 910,
+        "family3br": 1885
+      },
+      "groceriesSingle": 259,
+      "groceriesFamily": 634,
+      "healthcare": {
+        "model": "public",
+        "rateOfIncome": 0.146
+      },
+      "transport": {
+        "carMonthly": 417,
+        "transitPass": 58
+      },
+      "utilities": {
+        "electricity": 101,
+        "heating": 82,
+        "internet": 38
+      },
+      "colIndex": 96,
+      "lastVerified": "2026-08"
+    }
+  }
+}

@@ -375,6 +375,63 @@
     border-radius: 999px;
   }
 
+  /* ---------------- TOOL BANNER ---------------- */
+  section.tool-banner-wrap { padding: 10px 0 30px; }
+  .tool-banner {
+    background: linear-gradient(135deg, var(--coral) 0%, var(--coral-dark) 100%);
+    border-radius: 20px;
+    padding: 40px 44px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 28px;
+    align-items: center;
+    box-shadow: 0 4px 0 rgba(225, 69, 74, 0.55);
+    position: relative;
+    overflow: hidden;
+  }
+  .tool-banner .tb-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .tool-banner h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    line-height: 1.12;
+    margin: 0 0 10px;
+    color: #fff;
+  }
+  .tool-banner p {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 460px;
+  }
+  .tool-banner .tb-cta {
+    background: #fff;
+    color: var(--coral-dark) !important;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 15px 28px;
+    border-radius: 12px;
+    white-space: nowrap;
+    box-shadow: 0 4px 0 rgba(225, 69, 74, 0.6);
+    transition: transform 0.15s ease;
+    display: inline-block;
+  }
+  .tool-banner .tb-cta:hover { transform: translateY(-2px); }
+  @media (max-width: 640px) {
+    .tool-banner { grid-template-columns: 1fr; padding: 32px 28px; text-align: left; }
+  }
+
   /* ---------------- ABOUT ---------------- */
   section.about {
     padding: 60px 0 72px;
@@ -454,6 +511,7 @@
     <div class="nav-inner">
       <a class="logo" href="/">The Price of Germany <span class="tag">$ → €</span></a>
       <div class="nav-links">
+        <a href="/cost-of-living-calculator">Cost of Living Calculator</a>
         <a href="#reports">Reports</a>
         <a href="#about">About</a>
         <a class="nav-cta" href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">Watch on YouTube</a>
@@ -495,6 +553,19 @@
       </div>
     </div>
   </header>
+
+  <section class="tool-banner-wrap">
+    <div class="shell">
+      <a class="tool-banner" href="/cost-of-living-calculator">
+        <div>
+          <span class="tb-eyebrow">New interactive tool</span>
+          <h2>Compare any US city to any German city</h2>
+          <p>Pick two cities and see the real breakdown: rent, groceries, healthcare, transport, utilities, and how much of your salary you actually keep on each side.</p>
+        </div>
+        <span class="tb-cta">Open the calculator &rarr;</span>
+      </a>
+    </div>
+  </section>
 
   <section class="reports" id="reports">
     <div class="shell">
@@ -659,6 +730,7 @@
       <span class="brand">thepriceofgermany.com</span>
       <div class="footer-links">
         <a href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">YouTube</a>
+        <a href="/cost-of-living-calculator">Calculator</a>
         <a href="#reports">Reports</a>
         <a href="#about">About</a>
         <a href="/imprint">Imprint</a>
