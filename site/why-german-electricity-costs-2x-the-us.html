@@ -235,6 +235,28 @@
   .compare-row2 .value { font-weight: 700; text-align: right; }
   .compare-row2.us .value { color: var(--coral-dark); }
   .compare-row2.de .value { color: var(--teal-dark); }
+  /* side-by-side numeric comparison */
+  .vs-grid { display: grid; grid-template-columns: 1fr 1fr; }
+  .vs-col { display: flex; flex-direction: column; gap: 7px; padding: 4px 22px; }
+  .vs-col.us { border-right: 1.5px dashed var(--line); padding-left: 0; }
+  .vs-col.de { padding-right: 0; }
+  .vs-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .vs-num { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 2.2rem; line-height: 1; }
+  .vs-col.us .vs-num { color: var(--coral-dark); }
+  .vs-col.de .vs-num { color: var(--teal-dark); }
+  .vs-note { font-size: 12.5px; color: var(--ink-soft); line-height: 1.45; }
+  @media (max-width: 460px) {
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-col { padding: 14px 0; }
+    .vs-col.us { border-right: none; border-bottom: 1.5px dashed var(--line); padding-top: 4px; }
+    .vs-col.de { padding-bottom: 4px; }
+  }
 
   .rec-card {
     background: var(--paper);
@@ -373,8 +395,18 @@
 
       <div class="compare">
         <div class="compare-title">Average residential electricity, per kWh</div>
-        <div class="compare-row us"><span class="country">USA</span><span class="value">About 18 cents</span></div>
-        <div class="compare-row de"><span class="country">Germany</span><span class="value">Around 37 cents, closer to 42 on the default Grundversorgung tariff</span></div>
+        <div class="vs-grid">
+          <div class="vs-col us">
+            <span class="vs-label">USA</span>
+            <span class="vs-num">~18&cent;</span>
+            <span class="vs-note">national average this summer</span>
+          </div>
+          <div class="vs-col de">
+            <span class="vs-label">Germany</span>
+            <span class="vs-num">~37&cent;</span>
+            <span class="vs-note">closer to 42&cent; on the default Grundversorgung tariff</span>
+          </div>
+        </div>
       </div>
 
       <p>Do the math and German electricity is running roughly double the American price, sometimes more, for the exact same kilowatt hour.</p>
