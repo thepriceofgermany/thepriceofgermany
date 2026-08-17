@@ -20,8 +20,8 @@
 "name": "Why Peptides Cost Up to 20x More in the USA Than Germany (Wegovy, Zepbound &amp; BPC-157)",
   "description": "The same peptide can cost $1,297 in the USA and 61 euros in Germany. Same active ingredient, wildly different price. Here is exactly why.",
   "uploadDate": "2026-08-06",
-  "thumbnailUrl": "https://i.ytimg.com/vi/1jTtsKIdoG0/maxresdefault.jpg",
-  "embedUrl": "https://www.youtube.com/embed/1jTtsKIdoG0"
+  "thumbnailUrl": "https://thepriceofgermany.com/assets/video/peptide-poster.jpg",
+  "contentUrl": "https://thepriceofgermany.com/assets/video/peptide.mp4"
 }
 </script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -148,7 +148,7 @@
     padding-top: 56.25%;
     background: #000;
   }
-  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .video-wrap iframe, .video-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; background: #000; }
 
   /* ---------------- ARTICLE BODY ---------------- */
   article { padding: 24px 0 64px; }
@@ -340,7 +340,10 @@
       <p class="dek">The same peptide costs $1,297 in the USA and 61 euros in Germany. Same active ingredient, wildly different price. Here is exactly why.</p>
 
       <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/1jTtsKIdoG0" title="Why Peptides Cost Up to 20x More in the USA Than Germany (Wegovy, Zepbound &amp; BPC-157)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <video controls preload="metadata" playsinline poster="/assets/video/peptide-poster.jpg">
+          <source src="/assets/video/peptide.mp4" type="video/mp4">
+          Your browser can't play this video. <a href="/assets/video/peptide.mp4">Download it here</a>.
+        </video>
       </div>
     </div>
   </header>
