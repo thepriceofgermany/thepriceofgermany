@@ -76,7 +76,13 @@ try {
   let post = fs.readFileSync(TEMPLATE, 'utf8');
   post = post.split(T.video).join(vid);                         // thumbnail + embed + iframe src
   post = post.split(T.slug).join(slug);                          // canonical + og:url
-  post = post.split(T.title).join(text(title));                  // <title>, og:title, JSON-LD name, iframe title, h1
+  // Title appears in element text (<title>, <h1>), HTML attributes (og:title, iframe title),
+  // and the JSON-LD "name". A double quote in the title (e.g. '"Tax Cut"') breaks attributes
+  // and invalidates the JSON unless escaped per-context. So: escape the JSON name with real JSON
+  // escaping first, then attribute-escape every remaining HTML occurrence (&quot; also renders
+  // fine inside <title>/<h1> element text).
+  post = post.replace(/"name":\s*"[^"]*"/, () => `"name": ${JSON.stringify(noDash(title))}`);
+  post = post.split(T.title).join(attr(title));                  // <title>, og:title, iframe title, h1
   // NOTE: use replacement FUNCTIONS, not template strings. A template string in
   // the 2nd arg treats "$1" (e.g. inside a price like "$1,297") as a capture-group
   // backreference and corrupts the output.

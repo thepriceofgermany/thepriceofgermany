@@ -166,7 +166,11 @@ function buildPost(d) {
   let post = fs.readFileSync(TEMPLATE, 'utf8');
   post = post.split(T.video).join(vid);
   post = post.split(T.slug).join(slug);
-  post = post.split(T.title).join(escText(title));
+  // Escape the JSON-LD "name" with real JSON escaping, then attribute-escape every remaining
+  // HTML title occurrence (a double quote in the title would otherwise break attributes / the
+  // JSON). &quot; also renders fine inside <title>/<h1> element text.
+  post = post.replace(/"name":\s*"[^"]*"/, () => `"name": ${JSON.stringify(stripDashes(title))}`);
+  post = post.split(T.title).join(escAttr(title));
   // NOTE: use replacement FUNCTIONS, not template strings. A template string in
   // the 2nd arg treats "$1" (e.g. inside a price like "$1,297") as a capture-group
   // backreference and corrupts the output.
