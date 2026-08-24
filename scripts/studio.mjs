@@ -164,6 +164,8 @@ function buildPost(d) {
 
   // ---- post file from template ----
   let post = fs.readFileSync(TEMPLATE, 'utf8');
+  // Drop the template's inherited BlogPosting JSON-LD; regenerated fresh below to match this post.
+  post = post.replace(/<script type="application\/ld\+json">[^<]*?"BlogPosting"[^<]*?<\/script>\s*/, '');
   post = post.split(T.video).join(vid);
   post = post.split(T.slug).join(slug);
   // Escape the JSON-LD "name" with real JSON escaping, then attribute-escape every remaining
@@ -182,6 +184,22 @@ function buildPost(d) {
   post = post.replace(/(<span class="post-date">)[^<]*(<\/span>)/, (m, a, b) => a + date + b);
   post = post.replace(/<p class="dek">[\s\S]*?<\/p>/, () => `<p class="dek">${inline(hook)}</p>`);
   post = post.replace(/<article>[\s\S]*?<\/article>/, () => article);
+  // ---- fresh BlogPosting JSON-LD (article schema, helps the page index as an article) ----
+  const bp = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: stripDashes(title),
+    description: stripDashes(metaDesc),
+    image: `https://i.ytimg.com/vi/${vid}/maxresdefault.jpg`,
+    datePublished: d.date,
+    dateModified: d.date,
+    inLanguage: 'en',
+    author: { '@type': 'Person', name: 'Justin' },
+    publisher: { '@type': 'Organization', name: 'The Price of Germany', logo: { '@type': 'ImageObject', url: 'https://thepriceofgermany.com/favicon.svg' } },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://thepriceofgermany.com/${slug}` },
+    articleSection: stripDashes(label),
+  };
+  post = post.replace('<link rel="icon"', `<script type="application/ld+json">\n${JSON.stringify(bp, null, 2)}\n</script>\n<link rel="icon"`);
   fs.writeFileSync(file, post);
 
   // ---- homepage card at top of grid ----

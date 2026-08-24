@@ -74,6 +74,10 @@ try {
 
   // ---- build the post file from the template ----
   let post = fs.readFileSync(TEMPLATE, 'utf8');
+  // Drop the template's inherited BlogPosting JSON-LD; we regenerate it fresh below so its
+  // fields (description, dates, articleSection) match this post. (JSON has no "<", so [^<]
+  // keeps the match inside the one script block and starts at the BlogPosting block.)
+  post = post.replace(/<script type="application\/ld\+json">[^<]*?"BlogPosting"[^<]*?<\/script>\s*/, '');
   post = post.split(T.video).join(vid);                         // thumbnail + embed + iframe src
   post = post.split(T.slug).join(slug);                          // canonical + og:url
   // Title appears in element text (<title>, <h1>), HTML attributes (og:title, iframe title),
@@ -115,6 +119,23 @@ try {
 
     </div>
   </article>`);
+
+  // ---- fresh BlogPosting JSON-LD (article schema, helps the page index as an article) ----
+  const bp = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: noDash(title),
+    description: noDash(metaDesc),
+    image: `https://i.ytimg.com/vi/${vid}/maxresdefault.jpg`,
+    datePublished: dateIso,
+    dateModified: dateIso,
+    inLanguage: 'en',
+    author: { '@type': 'Person', name: 'Justin' },
+    publisher: { '@type': 'Organization', name: 'The Price of Germany', logo: { '@type': 'ImageObject', url: 'https://thepriceofgermany.com/favicon.svg' } },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://thepriceofgermany.com/${slug}` },
+    articleSection: noDash(label),
+  };
+  post = post.replace('<link rel="icon"', `<script type="application/ld+json">\n${JSON.stringify(bp, null, 2)}\n</script>\n<link rel="icon"`);
 
   fs.writeFileSync(path.join(SITE, slug + '.html'), post);
 
