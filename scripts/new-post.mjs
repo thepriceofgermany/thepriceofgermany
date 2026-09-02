@@ -23,7 +23,7 @@ const T = {
   metaDesc: 'An American expat in Germany breaks down what things actually cost, including rent, healthcare, groceries, and taxes, dollar for dollar, euro for euro.',
 };
 
-const noDash = (s) => s.replace(/[—–]/g, ', ');           // strip em/en dashes (site rule)
+const noDash = (s) => s.replace(/\s*[—–]\s*/g, ', ');     // strip em/en dashes + surrounding spaces (site rule)
 const attr = (s) => noDash(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
 const text = (s) => noDash(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const key  = (s) => s.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
