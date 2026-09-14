@@ -463,6 +463,51 @@
     </div>
   </article>
 
+<!-- related:start -->
+  <style>
+    .related{max-width:1080px;margin:0 auto;padding:56px 24px 8px}
+    .related-title{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:1.5rem;color:var(--ink);margin:0 0 20px}
+    .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .related-card{display:flex;flex-direction:column;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+    .related-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(35,38,43,.08);border-color:var(--coral)}
+    .related-topic{font-family:'Space Mono',ui-monospace,monospace;font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-dark)}
+    .related-card h3{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:1rem;line-height:1.25;color:var(--ink);margin:0}
+    .related-card p{font-family:'Work Sans',system-ui,sans-serif;font-size:.85rem;line-height:1.45;color:var(--ink-soft);margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-more{margin-top:auto;font-family:'Space Mono',ui-monospace,monospace;font-size:.7rem;letter-spacing:.06em;color:var(--coral)}
+    @media(max-width:900px){.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.related-grid{grid-template-columns:1fr}}
+  </style>
+  <section class="related" aria-label="Related reports">
+    <h2 class="related-title">Keep reading</h2>
+    <div class="related-grid">
+      <a class="related-card" href="/east-vs-west-germany-divide">
+        <span class="related-topic">Economy</span>
+        <h3>Inside Germany's Real East vs West Divide (It's Not Income)</h3>
+        <p>Mara in Chemnitz and Paul near Munich, same graduating class, nearly the same salary. 36 years after reunification they live completely different financial lives, and the reason is not the paycheck.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+      <a class="related-card" href="/why-germany-voted-afd">
+        <span class="related-topic">Politics</span>
+        <h3>The Real Reason Germany Voted AfD (America Already Did It)</h3>
+        <p>Everyone called Germany's 43.8% AfD result a far-right immigration earthquake. The people who studied the vote say it was cost of living, and it already happened in America. Petra in Halle and Mike near Youngstown made the same choice for the same reason.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+      <a class="related-card" href="/drone-cost-germany-billions">
+        <span class="related-topic">Politics</span>
+        <h3>How a €3,000 Drone Cost Germany Billions, And Who Really Pays</h3>
+        <p>A €3,000 drone crashed near Leipzig's airport in August 2026. It never even went off. It still cost two countries consulates, diplomats, and billions of euros. Here is the real bill, and who quietly pays it.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+      <a class="related-card" href="/what-an-afd-win-costs-germany">
+        <span class="related-topic">Politics</span>
+        <h3>What an AfD Win Really Costs Germany</h3>
+        <p>Torsten votes out of frustration. Andrea's US client already paused a contract over the same election. Same city, two very different bills, and a political cost nobody puts on a postcard.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+    </div>
+  </section>
+  <!-- related:end -->
+
   <footer>
     <div class="footer-inner">
       <span class="brand">thepriceofgermany.com</span>

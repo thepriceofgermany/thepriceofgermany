@@ -469,6 +469,51 @@
     </div>
   </article>
 
+<!-- related:start -->
+  <style>
+    .related{max-width:1080px;margin:0 auto;padding:56px 24px 8px}
+    .related-title{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:1.5rem;color:var(--ink);margin:0 0 20px}
+    .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .related-card{display:flex;flex-direction:column;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+    .related-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(35,38,43,.08);border-color:var(--coral)}
+    .related-topic{font-family:'Space Mono',ui-monospace,monospace;font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-dark)}
+    .related-card h3{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:1rem;line-height:1.25;color:var(--ink);margin:0}
+    .related-card p{font-family:'Work Sans',system-ui,sans-serif;font-size:.85rem;line-height:1.45;color:var(--ink-soft);margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-more{margin-top:auto;font-family:'Space Mono',ui-monospace,monospace;font-size:.7rem;letter-spacing:.06em;color:var(--coral)}
+    @media(max-width:900px){.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.related-grid{grid-template-columns:1fr}}
+  </style>
+  <section class="related" aria-label="Related reports">
+    <h2 class="related-title">Keep reading</h2>
+    <div class="related-grid">
+      <a class="related-card" href="/freelancers-pensions-germany-vs-usa">
+        <span class="related-topic">Insurance</span>
+        <h3>Germany Might Force Freelancers Into Pensions, America Already Did</h3>
+        <p>Lukas in Leipzig and Danielle in Austin both think they handle their own retirement. Only one is right. Germany is debating forcing freelancers to pay in; the US already does, with zero opt-out.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+      <a class="related-card" href="/insurance-in-germany-vs-usa">
+        <span class="related-topic">Insurance</span>
+        <h3>This Cheap German Insurance Could Save You From Bankruptcy</h3>
+        <p>Why personal liability insurance costs 50 to 80 euros a year in Germany and covers up to 50 million euros, versus a $100,000 renter's policy in the US.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+      <a class="related-card" href="/why-german-electricity-costs-2x-the-us">
+        <span class="related-topic">Cost of Living</span>
+        <h3>Why German Electricity Costs 2x the US (It's Not the Solar Panels)</h3>
+        <p>Kevin in Phoenix pays $187 and shrugs. Lena in Leipzig watches her bill climb without touching the thermostat. Here is where German electricity money really goes.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+      <a class="related-card" href="/ev-charging-cost-germany-vs-usa">
+        <span class="related-topic">Cost of Living</span>
+        <h3>I Paid $50 to Charge My EV in Germany. My Friend Paid $11 in Texas.</h3>
+        <p>Mike charged his Tesla near Austin for $11. I charged a comparable amount off the Autobahn and paid nearly $50. Same car, wildly different bill.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+    </div>
+  </section>
+  <!-- related:end -->
+
   <footer>
     <div class="footer-inner">
       <span class="brand">thepriceofgermany.com</span>

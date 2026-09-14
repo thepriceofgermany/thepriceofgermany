@@ -10,8 +10,9 @@
     "sitemap": "node scripts/build-sitemap.mjs",
     "data": "node scripts/build-cost-data.mjs",
     "calculator": "node scripts/build-calculator.mjs",
+    "related": "node scripts/build-related.mjs",
     "preview": "npx serve site",
-    "deploy": "npm run calculator && npm run sitemap && npx wrangler pages deploy site --project-name thepriceofgermany --branch main --commit-dirty=true"
+    "deploy": "npm run calculator && npm run related && npm run sitemap && npx wrangler pages deploy site --project-name thepriceofgermany --branch main --commit-dirty=true"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.115.0"
