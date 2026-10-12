@@ -1,0 +1,35 @@
+NEWSLETTER FOR: What Moving to Germany Actually Costs: $8,000 vs. $19,000
+Post: https://thepriceofgermany.com/moving-to-germany-cost
+Published: Jul 29, 2026
+
+=== COPY INTO MAILERLITE (Campaigns > Create campaign) ===
+
+Campaign name:   moving-to-germany-cost
+Subject line:    What Moving to Germany Actually Costs: $8,000 vs. $19,000
+Preview text:    The real line-by-line breakdown: blocked account, health insurance, shipping, deposits, and the hidden...
+From:            The Price of Germany <contact@thepriceofgermany.com>
+Send to:         group "Website subscribers"
+
+--- Drag and drop editor blocks ---
+Image URL:       https://i.ytimg.com/vi/QvCYMMCXQjI/maxresdefault.jpg
+Small label:     Relocation
+Headline:        What Moving to Germany Actually Costs: $8,000 vs. $19,000
+Body:            The real line-by-line breakdown: blocked account, health insurance, shipping, deposits, and the hidden setup costs nobody budgets for.
+Button 1 text:   Read the full breakdown
+Button 1 link:   https://thepriceofgermany.com/moving-to-germany-cost?utm_source=newsletter&utm_medium=email&utm_campaign=moving-to-germany-cost&utm_content=read
+Button 2 text:   Watch the video
+Button 2 link:   https://www.youtube.com/watch?v=QvCYMMCXQjI&utm_source=newsletter&utm_medium=email&utm_campaign=moving-to-germany-cost&utm_content=watch
+Sign-off:        Thanks for reading, Justin
+
+--- Subject line alternatives ---
+What Moving to Germany Actually Costs: $8,000 vs. $19,000
+New: What Moving to Germany Actually Costs: $8,000 vs. $19,000
+The real line-by-line breakdown: blocked account, health insurance, shipping, deposits, and the hidden setup costs nobody budgets for.
+
+=== BEFORE YOU SEND ===
+1. Send a test email to yourself and open every link.
+2. Check the subject and preview text on your phone.
+3. Make sure the post is live on the site first (deployed).
+4. Schedule or send.
+
+If your MailerLite plan has the custom HTML editor, you can paste the contents of moving-to-germany-cost.html instead of using the blocks above.

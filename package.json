@@ -12,7 +12,9 @@
     "calculator": "node scripts/build-calculator.mjs",
     "related": "node scripts/build-related.mjs",
     "preview": "npx serve site",
-    "deploy": "npm run calculator && npm run related && npm run sitemap && npx wrangler pages deploy site --project-name thepriceofgermany --branch main --commit-dirty=true"
+    "rss": "node scripts/build-rss.mjs",
+    "newsletter": "node scripts/newsletter.mjs",
+    "deploy": "npm run calculator && npm run related && npm run sitemap && npm run rss && npx wrangler pages deploy site --project-name thepriceofgermany --branch main --commit-dirty=true"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.115.0"

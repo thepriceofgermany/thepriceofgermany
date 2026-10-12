@@ -1,0 +1,35 @@
+NEWSLETTER FOR: Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)
+Post: https://thepriceofgermany.com/eu-disinfo-lab-funding
+Published: Oct 12, 2026
+
+=== COPY INTO MAILERLITE (Campaigns > Create campaign) ===
+
+Campaign name:   eu-disinfo-lab-funding
+Subject line:    Nobody Is Showing You What the EU Actually Paid Disinfo Lab
+Preview text:    A headline says Europe is spending taxpayer billions to brand America a disinformation threat.
+From:            The Price of Germany <contact@thepriceofgermany.com>
+Send to:         group "Website subscribers"
+
+--- Drag and drop editor blocks ---
+Image URL:       https://i.ytimg.com/vi/1W5G_W7LIP8/maxresdefault.jpg
+Small label:     Politics
+Headline:        Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)
+Body:            A headline says Europe is spending taxpayer billions to brand America a disinformation threat. I followed the money in the EU's own grant database. A German taxpayer's share works out to about a third of a cent.
+Button 1 text:   Read the full breakdown
+Button 1 link:   https://thepriceofgermany.com/eu-disinfo-lab-funding?utm_source=newsletter&utm_medium=email&utm_campaign=eu-disinfo-lab-funding&utm_content=read
+Button 2 text:   Watch the video
+Button 2 link:   https://www.youtube.com/watch?v=1W5G_W7LIP8&utm_source=newsletter&utm_medium=email&utm_campaign=eu-disinfo-lab-funding&utm_content=watch
+Sign-off:        Thanks for reading, Justin
+
+--- Subject line alternatives ---
+Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)
+New: Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)
+A headline says Europe is spending taxpayer billions to brand America a disinformation threat.
+
+=== BEFORE YOU SEND ===
+1. Send a test email to yourself and open every link.
+2. Check the subject and preview text on your phone.
+3. Make sure the post is live on the site first (deployed).
+4. Schedule or send.
+
+If your MailerLite plan has the custom HTML editor, you can paste the contents of eu-disinfo-lab-funding.html instead of using the blocks above.
