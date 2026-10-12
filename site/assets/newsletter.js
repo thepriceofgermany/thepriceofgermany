@@ -40,10 +40,10 @@
     box.innerHTML =
       '<div class="tpog-nl-card">' +
       '<span class="tpog-nl-tag">Newsletter</span>' +
-      '<h3>Get the next cost breakdown in your inbox</h3>' +
-      '<p>New Germany vs USA cost breakdowns, straight to your email. No spam, and you can unsubscribe any time.</p>' +
+      '<h3>Get the free German Citizenship Checklist</h3>' +
+      '<p>Subscribe and confirm your email to download the 6 page checklist for applying for German citizenship. You will also get new Germany vs USA cost breakdowns. No spam, and you can unsubscribe any time.</p>' +
       '<button type="button" class="tpog-nl-btn">Subscribe</button>' +
-      '<p class="tpog-nl-note">Clicking Subscribe loads the signup form from our email provider, MailerLite. You will get a confirmation email first. See the <a href="/privacy">Privacy Policy</a>.</p>' +
+      '<p class="tpog-nl-note">Clicking Subscribe loads the signup form from our email provider, MailerLite. You will get a confirmation email first, and the download opens after you confirm. See the <a href="/privacy">Privacy Policy</a>.</p>' +
       '</div>';
     box.querySelector('.tpog-nl-btn').addEventListener('click', function () {
       var card = box.querySelector('.tpog-nl-card');

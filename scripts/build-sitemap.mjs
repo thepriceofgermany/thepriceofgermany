@@ -36,6 +36,7 @@ function lastModified(file) {
 
 const pages = fs.readdirSync(SITE)
   .filter(f => f.endsWith('.html'))
+  .filter(f => !/<meta name="robots" content="noindex/i.test(fs.readFileSync(path.join(SITE, f), 'utf8')))
   .sort((a, b) => (a === 'index.html' ? -1 : b === 'index.html' ? 1 : a.localeCompare(b)));
 
 const urls = pages.map(f => {
