@@ -67,7 +67,7 @@
     bar.setAttribute('aria-label', 'Cookie consent');
     bar.innerHTML =
       '<p>We use Google Analytics cookies to understand how visitors use this site. ' +
-      'You can accept or decline. See the <a href="/imprint">Imprint</a> for details.</p>' +
+      'You can accept or decline. See the <a href="/privacy">Privacy Policy</a> for details.</p>' +
       '<div class="tpog-consent-btns">' +
       '<button type="button" class="tpog-btn tpog-decline">Decline</button>' +
       '<button type="button" class="tpog-btn tpog-accept">Accept</button>' +
