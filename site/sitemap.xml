@@ -131,6 +131,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thepriceofgermany.com/refund</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thepriceofgermany.com/renting-in-germany-vs-usa</loc>
     <lastmod>2026-10-12</lastmod>
     <priority>0.8</priority>
@@ -142,6 +147,11 @@
   </url>
   <url>
     <loc>https://thepriceofgermany.com/study-in-germany-vs-usa</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thepriceofgermany.com/terms</loc>
     <lastmod>2026-10-12</lastmod>
     <priority>0.8</priority>
   </url>

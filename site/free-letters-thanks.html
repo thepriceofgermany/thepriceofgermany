@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics (loaded only after cookie consent) -->
+<script src="/assets/consent.js" defer></script>
+<title>Your free German letters: The Price of Germany</title>
+<meta name="description" content="Download your free German letter templates.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Price of Germany">
+<meta property="og:title" content="Your free German letters">
+<meta property="og:description" content="Download your free German letter templates.">
+<meta name="twitter:title" content="Your free German letters">
+<meta name="twitter:description" content="Download your free German letter templates.">
+<style>
+  :root {
+    --cream: #FDF8F0;
+    --paper: #FFFDF6;
+    --ink: #23262B;
+    --ink-soft: #5B5F66;
+    --coral: #FF5A5F;
+    --coral-dark: #E1454A;
+    --teal: #1FA6A0;
+    --teal-dark: #14807B;
+    --yellow: #FFC857;
+    --line: #E7E0D2;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  a { color: inherit; }
+
+  .shell { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------------- NAV ---------------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(253, 248, 240, 0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo .tag {
+    background: var(--coral);
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .back-link { font-size: 13.5px; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
+  .back-link:hover { color: var(--ink); }
+
+  /* ---------------- ARTICLE HEADER ---------------- */
+  header.post-head { padding: 56px 0 32px; }
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    background: rgba(31, 166, 160, 0.1);
+    border: 1px solid rgba(31, 166, 160, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.08;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .dek { font-size: 1.1rem; color: var(--ink-soft); line-height: 1.6; margin: 0; max-width: 620px; }
+
+  /* ---------------- VIDEO EMBED ---------------- */
+  .video-wrap {
+    margin: 32px 0 8px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--line);
+    box-shadow: 0 2px 0 var(--line);
+    position: relative;
+    padding-top: 56.25%;
+    background: #000;
+  }
+  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ---------------- ARTICLE BODY ---------------- */
+  article { padding: 24px 0 64px; }
+  article h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 46px 0 16px;
+    letter-spacing: -0.005em;
+  }
+  article p { font-size: 16.5px; line-height: 1.75; margin: 0 0 18px; color: var(--ink); }
+  article p.lede { font-size: 1.15rem; color: var(--ink); }
+  article strong { color: var(--ink); }
+
+  .payslip {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 26px 0;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .payslip .compare-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .payslip-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    font-size: 13.5px;
+    padding: 9px 0;
+    border-top: 1.5px dashed var(--line);
+    gap: 12px;
+  }
+  .payslip-row:first-of-type { border-top: none; }
+  .payslip-row .label { color: var(--ink-soft); font-size: 12.5px; }
+  .payslip-row .value { font-weight: 700; color: var(--coral-dark); text-align: right; white-space: nowrap; }
+  .payslip-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1.5px solid var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .payslip-total .value { color: var(--teal-dark); }
+
+  .compare {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 26px 0;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .compare .compare-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .compare-row2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    padding: 9px 0;
+    border-top: 1.5px dashed var(--line);
+  }
+  .compare-row2:first-of-type { border-top: none; }
+  .compare-row2 .country { color: var(--ink-soft); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 10px; }
+  .compare-row2 .value { font-weight: 700; text-align: right; }
+  .compare-row2.us .value { color: var(--coral-dark); }
+  .compare-row2.de .value { color: var(--teal-dark); }
+
+  .rec-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 22px 20px;
+    margin: 30px 0;
+    position: relative;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .rec-hole {
+    position: absolute; top: -8px; left: 22px;
+    width: 16px; height: 16px;
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: 50%;
+  }
+  .rec-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--coral-dark);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .rec-card h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; }
+  .rec-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
+  .rec-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--coral); color: #fff !important; text-decoration: none;
+    font-weight: 600; font-size: 14px; padding: 10px 20px; border-radius: 8px;
+    box-shadow: 0 3px 0 var(--coral-dark);
+  }
+  .rec-btn:hover { transform: translateY(-1px); }
+
+  .action-list { list-style: none; margin: 0 0 18px; padding: 0; counter-reset: action; }
+  .action-list li { counter-increment: action; display: flex; gap: 16px; padding: 16px 0; border-top: 1.5px dashed var(--line); }
+  .action-list li:first-child { border-top: none; }
+  .action-list li::before {
+    content: counter(action);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--coral);
+    flex-shrink: 0;
+    width: 28px;
+  }
+  .action-list p { margin: 0; font-size: 15.5px; line-height: 1.65; }
+
+  blockquote {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--ink);
+    border-left: 4px solid var(--yellow);
+    padding: 4px 0 4px 22px;
+    margin: 34px 0;
+  }
+
+  .disclosure {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    margin-top: 40px;
+    line-height: 1.6;
+  }
+  .disclaimer {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  /* ---------------- FOOTER ---------------- */
+  footer { border-top: 1px solid var(--line); padding: 36px 0 44px; }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    max-width: 760px; margin: 0 auto; padding: 0 24px;
+  }
+  .footer-inner .brand { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--ink-soft); }
+  .footer-links { display: flex; gap: 20px; font-size: 13.5px; }
+  .footer-links a { text-decoration: none; color: var(--ink-soft); }
+  .footer-links a:hover { color: var(--ink); }
+
+  .inside { padding-left: 20px; margin: 0 0 18px; }
+  .inside li { font-size: 16.5px; line-height: 1.7; margin-bottom: 6px; }
+  .cover-img { display: block; width: 100%; max-width: 340px; height: auto; border-radius: 12px; border: 1.5px solid var(--line); box-shadow: 0 4px 0 var(--line); margin: 6px 0 30px; }
+
+  .dl-card { background: var(--paper); border: 1.5px solid var(--line); border-radius: 16px; padding: 28px 26px; box-shadow: 0 3px 0 var(--line); margin: 8px 0 34px; }
+  .dl-tag { display: inline-block; font-family: 'Space Mono', monospace; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: var(--coral); padding: 4px 10px; border-radius: 5px; margin-bottom: 12px; }
+  .dl-card h2 { margin: 0 0 8px; font-size: 1.5rem; }
+  .dl-card p { margin: 0 0 18px; }
+  .dl-btn { display: inline-block; font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 16px; padding: 13px 26px; border-radius: 10px; background: var(--coral); color: #fff !important; text-decoration: none; border: 1.5px solid var(--coral); box-shadow: 0 3px 0 var(--coral-dark); }
+  .dl-btn:hover { background: var(--coral-dark); border-color: var(--coral-dark); }
+  .dl-meta { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--ink-soft); margin-top: 14px; }
+
+  .cta-row { margin: 26px 0 8px; }
+  .cta-note { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--ink-soft); margin: 10px 0 0; }
+  .hl { background: linear-gradient(transparent 62%, var(--yellow) 62%, var(--yellow) 92%, transparent 92%); }
+  .cover-shot { display: block; width: 100%; max-width: 340px; height: auto; border-radius: 10px; border: 1.5px solid var(--line); box-shadow: 0 4px 0 var(--line); margin: 30px 0 6px; }
+  .wide-shot { display: block; width: 100%; height: auto; border-radius: 12px; border: 1.5px solid var(--line); box-shadow: 0 3px 0 var(--line); margin: 20px 0; }
+  .pains { list-style: none; padding: 0; margin: 0 0 18px; }
+  .pains li { padding: 10px 0 10px 34px; border-top: 1.5px dashed var(--line); position: relative; font-size: 16px; }
+  .pains li:first-child { border-top: none; }
+  .pains li::before { content: "x"; position: absolute; left: 4px; top: 10px; width: 20px; height: 20px; border-radius: 50%; background: #FFEDEC; color: var(--coral-dark); font-family: 'Space Mono', monospace; font-weight: 700; font-size: 11px; display: grid; place-items: center; }
+  .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 20px; }
+  .feat { background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px; padding: 18px 20px; box-shadow: 0 2px 0 var(--line); }
+  .feat h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 6px; }
+  .feat p { margin: 0 !important; font-size: 14.5px !important; color: var(--ink-soft); line-height: 1.6 !important; }
+  .cat-card { background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px; padding: 18px 20px; margin: 0 0 14px; box-shadow: 0 2px 0 var(--line); }
+  .cat-card .cat-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .cat-card .count { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.4rem; }
+  .cat-label { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--coral-dark); }
+  .cat-card ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 18px; }
+  .cat-card li { font-size: 14.5px; padding-left: 16px; position: relative; }
+  .cat-card li::before { content: ">"; position: absolute; left: 0; color: var(--coral-dark); font-family: 'Space Mono', monospace; font-weight: 700; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+  .two .box { background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px; padding: 18px 20px; box-shadow: 0 2px 0 var(--line); }
+  .two .box h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 8px; }
+  .two .box ul { margin: 0; padding-left: 18px; font-size: 14.5px; line-height: 1.6; }
+  .two .yes { border-color: rgba(31,166,160,.45); }
+  .two .no { border-color: rgba(225,69,74,.35); }
+  .about { display: flex; gap: 22px; align-items: center; margin: 14px 0 6px; }
+  .about img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--line); flex-shrink: 0; }
+  .about p { margin: 0 0 12px !important; }
+  .price { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 3.4rem; line-height: 1; margin: 4px 0 4px; }
+  .price-sub { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--ink-soft); margin: 0 0 18px !important; }
+  .check-list { list-style: none; padding: 0; margin: 0 0 22px; }
+  .check-list li { padding: 7px 0 7px 30px; position: relative; font-size: 15.5px; }
+  .check-list li::before { content: "ok"; position: absolute; left: 0; top: 8px; width: 21px; height: 21px; border-radius: 50%; background: var(--teal); color: #fff; font-family: 'Space Mono', monospace; font-size: 9px; font-weight: 700; display: grid; place-items: center; }
+  details { background: var(--paper); border: 1.5px solid var(--line); border-radius: 12px; padding: 0 18px; margin-bottom: 10px; box-shadow: 0 2px 0 var(--line); }
+  summary { cursor: pointer; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.05rem; padding: 14px 0; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--coral-dark); transition: transform .15s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { color: var(--ink-soft); font-size: 15px !important; }
+  .legal h2 { font-size: 1.15rem; margin: 30px 0 10px; }
+  .legal p, .legal li { font-size: 15.5px; line-height: 1.7; }
+  .legal ul { padding-left: 20px; }
+  .draft-banner { background: #FFEFE6; border: 1.5px solid #F4D9C6; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin-bottom: 24px; }
+  @media (max-width: 640px) { .feat-grid, .two, .cat-card ul { grid-template-columns: 1fr; } .about { flex-direction: column; text-align: center; } }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">The Price of Germany <span class="tag">$ → €</span></a>
+      <a class="back-link" href="/#reports">All reports</a>
+    </div>
+  </nav>
+
+  <header class="post-head">
+    <div class="shell">
+      <span class="eyebrow">Free sample</span>
+      <h1>You are in. Here are your letters.</h1>
+      <p class="dek">Thanks for confirming your email. Your 2 free German letters are ready to download.</p>
+    </div>
+  </header>
+
+  <article>
+    <div class="shell">
+
+      <div class="dl-card">
+        <span class="dl-tag">PDF</span>
+        <h2>2 German letters, free</h2>
+        <p>Cancel any contract and ask an authority for an appointment, with English translations and a Watch out box for each.</p>
+        <a class="dl-btn" href="/downloads/germany-letter-kit-free-sample.pdf" download>Download the free letters</a>
+        <div class="dl-meta">7 pages &middot; Updated October 2026 &middot; Open it on a computer to fill in the yellow boxes</div>
+      </div>
+      <h2>How to use them</h2>
+      <ol class="action-list">
+        <li><p><strong>Click a yellow box</strong> and type your details. Works in Adobe Reader, Chrome, Edge and Mac Preview.</p></li>
+        <li><p><strong>Read the Watch out box</strong> before you send.</p></li>
+        <li><p><strong>Keep proof</strong> of what you sent and when.</p></li>
+      </ol>
+      <p>These letters are general information and not legal advice. For important matters, check with a Mieterverein, the Verbraucherzentrale or a lawyer.</p>
+      <p>Want the other 23? See the <a href="/letter-kit">full Germany Letter Kit</a>.</p>
+      <p>You will also get new videos, guides and cost breakdowns about life in Germany by email. You can unsubscribe at any time with the link in any email. Questions? Write to <a href="mailto:contact@thepriceofgermany.com">contact@thepriceofgermany.com</a>.</p>
+    
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="brand">thepriceofgermany.com</span>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">YouTube</a>
+        <a href="/#reports">All reports</a>
+        <a href="/#about">About</a>
+        <a href="/imprint">Imprint</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/refund">Refunds</a>
+        <a href="mailto:contact@thepriceofgermany.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

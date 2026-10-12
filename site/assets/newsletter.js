@@ -37,19 +37,29 @@
   }
 
   boxes.forEach(function (box) {
+    // Optional per-box overrides, so other lead magnets can reuse this box:
+    // data-form (MailerLite form id), data-tag, data-title, data-text.
+    var form = box.getAttribute('data-form') || FORM;
+    if (/^TODO/.test(form)) return; // form not configured yet, render nothing
+    var tag = box.getAttribute('data-tag') || 'Newsletter';
+    var title = box.getAttribute('data-title') || 'Get the free German Citizenship Checklist';
+    var text = box.getAttribute('data-text') || 'Subscribe and confirm your email to download the 6 page checklist for applying for German citizenship. You will also get new videos, guides and cost breakdowns about life in Germany. No spam, and you can unsubscribe any time.';
     box.innerHTML =
       '<div class="tpog-nl-card">' +
-      '<span class="tpog-nl-tag">Newsletter</span>' +
-      '<h3>Get the free German Citizenship Checklist</h3>' +
-      '<p>Subscribe and confirm your email to download the 6 page checklist for applying for German citizenship. You will also get new videos, guides and cost breakdowns about life in Germany. No spam, and you can unsubscribe any time.</p>' +
+      '<span class="tpog-nl-tag"></span>' +
+      '<h3></h3>' +
+      '<p class="tpog-nl-text"></p>' +
       '<button type="button" class="tpog-nl-btn">Subscribe</button>' +
       '<p class="tpog-nl-note">Clicking Subscribe loads the signup form from our email provider, MailerLite. You will get a confirmation email first, and the download opens after you confirm. See the <a href="/privacy">Privacy Policy</a>.</p>' +
       '</div>';
+    box.querySelector('.tpog-nl-tag').textContent = tag;
+    box.querySelector('h3').textContent = title;
+    box.querySelector('.tpog-nl-text').textContent = text;
     box.querySelector('.tpog-nl-btn').addEventListener('click', function () {
       var card = box.querySelector('.tpog-nl-card');
       var holder = document.createElement('div');
       holder.className = 'ml-embedded';
-      holder.setAttribute('data-form', FORM);
+      holder.setAttribute('data-form', form);
       card.innerHTML = '';
       card.appendChild(holder);
       loadMailerLite();
