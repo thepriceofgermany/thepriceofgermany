@@ -41,7 +41,7 @@
       '<div class="tpog-nl-card">' +
       '<span class="tpog-nl-tag">Newsletter</span>' +
       '<h3>Get the free German Citizenship Checklist</h3>' +
-      '<p>Subscribe and confirm your email to download the 6 page checklist for applying for German citizenship. You will also get new Germany vs USA cost breakdowns. No spam, and you can unsubscribe any time.</p>' +
+      '<p>Subscribe and confirm your email to download the 6 page checklist for applying for German citizenship. You will also get new videos, guides and cost breakdowns about life in Germany. No spam, and you can unsubscribe any time.</p>' +
       '<button type="button" class="tpog-nl-btn">Subscribe</button>' +
       '<p class="tpog-nl-note">Clicking Subscribe loads the signup form from our email provider, MailerLite. You will get a confirmation email first, and the download opens after you confirm. See the <a href="/privacy">Privacy Policy</a>.</p>' +
       '</div>';
