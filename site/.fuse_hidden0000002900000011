@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics (loaded only after cookie consent) -->
+<script src="/assets/consent.js" defer></script>
+<title>The Price of Germany: Real Cost-of-Living Comparisons, USA vs. Germany</title>
+<meta name="description" content="An American expat in Germany breaks down what things actually cost, including rent, healthcare, groceries, and taxes, dollar for dollar, euro for euro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://thepriceofgermany.com/#org",
+      "name": "The Price of Germany",
+      "url": "https://thepriceofgermany.com/",
+      "logo": "https://thepriceofgermany.com/favicon.svg",
+      "sameAs": ["https://www.youtube.com/@thepriceofgermany"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://thepriceofgermany.com/#website",
+      "name": "The Price of Germany",
+      "url": "https://thepriceofgermany.com/",
+      "publisher": { "@id": "https://thepriceofgermany.com/#org" },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://thepriceofgermany.com/">
+<meta property="og:url" content="https://thepriceofgermany.com/">
+<style>
+  :root {
+    --cream: #FDF8F0;
+    --paper: #FFFDF6;
+    --ink: #23262B;
+    --ink-soft: #5B5F66;
+    --coral: #FF5A5F;
+    --coral-dark: #E1454A;
+    --teal: #1FA6A0;
+    --teal-dark: #14807B;
+    --yellow: #FFC857;
+    --line: #E7E0D2;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  a { color: inherit; }
+
+  .shell { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------------- NAV ---------------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(253, 248, 240, 0.88);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo .tag {
+    background: var(--coral);
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    font-size: 14.5px;
+    font-weight: 500;
+  }
+  .nav-links a { text-decoration: none; color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    background: var(--ink);
+    color: #fff !important;
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  @media (max-width: 640px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+  }
+
+  /* ---------------- HERO ---------------- */
+  header.hero {
+    padding: 64px 0 56px;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .hero-text { flex: 1; min-width: 0; text-align: center; max-width: 640px; }
+  .hero-character {
+    flex-shrink: 0;
+    margin-top: 8px;
+    width: 100%;
+  }
+  .hero-stage {
+    position: relative;
+    width: min(660px, 94vw);
+    height: clamp(320px, 46vw, 440px);
+    margin: 0 auto;
+  }
+  .hero-stage .justin {
+    position: absolute;
+    left: 50%;
+    bottom: 11%;
+    transform: translateX(-50%);
+    width: clamp(211px, 40vw, 290px);
+    height: auto;
+    display: block;
+    z-index: 2;
+    filter: drop-shadow(0 18px 22px rgba(35, 38, 43, 0.16));
+    animation: bob 4.5s ease-in-out infinite;
+  }
+  .hero-stage .float {
+    position: absolute;
+    height: auto;
+    z-index: 1;
+    filter: drop-shadow(0 8px 12px rgba(35, 38, 43, 0.14));
+    animation: floaty 6s ease-in-out infinite;
+  }
+  .f-money    { top: 1%;   left: 3%;   width: clamp(72px, 15vw, 122px); animation-delay: 0s;   }
+  .f-house    { top: 3%;   right: 2%;  width: clamp(80px, 16vw, 134px); animation-delay: -1.2s; }
+  .f-laptop   { top: 38%;  left: 0%;   width: clamp(98px, 19vw, 160px); animation-delay: -2.4s; }
+  .f-suitcase { top: 31%;  right: 1%;  width: clamp(66px, 13vw, 110px); animation-delay: -3s;   }
+  .f-docs     { bottom: 2%; left: 3%;  width: clamp(66px, 13vw, 108px); animation-delay: -1.8s; }
+  .f-bill     { bottom: 4%; right: 2%; width: clamp(62px, 12vw, 102px); animation-delay: -3.6s; }
+  @keyframes bob {
+    0%, 100% { transform: translateX(-50%) translateY(0) rotate(-1.5deg); }
+    50% { transform: translateX(-50%) translateY(-10px) rotate(1.5deg); }
+  }
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-stage .justin, .hero-stage .float { animation: none; }
+  }
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    background: rgba(31, 166, 160, 0.1);
+    border: 1px solid rgba(31, 166, 160, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.04;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  h1 .hl { position: relative; display: inline-block; }
+  h1 .hl::after {
+    content: "";
+    position: absolute;
+    left: -2px; right: -2px; bottom: 4px;
+    height: 0.3em;
+    background: var(--yellow);
+    z-index: -1;
+    transform: skewX(-6deg);
+  }
+  .hero p.sub {
+    max-width: 560px;
+    margin: 0 auto 34px;
+    font-size: clamp(1.02rem, 2vw, 1.18rem);
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 13px 26px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary {
+    background: var(--coral);
+    color: #fff !important;
+    box-shadow: 0 4px 0 var(--coral-dark);
+  }
+  .btn-primary:hover { transform: translateY(-2px); }
+  .btn-primary:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--coral-dark); }
+  .btn-outline {
+    background: transparent;
+    border: 1.5px solid var(--ink);
+    color: var(--ink) !important;
+  }
+  .btn-outline:hover { background: var(--ink); color: #fff !important; }
+
+  /* exchange strip */
+  .strip {
+    margin-top: 56px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    letter-spacing: 0.02em;
+  }
+  .strip span { white-space: nowrap; }
+  .strip .sep { color: var(--line); }
+
+  /* ---------------- REPORTS GRID ---------------- */
+  section.reports { padding: 20px 0 72px; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .section-head h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin: 0;
+  }
+  .section-head .note {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+  .chip {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 15px;
+    cursor: pointer;
+    transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  }
+  .chip:hover { border-color: var(--coral); color: var(--ink); }
+  .chip.active {
+    background: var(--coral);
+    border-color: var(--coral);
+    color: #fff;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+  }
+  .tag-card[hidden] { display: none; }
+
+  .tag-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 20px 20px;
+    position: relative;
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .tag-card:hover {
+    transform: translateY(-3px) rotate(-0.4deg);
+    border-color: var(--coral);
+    box-shadow: 0 8px 18px rgba(35,38,43,0.08);
+  }
+  .tag-hole {
+    position: absolute;
+    top: -8px;
+    left: 22px;
+    width: 16px;
+    height: 16px;
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: 50%;
+  }
+  .tag-card:hover .tag-hole { border-color: var(--coral); }
+  .tag-topic {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .tag-card h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+    line-height: 1.25;
+  }
+  .tag-card p {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0 0 18px;
+  }
+  .tag-compare {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    border-top: 1.5px dashed var(--line);
+    padding-top: 12px;
+  }
+  .tag-compare .status {
+    color: var(--coral-dark);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .placeholder-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 2px 7px;
+    border-radius: 999px;
+  }
+
+  /* ---------------- TOOL BANNER ---------------- */
+  section.tool-banner-wrap { padding: 10px 0 30px; }
+  .tool-banner {
+    background: rgba(31, 166, 160, 0.1);
+    border: 1px solid rgba(31, 166, 160, 0.25);
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 40px 44px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 28px;
+    align-items: center;
+    box-shadow: 0 2px 0 var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .tool-banner .tb-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .tool-banner h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    line-height: 1.12;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+  .tool-banner p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 460px;
+  }
+  .tool-banner .tb-cta {
+    background: var(--coral);
+    color: #fff !important;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 15px 28px;
+    border-radius: 12px;
+    white-space: nowrap;
+    box-shadow: 0 4px 0 var(--coral-dark);
+    transition: transform 0.15s ease;
+    display: inline-block;
+  }
+  .tool-banner .tb-cta:hover { transform: translateY(-2px); }
+  @media (max-width: 640px) {
+    .tool-banner { grid-template-columns: 1fr; padding: 32px 28px; text-align: left; }
+  }
+
+  /* ---------------- PARTNER BANNER ---------------- */
+  section.partner-banner-wrap { padding: 0 0 30px; }
+  .partner-banner { text-align: center; }
+  .partner-banner .pb-label { display: block; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
+  .partner-banner img { display: block; width: 100%; max-width: 728px; height: auto; margin: 0 auto; border-radius: 10px; border: 1.5px solid var(--line); }
+  .partner-banner .pb-more { display: inline-block; margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--coral-dark); text-decoration: none; }
+  .partner-banner .pb-more:hover { text-decoration: underline; }
+
+  /* ---------------- ABOUT ---------------- */
+  section.about {
+    padding: 60px 0 72px;
+  }
+  .about-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 20px;
+    padding: 44px;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  @media (max-width: 560px) {
+    .about-card { grid-template-columns: 1fr; text-align: center; padding: 32px 24px; }
+    .avatar { margin: 0 auto; }
+  }
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(160deg, var(--yellow), var(--coral));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 4px solid var(--paper);
+    box-shadow: 0 0 0 2px var(--line);
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transform: scale(1.6) translateY(6px);
+  }
+  .about-card h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+  }
+  .about-card p {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ---------------- FOOTER ---------------- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 36px 0 44px;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-inner .brand {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+  .footer-links { display: flex; gap: 20px; font-size: 13.5px; flex-wrap: wrap; }
+  .footer-links a { text-decoration: none; color: var(--ink-soft); }
+  .footer-links a:hover { color: var(--ink); }
+  .social-row { display: flex; gap: 10px; align-items: center; }
+  .social-row a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid var(--line); color: var(--ink-soft); background: var(--paper);
+    transition: transform 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .social-row a:hover { transform: translateY(-2px); color: var(--ink); border-color: var(--ink); }
+  .social-row svg { width: 18px; height: 18px; display: block; }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">The Price of Germany <span class="tag">$ → €</span></a>
+      <div class="nav-links">
+        <a href="/cost-of-living-calculator">Cost of Living Calculator</a>
+        <a href="#reports">Reports</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">Watch on YouTube</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="shell">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow">Cost-of-living show</span>
+          <h1>What things <span class="hl">actually</span> cost<br>in Germany</h1>
+          <p class="sub">An American who's lived in Germany for over a decade, breaking down the real numbers: rent, healthcare, groceries, taxes, dollar for dollar, euro for euro.</p>
+        </div>
+        <div class="hero-character">
+          <div class="hero-stage">
+            <img class="justin" src="assets/justin-nobg.png" alt="Justin, host of The Price of Germany" width="480" height="600">
+            <img class="float f-money" src="assets/objects/obj-money.png" alt="" aria-hidden="true" loading="lazy">
+            <img class="float f-house" src="assets/objects/obj-house.png" alt="" aria-hidden="true" loading="lazy">
+            <img class="float f-laptop" src="assets/objects/obj-laptop.png" alt="" aria-hidden="true" loading="lazy">
+            <img class="float f-suitcase" src="assets/objects/obj-suitcase.png" alt="" aria-hidden="true" loading="lazy">
+            <img class="float f-docs" src="assets/objects/obj-docs.png" alt="" aria-hidden="true" loading="lazy">
+            <img class="float f-bill" src="assets/objects/obj-bill.png" alt="" aria-hidden="true" loading="lazy">
+          </div>
+        </div>
+        <div class="ctas">
+          <a class="btn btn-primary" href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">Watch on YouTube</a>
+          <a class="btn btn-outline" href="#reports">Browse reports</a>
+        </div>
+      </div>
+      <div class="strip">
+        <span>RENT</span><span class="sep">·</span>
+        <span>HEALTHCARE</span><span class="sep">·</span>
+        <span>GROCERIES</span><span class="sep">·</span>
+        <span>TAXES</span><span class="sep">·</span>
+        <span>CHILDCARE</span><span class="sep">·</span>
+        <span>TRANSIT</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="tool-banner-wrap">
+    <div class="shell">
+      <a class="tool-banner" href="/cost-of-living-calculator">
+        <div>
+          <span class="tb-eyebrow">New interactive tool</span>
+          <h2>Compare any US city to any German city</h2>
+          <p>Pick two cities and see the real breakdown: rent, groceries, healthcare, transport, utilities, and how much of your salary you actually keep on each side.</p>
+        </div>
+        <span class="tb-cta">Open the calculator &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="partner-banner-wrap">
+    <div class="shell">
+      <div class="partner-banner">
+        <span class="pb-label">Advertisement</span>
+        <a href="https://grandclassicballet.reservix.de/events?awc=129009_1790773479_aacd6f9a54774505774f51d8fe4e3bbf&amp;utm_source=awin" target="_blank" rel="noopener sponsored"><img src="/assets/gcb-banner.png" width="728" height="90" alt="Grand Classic Ballet: Swan Lake and Der Nussknacker. Tickets hier" loading="lazy"></a>
+        <a class="pb-more" href="/grand-classic-ballet-tickets-germany">More info &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="reports" id="reports">
+    <div class="shell">
+      <div class="section-head">
+        <h2>Latest reports</h2>
+        <span class="note">ONE POST PER VIDEO</span>
+      </div>
+      <div class="filter-bar" role="group" aria-label="Filter reports by category">
+        <button class="chip active" type="button" data-filter="all">All</button>
+        <button class="chip" type="button" data-filter="housing">Housing</button>
+        <button class="chip" type="button" data-filter="childcare">Childcare</button>
+        <button class="chip" type="button" data-filter="insurance">Insurance</button>
+        <button class="chip" type="button" data-filter="relocation">Relocation</button>
+        <button class="chip" type="button" data-filter="salary">Salary</button>
+        <button class="chip" type="button" data-filter="culture">Culture</button>
+        <button class="chip" type="button" data-filter="education">Education</button>
+        <button class="chip" type="button" data-filter="cost-of-living">Cost of Living</button>
+        <button class="chip" type="button" data-filter="healthcare">Healthcare</button>
+        <button class="chip" type="button" data-filter="parental-leave">Parental Leave</button>
+        <button class="chip" type="button" data-filter="politics">Politics</button>
+        <button class="chip" type="button" data-filter="economy">Economy</button>
+        <button class="chip" type="button" data-filter="investing">Investing</button>
+      </div>
+      <div class="grid">
+
+        <a class="tag-card" data-cat="cost-of-living" href="/german-gas-prices-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Cost of Living</span>
+          <h3>Why German Gas Is Still 2.1x More Expensive Than The US</h3>
+          <p>Lars fills his tank in Leipzig for $123; Kyle fills the same in Cincinnati for about $58. Germany just cut fuel tax again, and gas still costs 2.1x more. I opened up a liter and counted every cent, and the yearly bill is the twist.</p>
+          <div class="tag-compare">
+            <span>Oct 8, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="salary" href="/minimum-wage-germany-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Salary</span>
+          <h3>Can You Actually Survive on Minimum Wage in Germany?</h3>
+          <p>Same age, same hours, same job at the minimum wage. Jana in Dortmund ends the month with 550 euros left over; Tyler outside Jackson ends $225 short. I rebuilt both months line by line.</p>
+          <div class="tag-compare">
+            <span>Oct 4, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="childcare" href="/cost-of-having-a-baby-germany-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Childcare</span>
+          <h3>The $19,000 Baby Bill Nobody Warns Americans About (Germany Pays $0)</h3>
+          <p>Two babies born the same night, 4,800 miles apart. Anna in Munich paid $0. Sarah in Florida got a $19,000 bill, with good insurance. Here is the entire first year, line by line.</p>
+          <div class="tag-compare">
+            <span>Oct 1, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="politics" href="/germany-chancellor-crisis-cost">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Politics</span>
+          <h3>The Hidden Bill Behind Germany's Chancellor Crisis</h3>
+          <p>Merz failed his own confidence vote, cratered to 9% approval, and got wiped out in three state elections. A Leipzig machinist and a Cincinnati car buyer never met, and both are paying for it. Here is the real bill.</p>
+          <div class="tag-compare">
+            <span>Sep 27, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="politics" href="/berlin-seize-240000-apartments">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Politics</span>
+          <h3>Inside Berlin's €36 Billion Plan to Seize 240,000 Apartments</h3>
+          <p>Berlin made a party that wants to convert nearly 240,000 corporate apartments into public housing its strongest since reunification. Two neighbors read the same 25.7% headline and had opposite mornings. Here is the real bill: 8 to 36 billion euros.</p>
+          <div class="tag-compare">
+            <span>Sep 22, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="politics" href="/us-missile-deal-german-tax-bill">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Politics</span>
+          <h3>How a US Missile Deal Ends Up on a German Teacher's Tax Bill</h3>
+          <p>Dana builds Tomahawk parts in Arkansas; her overtime beats her mortgage. Jonas teaches in Dresden under a two-year leaking ceiling. A US-Germany missile deal quietly attached both their lives, and the ~108 billion euro bill lands on taxpayers who never voted on it.</p>
+          <div class="tag-compare">
+            <span>Sep 20, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="politics" href="/heating-bill-germany-afd-surge">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Politics</span>
+          <h3>How a Heating Bill Is Driving Germany's Far-Right Surge (Not Immigration)</h3>
+          <p>Two neighbors one wall apart in Halle, same age and same bills, opposite votes. What best predicted the difference was not ideology, it was heat, rent, and pensions. The cost story under the AfD surge.</p>
+          <div class="tag-compare">
+            <span>Sep 17, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="politics" href="/why-germany-voted-afd">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Politics</span>
+          <h3>The Real Reason Germany Voted AfD (America Already Did It)</h3>
+          <p>Everyone called Germany's 43.8% AfD result a far-right immigration earthquake. The people who studied the vote say it was cost of living, and it already happened in America. Petra in Halle and Mike near Youngstown made the same choice for the same reason.</p>
+          <div class="tag-compare">
+            <span>Sep 14, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="economy" href="/east-vs-west-germany-divide">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Economy</span>
+          <h3>Inside Germany's Real East vs West Divide (It's Not Income)</h3>
+          <p>Mara in Chemnitz and Paul near Munich, same graduating class, nearly the same salary. 36 years after reunification they live completely different financial lives, and the reason is not the paycheck.</p>
+          <div class="tag-compare">
+            <span>Sep 11, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="childcare" href="/cost-of-raising-a-child-germany-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Childcare</span>
+          <h3>The True Cost of Raising a Kid: Germany vs the US (18 Years)</h3>
+          <p>Two babies born the same week, one in Germany, one in Ohio. By 18, their parents will have spent wildly different amounts. Here is the real 18-year ledger, category by category.</p>
+          <div class="tag-compare">
+            <span>Sep 8, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="politics" href="/drone-cost-germany-billions">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Politics</span>
+          <h3>How a €3,000 Drone Cost Germany Billions, And Who Really Pays</h3>
+          <p>A €3,000 drone crashed near Leipzig's airport in August 2026. It never even went off. It still cost two countries consulates, diplomats, and billions of euros. Here is the real bill, and who quietly pays it.</p>
+          <div class="tag-compare">
+            <span>Sep 3, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="insurance" href="/freelancers-pensions-germany-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Insurance</span>
+          <h3>Germany Might Force Freelancers Into Pensions, America Already Did</h3>
+          <p>Lukas in Leipzig and Danielle in Austin both think they handle their own retirement. Only one is right. Germany is debating forcing freelancers to pay in; the US already does, with zero opt-out.</p>
+          <div class="tag-compare">
+            <span>Sep 2, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="insurance" href="/unemployment-benefits-germany-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Insurance</span>
+          <h3>Laid Off in Germany vs the US: What Nobody Tells Americans</h3>
+          <p>Dana in Mississippi and Lukas near Dortmund get laid off the same week. A year later their bank accounts look nothing alike, and in some US states the laid-off worker out-earns the German.</p>
+          <div class="tag-compare">
+            <span>Aug 29, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="investing" href="/why-germans-dont-invest">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Investing</span>
+          <h3>Why Germans Don't Invest and Still Retire Just Fine</h3>
+          <p>Only 1 in 6 Germans own stocks, and Jana in Leipzig still parks her money in a savings account earning next to nothing. So why is she not broke? The real answer is stranger than the myth.</p>
+          <div class="tag-compare">
+            <span>Aug 20, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="salary" href="/germany-10-billion-tax-cut">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Salary</span>
+          <h3>Inside Germany's €10 Billion "Tax Cut" (It's Not Free Money)</h3>
+          <p>Germany announced a €10 billion tax cut, and Mara in Berlin and Kyle in Ohio both got a bit richer without knowing why. Open the number up and it is barely a tax cut at all.</p>
+          <div class="tag-compare">
+            <span>Aug 20, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="economy" href="/the-end-of-made-in-germany">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Economy</span>
+          <h3>The End of 'Made in Germany'? Why the Economic Engine is Breaking</h3>
+          <p>Everyone still thinks German industry is unstoppable. Markus just found a layoff notice on the breakroom door. 272,000 industrial jobs gone since 2019, and the pain lands nothing like it would in the US.</p>
+          <div class="tag-compare">
+            <span>Aug 20, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="politics" href="/what-an-afd-win-costs-germany">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Politics</span>
+          <h3>What an AfD Win Really Costs Germany</h3>
+          <p>Torsten votes out of frustration. Andrea's US client already paused a contract over the same election. Same city, two very different bills, and a political cost nobody puts on a postcard.</p>
+          <div class="tag-compare">
+            <span>Aug 19, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="parental-leave" href="/parental-leave-germany-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Parental Leave</span>
+          <h3>Germany Paid Her €1,200 a Month. America Paid Her $0.</h3>
+          <p>Same job title, same salary, due dates 11 days apart. Megan came home to $0. Julia came home to two-thirds of her paycheck, automatically, for over a year.</p>
+          <div class="tag-compare">
+            <span>Aug 17, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="cost-of-living" href="/why-german-electricity-costs-2x-the-us">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Cost of Living</span>
+          <h3>Why German Electricity Costs 2x the US (It's Not the Solar Panels)</h3>
+          <p>Kevin in Phoenix pays $187 and shrugs. Lena in Leipzig watches her bill climb without touching the thermostat. Here is where German electricity money really goes.</p>
+          <div class="tag-compare">
+            <span>Aug 14, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="cost-of-living" href="/ev-charging-cost-germany-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Cost of Living</span>
+          <h3>I Paid $50 to Charge My EV in Germany. My Friend Paid $11 in Texas.</h3>
+          <p>Mike charged his Tesla near Austin for $11. I charged a comparable amount off the Autobahn and paid nearly $50. Same car, wildly different bill.</p>
+          <div class="tag-compare">
+            <span>Aug 8, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="healthcare" href="/why-peptides-cost-more-in-the-usa-than-germany">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Healthcare</span>
+          <h3>Why Peptides Cost Up to 20x More in the USA Than Germany (Wegovy, Zepbound &amp; BPC-157)</h3>
+          <p>The same peptide can cost $1,297 in the USA and 61 euros in Germany. Same ingredient, wildly different price. Here is exactly why.</p>
+          <div class="tag-compare">
+            <span>Aug 6, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="cost-of-living" href="/the-real-cost-of-owning-a-car-in-germany-vs-the-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Cost of Living</span>
+          <h3>The REAL Cost of Owning a Car in Germany vs the USA</h3>
+          <p>Gas costs over $9 a gallon in Germany, so owning a car must cost a fortune, right? Not even close.</p>
+          <div class="tag-compare">
+            <span>Aug 5, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="cost-of-living" href="/is-germany-cheaper-than-america">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Cost of Living</span>
+          <h3>Is Germany Cheaper Than America? The Honest Numbers</h3>
+          <p>Two new dads, two very different bills. Where Germany quietly saves you tens of thousands, and where it will make your eyes water.</p>
+          <div class="tag-compare">
+            <span>Aug 3, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="education" href="/study-in-germany-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Education</span>
+          <h3>Study in Germany vs. USA: Is the Debt Worth It?</h3>
+          <p>Everyone says German uni is free. The real numbers: semester fees, health insurance, the blocked account, and the one catch that isn't money at all.</p>
+          <div class="tag-compare">
+            <span>Aug 2, 2026</span>
+            <span class="status">READ &rarr;</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="salary" href="/salary-in-germany-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Salary</span>
+          <h3>The German Salary Trap: Why Your Gross Pay Is A Lie</h3>
+          <p>A real €75,000 payslip broken down line by line, and why Mike's 53% take-home isn't as far behind Sarah's 77% in Texas as it looks.</p>
+          <div class="tag-compare">
+            <span>Aug 1, 2026</span>
+            <span class="status">READ →</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="culture" href="/emotional-tax-germany">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Culture</span>
+          <h3>The Emotional Tax of Living in Germany</h3>
+          <p>What German directness actually costs in chronic stress and strained relationships, and the €0 fix that's been sitting there the whole time.</p>
+          <div class="tag-compare">
+            <span>Jul 31, 2026</span>
+            <span class="status">READ →</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="childcare" href="/daycare-in-germany-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Childcare</span>
+          <h3>"Free" Daycare in Germany? The Real Cost, State by State</h3>
+          <p>Sarah in Austin pays $420 every two weeks. Lukas in Berlin pays €23 a month. What parents actually pay across all 16 German states.</p>
+          <div class="tag-compare">
+            <span>Jul 29, 2026</span>
+            <span class="status">READ →</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="relocation" href="/moving-to-germany-cost">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Relocation</span>
+          <h3>What Moving to Germany Actually Costs: $8,000 vs. $19,000</h3>
+          <p>The real line-by-line breakdown: blocked account, health insurance, shipping, deposits, and the hidden setup costs nobody budgets for.</p>
+          <div class="tag-compare">
+            <span>Jul 29, 2026</span>
+            <span class="status">READ →</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="insurance" href="/insurance-in-germany-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Insurance</span>
+          <h3>This Cheap German Insurance Could Save You From Bankruptcy</h3>
+          <p>Why personal liability insurance costs 50 to 80 euros a year in Germany and covers up to 50 million euros, versus a $100,000 renter's policy in the US.</p>
+          <div class="tag-compare">
+            <span>Jul 28, 2026</span>
+            <span class="status">READ →</span>
+          </div>
+        </a>
+
+        <a class="tag-card" data-cat="housing" href="/renting-in-germany-vs-usa">
+          <span class="tag-hole"></span>
+          <span class="tag-topic">Housing</span>
+          <h3>Renting in Germany vs. USA: Why Your Rent Never Changes</h3>
+          <p>Cold rent vs. warm rent, deposit caps, broker fees, and the rent brake law that makes a 14% jump illegal in most of Germany.</p>
+          <div class="tag-compare">
+            <span>Jul 27, 2026</span>
+            <span class="status">READ →</span>
+          </div>
+        </a>
+
+      
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="shell">
+      <div class="about-card">
+        <div class="avatar"><img src="assets/justin-nobg.png" alt="Justin, host of The Price of Germany"></div>
+        <div>
+          <h2>Hi, I'm Justin</h2>
+          <p>I'm an American who's called Germany home for over 12 years. This channel, and this blog, exist for one reason: to show you exactly what things cost here, with real numbers instead of guesses, so you can decide for yourself if it's worth it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span class="brand">thepriceofgermany.com</span>
+      <div class="footer-links">
+        <a href="/links">Links</a>
+        <a href="/cost-of-living-calculator">Calculator</a>
+        <a href="#reports">Reports</a>
+        <a href="#about">About</a>
+        <a href="/imprint">Imprint</a>
+      </div>
+      <div class="social-row">
+        <a href="https://www.instagram.com/justinvsgermany" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.1266-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.0559 1.6884.0692 4.9462.063 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.1487-.2652 2.9115-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.0563-1.2809.0698-1.6898.0636-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.2648-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.4232-.1651 1.0577-.3614 2.2272-.4171 1.2646-.06 1.6442-.072 4.848-.079 3.2037-.007 3.5834.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2645.0739 1.6443.0796 4.848.0058 3.2037-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.423.1649-1.0578.3617-2.2263.4174-1.2645.0595-1.6442.072-4.8487.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.7708-6.1565-6.174-6.1498-3.4032.0067-6.1563 2.771-6.1496 6.1738M8 12.0044a4 4 0 1 1 4.0084 3.9917A3.9996 3.9996 0 0 1 8 12.0044"/></svg></a>
+        <a href="https://www.tiktok.com/@justinvsgermany" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+        <a href="https://youtube.com/@justinvsgermany" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://www.facebook.com/justinvsgermany" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+        <a href="https://www.threads.com/@justinvsgermany" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  (function () {
+    var chips = document.querySelectorAll('.filter-bar .chip');
+    var cards = document.querySelectorAll('.grid .tag-card');
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var f = chip.getAttribute('data-filter');
+        chips.forEach(function (c) { c.classList.toggle('active', c === chip); });
+        cards.forEach(function (card) {
+          card.hidden = !(f === 'all' || card.getAttribute('data-cat') === f);
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
