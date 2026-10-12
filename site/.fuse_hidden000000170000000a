@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics (loaded only after cookie consent) -->
+<script src="/assets/consent.js" defer></script>
+<title>Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)</title>
+<meta name="description" content="A headline says Europe is spending taxpayer billions to brand America a disinformation threat. I followed the money in the EU's own grant database. A German taxpayer's share works out to about a third of a cent.">
+<meta property="og:title" content="Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)">
+<meta property="og:description" content="A headline says Europe is spending taxpayer billions to brand America a disinformation threat. I followed the money in the EU's own grant database. A German taxpayer's share works out to about a third of a cent.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+"name": "Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)",
+  "description": "A headline says Europe is spending taxpayer billions to brand America a disinformation threat. I followed the money in the EU's own grant database. A German taxpayer's share works out to about a third of a cent.",
+  "uploadDate": "2026-10-12",
+  "thumbnailUrl": "https://i.ytimg.com/vi/1W5G_W7LIP8/maxresdefault.jpg",
+  "embedUrl": "https://www.youtube.com/embed/1W5G_W7LIP8"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)",
+  "description": "A headline says Europe is spending taxpayer billions to brand America a disinformation threat. I followed the money in the EU's own grant database. A German taxpayer's share works out to about a third of a cent.",
+  "image": "https://i.ytimg.com/vi/1W5G_W7LIP8/maxresdefault.jpg",
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Justin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Price of Germany",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thepriceofgermany.com/favicon.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thepriceofgermany.com/eu-disinfo-lab-funding"
+  },
+  "articleSection": "Politics"
+}
+</script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://thepriceofgermany.com/eu-disinfo-lab-funding">
+<meta property="og:url" content="https://thepriceofgermany.com/eu-disinfo-lab-funding">
+<style>
+  :root {
+    --cream: #FDF8F0;
+    --paper: #FFFDF6;
+    --ink: #23262B;
+    --ink-soft: #5B5F66;
+    --coral: #FF5A5F;
+    --coral-dark: #E1454A;
+    --teal: #1FA6A0;
+    --teal-dark: #14807B;
+    --yellow: #FFC857;
+    --line: #E7E0D2;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  a { color: inherit; }
+
+  .shell { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------------- NAV ---------------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(253, 248, 240, 0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo .tag {
+    background: var(--coral);
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .back-link { font-size: 13.5px; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
+  .back-link:hover { color: var(--ink); }
+
+  /* ---------------- ARTICLE HEADER ---------------- */
+  header.post-head { padding: 56px 0 32px; }
+  .post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .post-meta .eyebrow { margin-bottom: 0; }
+  .post-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    background: rgba(31, 166, 160, 0.1);
+    border: 1px solid rgba(31, 166, 160, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.08;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .dek { font-size: 1.1rem; color: var(--ink-soft); line-height: 1.6; margin: 0; max-width: 620px; }
+
+  /* ---------------- VIDEO EMBED ---------------- */
+  .video-wrap {
+    margin: 32px 0 8px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--line);
+    box-shadow: 0 2px 0 var(--line);
+    position: relative;
+    padding-top: 56.25%;
+    background: #000;
+  }
+  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ---------------- ARTICLE BODY ---------------- */
+  article { padding: 24px 0 64px; }
+  article h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 46px 0 16px;
+    letter-spacing: -0.005em;
+  }
+  article p { font-size: 16.5px; line-height: 1.75; margin: 0 0 18px; color: var(--ink); }
+  article p.lede { font-size: 1.15rem; color: var(--ink); }
+  article strong { color: var(--ink); }
+
+  .payslip {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 26px 0;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .payslip .compare-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .payslip-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    font-size: 13.5px;
+    padding: 9px 0;
+    border-top: 1.5px dashed var(--line);
+    gap: 12px;
+  }
+  .payslip-row:first-of-type { border-top: none; }
+  .payslip-row .label { color: var(--ink-soft); font-size: 12.5px; }
+  .payslip-row .value { font-weight: 700; color: var(--coral-dark); text-align: right; white-space: nowrap; }
+  .payslip-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1.5px solid var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .payslip-total .value { color: var(--teal-dark); }
+
+  .compare {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 26px 0;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .compare .compare-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .compare-row2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    padding: 9px 0;
+    border-top: 1.5px dashed var(--line);
+  }
+  .compare-row2:first-of-type { border-top: none; }
+  .compare-row2 .country { color: var(--ink-soft); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 10px; }
+  .compare-row2 .value { font-weight: 700; text-align: right; }
+  .compare-row2.us .value { color: var(--coral-dark); }
+  .compare-row2.de .value { color: var(--teal-dark); }
+
+  .rec-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 22px 20px;
+    margin: 30px 0;
+    position: relative;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .rec-hole {
+    position: absolute; top: -8px; left: 22px;
+    width: 16px; height: 16px;
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: 50%;
+  }
+  .rec-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--coral-dark);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .rec-card h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; }
+  .rec-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
+  .rec-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--coral); color: #fff !important; text-decoration: none;
+    font-weight: 600; font-size: 14px; padding: 10px 20px; border-radius: 8px;
+    box-shadow: 0 3px 0 var(--coral-dark);
+  }
+  .rec-btn:hover { transform: translateY(-1px); }
+
+  .action-list { list-style: none; margin: 0 0 18px; padding: 0; counter-reset: action; }
+  .action-list li { counter-increment: action; display: flex; gap: 16px; padding: 16px 0; border-top: 1.5px dashed var(--line); }
+  .action-list li:first-child { border-top: none; }
+  .action-list li::before {
+    content: counter(action);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--coral);
+    flex-shrink: 0;
+    width: 28px;
+  }
+  .action-list p { margin: 0; font-size: 15.5px; line-height: 1.65; }
+
+  blockquote {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--ink);
+    border-left: 4px solid var(--yellow);
+    padding: 4px 0 4px 22px;
+    margin: 34px 0;
+  }
+
+  .disclosure {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    margin-top: 40px;
+    line-height: 1.6;
+  }
+  .disclaimer {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  /* ---------------- FOOTER ---------------- */
+  footer { border-top: 1px solid var(--line); padding: 36px 0 44px; }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    max-width: 760px; margin: 0 auto; padding: 0 24px;
+  }
+  .footer-inner .brand { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--ink-soft); }
+  .footer-links { display: flex; gap: 20px; font-size: 13.5px; }
+  .footer-links a { text-decoration: none; color: var(--ink-soft); }
+  .footer-links a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">The Price of Germany <span class="tag">$ → €</span></a>
+      <a class="back-link" href="/#reports">All reports</a>
+    </div>
+  </nav>
+
+  <header class="post-head">
+    <div class="shell">
+      <div class="post-meta"><span class="eyebrow">Politics report</span><span class="post-date">Oct 12, 2026</span></div>
+      <h1>Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)</h1>
+      <p class="dek">A headline says Europe is spending taxpayer billions to brand America a disinformation threat. I followed the money in the EU's own grant database. A German taxpayer's share works out to about a third of a cent.</p>
+
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/1W5G_W7LIP8" title="Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </header>
+
+  <article>
+    <div class="shell">
+
+      <p class="lede">A headline says Europe is spending taxpayer billions to brand America a disinformation threat. I followed the money in the EU's own grant database. A German taxpayer's share works out to about a third of a cent.</p>
+
+      <p>It's a Thursday evening in Hanover, and Heike, a fifty-two-year-old payroll clerk, is going through her own pay stub line by line, because she spends all day checking other people's. She knows to the cent how much wage tax, <strong>Lohnsteuer</strong>, came out, and how much went to pension, health insurance, and the solidarity surcharge. Then her phone buzzes. The headline reads, roughly: Europe brands America a disinformation threat, paid for with taxpayer money. Her first thought isn't about politics. It's the accountant's question: how much of that was mine?</p>
+
+      <p>About four thousand miles away in Erie, Pennsylvania, a retired machinist named Doug sees the same story on cable news. He's irritated for a different reason: America has defended Europe for eighty years, and now Europe is using public money to call his country a liar. A second thought nags at him too. Didn't his own government run a disinformation office? He can't remember whether it still exists. Two people read the same headline, and both want to know who's paying for this fight. Neither has seen the receipts.</p>
+
+      <p>I'm Justin, an American who's lived in Germany for over twelve years, which means I pay into the European system and still file every year with the American one. This channel covers the costs nobody puts on a postcard, and today the postcard is a headline. I followed the money using only figures I could confirm in the EU's own grant database, its adopted budget, and the reporting of Germany's central bank. Where a number isn't public, I say so instead of guessing.</p>
+
+      <h2>The popular version, and why most of it is wrong</h2>
+      <p>The popular version goes like this: the European Union officially declared the United States a disinformation threat and is spending taxpayer billions to fight it. Almost every part of that sentence is wrong. The EU didn't declare anything. An independent nonprofit in Brussels put the question on a panel at its own annual conference. The EU's diplomatic service publicly distanced itself. Its own official threat report, published in March, names Russia and China and doesn't name the United States. And the money is nowhere near billions.</p>
+
+      <p>One part is true, though, and it's the part the conference's defenders would rather skip: public EU money is connected to the organization that ran that panel, and the EU kept funding the conference even after it took its name off the banners. The critics' strongest version deserves a hearing: the amount doesn't matter, the principle does. Money is fungible, so a research grant keeps an organization's lights on and its conference running even if the grant was technically for something else. The EU's diplomatic service apparently agreed the framing was a problem, because it pulled its branding. It didn't pull its funding, and from a taxpayer's view that looks like having it both ways. That's a fair objection. The other side has a point too: a grant to build fact-checking software isn't an endorsement of every sentence spoken at a conference two years later. So let's open the ledger.</p>
+
+      <h2>What actually happened in Vilnius</h2>
+      <p>The organization is EU DisinfoLab, an independent nonprofit based in Brussels. Its annual conference this year ran from October sixth to the eighth at a hotel in Vilnius, Lithuania, and drew hundreds of researchers, journalists, and policymakers. One of the first panels was titled around the United States as a "FIMI" threat, the EU's acronym for foreign information manipulation and interference, with three American speakers billed; a second session referred to evidence that the United States had acted as an interference actor in specific Arctic contexts. Those real titles are why it became news.</p>
+
+      <p>Then came the pressure. According to the Guardian, the Trump administration urged several governments to drop their sponsorship, and three did: the EU's diplomatic service, Canada, and Lithuania, with participants describing white stickers going up over their logos on the sponsor posters. An EU spokesperson said the organizers had framed some discussions in a way that didn't match the EU's official positions. The State Department told reporters it rejects the characterization of the United States as a threat, and pointed to visa restrictions it imposed last December on five Europeans it accuses of censoring Americans. Here's the first gap in the ledger: the Guardian reports the EU still funds the conference, but I could not find a single published figure for how much. That number isn't public, so I won't invent one.</p>
+
+      <h2>The four projects, in the EU's own database</h2>
+      <p>What is public is the money that went to the organization itself, all in the EU's research database, <strong>CORDIS</strong>, where anyone can look it up. Since 2018, EU DisinfoLab has received EU research funding through four projects, and its combined share comes to about one point one million euros. In every case it was one partner among many in a larger consortium, its share a slice of a bigger pie.</p>
+
+      <p><strong>WeVerify</strong> (December 2018 to November 2021) built open-source tools to help journalists check whether a photo, video, or viral post is genuine. Total cost just under €2.9 million, the EU paying about €2.5 million; DisinfoLab's share was €250,000, while Germany's international public broadcaster, <strong>Deutsche Welle</strong>, received €400,000. <strong>vera.ai</strong> (September 2022 to November 2025), funded under a call literally titled "AI to fight disinformation," focused on deepfake detection; the EU covered about €5.69 million, DisinfoLab got €327,500, Deutsche Welle just over €504,000, and Munich's applied-research giant, the <strong>Fraunhofer-Gesellschaft</strong> (the people who helped invent the MP3), €539,500. In other words, the largest grant in this story paid more to German institutions than to the Brussels nonprofit at the center of the headline.</p>
+
+      <p><strong>ATHENA</strong> (ending October 31, 2026) is the one to point to if anyone says EU disinformation money targets America, because its stated targets are Russia, China, and other countries running interference campaigns in Europe. EU contribution about €3.1 million; DisinfoLab's share €212,500; partners include a Ukrainian cybersecurity firm and a Bavarian university that trains civil servants. <strong>ANTIGONE</strong> (June 2026 to May 2029) was funded under a call titled "fighting disinformation while ensuring the right to freedom of expression," and its goal is to tell harmful disinformation apart from legitimate democratic disagreement. EU putting in about €3.48 million; DisinfoLab's share €308,357.50; a Berlin think tank, the Institute for Strategic Dialogue, gets €351,000. The newest money in this pipeline is meant to study exactly where the line between fighting lies and policing speech should sit, the argument Washington and Brussels are having right now.</p>
+
+      <div class="payslip">
+        <div class="compare-title">EU DisinfoLab's share of each project</div>
+        <div class="payslip-row"><span class="label">WeVerify (2018 to 2021)</span><span class="value">€250,000</span></div>
+        <div class="payslip-row"><span class="label">vera.ai (2022 to 2025)</span><span class="value">€327,500</span></div>
+        <div class="payslip-row"><span class="label">ATHENA (ends 2026) / ANTIGONE (to 2029)</span><span class="value">€212,500 / €308,357.50</span></div>
+        <div class="payslip-total"><span>All four projects, total</span><span class="value">~€1.1 million (~€105,000/yr)</span></div>
+      </div>
+
+      <h2>Heike's pay-stub test</h2>
+      <p>Across all four projects the EU committed about fourteen point seven seven million euros, of which DisinfoLab's share is about seven and a half percent, averaging roughly €105,000 a year over a decade, about what one or two mid-level Brussels researchers cost once you include overhead. Not a propaganda budget, but not nothing either, which is what the fungibility argument is about.</p>
+
+      <p>So how much is Heike's? The EU's adopted 2026 budget is €192.8 billion in commitments, funded mostly by member states according to the size of their economies, and Germany is the biggest payer. According to Germany's central bank, the <strong>Bundesbank</strong>, Germany paid about €32.25 billion into the EU budget, the <strong>EU-Haushalt</strong>, in 2024 and received about €14.4 billion back, leaving it the largest net contributor, <strong>Nettozahler</strong>, at around €17.8 billion, about €390 per resident gross for the year. Germany covers close to a quarter of EU spending, which I'll use as a rough working figure.</p>
+
+      <p>Run the math. Germany's quarter of DisinfoLab's €1.1 million is about €275,000; divided across eighty-three million residents, that's about a third of one euro cent per person, spread over a decade. Widen it to all four projects (€14.77 million) and Germany's share is about €3.7 million, roughly four and a half cents per resident, not per year, in total since 2018. Even the angriest version of this story has to admit the money doesn't pass the pay-stub test. The case against it rests on principle, because it can't rest on cost.</p>
+
+      <div class="payslip">
+        <div class="compare-title">Per resident: what this actually costs</div>
+        <div class="payslip-row"><span class="label">EU DisinfoLab, Germany's share (since 2018)</span><span class="value">~⅓ of a cent</span></div>
+        <div class="payslip-row"><span class="label">All four research projects, Germany's share</span><span class="value">~4.5 cents</span></div>
+        <div class="payslip-row"><span class="label">EDMO fact-check network, Germany's share</span><span class="value">~14 cents</span></div>
+        <div class="payslip-total"><span>US Global Engagement Center (per year, when it existed)</span><span class="value">~18 cents per American</span></div>
+      </div>
+
+      <h2>The bigger pots, in perspective</h2>
+      <p>To put €1.1 million in perspective: in 2026 alone, the EU's flagship research program, Horizon Europe, has about €13 billion. DisinfoLab's entire decade of grants equals less than one hundredth of one percent of a single year of it, a tiny line inside a budget that mostly pays for chip manufacturing, cancer research, and battery chemistry. When someone says Brussels spends billions on this, check which budget they mean.</p>
+
+      <p>There is a bigger pot that rarely makes headlines: the European Digital Media Observatory, a network of fact-checkers and university researchers funded in phases since 2019. The central platform has received about €9 million, and the fifteen regional hubs (one covering Germany and Austria) about €38 million, roughly €47 million over seven years. Germany's quarter is about €11.7 million, around fourteen cents per resident in total, bigger than the DisinfoLab money but still less than one bread roll per person over most of a decade.</p>
+
+      <p>Then there's the EU's diplomatic service, which runs dedicated teams for countering foreign disinformation, starting with one focused on Russia, the <strong>East StratCom Task Force</strong>. It received €1.1 million in 2018, €3 million in 2019, €4 million in 2020, and by 2021 the whole division was budgeted at €11.1 million, the last clean official annual figure I could confirm. Across about 450 million EU residents, that 2021 figure is roughly two and a half cents per person for the year.</p>
+
+      <h2>The American side, and the real fight</h2>
+      <p>Now Doug's question. The United States ran this same kind of office: the Global Engagement Center, set up at the State Department in 2016, which at its peak had a budget of around sixty-one million dollars a year and more than 120 staff, countering foreign propaganda mainly from Russia and China. Critics, including many Republicans in Congress, argued it drifted into pressuring platforms over Americans' speech. Congress let its mandate expire and it shut down in December 2024; a smaller successor was closed in April 2025. Across roughly 340 million Americans, that budget came to about eighteen cents per person per year, more than five times the EU diplomatic service's 2021 figure.</p>
+
+      <p>One number shows what this fight is really about, and it isn't a grant. Last December the European Commission fined Elon Musk's platform X one hundred twenty million euros under the EU's online platform law, the Digital Services Act, the first fine ever issued under it. X is appealing. That single fine is more than one hundred times everything EU DisinfoLab has received from the EU since 2018. When Washington pushes back on European disinformation policy, it's thinking about the regulation and the fines, not the research grants.</p>
+
+      <div class="compare">
+        <div class="compare-title">Official counter-disinformation spending</div>
+        <div class="compare-row2 us"><span class="country">USA</span><span class="value">Global Engagement Center: ~$61M/yr at peak, 120+ staff (shut down 2024)</span></div>
+        <div class="compare-row2 de"><span class="country">EU</span><span class="value">Diplomatic service division ~€11.1M (2021), plus small research grants</span></div>
+      </div>
+
+      <h2>Where the money actually landed</h2>
+      <p>Look at where the grant money landed instead of who got the headline. Four German institutions were partners across the projects (the broadcaster, the Munich research institute, the Berlin think tank, and the Bavarian civil-service university), together receiving about €1.9 million, close to double what the Brussels nonprofit got. Germany's rough quarter share of all four projects was about €3.7 million, so roughly half of what German taxpayers put into this slice came straight back to German institutions. And Deutsche Welle, which took the largest German share, is itself funded from the federal budget, the <strong>Bundeshaushalt</strong>, so part of that money went from Berlin to Brussels and back to a German public institution.</p>
+
+      <p>Then the swap. For years the bigger per-year funder of official counter-disinformation work wasn't the EU, it was the United States, at roughly five times the EU diplomatic service's budget. Within about eighteen months the two sides traded places: Washington used to be the bigger funder and is now its loudest critic, while Brussels kept funding it on a much smaller budget. The money barely shows up on anyone's pay stub. The diplomatic cost is something neither side has put a number on.</p>
+
+      <div class="rec-card">
+        <span class="rec-hole"></span>
+        <span class="rec-label">Recommended</span>
+        <h3>The voice behind the script</h3>
+        <p>Quick behind-the-scenes note, since we're talking about costs that never show up on a receipt. The voice narrating this isn't me in front of a microphone. I research and write every script myself, which this week meant reading EU grant records participant by participant, then bring it to life with an AI voice built using ElevenLabs. If you've ever wanted to narrate your own videos, clone your voice, or skip hours of re-recording, it's the tool I actually use.</p>
+        <a class="rec-btn" href="https://try.elevenlabs.io/mcjpkrtj3pnc" target="_blank" rel="noopener sponsored">Check out ElevenLabs &rarr;</a>
+      </div>
+
+      <h2>Heike and Doug get their answers</h2>
+      <p>Heike asked how much of the outrage she paid for. Her share of everything the EU ever paid the organization behind that panel is about a third of a cent, and her share of the four research projects it belonged to is about four and a half cents, roughly half of which came back to institutions in her own country. What she can't put a number on is the conference funding itself, because nobody has published it. Doug has his answer too: his government did have a disinformation office, it cost him about eighteen cents a year, and it no longer exists. Both were right to be suspicious and wrong about the scale. This was never a story about a lot of money. It's about whose money is attached to whose words, and that's the part both governments are still fighting over.</p>
+
+      <h2>What to actually do about it</h2>
+      <ol class="action-list">
+        <li><p><strong>When a headline says "EU-funded," look the organization up yourself in the EU's public research database, CORDIS.</strong> Every grant, partner, and euro is listed there for free, and it takes minutes.</p></li>
+        <li><p><strong>Separate the organization from the institution.</strong> A Brussels nonprofit hosting a panel is not the European Union taking a position, and the EU's own threat report is where to check the official stance.</p></li>
+        <li><p><strong>If you're in Germany and want to know what EU membership really costs, follow the net contribution figures the Bundesbank publishes each year.</strong> That's the real number on your behalf, not any single grant someone made viral.</p></li>
+        <li><p><strong>If you're American, remember the argument isn't really about research money.</strong> It's about European platform regulation and the fines that come with it, and that's where the next round is likely to happen.</p></li>
+      </ol>
+
+      <p>Want to see how the two countries stack up for your own situation? Our free <a href="/cost-of-living-calculator">US vs Germany cost-of-living calculator</a> lets you pick any two cities and compare rent, groceries, healthcare, transport, utilities, and how much of your salary you actually take home on each side.</p>
+
+      <h2>The costs nobody puts on a postcard</h2>
+      <p>Heike will check her next pay stub the same way she always does, line by line. Doug will probably see this story come back on cable the next time Brussels and Washington argue. Neither will find a line that says disinformation research, because at a third of a cent it wouldn't fill a decimal place. That's the strange thing about this fight: the money is almost invisible and the anger is enormous, and the real price is in a relationship between two allies that nobody puts on a budget line.</p>
+
+      <h2>Sources</h2>
+      <ul class="sources">
+        <li><a href="https://cordis.europa.eu/project/id/825297" target="_blank" rel="noopener">CORDIS: WeVerify</a></li>
+        <li><a href="https://cordis.europa.eu/project/id/101070093" target="_blank" rel="noopener">CORDIS: vera.ai</a></li>
+        <li><a href="https://cordis.europa.eu/project/id/101132686" target="_blank" rel="noopener">CORDIS: ATHENA</a></li>
+        <li><a href="https://cordis.europa.eu/project/id/101287848" target="_blank" rel="noopener">CORDIS: ANTIGONE</a></li>
+        <li><a href="https://digital-strategy.ec.europa.eu/en/policies/edmo" target="_blank" rel="noopener">European Commission: European Digital Media Observatory funding</a></li>
+        <li><a href="https://eur-lex.europa.eu/EN/legal-content/summary/2026-european-union-budget.html" target="_blank" rel="noopener">EUR-Lex: 2026 European Union budget</a></li>
+        <li><a href="https://www.bundesbank.de/resource/blob/810948/f6a77be7d6873125c4cabedf1c6bd5c5/472B63F073F071307366337C94F8C870/ii-7-nachrichtlich-leistungen-eu-haushalt-data.pdf" target="_blank" rel="noopener">Bundesbank: transfers in connection with the EU budget (data)</a></li>
+        <li><a href="https://europeannewsroom.com/?p=361771" target="_blank" rel="noopener">European Newsroom (dpa): Germany's share of the EU budget</a></li>
+        <li><a href="https://www.ksl.com/article/news/politics/us-state-department-closing-office-aimed-at-countering-foreign-disinformation/51296272" target="_blank" rel="noopener">Reuters via KSL: State Department closing its counter-disinformation office</a></li>
+        <li><a href="https://www.irishtimes.com/business/2025/12/05/eu-fines-elon-musks-x-120mn-for-transparency-violations/" target="_blank" rel="noopener">Irish Times: EU fines X €120m</a></li>
+        <li><a href="https://techpolicy.press/disinformation-conference-in-europe-roiled-by-transatlantic-politics" target="_blank" rel="noopener">Tech Policy Press: disinformation conference roiled by transatlantic politics</a></li>
+      </ul>
+
+      <p><em>Disclosure: the ElevenLabs link in this article is an affiliate link. If you sign up through it, I may earn a commission at no extra cost to you, which helps support the channel. This article is general information, not tax, financial, or political advice, and it does not endorse any party or government. Figures come from the EU's CORDIS database, its adopted 2026 budget, the Bundesbank, and public reporting; where a figure is not public (such as the conference's own funding), it is identified as unknown rather than estimated, and Germany's share is an approximation based on roughly one quarter of EU spending.</em></p>
+
+    </div>
+  </article>
+
+<!-- related:start -->
+  <style>
+    .related{max-width:1080px;margin:0 auto;padding:56px 24px 8px}
+    .related-title{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:1.5rem;color:var(--ink);margin:0 0 20px}
+    .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .related-card{display:flex;flex-direction:column;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+    .related-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(35,38,43,.08);border-color:var(--coral)}
+    .related-topic{font-family:'Space Mono',ui-monospace,monospace;font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-dark)}
+    .related-card h3{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:1rem;line-height:1.25;color:var(--ink);margin:0}
+    .related-card p{font-family:'Work Sans',system-ui,sans-serif;font-size:.85rem;line-height:1.45;color:var(--ink-soft);margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-more{margin-top:auto;font-family:'Space Mono',ui-monospace,monospace;font-size:.7rem;letter-spacing:.06em;color:var(--coral)}
+    @media(max-width:900px){.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.related-grid{grid-template-columns:1fr}}
+  </style>
+  <section class="related" aria-label="Related reports">
+    <h2 class="related-title">Keep reading</h2>
+    <div class="related-grid">
+      <a class="related-card" href="/germany-chancellor-crisis-cost">
+        <span class="related-topic">Politics</span>
+        <h3>The Hidden Bill Behind Germany's Chancellor Crisis</h3>
+        <p>Merz failed his own confidence vote, cratered to 9% approval, and got wiped out in three state elections. A Leipzig machinist and a Cincinnati car buyer never met, and both are paying for it. Here is the real bill.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+      <a class="related-card" href="/berlin-seize-240000-apartments">
+        <span class="related-topic">Politics</span>
+        <h3>Inside Berlin's €36 Billion Plan to Seize 240,000 Apartments</h3>
+        <p>Berlin made a party that wants to convert nearly 240,000 corporate apartments into public housing its strongest since reunification. Two neighbors read the same 25.7% headline and had opposite mornings. Here is the real bill: 8 to 36 billion euros.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+      <a class="related-card" href="/us-missile-deal-german-tax-bill">
+        <span class="related-topic">Politics</span>
+        <h3>How a US Missile Deal Ends Up on a German Teacher's Tax Bill</h3>
+        <p>Dana builds Tomahawk parts in Arkansas; her overtime beats her mortgage. Jonas teaches in Dresden under a two-year leaking ceiling. A US-Germany missile deal quietly attached both their lives, and the ~108 billion euro bill lands on taxpayers who never voted on it.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+      <a class="related-card" href="/heating-bill-germany-afd-surge">
+        <span class="related-topic">Politics</span>
+        <h3>How a Heating Bill Is Driving Germany's Far-Right Surge (Not Immigration)</h3>
+        <p>Two neighbors one wall apart in Halle, same age and same bills, opposite votes. What best predicted the difference was not ideology, it was heat, rent, and pensions. The cost story under the AfD surge.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+    </div>
+  </section>
+  <!-- related:end -->
+
+  <footer>
+    <div class="footer-inner">
+      <span class="brand">thepriceofgermany.com</span>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">YouTube</a>
+        <a href="/#reports">All reports</a>
+        <a href="/#about">About</a>
+        <a href="/imprint">Imprint</a>
+        <a href="/privacy">Privacy</a>
+        <a href="mailto:contact@thepriceofgermany.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
