@@ -547,6 +547,80 @@
   }
   .social-row a:hover { transform: translateY(-2px); color: var(--ink); border-color: var(--ink); }
   .social-row svg { width: 18px; height: 18px; display: block; }
+
+  /* ---- reports: show the newest 4, "see more" reveals the rest ---- */
+  .more-wrap { text-align: center; margin-top: 30px; }
+  .more-wrap[hidden] { display: none; }
+  .more-btn {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    border-radius: 10px;
+    padding: 12px 26px;
+    cursor: pointer;
+    box-shadow: 0 3px 0 var(--line);
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .more-btn:hover { background: var(--coral); border-color: var(--coral); color: #fff; transform: translateY(-1px); }
+
+  /* ---- Letter Kit promo box ---- */
+  section.kit-banner-wrap { padding: 0 0 56px; }
+  .kit-banner {
+    background: rgba(255, 90, 95, 0.08);
+    border: 1px solid rgba(255, 90, 95, 0.28);
+    text-decoration: none;
+    color: var(--ink);
+    border-radius: 20px;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: minmax(0, 340px) 1fr;
+    gap: 36px;
+    align-items: center;
+    box-shadow: 0 2px 0 var(--line);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .kit-banner:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--line); }
+  .kit-banner img { width: 100%; height: auto; border-radius: 12px; display: block; box-shadow: 0 6px 0 rgba(35, 38, 43, 0.08); }
+  .kit-banner .kb-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--coral-dark);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .kit-banner h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    line-height: 1.12;
+    margin: 0 0 10px;
+  }
+  .kit-banner p { color: var(--ink-soft); font-size: 15px; line-height: 1.6; margin: 0 0 14px; max-width: 520px; }
+  .kb-points { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 0; }
+  .kb-points li {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+  }
+  .kit-banner .kb-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--coral); color: #fff; font-weight: 600; font-size: 15px;
+    padding: 12px 22px; border-radius: 10px; box-shadow: 0 3px 0 var(--coral-dark);
+  }
+  @media (max-width: 760px) {
+    .kit-banner { grid-template-columns: 1fr; padding: 22px; gap: 22px; }
+  }
 </style>
 </head>
 <body>
@@ -988,6 +1062,24 @@
 
       
       </div>
+      <div class="more-wrap" hidden>
+        <button class="more-btn" id="see-more" type="button" aria-expanded="false">See all reports</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="kit-banner-wrap">
+    <div class="shell">
+      <a class="kit-banner" href="/letter-kit">
+        <img src="/assets/letter-kit-promo.jpg" width="900" height="675" alt="The Germany Letter Kit: 25 German letters you can fill in and send" loading="lazy">
+        <div>
+          <span class="kb-eyebrow">New template kit</span>
+          <h2>Write that German letter in minutes</h2>
+          <p>25 ready-to-send letters for your landlord, boss, insurer, school and authorities. In German and English, with the deadlines and traps to avoid. Fill in the yellow boxes and send.</p>
+          <ul class="kb-points"><li>German + English</li><li>Fillable PDF</li><li>14 day guarantee</li></ul>
+          <span class="kb-cta">Get the Letter Kit &middot; &euro;19 &rarr;</span>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -1036,17 +1128,40 @@
 
 <script>
   (function () {
+    var LIMIT = 4;
     var chips = document.querySelectorAll('.filter-bar .chip');
     var cards = document.querySelectorAll('.grid .tag-card');
+    var moreWrap = document.querySelector('.more-wrap');
+    var moreBtn = document.getElementById('see-more');
+    var filter = 'all';
+    var expanded = false;
+
+    function render() {
+      cards.forEach(function (card, i) {
+        var match = filter === 'all' || card.getAttribute('data-cat') === filter;
+        card.hidden = !(match && (filter !== 'all' || expanded || i < LIMIT));
+      });
+      // The button only applies to the unfiltered view and only if there is more to show.
+      moreWrap.hidden = !(filter === 'all' && cards.length > LIMIT);
+      moreBtn.textContent = expanded ? 'Show fewer reports' : 'See all ' + cards.length + ' reports';
+      moreBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    }
+
     chips.forEach(function (chip) {
       chip.addEventListener('click', function () {
-        var f = chip.getAttribute('data-filter');
+        filter = chip.getAttribute('data-filter');
         chips.forEach(function (c) { c.classList.toggle('active', c === chip); });
-        cards.forEach(function (card) {
-          card.hidden = !(f === 'all' || card.getAttribute('data-cat') === f);
-        });
+        render();
       });
     });
+
+    moreBtn.addEventListener('click', function () {
+      expanded = !expanded;
+      render();
+      if (!expanded) document.getElementById('reports').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    render();
   })();
 </script>
 </body>
