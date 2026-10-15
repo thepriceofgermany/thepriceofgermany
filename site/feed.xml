@@ -6,7 +6,17 @@
     <atom:link href="https://thepriceofgermany.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Videos, guides and cost breakdowns about life and money in Germany.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 14 Oct 2026 19:17:52 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 07:26:13 GMT</lastBuildDate>
+    <item>
+      <title>How a Chart About Search Crawlers Became “Proof” of an AfD Bot Collapse</title>
+      <link>https://thepriceofgermany.com/afd-bot-chart-fact-check</link>
+      <guid isPermaLink="true">https://thepriceofgermany.com/afd-bot-chart-fact-check</guid>
+      <pubDate>Thu, 15 Oct 2026 08:00:00 GMT</pubDate>
+      <category>Politics</category>
+      <description>A viral chart claimed Ukraine's strikes on Russian data centers silenced the bots pushing Germany's AfD overnight. Kyle shared it; Lars zoomed in and asked what the chart actually counts. It is not what the posts claim.</description>
+      <media:content url="https://i.ytimg.com/vi/9MMMW_seCn0/maxresdefault.jpg" medium="image" />
+      <enclosure url="https://i.ytimg.com/vi/9MMMW_seCn0/maxresdefault.jpg" type="image/jpeg" length="0" />
+    </item>
     <item>
       <title>Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)</title>
       <link>https://thepriceofgermany.com/eu-disinfo-lab-funding</link>
@@ -296,16 +306,6 @@
       <description>The real line-by-line breakdown: blocked account, health insurance, shipping, deposits, and the hidden setup costs nobody budgets for.</description>
       <media:content url="https://i.ytimg.com/vi/QvCYMMCXQjI/maxresdefault.jpg" medium="image" />
       <enclosure url="https://i.ytimg.com/vi/QvCYMMCXQjI/maxresdefault.jpg" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>This Cheap German Insurance Could Save You From Bankruptcy</title>
-      <link>https://thepriceofgermany.com/insurance-in-germany-vs-usa</link>
-      <guid isPermaLink="true">https://thepriceofgermany.com/insurance-in-germany-vs-usa</guid>
-      <pubDate>Tue, 28 Jul 2026 08:00:00 GMT</pubDate>
-      <category>Insurance</category>
-      <description>Why personal liability insurance costs 50 to 80 euros a year in Germany and covers up to 50 million euros, versus a $100,000 renter's policy in the US.</description>
-      <media:content url="https://i.ytimg.com/vi/vEdqvKJ_RWE/maxresdefault.jpg" medium="image" />
-      <enclosure url="https://i.ytimg.com/vi/vEdqvKJ_RWE/maxresdefault.jpg" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>

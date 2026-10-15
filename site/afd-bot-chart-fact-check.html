@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics (loaded only after cookie consent) -->
+<script src="/assets/consent.js" defer></script>
+<script src="/assets/newsletter.js?v=20261012b" defer></script>
+<title>How a Chart About Search Crawlers Became “Proof” of an AfD Bot Collapse</title>
+<meta name="description" content="A viral chart claimed Ukraine's strikes on Russian data centers silenced the bots pushing Germany's AfD overnight. Kyle shared it; Lars zoomed in and asked what the chart actually counts. It is not what the posts claim.">
+<meta property="og:title" content="How a Chart About Search Crawlers Became “Proof” of an AfD Bot Collapse">
+<meta property="og:description" content="A viral chart claimed Ukraine's strikes on Russian data centers silenced the bots pushing Germany's AfD overnight. Kyle shared it; Lars zoomed in and asked what the chart actually counts. It is not what the posts claim.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+"name": "How a Chart About Search Crawlers Became “Proof” of an AfD Bot Collapse",
+  "description": "A viral chart claimed Ukraine's strikes on Russian data centers silenced the bots pushing Germany's AfD overnight. Kyle shared it; Lars zoomed in and asked what the chart actually counts. It is not what the posts claim.",
+  "uploadDate": "2026-10-15",
+  "thumbnailUrl": "https://i.ytimg.com/vi/9MMMW_seCn0/maxresdefault.jpg",
+  "embedUrl": "https://www.youtube.com/embed/9MMMW_seCn0"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How a Chart About Search Crawlers Became “Proof” of an AfD Bot Collapse",
+  "description": "A viral chart claimed Ukraine's strikes on Russian data centers silenced the bots pushing Germany's AfD overnight. Kyle shared it; Lars zoomed in and asked what the chart actually counts. It is not what the posts claim.",
+  "image": "https://i.ytimg.com/vi/9MMMW_seCn0/maxresdefault.jpg",
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Justin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Price of Germany",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thepriceofgermany.com/favicon.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thepriceofgermany.com/afd-bot-chart-fact-check"
+  },
+  "articleSection": "Politics"
+}
+</script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://thepriceofgermany.com/afd-bot-chart-fact-check">
+<meta property="og:url" content="https://thepriceofgermany.com/afd-bot-chart-fact-check">
+<style>
+  :root {
+    --cream: #FDF8F0;
+    --paper: #FFFDF6;
+    --ink: #23262B;
+    --ink-soft: #5B5F66;
+    --coral: #FF5A5F;
+    --coral-dark: #E1454A;
+    --teal: #1FA6A0;
+    --teal-dark: #14807B;
+    --yellow: #FFC857;
+    --line: #E7E0D2;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  a { color: inherit; }
+
+  .shell { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------------- NAV ---------------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(253, 248, 240, 0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo .tag {
+    background: var(--coral);
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .back-link { font-size: 13.5px; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
+  .back-link:hover { color: var(--ink); }
+
+  /* ---------------- ARTICLE HEADER ---------------- */
+  header.post-head { padding: 56px 0 32px; }
+  .post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .post-meta .eyebrow { margin-bottom: 0; }
+  .post-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    background: rgba(31, 166, 160, 0.1);
+    border: 1px solid rgba(31, 166, 160, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.08;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .dek { font-size: 1.1rem; color: var(--ink-soft); line-height: 1.6; margin: 0; max-width: 620px; }
+
+  /* ---------------- VIDEO EMBED ---------------- */
+  .video-wrap {
+    margin: 32px 0 8px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--line);
+    box-shadow: 0 2px 0 var(--line);
+    position: relative;
+    padding-top: 56.25%;
+    background: #000;
+  }
+  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ---------------- ARTICLE BODY ---------------- */
+  article { padding: 24px 0 64px; }
+  article h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 46px 0 16px;
+    letter-spacing: -0.005em;
+  }
+  article p { font-size: 16.5px; line-height: 1.75; margin: 0 0 18px; color: var(--ink); }
+  article p.lede { font-size: 1.15rem; color: var(--ink); }
+  article strong { color: var(--ink); }
+
+  .payslip {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 26px 0;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .payslip .compare-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .payslip-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    font-size: 13.5px;
+    padding: 9px 0;
+    border-top: 1.5px dashed var(--line);
+    gap: 12px;
+  }
+  .payslip-row:first-of-type { border-top: none; }
+  .payslip-row .label { color: var(--ink-soft); font-size: 12.5px; }
+  .payslip-row .value { font-weight: 700; color: var(--coral-dark); text-align: right; white-space: nowrap; }
+  .payslip-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1.5px solid var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .payslip-total .value { color: var(--teal-dark); }
+
+  .compare {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 26px 0;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .compare .compare-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .compare-row2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    padding: 9px 0;
+    border-top: 1.5px dashed var(--line);
+  }
+  .compare-row2:first-of-type { border-top: none; }
+  .compare-row2 .country { color: var(--ink-soft); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 10px; }
+  .compare-row2 .value { font-weight: 700; text-align: right; }
+  .compare-row2.us .value { color: var(--coral-dark); }
+  .compare-row2.de .value { color: var(--teal-dark); }
+
+  .rec-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 22px 20px;
+    margin: 30px 0;
+    position: relative;
+    box-shadow: 0 2px 0 var(--line);
+  }
+  .rec-hole {
+    position: absolute; top: -8px; left: 22px;
+    width: 16px; height: 16px;
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: 50%;
+  }
+  .rec-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--coral-dark);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .rec-card h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; }
+  .rec-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
+  .rec-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--coral); color: #fff !important; text-decoration: none;
+    font-weight: 600; font-size: 14px; padding: 10px 20px; border-radius: 8px;
+    box-shadow: 0 3px 0 var(--coral-dark);
+  }
+  .rec-btn:hover { transform: translateY(-1px); }
+
+  .action-list { list-style: none; margin: 0 0 18px; padding: 0; counter-reset: action; }
+  .action-list li { counter-increment: action; display: flex; gap: 16px; padding: 16px 0; border-top: 1.5px dashed var(--line); }
+  .action-list li:first-child { border-top: none; }
+  .action-list li::before {
+    content: counter(action);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--coral);
+    flex-shrink: 0;
+    width: 28px;
+  }
+  .action-list p { margin: 0; font-size: 15.5px; line-height: 1.65; }
+
+  blockquote {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--ink);
+    border-left: 4px solid var(--yellow);
+    padding: 4px 0 4px 22px;
+    margin: 34px 0;
+  }
+
+  .disclosure {
+    font-family: 'Space Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    margin-top: 40px;
+    line-height: 1.6;
+  }
+  .disclaimer {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  /* ---------------- FOOTER ---------------- */
+  footer { border-top: 1px solid var(--line); padding: 36px 0 44px; }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    max-width: 760px; margin: 0 auto; padding: 0 24px;
+  }
+  .footer-inner .brand { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--ink-soft); }
+  .footer-links { display: flex; gap: 20px; font-size: 13.5px; }
+  .footer-links a { text-decoration: none; color: var(--ink-soft); }
+  .footer-links a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">The Price of Germany <span class="tag">$ → €</span></a>
+      <a class="back-link" href="/#reports">All reports</a>
+    </div>
+  </nav>
+
+  <header class="post-head">
+    <div class="shell">
+      <div class="post-meta"><span class="eyebrow">Politics report</span><span class="post-date">Oct 15, 2026</span></div>
+      <h1>How a Chart About Search Crawlers Became “Proof” of an AfD Bot Collapse</h1>
+      <p class="dek">A viral chart claimed Ukraine's strikes on Russian data centers silenced the bots pushing Germany's AfD overnight. Kyle shared it; Lars zoomed in and asked what the chart actually counts. It is not what the posts claim.</p>
+
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/9MMMW_seCn0" title="How a Chart About Search Crawlers Became “Proof” of an AfD Bot Collapse" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </header>
+
+  <article>
+    <div class="shell">
+
+      <p class="lede">A viral chart claimed Ukraine's strikes on Russian data centers silenced the bots pushing Germany's AfD overnight. Kyle shared it; Lars zoomed in and asked what the chart actually counts. It is not what the posts claim.</p>
+
+      <p>It's a Sunday afternoon in Cincinnati, and Kyle is on the couch, phone in one hand, scrolling. A chart stops his thumb: a red line, flat for months, then a cliff. The caption says Ukraine bombed a Russian data center, and the bots pushing Germany's far-right party went silent overnight. Kyle hits share and goes back to the game, feeling like he finally understands the internet.</p>
+
+      <p>More than four thousand miles away in Leipzig, it's nine at night, and Lars sees the exact same chart. He doesn't share it. He zooms in. There's no source in the corner. No list of accounts. No explanation of how anything was counted. And the dates along the bottom run four days into the future. Same chart, same evening, two completely different reactions. By Monday morning, the president of Ukraine himself was making a version of that claim on an international stage.</p>
+
+      <p>I'm Justin, an American who's lived in Germany for over twelve years. On this channel I usually break down what life here really costs, but this one is the same idea pointed at a chart: looking past the headline to the real number underneath, because the price of believing the wrong thing is one of the costs nobody puts on a postcard. This is not a story about who's right in the war, or about German politics. It's about checking the chart before you share it. Where something isn't public, I say so instead of guessing.</p>
+
+      <h2>The short answer</h2>
+      <p>Here's the version going around: Ukraine hit Russian data centers, Russia's bot army went dark, and online support for the far-right <strong>Alternative für Deutschland</strong> collapsed, proving it was fake all along. Here's the reality, in short. The strikes are real. Zelensky's statement is real. A massive drop in automated traffic from Russia's biggest tech company is real. But the part everyone actually cares about, that political bots were wiped out and that activity around one German party collapsed because of it, has not been shown by any data anyone has published so far. It's a real event with an unproven conclusion stacked on top.</p>
+
+      <div class="compare">
+        <div class="compare-title">The claim, split in two</div>
+        <div class="compare-row2 de"><span class="country">Verified</span><span class="value">3 Yandex data centers hit in 4 days; Zelensky's statement; a huge drop in Yandex network traffic</span></div>
+        <div class="compare-row2 us"><span class="country">Not shown by any data</span><span class="value">That political bots, or AfD activity, collapsed because of it</span></div>
+      </div>
+
+      <h2>The best case for believing it</h2>
+      <p>Before picking it apart, the strongest version, because it isn't crazy. Russia really does run large networks of fake accounts aimed at Germany, documented by the German government itself. Those networks need servers somewhere. Yandex is Russia's largest technology company, and its data centers just went dark. And plenty of people, from a member of the European Parliament to a well-known historian, noticed their feeds felt quieter at almost the same moment. When the timing lines up that neatly, it's reasonable to suspect a connection. The problem is that suspecting a connection and proving one are two very different things.</p>
+
+      <h2>What Zelensky actually said</h2>
+      <p>On Monday, October twelfth, at the opening of the Warsaw Security Forum, Zelensky said that after Ukraine's strikes on Yandex data centers it suddenly became a little easier to breathe on social media: less hate, less division, fewer provocations, because there were fewer bots, and he added it was pretty clear where they'd come from. So he really said it. But notice what he didn't say. He didn't name a party, cite a dataset, or give a single number. It was a general observation from a wartime leader at a security conference, about an operation his own military had just carried out.</p>
+
+      <p>The specific link to the far-right party didn't come from Zelensky at all. It came the day before, Sunday evening October eleventh, from a Czech member of the European Parliament, Tomáš Zdechovský, who posted a chart on X showing what he described as a sudden plunge in activity around the party. Here's the detail that got lost: his post opened with the words "if confirmed." That's a caveat, not a conclusion. Within about two hours it had roughly 230,000 views and thousands of reposts, and as the claim got passed along, those two words quietly fell off. By the next day it was being repeated as settled fact.</p>
+
+      <h2>What is verified: 3 data centers in 4 days</h2>
+      <p>Overnight from October seventh into the eighth, drones hit a Yandex data center in Sasovo, in Russia's Ryazan region; Yandex confirmed a drone attack caused a fire and the facility shut down completely. The next day a second Yandex site in the Kaluga region was hit, and on Sunday the eleventh a third near Vladimir was struck and fully shut down. That's three data centers in four days. Ukraine framed it as tit-for-tat, since Russia has been striking Ukrainian data centers since late September, describing its own campaign as a "forced digital detox." Zelensky confirmed Ukraine hit back, and Yandex itself confirmed the damage. This part is about as verified as wartime news gets.</p>
+
+      <p>Yandex is often called Russia's Google: search, maps, ride-hailing, delivery, payments, cloud, and its own AI. The Sasovo site alone housed two of its three AI-training supercomputers, per Reuters. So real disruption followed: cloud and document outages, the taxi and delivery app failing as far away as Kazakhstan, and the company's shares falling more than three percent. None of that is in dispute.</p>
+
+      <h2>What the chart actually measures</h2>
+      <p>The chart that launched the bot story comes from Cloudflare Radar. Every large network has an ID called an autonomous system number, like a postal code for one company's corner of the internet; Yandex's is AS13238. After the strikes, Cloudflare's chart of automated traffic from that network fell off a cliff, to around half of one percent of its recent peak. Real data from a real company. The question is what it measures.</p>
+
+      <p>Here's the catch. When Cloudflare says "bot," it means any automated request to a website, not a fake person posting on X. And Yandex runs a search engine, whose whole job is to send out automated crawlers that visit billions of pages to index them, exactly like Google. Cloudflare classifies about 99.6% of requests from Yandex's network as automated, much of it routine search indexing. So when the data centers went down, the crawlers went down. If the post office burns down, the number of letters arriving drops to almost zero. That tells you the post office is gone. It doesn't tell you how many of those letters were scams.</p>
+
+      <div class="payslip">
+        <div class="compare-title">What Cloudflare's chart really measures</div>
+        <div class="payslip-row"><span class="label">Network</span><span class="value">Yandex AS13238 (search engine + cloud)</span></div>
+        <div class="payslip-row"><span class="label">Automated share of its requests</span><span class="value">~99.6% (mostly search crawlers)</span></div>
+        <div class="payslip-row"><span class="label">Automated traffic after the strikes</span><span class="value">~0.5% of peak</span></div>
+        <div class="payslip-total"><span>Human traffic after the strikes</span><span class="value">also down ~90%</span></div>
+      </div>
+
+      <p>Researchers flagged this immediately. A well-known account tracking Kremlin troll networks told Radio Free Europe the chart has little to do with social-media propaganda bots, because it measures web requests of every kind. And the detail that settles a lot: an hour-by-hour analysis found human traffic from Yandex's network on October eleventh was also down about 90% from its September baseline. If only bots had vanished, human traffic would have held steady. When everything drops together, you're looking at buildings that lost power, not a bot army that got wiped out.</p>
+
+      <p>The viral "86%" came from misreading the chart. At 1am on October eleventh, automated requests sat at about half a percent of the chart's peak; at the same hour a week earlier the reading was 86.8%. That's a comparison point for all automated traffic on one company's network, nothing to do with a German party or with X. Somewhere between a dashboard and a meme, a technical reading about search crawlers turned into a statistic about political bots, and some headlines helped it along.</p>
+
+      <h2>The party chart: no source, data from the future</h2>
+      <p>The chart specifically about the party names no data source, no platform, no list of accounts, and no definition of an "activity." The level before the drop is roughly six to seven thousand activities a day, but nobody can say what that means or reproduce it. The strangest part: the timeline runs to October fifteenth even though the chart was posted on the eleventh, with a second big drop sitting days in the future. A chart with no source and data from the future isn't evidence of anything.</p>
+
+      <p>A German tech site then ran its own cross-check, counting German-language posts mentioning four parties over the same eighteen-hour window on Saturday versus Sunday. The far-right party didn't stand out at all. Everybody went quieter on Sunday, which is what Sundays look like, and posts mentioning the party actually rose about nine percent the day after the first strike.</p>
+
+      <div class="payslip">
+        <div class="compare-title">German-party mentions, Saturday vs Sunday</div>
+        <div class="payslip-row"><span class="label">AfD</span><span class="value">down ~19%</span></div>
+        <div class="payslip-row"><span class="label">CDU</span><span class="value">down ~18%</span></div>
+        <div class="payslip-row"><span class="label">SPD / Greens</span><span class="value">down ~37% / ~29%</span></div>
+        <div class="payslip-total"><span>AfD posts, Thursday to Friday (after first strike)</span><span class="value">up ~9%</span></div>
+      </div>
+
+      <h2>The strongest case: the bot networks are real</h2>
+      <p>So is the whole idea nonsense? No. In January 2024, Germany's Federal Foreign Office, the <strong>Auswärtiges Amt</strong>, exposed a pro-Russian network on X: over one month, more than fifty thousand fake accounts pushing over a million German-language posts, around two hundred thousand on some days. It tied the wave to a long-running operation researchers call <strong>Doppelgänger</strong>, named for the fake copies it builds of real German news sites, including <strong>Der Spiegel</strong>. And in July 2024, the US Justice Department disrupted a network of 968 Russian-run fake accounts on X. Russian bot networks aimed at Germany and America are documented fact.</p>
+
+      <p>But documented bot networks and Yandex data centers are two different claims. Nobody has published evidence those networks ran on Yandex's servers. A bot network posting on X doesn't need Russia's search engine; it can run on rented servers almost anywhere, or through ordinary-looking home connections, precisely to hide where it comes from. An operation built to pass as ordinary German users would have every reason not to route through Russia's most recognizable tech company. That cuts both ways: you can't prove the strikes silenced them, and you can't prove they didn't. The honest answer right now is: we don't know.</p>
+
+      <h2>The hidden cost of a shaky claim</h2>
+      <p>There's a cost that's easy to miss. In the February 2025 federal election, the <strong>Bundestagswahl</strong>, the far-right party won about 20.8% of the vote, roughly one in five voters, real people. A viral claim that its online support was mostly Russian bots that vanished overnight tells a lot of people what they want to hear, but it isn't backed by data, and it's exactly the kind of claim that's easy to debunk later. Every time a shaky disinformation claim gets debunked, it becomes harder to get people to take the real, documented disinformation seriously. Bad evidence doesn't just fail to help a good argument. It damages it.</p>
+
+      <p>And the timing that looked like proof is the one pattern that proves nothing. Coverage of that 2024 report noted the flood of fake posts went quiet on only two kinds of days: weekends and Russian public holidays. Bots keep office hours, because the people running them do. The strike near Vladimir landed on a Sunday. The viral chart was posted on a Sunday evening. The cross-check compared a Saturday to a Sunday. A weekend dip is exactly what you'd expect whether the strikes touched a single bot or not. To actually know, you'd need to follow specific, identified accounts through a full working week, and that data hasn't been published.</p>
+
+      <div class="rec-card">
+        <span class="rec-hole"></span>
+        <span class="rec-label">Recommended</span>
+        <h3>A note on the AI voice (given today's topic)</h3>
+        <p>Since today is about automation, I want to be upfront. The voice narrating this isn't me in front of a mic. I write every script myself, research and all, then bring it to life with an AI voice built using ElevenLabs. That's the honest version of automation: a real person, real research, and a tool that saves hours of re-recording. If you've ever wanted to narrate your own videos or clone your own voice, it's the tool I actually use.</p>
+        <a class="rec-btn" href="https://try.elevenlabs.io/mcjpkrtj3pnc" target="_blank" rel="noopener sponsored">Check out ElevenLabs &rarr;</a>
+      </div>
+
+      <h2>Back to Kyle and Lars</h2>
+      <p>Kyle shared a chart that turned out to measure search engine crawlers, attached to a claim about a German party with no source and a timeline running into the future. He wasn't stupid. He was handed a real event, a real quote from a real president, and a satisfying ending, and filled in the rest himself. Lars didn't know any more about Russian data centers than Kyle did. He just asked one question first: what does this chart actually count? That single question was the whole difference. By Monday, when Zelensky spoke in Warsaw, Kyle felt proven right. Lars knew the strikes were real, the outage was real, and the bot claim was still an open question. Only one of them actually had the story right.</p>
+
+      <h2>Four things to check before you share a chart</h2>
+      <ol class="action-list">
+        <li><p><strong>Ask what's actually being counted.</strong> A "bot" to an internet company and a "bot" to a political researcher are completely different things, and most viral charts hide that difference.</p></li>
+        <li><p><strong>Look for the caveat.</strong> Phrases like "if confirmed" are usually where the truth lives, and they're the first thing to fall off when a post gets shared.</p></li>
+        <li><p><strong>Demand a comparison.</strong> A drop means nothing until you compare it to other parties, other weekends, and other weeks. If everything fell on Sunday, nothing special happened.</p></li>
+        <li><p><strong>Separate the event from the story stacked on top of it.</strong> Ukraine hitting three Yandex data centers is verified. Russia running bot networks is verified. That one caused a collapse in the other is not, at least not yet.</p></li>
+      </ol>
+
+      <p>Want the real numbers on another viral claim? We traced the EU's actual disinformation spending to the cent in <a href="/eu-disinfo-lab-funding">the EU DisinfoLab breakdown</a>, and our free <a href="/cost-of-living-calculator">US vs Germany cost-of-living calculator</a> does the same for everyday prices.</p>
+
+      <h2>Verdict: real event, unproven conclusion</h2>
+      <p>The quote is real. The strikes are real. The bot networks are real. The connection between them is a hopeful theory that a wartime leader repeated in public, built on a chart that measures something else. That's not a fabricated story, but it isn't proven fact either, and in a war, the gap between messaging and evidence is exactly where you should slow down. Sometimes the most expensive thing you can buy is a story that's too good to check. That's one of the costs nobody puts on a postcard.</p>
+
+      <h2>Sources</h2>
+      <ul class="sources">
+        <li><a href="https://www.rferl.org/a/zelenskyy-says-yandex-strikes-crippled-pro-kremlin-bots-but-tech-experts-call-evidence-weak/33875054.html" target="_blank" rel="noopener">RFE/RL: Zelenskyy says Yandex strikes crippled pro-Kremlin bots, but experts question the evidence</a></li>
+        <li><a href="https://rohtext.de/news/afd-bots-offline-yandex-angriffen-was-virale" target="_blank" rel="noopener">Rohtext: AfD bots offline after Yandex strikes? What the viral chart does not show</a></li>
+        <li><a href="https://factcheckradar.com/fact-check/russian-data-centres-and-afd-buzz" target="_blank" rel="noopener">FactCheckRadar: Russian data centres and AfD buzz</a></li>
+        <li><a href="https://radar.cloudflare.com/traffic/as13238" target="_blank" rel="noopener">Cloudflare Radar: traffic for AS13238 (Yandex)</a></li>
+        <li><a href="https://xenospectrum.com/en/yandex-drone-strikes-bot-traffic/" target="_blank" rel="noopener">XenoSpectrum: analysis of the Yandex bot-traffic chart</a></li>
+        <li><a href="https://mezha.net/eng/mysli/2b69af1d_after_strikes_on_yandex/" target="_blank" rel="noopener">Mezha: AfD and MAGA "bot disappearance" after the Yandex strikes</a></li>
+        <li><a href="https://meduza.io/en/feature/2026/10/08/ukraine-strikes-yandex-data-center-housing-two-of-the-company-s-supercomputers" target="_blank" rel="noopener">Meduza: Ukraine strikes Yandex data center housing two supercomputers</a></li>
+        <li><a href="https://www.tomshardware.com/tech-industry/data-centers/russian-disinformation-bot-traffic-nearly-eliminated-overnight-after-ukraine-drone-strikes-cripple-multiple-of-russias-google-data-centers-ukraine-intensifies-bombing-of-yandex-data-centers-in-response-to-moscows-strikes-on-kyiv-data-centers" target="_blank" rel="noopener">Tom's Hardware: bot traffic "nearly eliminated" (example of overstated coverage)</a></li>
+        <li><a href="https://preview.auswaertiges-amt.de/blueprint/servlet/resource/blob/2682484/2da31936d1cbeb9faec49df74d8bbe2e/technischer-bericht-desinformationskampagne-doppelgaenger-1--data.pdf" target="_blank" rel="noopener">Auswärtiges Amt: technical report on the Doppelgänger campaign (PDF)</a></li>
+        <li><a href="https://www.justice.gov/archives/opa/pr/justice-department-leads-efforts-among-federal-international-and-private-sector-partners" target="_blank" rel="noopener">US Department of Justice: takedown of a Russian bot farm on X</a></li>
+      </ul>
+
+      <p><em>Disclosure: the ElevenLabs link in this article is an affiliate link. If you sign up through it, I may earn a commission at no extra cost to you, which helps support the channel. This article is general information, not political or financial advice, and it does not endorse any party, government, or side in the war. It summarizes public reporting and primary documents; where a figure (such as which accounts the viral charts tracked) is not public, that is stated rather than estimated.</em></p>
+
+    </div>
+  </article>
+
+  <div class="tpog-newsletter"></div>
+
+<!-- related:start -->
+  <style>
+    .related{max-width:1080px;margin:0 auto;padding:56px 24px 8px}
+    .related-title{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:1.5rem;color:var(--ink);margin:0 0 20px}
+    .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .related-card{display:flex;flex-direction:column;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+    .related-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(35,38,43,.08);border-color:var(--coral)}
+    .related-topic{font-family:'Space Mono',ui-monospace,monospace;font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-dark)}
+    .related-card h3{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:1rem;line-height:1.25;color:var(--ink);margin:0}
+    .related-card p{font-family:'Work Sans',system-ui,sans-serif;font-size:.85rem;line-height:1.45;color:var(--ink-soft);margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-more{margin-top:auto;font-family:'Space Mono',ui-monospace,monospace;font-size:.7rem;letter-spacing:.06em;color:var(--coral)}
+    @media(max-width:900px){.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.related-grid{grid-template-columns:1fr}}
+  </style>
+  <section class="related" aria-label="Related reports">
+    <h2 class="related-title">Keep reading</h2>
+    <div class="related-grid">
+      <a class="related-card" href="/eu-disinfo-lab-funding">
+        <span class="related-topic">Politics</span>
+        <h3>Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)</h3>
+        <p>A headline says Europe is spending taxpayer billions to brand America a disinformation threat. I followed the money in the EU's own grant database. A German taxpayer's share works out to about a third of a cent.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+      <a class="related-card" href="/germany-chancellor-crisis-cost">
+        <span class="related-topic">Politics</span>
+        <h3>The Hidden Bill Behind Germany's Chancellor Crisis</h3>
+        <p>Merz failed his own confidence vote, cratered to 9% approval, and got wiped out in three state elections. A Leipzig machinist and a Cincinnati car buyer never met, and both are paying for it. Here is the real bill.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+      <a class="related-card" href="/berlin-seize-240000-apartments">
+        <span class="related-topic">Politics</span>
+        <h3>Inside Berlin's €36 Billion Plan to Seize 240,000 Apartments</h3>
+        <p>Berlin made a party that wants to convert nearly 240,000 corporate apartments into public housing its strongest since reunification. Two neighbors read the same 25.7% headline and had opposite mornings. Here is the real bill: 8 to 36 billion euros.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+      <a class="related-card" href="/us-missile-deal-german-tax-bill">
+        <span class="related-topic">Politics</span>
+        <h3>How a US Missile Deal Ends Up on a German Teacher's Tax Bill</h3>
+        <p>Dana builds Tomahawk parts in Arkansas; her overtime beats her mortgage. Jonas teaches in Dresden under a two-year leaking ceiling. A US-Germany missile deal quietly attached both their lives, and the ~108 billion euro bill lands on taxpayers who never voted on it.</p>
+        <span class="related-more">READ &rarr;</span>
+      </a>
+    </div>
+  </section>
+  <!-- related:end -->
+
+  <footer>
+    <div class="footer-inner">
+      <span class="brand">thepriceofgermany.com</span>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">YouTube</a>
+        <a href="/#reports">All reports</a>
+        <a href="/#about">About</a>
+        <a href="/imprint">Imprint</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/refund">Refunds</a>
+        <a href="mailto:contact@thepriceofgermany.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
