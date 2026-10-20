@@ -6,7 +6,17 @@
     <atom:link href="https://thepriceofgermany.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Videos, guides and cost breakdowns about life and money in Germany.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Oct 2026 07:26:13 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 11:23:57 GMT</lastBuildDate>
+    <item>
+      <title>Inside the EU “Censorship Machine” (The Police Raid Didn’t Come From Brussels)</title>
+      <link>https://thepriceofgermany.com/eu-dsa-censorship-machine</link>
+      <guid isPermaLink="true">https://thepriceofgermany.com/eu-dsa-censorship-machine</guid>
+      <pubDate>Tue, 20 Oct 2026 08:00:00 GMT</pubDate>
+      <category>Politics</category>
+      <description>Helmut shares a shampoo-brand meme about a minister and police are at his door by 6am. Travis in Tulsa calls a senator a moron and gets 14 likes. The difference is not what they posted. It is which legal system was reading it.</description>
+      <media:content url="https://i.ytimg.com/vi/g5WM-aGTLv0/maxresdefault.jpg" medium="image" />
+      <enclosure url="https://i.ytimg.com/vi/g5WM-aGTLv0/maxresdefault.jpg" type="image/jpeg" length="0" />
+    </item>
     <item>
       <title>How a Chart About Search Crawlers Became “Proof” of an AfD Bot Collapse</title>
       <link>https://thepriceofgermany.com/afd-bot-chart-fact-check</link>
@@ -296,16 +306,6 @@
       <description>Sarah in Austin pays $420 every two weeks. Lukas in Berlin pays €23 a month. What parents actually pay across all 16 German states.</description>
       <media:content url="https://i.ytimg.com/vi/sbYec0-cguo/maxresdefault.jpg" medium="image" />
       <enclosure url="https://i.ytimg.com/vi/sbYec0-cguo/maxresdefault.jpg" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>What Moving to Germany Actually Costs: $8,000 vs. $19,000</title>
-      <link>https://thepriceofgermany.com/moving-to-germany-cost</link>
-      <guid isPermaLink="true">https://thepriceofgermany.com/moving-to-germany-cost</guid>
-      <pubDate>Wed, 29 Jul 2026 08:00:00 GMT</pubDate>
-      <category>Relocation</category>
-      <description>The real line-by-line breakdown: blocked account, health insurance, shipping, deposits, and the hidden setup costs nobody budgets for.</description>
-      <media:content url="https://i.ytimg.com/vi/QvCYMMCXQjI/maxresdefault.jpg" medium="image" />
-      <enclosure url="https://i.ytimg.com/vi/QvCYMMCXQjI/maxresdefault.jpg" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>
