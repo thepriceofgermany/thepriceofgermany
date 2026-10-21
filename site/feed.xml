@@ -6,7 +6,17 @@
     <atom:link href="https://thepriceofgermany.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Videos, guides and cost breakdowns about life and money in Germany.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Oct 2026 20:04:55 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 20:19:31 GMT</lastBuildDate>
+    <item>
+      <title>Germany's New Retirement Account + 4 Others Nobody Explains</title>
+      <link>https://thepriceofgermany.com/german-retirement-accounts-explained</link>
+      <guid isPermaLink="true">https://thepriceofgermany.com/german-retirement-accounts-explained</guid>
+      <pubDate>Wed, 21 Oct 2026 08:00:00 GMT</pubDate>
+      <category>Investing</category>
+      <description>Germany lets you legally cut your tax bill, and even adds money to your retirement savings. Almost nobody explains it in English. Here are the five accounts that matter, the German terms you need, the 2026 numbers, and the new depot from 2027.</description>
+      <media:content url="https://i.ytimg.com/vi/VNHyPbDfb2o/maxresdefault.jpg" medium="image" />
+      <enclosure url="https://i.ytimg.com/vi/VNHyPbDfb2o/maxresdefault.jpg" type="image/jpeg" length="0" />
+    </item>
     <item>
       <title>Inside the EU “Censorship Machine” (The Police Raid Didn’t Come From Brussels)</title>
       <link>https://thepriceofgermany.com/eu-dsa-censorship-machine</link>
@@ -296,16 +306,6 @@
       <description>What German directness actually costs in chronic stress and strained relationships, and the €0 fix that's been sitting there the whole time.</description>
       <media:content url="https://i.ytimg.com/vi/fK5Vm0v47Ns/maxresdefault.jpg" medium="image" />
       <enclosure url="https://i.ytimg.com/vi/fK5Vm0v47Ns/maxresdefault.jpg" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>&quot;Free&quot; Daycare in Germany? The Real Cost, State by State</title>
-      <link>https://thepriceofgermany.com/daycare-in-germany-vs-usa</link>
-      <guid isPermaLink="true">https://thepriceofgermany.com/daycare-in-germany-vs-usa</guid>
-      <pubDate>Wed, 29 Jul 2026 08:00:00 GMT</pubDate>
-      <category>Childcare</category>
-      <description>Sarah in Austin pays $420 every two weeks. Lukas in Berlin pays €23 a month. What parents actually pay across all 16 German states.</description>
-      <media:content url="https://i.ytimg.com/vi/sbYec0-cguo/maxresdefault.jpg" medium="image" />
-      <enclosure url="https://i.ytimg.com/vi/sbYec0-cguo/maxresdefault.jpg" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>
