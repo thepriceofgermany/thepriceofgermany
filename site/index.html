@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google Analytics (loaded only after cookie consent) -->
 <script src="/assets/consent.js" defer></script>
-<script src="/assets/newsletter.js?v=20261012b" defer></script>
+<script src="/assets/newsletter.js?v=20261027a" defer></script>
 <title>The Price of Germany: Real Cost-of-Living Comparisons, USA vs. Germany</title>
 <meta name="description" content="An American expat in Germany breaks down what things actually cost, including rent, healthcare, groceries, and taxes, dollar for dollar, euro for euro.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,16 +40,16 @@
 <meta property="og:url" content="https://thepriceofgermany.com/">
 <style>
   :root {
-    --cream: #FDF8F0;
+    --cream: #FFFDF6;
     --paper: #FFFDF6;
-    --ink: #23262B;
-    --ink-soft: #5B5F66;
-    --coral: #FF5A5F;
-    --coral-dark: #E1454A;
-    --teal: #1FA6A0;
-    --teal-dark: #14807B;
-    --yellow: #FFC857;
-    --line: #E7E0D2;
+    --ink: #121210;
+    --ink-soft: #67665F;
+    --coral: #D83A2E;
+    --coral-dark: #AE2E24;
+    --teal: #121210;
+    --teal-dark: #121210;
+    --yellow: #D83A2E;
+    --line: #E6E1D4;
   }
 
   * { box-sizing: border-box; }
@@ -60,9 +60,9 @@
     margin: 0;
     background: var(--cream);
     color: var(--ink);
-    font-family: 'Work Sans', sans-serif;
-    background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
-    background-size: 26px 26px;
+    font-family: 'Inter', sans-serif;
+    
+    
   }
 
   a { color: inherit; }
@@ -87,7 +87,7 @@
     margin: 0 auto;
   }
   .logo {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     font-size: 1.1rem;
     text-decoration: none;
@@ -98,7 +98,7 @@
   .logo .tag {
     background: var(--coral);
     color: #fff;
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     font-weight: 700;
     padding: 2px 7px;
@@ -187,7 +187,7 @@
     .hero-stage .justin, .hero-stage .float { animation: none; }
   }
   .eyebrow {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -200,7 +200,7 @@
     margin-bottom: 24px;
   }
   h1 {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: clamp(2.4rem, 6vw, 4rem);
     line-height: 1.04;
@@ -226,7 +226,7 @@
   }
   .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .btn {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 15px;
     text-decoration: none;
@@ -240,10 +240,10 @@
   .btn-primary {
     background: var(--coral);
     color: #fff !important;
-    box-shadow: 0 4px 0 var(--coral-dark);
+    box-shadow: none;
   }
   .btn-primary:hover { transform: translateY(-2px); }
-  .btn-primary:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--coral-dark); }
+  .btn-primary:active { transform: translateY(2px); box-shadow: none; }
   .btn-outline {
     background: transparent;
     border: 1.5px solid var(--ink);
@@ -254,7 +254,7 @@
   /* exchange strip */
   .strip {
     margin-top: 56px;
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
     color: var(--ink-soft);
     display: flex;
@@ -277,13 +277,13 @@
     gap: 10px;
   }
   .section-head h2 {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     font-size: 1.7rem;
     margin: 0;
   }
   .section-head .note {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11.5px;
     color: var(--ink-soft);
     letter-spacing: 0.04em;
@@ -296,7 +296,7 @@
     margin-bottom: 26px;
   }
   .chip {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11.5px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -332,7 +332,7 @@
     color: var(--ink);
     display: block;
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-    box-shadow: 0 2px 0 var(--line);
+    box-shadow: none;
   }
   .tag-card:hover {
     transform: translateY(-3px) rotate(-0.4deg);
@@ -351,7 +351,7 @@
   }
   .tag-card:hover .tag-hole { border-color: var(--coral); }
   .tag-topic {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 10.5px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -360,7 +360,7 @@
     display: block;
   }
   .tag-card h3 {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
     margin: 0 0 10px;
@@ -376,7 +376,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
     border-top: 1.5px dashed var(--line);
     padding-top: 12px;
@@ -390,7 +390,7 @@
     position: absolute;
     top: 14px;
     right: 14px;
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 9px;
     letter-spacing: 0.08em;
     color: var(--ink-soft);
@@ -412,12 +412,12 @@
     grid-template-columns: 1fr auto;
     gap: 28px;
     align-items: center;
-    box-shadow: 0 2px 0 var(--line);
+    box-shadow: none;
     position: relative;
     overflow: hidden;
   }
   .tool-banner .tb-eyebrow {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -426,7 +426,7 @@
     display: block;
   }
   .tool-banner h2 {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: clamp(1.5rem, 3.5vw, 2rem);
     line-height: 1.12;
@@ -443,14 +443,14 @@
   .tool-banner .tb-cta {
     background: var(--coral);
     color: #fff !important;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 15px;
     text-decoration: none;
     padding: 15px 28px;
     border-radius: 12px;
     white-space: nowrap;
-    box-shadow: 0 4px 0 var(--coral-dark);
+    box-shadow: none;
     transition: transform 0.15s ease;
     display: inline-block;
   }
@@ -462,7 +462,7 @@
   /* ---------------- PARTNER BANNER ---------------- */
   section.partner-banner-wrap { padding: 0 0 30px; }
   .partner-banner { text-align: center; }
-  .partner-banner .pb-label { display: block; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
+  .partner-banner .pb-label { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
   .partner-banner img { display: block; width: 100%; max-width: 728px; height: auto; margin: 0 auto; border-radius: 10px; border: 1.5px solid var(--line); }
   .partner-banner .pb-more { display: inline-block; margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--coral-dark); text-decoration: none; }
   .partner-banner .pb-more:hover { text-decoration: underline; }
@@ -489,7 +489,7 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: linear-gradient(160deg, var(--yellow), var(--coral));
+    background: var(--line);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -501,11 +501,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
-    transform: scale(1.6) translateY(6px);
+    object-position: 42% 22%;
   }
   .about-card h2 {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     font-size: 1.5rem;
     margin: 0 0 10px;
@@ -530,7 +529,7 @@
     gap: 16px;
   }
   .footer-inner .brand {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
     color: var(--ink-soft);
     letter-spacing: 0.04em;
@@ -552,7 +551,7 @@
   .more-wrap { text-align: center; margin-top: 30px; }
   .more-wrap[hidden] { display: none; }
   .more-btn {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 15px;
     color: var(--ink);
@@ -569,10 +568,10 @@
   /* ---- Free cheat sheet box (same look as the newsletter / checklist box) ---- */
   .cs-box { max-width: 760px; margin: 0 auto 40px; padding: 0 24px; }
   .cs-card { background: var(--paper); border: 1.5px solid var(--line); border-radius: 16px; padding: 26px 26px 22px; box-shadow: 0 3px 0 var(--line); text-align: left; }
-  .cs-tag { display: inline-block; font-family: 'Space Mono', monospace; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: var(--coral); padding: 4px 10px; border-radius: 5px; margin-bottom: 12px; }
-  .cs-card h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.4rem; line-height: 1.2; margin: 0 0 8px; letter-spacing: -.005em; }
+  .cs-tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: var(--coral); padding: 4px 10px; border-radius: 5px; margin-bottom: 12px; }
+  .cs-card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.4rem; line-height: 1.2; margin: 0 0 8px; letter-spacing: -.005em; }
   .cs-card p { margin: 0 0 16px; font-size: 15.5px; line-height: 1.6; color: var(--ink-soft); }
-  .cs-card .cs-btn { display: inline-block; font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 15px; padding: 11px 22px; border-radius: 10px; border: 1.5px solid var(--coral); background: var(--coral); color: #fff; text-decoration: none; }
+  .cs-card .cs-btn { display: inline-block; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; padding: 11px 22px; border-radius: 10px; border: 1.5px solid var(--coral); background: var(--coral); color: #fff; text-decoration: none; }
   .cs-card .cs-btn:hover { background: var(--coral-dark); border-color: var(--coral-dark); }
   .cs-card p.cs-note { margin: 14px 0 0; font-size: 12.5px; line-height: 1.5; }
 
@@ -589,13 +588,13 @@
     grid-template-columns: minmax(0, 340px) 1fr;
     gap: 36px;
     align-items: center;
-    box-shadow: 0 2px 0 var(--line);
+    box-shadow: none;
     transition: transform 0.18s ease, box-shadow 0.18s ease;
   }
   .kit-banner:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--line); }
   .kit-banner img { width: 100%; height: auto; border-radius: 12px; display: block; box-shadow: 0 6px 0 rgba(35, 38, 43, 0.08); }
   .kit-banner .kb-eyebrow {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -604,7 +603,7 @@
     display: block;
   }
   .kit-banner h2 {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: clamp(1.5rem, 3.5vw, 2rem);
     line-height: 1.12;
@@ -613,7 +612,7 @@
   .kit-banner p { color: var(--ink-soft); font-size: 15px; line-height: 1.6; margin: 0 0 14px; max-width: 520px; }
   .kb-points { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 0; }
   .kb-points li {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -626,11 +625,34 @@
   .kit-banner .kb-cta {
     display: inline-flex; align-items: center; gap: 6px;
     background: var(--coral); color: #fff; font-weight: 600; font-size: 15px;
-    padding: 12px 22px; border-radius: 10px; box-shadow: 0 3px 0 var(--coral-dark);
+    padding: 12px 22px; border-radius: 10px; box-shadow: none;
   }
   @media (max-width: 760px) {
     .kit-banner { grid-template-columns: 1fr; padding: 22px; gap: 22px; }
   }
+</style>
+<style id="index-skin">
+/* ---- The Index: modern grotesk reskin (overrides cartoon template) ---- */
+:root{ --red:#D83A2E; --red-dark:#AE2E24; --paper:#FFFDF6; }
+body{ background:var(--paper); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+h1,h2,h3,h4,.logo{ font-family:'Space Grotesk',system-ui,sans-serif; letter-spacing:-0.02em; }
+h1{ font-weight:700; }
+nav{ background:rgba(255,253,246,0.85)!important; border-bottom:1px solid var(--ink)!important; backdrop-filter:blur(8px); }
+.logo .tag{ background:var(--red); border-radius:3px; font-family:'IBM Plex Mono',monospace; }
+.nav-cta{ border-radius:4px!important; }
+/* eyebrow: squared mono label instead of teal pill */
+.eyebrow{ background:transparent!important; border:0!important; border-radius:0!important; padding:0!important; color:var(--red)!important; font-family:'IBM Plex Mono',monospace!important; font-weight:500; letter-spacing:0.12em!important; }
+/* h1 highlighter: thin red swash, no skew */
+h1 .hl{ color:inherit; }
+h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:0.06em!important; transform:none!important; opacity:0.85; }
+/* buttons: flat + squared */
+.btn{ border-radius:4px!important; box-shadow:none!important; font-family:'Space Grotesk',sans-serif; font-weight:600; transition:background .15s ease,color .15s ease,border-color .15s ease!important; }
+.btn:hover{ transform:none!important; }
+.btn-primary{ background:var(--ink)!important; color:#FFFDF6!important; box-shadow:none!important; }
+.btn-primary:hover{ background:var(--red)!important; color:#FFFDF6!important; }
+.btn-primary:active{ transform:none!important; box-shadow:none!important; }
+.btn-outline{ border:1px solid var(--ink)!important; }
+.btn-outline:hover{ background:var(--ink)!important; color:#FFFDF6!important; }
 </style>
 </head>
 <body>
@@ -651,24 +673,13 @@
     <div class="shell">
       <div class="hero-grid">
         <div class="hero-text">
-          <span class="eyebrow">Cost-of-living show</span>
+          <span class="eyebrow">USA &rarr; Germany &middot; the real price</span>
           <h1>What things <span class="hl">actually</span> cost<br>in Germany</h1>
           <p class="sub">An American who's lived in Germany for over a decade, breaking down the real numbers: rent, healthcare, groceries, taxes, dollar for dollar, euro for euro.</p>
-        </div>
-        <div class="hero-character">
-          <div class="hero-stage">
-            <img class="justin" src="assets/justin-nobg.png" alt="Justin, host of The Price of Germany" width="480" height="600">
-            <img class="float f-money" src="assets/objects/obj-money.png" alt="" aria-hidden="true" loading="lazy">
-            <img class="float f-house" src="assets/objects/obj-house.png" alt="" aria-hidden="true" loading="lazy">
-            <img class="float f-laptop" src="assets/objects/obj-laptop.png" alt="" aria-hidden="true" loading="lazy">
-            <img class="float f-suitcase" src="assets/objects/obj-suitcase.png" alt="" aria-hidden="true" loading="lazy">
-            <img class="float f-docs" src="assets/objects/obj-docs.png" alt="" aria-hidden="true" loading="lazy">
-            <img class="float f-bill" src="assets/objects/obj-bill.png" alt="" aria-hidden="true" loading="lazy">
+          <div class="ctas">
+            <a class="btn btn-primary" href="#reports">See the reports</a>
+            <a class="btn btn-outline" href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">Watch on YouTube</a>
           </div>
-        </div>
-        <div class="ctas">
-          <a class="btn btn-primary" href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">Watch on YouTube</a>
-          <a class="btn btn-outline" href="#reports">Browse reports</a>
         </div>
       </div>
       <div class="strip">
@@ -1176,7 +1187,7 @@
   <section class="about" id="about">
     <div class="shell">
       <div class="about-card">
-        <div class="avatar"><img src="assets/justin-nobg.png" alt="Justin, host of The Price of Germany"></div>
+        <div class="avatar"><img src="assets/justin-photo.jpg" alt="Justin, host of The Price of Germany"></div>
         <div>
           <h2>Hi, I'm Justin</h2>
           <p>I'm an American who's called Germany home for over 12 years. This channel, and this blog, exist for one reason: to show you exactly what things cost here, with real numbers instead of guesses, so you can decide for yourself if it's worth it.</p>

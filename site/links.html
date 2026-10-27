@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google Analytics (loaded only after cookie consent) -->
 <script src="/assets/consent.js" defer></script>
-<script src="/assets/newsletter.js?v=20261012b" defer></script>
+<script src="/assets/newsletter.js?v=20261027a" defer></script>
 <title>Links | The Price of Germany</title>
 <meta name="description" content="Every place to follow The Price of Germany: YouTube, Instagram, TikTok, Facebook, and Threads, plus the blog and the US vs Germany cost-of-living calculator.">
 <meta property="og:title" content="Links | The Price of Germany">
@@ -13,22 +13,22 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://thepriceofgermany.com/links">
 <meta property="og:url" content="https://thepriceofgermany.com/links">
 <style>
   :root {
-    --cream: #FDF8F0;
+    --cream: #FFFDF6;
     --paper: #FFFDF6;
-    --ink: #23262B;
-    --ink-soft: #5B5F66;
-    --coral: #FF5A5F;
-    --coral-dark: #E1454A;
-    --teal: #1FA6A0;
-    --teal-dark: #14807B;
-    --yellow: #FFC857;
-    --line: #E7E0D2;
+    --ink: #121210;
+    --ink-soft: #67665F;
+    --coral: #D83A2E;
+    --coral-dark: #AE2E24;
+    --teal: #121210;
+    --teal-dark: #121210;
+    --yellow: #D83A2E;
+    --line: #E6E1D4;
   }
   * { box-sizing: border-box; }
   body {
@@ -36,9 +36,9 @@
     min-height: 100vh;
     background: var(--cream);
     color: var(--ink);
-    font-family: 'Work Sans', sans-serif;
-    background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
-    background-size: 26px 26px;
+    font-family: 'Inter', sans-serif;
+    
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,12 +59,12 @@
   .tag {
     display: inline-block;
     background: var(--coral); color: #fff;
-    font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700;
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
     padding: 4px 10px; border-radius: 5px; margin-bottom: 12px;
   }
   h1 {
-    font-family: 'Fredoka', sans-serif; font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700;
     font-size: 1.7rem; line-height: 1.15; margin: 0 0 8px;
     letter-spacing: -0.01em;
   }
@@ -85,10 +85,10 @@
     transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   }
   .link:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--line); border-color: var(--ink); }
-  .link:active { transform: translateY(1px); box-shadow: 0 2px 0 var(--line); }
+  .link:active { transform: translateY(1px); box-shadow: none; }
   .link svg { width: 24px; height: 24px; flex-shrink: 0; }
   .link .label { flex: 1; text-align: left; }
-  .link .go { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--ink-soft); }
+  .link .go { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--ink-soft); }
 
   /* brand accents on the icon */
   .ig  { color: #E1306C; }
@@ -108,9 +108,32 @@
   .featured svg { color: #fff; }
   .link .label small { display: block; font-weight: 500; font-size: 12.5px; line-height: 1.35; margin-top: 2px; opacity: 0.75; }
 
-  footer { margin-top: 34px; font-family: 'Space Mono', monospace; font-size: 11.5px; color: var(--ink-soft); }
+  footer { margin-top: 34px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-soft); }
   footer a { color: var(--ink-soft); text-decoration: none; }
   footer a:hover { color: var(--ink); }
+</style>
+<style id="index-skin">
+/* ---- The Index: modern grotesk reskin (overrides cartoon template) ---- */
+:root{ --red:#D83A2E; --red-dark:#AE2E24; --paper:#FFFDF6; }
+body{ background:var(--paper); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+h1,h2,h3,h4,.logo{ font-family:'Space Grotesk',system-ui,sans-serif; letter-spacing:-0.02em; }
+h1{ font-weight:700; }
+nav{ background:rgba(255,253,246,0.85)!important; border-bottom:1px solid var(--ink)!important; backdrop-filter:blur(8px); }
+.logo .tag{ background:var(--red); border-radius:3px; font-family:'IBM Plex Mono',monospace; }
+.nav-cta{ border-radius:4px!important; }
+/* eyebrow: squared mono label instead of teal pill */
+.eyebrow{ background:transparent!important; border:0!important; border-radius:0!important; padding:0!important; color:var(--red)!important; font-family:'IBM Plex Mono',monospace!important; font-weight:500; letter-spacing:0.12em!important; }
+/* h1 highlighter: thin red swash, no skew */
+h1 .hl{ color:inherit; }
+h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:0.06em!important; transform:none!important; opacity:0.85; }
+/* buttons: flat + squared */
+.btn{ border-radius:4px!important; box-shadow:none!important; font-family:'Space Grotesk',sans-serif; font-weight:600; transition:background .15s ease,color .15s ease,border-color .15s ease!important; }
+.btn:hover{ transform:none!important; }
+.btn-primary{ background:var(--ink)!important; color:#FFFDF6!important; box-shadow:none!important; }
+.btn-primary:hover{ background:var(--red)!important; color:#FFFDF6!important; }
+.btn-primary:active{ transform:none!important; box-shadow:none!important; }
+.btn-outline{ border:1px solid var(--ink)!important; }
+.btn-outline:hover{ background:var(--ink)!important; color:#FFFDF6!important; }
 </style>
 </head>
 <body>

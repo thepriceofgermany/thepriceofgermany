@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google Analytics (loaded only after cookie consent) -->
 <script src="/assets/consent.js" defer></script>
-<script src="/assets/newsletter.js?v=20261012b" defer></script>
+<script src="/assets/newsletter.js?v=20261027a" defer></script>
 <title>Study in Germany vs. USA: Is a US Degree Worth the Debt?</title>
 <meta name="description" content="Is a US degree worth the debt, or is nearly free study in Germany smarter? The real cost of Germany vs the USA, plus how a US degree and American universities in Germany actually fit in.">
 <meta property="og:title" content="Study in Germany vs. USA: Is a US Degree Worth the Debt?">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,16 +59,16 @@
 <meta property="og:url" content="https://thepriceofgermany.com/study-in-germany-vs-usa">
 <style>
   :root {
-    --cream: #FDF8F0;
+    --cream: #FFFDF6;
     --paper: #FFFDF6;
-    --ink: #23262B;
-    --ink-soft: #5B5F66;
-    --coral: #FF5A5F;
-    --coral-dark: #E1454A;
-    --teal: #1FA6A0;
-    --teal-dark: #14807B;
-    --yellow: #FFC857;
-    --line: #E7E0D2;
+    --ink: #121210;
+    --ink-soft: #67665F;
+    --coral: #D83A2E;
+    --coral-dark: #AE2E24;
+    --teal: #121210;
+    --teal-dark: #121210;
+    --yellow: #D83A2E;
+    --line: #E6E1D4;
   }
 
   * { box-sizing: border-box; }
@@ -78,9 +78,9 @@
     margin: 0;
     background: var(--cream);
     color: var(--ink);
-    font-family: 'Work Sans', sans-serif;
-    background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
-    background-size: 26px 26px;
+    font-family: 'Inter', sans-serif;
+    
+    
   }
 
   a { color: inherit; }
@@ -105,7 +105,7 @@
     margin: 0 auto;
   }
   .logo {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     font-size: 1.05rem;
     text-decoration: none;
@@ -116,7 +116,7 @@
   .logo .tag {
     background: var(--coral);
     color: #fff;
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     font-weight: 700;
     padding: 2px 7px;
@@ -137,7 +137,7 @@
   }
   .post-meta .eyebrow { margin-bottom: 0; }
   .post-date {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -145,7 +145,7 @@
     white-space: nowrap;
   }
   .eyebrow {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11.5px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -158,7 +158,7 @@
     margin-bottom: 20px;
   }
   h1 {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: clamp(2rem, 5vw, 2.8rem);
     line-height: 1.08;
@@ -173,7 +173,7 @@
     border-radius: 16px;
     overflow: hidden;
     border: 1.5px solid var(--line);
-    box-shadow: 0 2px 0 var(--line);
+    box-shadow: none;
     position: relative;
     padding-top: 56.25%;
     background: #000;
@@ -183,7 +183,7 @@
   /* ---------------- ARTICLE BODY ---------------- */
   article { padding: 24px 0 64px; }
   article h2 {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     font-size: 1.5rem;
     margin: 46px 0 16px;
@@ -199,10 +199,10 @@
     border-radius: 14px;
     padding: 22px 24px;
     margin: 26px 0;
-    box-shadow: 0 2px 0 var(--line);
+    box-shadow: none;
   }
   .payslip .compare-title {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 10.5px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -213,7 +213,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 13.5px;
     padding: 9px 0;
     border-top: 1.5px dashed var(--line);
@@ -226,7 +226,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     margin-top: 8px;
     padding-top: 12px;
     border-top: 1.5px solid var(--ink);
@@ -241,10 +241,10 @@
     border-radius: 14px;
     padding: 22px 24px;
     margin: 26px 0;
-    box-shadow: 0 2px 0 var(--line);
+    box-shadow: none;
   }
   .compare .compare-title {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 10.5px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -255,7 +255,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 13px;
     padding: 9px 0;
     border-top: 1.5px dashed var(--line);
@@ -273,7 +273,7 @@
     padding: 22px 22px 20px;
     margin: 30px 0;
     position: relative;
-    box-shadow: 0 2px 0 var(--line);
+    box-shadow: none;
   }
   .rec-hole {
     position: absolute; top: -8px; left: 22px;
@@ -283,7 +283,7 @@
     border-radius: 50%;
   }
   .rec-label {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -291,13 +291,13 @@
     margin-bottom: 8px;
     display: block;
   }
-  .rec-card h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; }
+  .rec-card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; }
   .rec-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
   .rec-btn {
     display: inline-flex; align-items: center; gap: 6px;
     background: var(--coral); color: #fff !important; text-decoration: none;
     font-weight: 600; font-size: 14px; padding: 10px 20px; border-radius: 8px;
-    box-shadow: 0 3px 0 var(--coral-dark);
+    box-shadow: none;
   }
   .rec-btn:hover { transform: translateY(-1px); }
 
@@ -306,7 +306,7 @@
   .action-list li:first-child { border-top: none; }
   .action-list li::before {
     content: counter(action);
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
     color: var(--coral);
@@ -316,7 +316,7 @@
   .action-list p { margin: 0; font-size: 15.5px; line-height: 1.65; }
 
   blockquote {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
     font-size: 1.25rem;
     line-height: 1.5;
@@ -327,7 +327,7 @@
   }
 
   .disclosure {
-    font-family: 'Space Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11.5px;
     color: var(--ink-soft);
     border-top: 1px solid var(--line);
@@ -348,10 +348,33 @@
     display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
     max-width: 760px; margin: 0 auto; padding: 0 24px;
   }
-  .footer-inner .brand { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--ink-soft); }
+  .footer-inner .brand { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--ink-soft); }
   .footer-links { display: flex; gap: 20px; font-size: 13.5px; }
   .footer-links a { text-decoration: none; color: var(--ink-soft); }
   .footer-links a:hover { color: var(--ink); }
+</style>
+<style id="index-skin">
+/* ---- The Index: modern grotesk reskin (overrides cartoon template) ---- */
+:root{ --red:#D83A2E; --red-dark:#AE2E24; --paper:#FFFDF6; }
+body{ background:var(--paper); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+h1,h2,h3,h4,.logo{ font-family:'Space Grotesk',system-ui,sans-serif; letter-spacing:-0.02em; }
+h1{ font-weight:700; }
+nav{ background:rgba(255,253,246,0.85)!important; border-bottom:1px solid var(--ink)!important; backdrop-filter:blur(8px); }
+.logo .tag{ background:var(--red); border-radius:3px; font-family:'IBM Plex Mono',monospace; }
+.nav-cta{ border-radius:4px!important; }
+/* eyebrow: squared mono label instead of teal pill */
+.eyebrow{ background:transparent!important; border:0!important; border-radius:0!important; padding:0!important; color:var(--red)!important; font-family:'IBM Plex Mono',monospace!important; font-weight:500; letter-spacing:0.12em!important; }
+/* h1 highlighter: thin red swash, no skew */
+h1 .hl{ color:inherit; }
+h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:0.06em!important; transform:none!important; opacity:0.85; }
+/* buttons: flat + squared */
+.btn{ border-radius:4px!important; box-shadow:none!important; font-family:'Space Grotesk',sans-serif; font-weight:600; transition:background .15s ease,color .15s ease,border-color .15s ease!important; }
+.btn:hover{ transform:none!important; }
+.btn-primary{ background:var(--ink)!important; color:#FFFDF6!important; box-shadow:none!important; }
+.btn-primary:hover{ background:var(--red)!important; color:#FFFDF6!important; }
+.btn-primary:active{ transform:none!important; box-shadow:none!important; }
+.btn-outline{ border:1px solid var(--ink)!important; }
+.btn-outline:hover{ background:var(--ink)!important; color:#FFFDF6!important; }
 </style>
 </head>
 <body>
@@ -471,14 +494,14 @@
 <!-- related:start -->
   <style>
     .related{max-width:1080px;margin:0 auto;padding:56px 24px 8px}
-    .related-title{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:1.5rem;color:var(--ink);margin:0 0 20px}
+    .related-title{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;font-size:1.5rem;color:var(--ink);margin:0 0 20px}
     .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
     .related-card{display:flex;flex-direction:column;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
     .related-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(35,38,43,.08);border-color:var(--coral)}
-    .related-topic{font-family:'Space Mono',ui-monospace,monospace;font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-dark)}
-    .related-card h3{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:1rem;line-height:1.25;color:var(--ink);margin:0}
-    .related-card p{font-family:'Work Sans',system-ui,sans-serif;font-size:.85rem;line-height:1.45;color:var(--ink-soft);margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-    .related-more{margin-top:auto;font-family:'Space Mono',ui-monospace,monospace;font-size:.7rem;letter-spacing:.06em;color:var(--coral)}
+    .related-topic{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-dark)}
+    .related-card h3{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;font-size:1rem;line-height:1.25;color:var(--ink);margin:0}
+    .related-card p{font-family:'Inter',system-ui,sans-serif;font-size:.85rem;line-height:1.45;color:var(--ink-soft);margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-more{margin-top:auto;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.7rem;letter-spacing:.06em;color:var(--coral)}
     @media(max-width:900px){.related-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:520px){.related-grid{grid-template-columns:1fr}}
   </style>
