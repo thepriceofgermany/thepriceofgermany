@@ -1,0 +1,35 @@
+NEWSLETTER FOR: Why Nobody Riots Over the German Pension Bill
+Post: https://thepriceofgermany.com/why-nobody-riots-over-the-german-pension
+Published: Oct 29, 2026
+
+=== COPY INTO MAILERLITE (Campaigns > Create campaign) ===
+
+Campaign name:   why-nobody-riots-over-the-german-pension
+Subject line:    Why Nobody Riots Over the German Pension Bill
+Preview text:    France rioted over a pension reform.
+From:            The Price of Germany <contact@thepriceofgermany.com>
+Send to:         group "Website subscribers"
+
+--- Drag and drop editor blocks ---
+Image URL:       https://i.ytimg.com/vi/bM69V4zV91A/maxresdefault.jpg
+Small label:     Pensions
+Headline:        Why Nobody Riots Over the German Pension Bill
+Body:            France rioted over a pension reform. Germany has the same problem and quietly pays. Here is where the money goes, who pays it, what other countries did, and what it means if you live and work here.
+Button 1 text:   Read the full breakdown
+Button 1 link:   https://thepriceofgermany.com/why-nobody-riots-over-the-german-pension?utm_source=newsletter&utm_medium=email&utm_campaign=why-nobody-riots-over-the-german-pension&utm_content=read
+Button 2 text:   Watch the video
+Button 2 link:   https://www.youtube.com/watch?v=bM69V4zV91A&utm_source=newsletter&utm_medium=email&utm_campaign=why-nobody-riots-over-the-german-pension&utm_content=watch
+Sign-off:        Thanks for reading, Justin
+
+--- Subject line alternatives ---
+Why Nobody Riots Over the German Pension Bill
+New: Why Nobody Riots Over the German Pension Bill
+France rioted over a pension reform.
+
+=== BEFORE YOU SEND ===
+1. Send a test email to yourself and open every link.
+2. Check the subject and preview text on your phone.
+3. Make sure the post is live on the site first (deployed).
+4. Schedule or send.
+
+If your MailerLite plan has the custom HTML editor, you can paste the contents of why-nobody-riots-over-the-german-pension.html instead of using the blocks above.

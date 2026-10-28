@@ -6,7 +6,17 @@
     <atom:link href="https://thepriceofgermany.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Videos, guides and cost breakdowns about life and money in Germany.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Oct 2026 22:33:46 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 23:16:23 GMT</lastBuildDate>
+    <item>
+      <title>Why Nobody Riots Over the German Pension Bill</title>
+      <link>https://thepriceofgermany.com/why-nobody-riots-over-the-german-pension</link>
+      <guid isPermaLink="true">https://thepriceofgermany.com/why-nobody-riots-over-the-german-pension</guid>
+      <pubDate>Thu, 29 Oct 2026 08:00:00 GMT</pubDate>
+      <category>Pensions</category>
+      <description>France rioted over a pension reform. Germany has the same problem and quietly pays. Here is where the money goes, who pays it, what other countries did, and what it means if you live and work here.</description>
+      <media:content url="https://i.ytimg.com/vi/bM69V4zV91A/maxresdefault.jpg" medium="image" />
+      <enclosure url="https://i.ytimg.com/vi/bM69V4zV91A/maxresdefault.jpg" type="image/jpeg" length="0" />
+    </item>
     <item>
       <title>Why Investing Is So Hard for Expats</title>
       <link>https://thepriceofgermany.com/investing-as-an-expat-in-germany</link>
@@ -296,16 +306,6 @@
       <description>Everyone says German uni is free. The real numbers: semester fees, health insurance, the blocked account, and the one catch that isn't money at all.</description>
       <media:content url="https://i.ytimg.com/vi/NKM6eLVZfjQ/maxresdefault.jpg" medium="image" />
       <enclosure url="https://i.ytimg.com/vi/NKM6eLVZfjQ/maxresdefault.jpg" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>The German Salary Trap: Why Your Gross Pay Is A Lie</title>
-      <link>https://thepriceofgermany.com/salary-in-germany-vs-usa</link>
-      <guid isPermaLink="true">https://thepriceofgermany.com/salary-in-germany-vs-usa</guid>
-      <pubDate>Sat, 01 Aug 2026 08:00:00 GMT</pubDate>
-      <category>Salary</category>
-      <description>A real €75,000 payslip broken down line by line, and why Mike's 53% take-home isn't as far behind Sarah's 77% in Texas as it looks.</description>
-      <media:content url="https://i.ytimg.com/vi/KNk8xvkgPmE/maxresdefault.jpg" medium="image" />
-      <enclosure url="https://i.ytimg.com/vi/KNk8xvkgPmE/maxresdefault.jpg" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>
