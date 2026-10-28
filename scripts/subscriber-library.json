@@ -1,0 +1,44 @@
+{
+  "slug": "subscriber-library-e2c38d15c199e51c",
+  "updated": "October 2026",
+  "guides": [
+    {
+      "title": "German Citizenship Checklist",
+      "desc": "Everything you need to apply for Einbürgerung, step by step, made for expats living in Germany.",
+      "file": "/downloads/german-citizenship-checklist-b2e8cf5038fd0f1f.pdf",
+      "btn": "Download the checklist",
+      "meta": "6 pages · Updated October 2026"
+    },
+    {
+      "title": "Tax Accounts Cheat Sheet",
+      "desc": "The five tax-advantaged accounts on one A4 page: bAV, Basisrente (Rürup), ETF savings plan, VL and the new Altersvorsorgedepot, with the German terms and the 2026 limits.",
+      "file": "/downloads/germany-tax-advantaged-accounts-cheat-sheet-c8577fea4917d42b.pdf",
+      "btn": "Download the cheat sheet",
+      "meta": "1 page · Figures for 2026"
+    },
+    {
+      "title": "Expat Investing Checklist",
+      "desc": "Investing in Germany on one A4 page: the 7 expat hurdles, the German tax basics for 2026, questions for your broker and tax adviser, and the extra traps for Americans.",
+      "file": "/downloads/investing-in-germany-expat-checklist-589ba014f7f02920.pdf",
+      "btn": "Download the checklist",
+      "meta": "1 page · Figures for 2026"
+    }
+  ],
+  "videos": [
+    {
+      "title": "Why Nobody Riots Over the German Pension Bill",
+      "post": "/why-nobody-riots-over-the-german-pension",
+      "video": "https://www.youtube.com/watch?v=bM69V4zV91A"
+    },
+    {
+      "title": "Why Investing Is So Hard for Expats",
+      "post": "/investing-as-an-expat-in-germany",
+      "video": "https://www.youtube.com/watch?v=go06TjIJwmQ"
+    },
+    {
+      "title": "Germany's New Retirement Account + 4 Others Nobody Explains",
+      "post": "/german-retirement-accounts-explained",
+      "video": "https://youtu.be/VNHyPbDfb2o"
+    }
+  ]
+}
