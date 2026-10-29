@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google Analytics (loaded only after cookie consent) -->
 <script src="/assets/consent.js" defer></script>
-<title>US vs Germany Cost of Living Calculator: Compare 40 Cities | The Price of Germany</title>
-<meta name="description" content="Pick a US city and a German city and see a real, category-by-category cost-of-living comparison: rent, groceries, healthcare, transport, utilities, and estimated take-home pay on your salary.">
-<meta property="og:title" content="US vs Germany Cost of Living Calculator">
-<meta property="og:description" content="Compare rent, groceries, healthcare, transport, utilities, and net take-home pay between any US city and any German city.">
+<title>German Cost of Living Calculator: Compare 40 Cities | The Price of Germany</title>
+<meta name="description" content="Pick two German cities and see a real, category-by-category cost-of-living comparison: rent, groceries, transport, utilities, and estimated take-home pay on a German salary.">
+<meta property="og:title" content="German Cost of Living Calculator">
+<meta property="og:description" content="Compare rent, groceries, transport, utilities, and take-home pay between any two German cities.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -168,6 +168,8 @@
   /* payslip (net pay) reused from post pages */
   .payslip-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 18px 0; }
   @media (max-width: 620px) { .payslip-pair { grid-template-columns: 1fr; } }
+  .payslip-single { margin: 18px 0; }
+  .payslip-single .payslip-solo { max-width: 420px; }
   .payslip {
     background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px;
     padding: 20px 20px; box-shadow: none;
@@ -283,14 +285,14 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
   <header class="tool-head">
     <div class="shell">
       <span class="eyebrow">Interactive tool</span>
-      <h1>US vs Germany <span class="hl">cost of living</span> calculator</h1>
-      <p class="dek">Pick the US city you know and a German city you are curious about. You will get a real, category-by-category breakdown: rent, groceries, healthcare, transport, utilities, and estimated take-home pay on your own salary.</p>
+      <h1>German <span class="hl">cost of living</span> calculator</h1>
+      <p class="dek">Pick two German cities and see how much each one really costs to live in. You will get a real, category-by-category breakdown: rent, groceries, transport, utilities, and estimated take-home pay on a German salary.</p>
     </div>
   </header>
 
   <section class="intro">
     <div class="shell">
-      <p>Most cost-of-living comparisons give you one vague number and call it a day. This one does not. It breaks the move down the way you would actually feel it: what you pay for a one-bedroom, what a full grocery cart costs, what healthcare really runs when it is a separate bill versus built into your paycheck, and how much of a gross salary you actually keep on each side of the Atlantic. The headline number is shareable, but the categories underneath it are where the real story lives.</p>
+      <p>Most cost-of-living comparisons give you one vague number and call it a day. This one does not. It breaks a German city down the way you would actually feel it: what you pay for a one-bedroom, what a full grocery cart costs, what getting around runs, and what the lights and heating add up to. The headline number is shareable, but the categories underneath it are where the real story lives, and they are where one German city pulls ahead of another.</p>
     </div>
   </section>
 
@@ -299,19 +301,19 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
       <form class="calc-form" id="calc-form">
         <div class="field-row">
           <div class="field">
-            <label for="sel-from"><span class="flag">🇺🇸</span> Your US city</label>
-            <div class="select-wrap"><select id="sel-from" aria-label="Your US city"></select></div>
+            <label for="sel-from"><span class="flag">🇩🇪</span> German city</label>
+            <div class="select-wrap"><select id="sel-from" aria-label="First German city"></select></div>
           </div>
           <div class="field">
-            <label for="sel-to"><span class="flag">🇩🇪</span> Compare to German city</label>
-            <div class="select-wrap"><select id="sel-to" aria-label="Compare to German city"></select></div>
+            <label for="sel-to"><span class="flag">🇩🇪</span> Compare to</label>
+            <div class="select-wrap"><select id="sel-to" aria-label="Second German city"></select></div>
           </div>
         </div>
         <div class="salary-row">
           <div class="salary-field">
             <label for="salary">Gross annual salary (optional, for take-home pay)</label>
-            <input class="salary-input" id="salary" type="number" inputmode="numeric" min="0" step="1000" placeholder="e.g. 75000">
-            <p class="salary-hint">Entered as US dollars for the US side and euros for the German side, so you compare the same headline number.</p>
+            <input class="salary-input" id="salary" type="number" inputmode="numeric" min="0" step="1000" placeholder="e.g. 65000">
+            <p class="salary-hint">Entered as euros. German income tax and social insurance are national, so take-home pay is the same in every city.</p>
           </div>
           <button type="button" class="copy-btn" id="copy-link">Copy share link</button>
         </div>
@@ -323,14 +325,13 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
     <div class="shell">
       <!-- CALC:DEFAULT start -->
       <div id="calc-results">
-<section class="cat-block headline" id="cat-headline"><p class="headline-line">A single person’s core monthly essentials cost <strong>$3,797</strong> in New York and about <strong>$1,704</strong> (€1,578) in Berlin.</p><p class="headline-sub">Living in Berlin costs <strong>about 55% less</strong> for the same rent-plus-groceries-plus-transport-plus-utilities basket. Healthcare and take-home pay differ structurally and are broken out below.</p></section>
-<section class="cat-block" id="cat-taxes"><h2>Taxes and net income</h2><p class="cat-blurb">Enter a gross annual salary and see estimated take-home pay in each place. This is the category that surprises Americans the most: German gross pay looks similar, but a much larger slice comes off the top, most of it mandatory insurance rather than tax.</p><div class="cmp salary-empty"><p>Enter a gross annual salary above to see estimated take-home pay in New York (USD) and Berlin (EUR).</p></div><div class="rec-card"><span class="rec-hole"></span><span class="rec-label">Recommended</span><h3>File your US taxes from abroad</h3><p>Americans in Germany still owe a US tax return every year, and it is easy to get wrong. This is the expat-focused filing service I would point you to for the Foreign Earned Income Exclusion, foreign tax credits, and staying compliant with the IRS from overseas.</p><a class="rec-btn" href="https://app.myexpattaxes.com/wizard?ref=fwefphge" target="_blank" rel="noopener sponsored">File with MyExpatTaxes →</a></div><div class="disclosure">DISCLOSURE: The link above is an affiliate link. If you sign up through it, I may earn a commission at no extra cost to you, it helps support the site.</div></section>
-<section class="cat-block" id="cat-housing"><h2>Housing</h2><p class="cat-blurb">Monthly rent for a one-bedroom in the city center, a one-bedroom outside the center, and a three-bedroom family apartment. German figures are cold rent (Kaltmiete), before heating and utilities.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">Monthly rent</span><span class="cmp-us head">New York</span><span class="cmp-de head">Berlin</span></div><div class="cmp-line"><span class="cmp-label">1-bed, city center</span><span class="cmp-us">$3,900</span><span class="cmp-de">€1,300</span></div><div class="cmp-line"><span class="cmp-label">1-bed, outside center</span><span class="cmp-us">$2,900</span><span class="cmp-de">€1,000</span></div><div class="cmp-line"><span class="cmp-label">3-bed family</span><span class="cmp-us">$6,800</span><span class="cmp-de">€2,200</span></div></div></section>
-<section class="cat-block" id="cat-groceries"><h2>Groceries</h2><p class="cat-blurb">Estimated monthly grocery spend for a single person and for a family of four, buying a normal mix of staples and fresh food.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">Monthly groceries</span><span class="cmp-us head">New York</span><span class="cmp-de head">Berlin</span></div><div class="cmp-line"><span class="cmp-label">Single person</span><span class="cmp-us">$450</span><span class="cmp-de">€280</span></div><div class="cmp-line"><span class="cmp-label">Family of four</span><span class="cmp-us">$1,100</span><span class="cmp-de">€700</span></div></div></section>
-<section class="cat-block" id="cat-healthcare"><h2>Healthcare</h2><p class="cat-blurb">The structural difference matters more than the number. In the US this is a separate, variable cost outside your paycheck: a premium plus a deductible when you actually get sick. In Germany public health insurance is about 14.6 percent of gross income, split between you and your employer, and it is already taken out before your net pay lands.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">What you pay directly</span><span class="cmp-us head">New York</span><span class="cmp-de head">Berlin</span></div><div class="cmp-line"><span class="cmp-label">Monthly premium</span><span class="cmp-us">$560</span><span class="cmp-de">Built into payroll</span></div><div class="cmp-line"><span class="cmp-label">Annual deductible</span><span class="cmp-us">$2,500</span><span class="cmp-de">None</span></div></div><p class="cat-note">In New York, that premium is money out of pocket on top of your paycheck, and the deductible is what you owe before insurance pays much of anything. In Berlin, public health insurance is about 14.6 percent of gross income, split with your employer, so it is already deducted before your net pay lands.</p></section>
-<section class="cat-block" id="cat-transport"><h2>Transportation</h2><p class="cat-blurb">Owning and running a car (insurance, fuel, registration, upkeep, averaged monthly) versus a monthly public-transit pass. In Germany the Deutschlandticket covers nationwide regional and local transit for one flat monthly price.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">Getting around</span><span class="cmp-us head">New York</span><span class="cmp-de head">Berlin</span></div><div class="cmp-line"><span class="cmp-label">Car ownership (all-in)</span><span class="cmp-us">$900/mo</span><span class="cmp-de">€450/mo</span></div><div class="cmp-line"><span class="cmp-label">Monthly transit pass</span><span class="cmp-us">$132</span><span class="cmp-de">€58 (Deutschlandticket)</span></div></div></section>
-<section class="cat-block" id="cat-utilities"><h2>Utilities</h2><p class="cat-blurb">Electricity, heating, and home internet for a typical apartment. German electricity is among the most expensive in Europe, which narrows the gap most Americans expect here.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">Monthly utilities</span><span class="cmp-us head">New York</span><span class="cmp-de head">Berlin</span></div><div class="cmp-line"><span class="cmp-label">Electricity</span><span class="cmp-us">$160</span><span class="cmp-de">€110</span></div><div class="cmp-line"><span class="cmp-label">Heating</span><span class="cmp-us">$90</span><span class="cmp-de">€90</span></div><div class="cmp-line"><span class="cmp-label">Home internet</span><span class="cmp-us">$65</span><span class="cmp-de">€40</span></div></div></section>
-<section class="cat-block" id="cat-context"><h2>Context notes</h2><ul class="context-list"><li>Figures are monthly unless stated, in local currency, converted at €1 ≈ $1.08 (rate set 2026-08-11).</li><li>These are informed estimates anchored to published indices and city rent data, not invoices. New York last checked 2026-08, Berlin last checked 2026-08.</li><li>German public health insurance bundles things Americans often pay extra for: no separate premium bill, no deductible, and dependents are covered on one contribution.</li><li>Net-pay figures use a simplified single-filer 2026 model and will differ from your real payslip. Always run a real offer through a proper calculator before you accept it.</li></ul></section>
+<section class="cat-block headline" id="cat-headline"><p class="headline-line">A single person’s core monthly essentials cost <strong>€1,578</strong> in Berlin and about <strong>€1,958</strong> in Munich.</p><p class="headline-sub">Living in Munich costs <strong>about 24% more</strong> than Berlin for the same rent-plus-groceries-plus-transport-plus-utilities basket.</p></section>
+<section class="cat-block" id="cat-housing"><h2>Housing</h2><p class="cat-blurb">Monthly rent for a one-bedroom in the city center, a one-bedroom outside the center, and a three-bedroom family apartment. Figures are cold rent (Kaltmiete), before heating and utilities.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">Monthly rent</span><span class="cmp-us head">Berlin</span><span class="cmp-de head">Munich</span></div><div class="cmp-line"><span class="cmp-label">1-bed, city center</span><span class="cmp-us">€1,300</span><span class="cmp-de">€1,700</span></div><div class="cmp-line"><span class="cmp-label">1-bed, outside center</span><span class="cmp-us">€1,000</span><span class="cmp-de">€1,350</span></div><div class="cmp-line"><span class="cmp-label">3-bed family</span><span class="cmp-us">€2,200</span><span class="cmp-de">€2,900</span></div></div></section>
+<section class="cat-block" id="cat-groceries"><h2>Groceries</h2><p class="cat-blurb">Estimated monthly grocery spend for a single person and for a family of four, buying a normal mix of staples and fresh food.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">Monthly groceries</span><span class="cmp-us head">Berlin</span><span class="cmp-de head">Munich</span></div><div class="cmp-line"><span class="cmp-label">Single person</span><span class="cmp-us">€280</span><span class="cmp-de">€300</span></div><div class="cmp-line"><span class="cmp-label">Family of four</span><span class="cmp-us">€700</span><span class="cmp-de">€760</span></div></div></section>
+<section class="cat-block" id="cat-transport"><h2>Transportation</h2><p class="cat-blurb">Owning and running a car (insurance, fuel, registration, upkeep, averaged monthly) versus a monthly public-transit pass. The Deutschlandticket is one flat nationwide price, so the pass is the same in every city; car costs vary a little.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">Getting around</span><span class="cmp-us head">Berlin</span><span class="cmp-de head">Munich</span></div><div class="cmp-line"><span class="cmp-label">Car ownership (all-in)</span><span class="cmp-us">€450/mo</span><span class="cmp-de">€470/mo</span></div><div class="cmp-line"><span class="cmp-label">Monthly transit pass</span><span class="cmp-us">€58 (Deutschlandticket)</span><span class="cmp-de">€58 (Deutschlandticket)</span></div></div></section>
+<section class="cat-block" id="cat-utilities"><h2>Utilities</h2><p class="cat-blurb">Electricity, heating, and home internet for a typical apartment.</p><div class="cmp"><div class="cmp-head"><span class="cmp-title">Monthly utilities</span><span class="cmp-us head">Berlin</span><span class="cmp-de head">Munich</span></div><div class="cmp-line"><span class="cmp-label">Electricity</span><span class="cmp-us">€110</span><span class="cmp-de">€115</span></div><div class="cmp-line"><span class="cmp-label">Heating</span><span class="cmp-us">€90</span><span class="cmp-de">€95</span></div><div class="cmp-line"><span class="cmp-label">Home internet</span><span class="cmp-us">€40</span><span class="cmp-de">€40</span></div></div></section>
+<section class="cat-block" id="cat-taxes"><h2>Taxes and net income</h2><p class="cat-blurb">Enter a gross annual salary and see estimated take-home pay. German income tax and social insurance are national, so this is the same wherever in Germany you live. A large slice comes off the top, most of it mandatory insurance rather than tax.</p><div class="cmp salary-empty"><p>Enter a gross annual salary above to see estimated take-home pay on a German payslip.</p></div><div class="rec-card"><span class="rec-hole"></span><span class="rec-label">Recommended</span><h3>Insurance built for expats in Germany</h3><p>A big slice of your German paycheck is mandatory insurance, and the rest is on you to arrange. For health, liability, life, and the other policies Germany expects you to carry, Feather is the English-language insurance service I point expats toward, so you can compare and sign up without wrestling German paperwork or a commission-driven sales agent.</p><a class="rec-btn" href="https://feather-insurance.com?utm_source=the-price-of-germany" target="_blank" rel="noopener sponsored">Check out Feather →</a></div><div class="disclosure">DISCLOSURE: The link above is an affiliate link. If you sign up through it, I may earn a commission at no extra cost to you, it helps support the site.</div></section>
+<section class="cat-block" id="cat-context"><h2>Context notes</h2><ul class="context-list"><li>Figures are monthly unless stated, in euros.</li><li>These are informed estimates anchored to published indices and city rent data, not invoices. Berlin last checked 2026-08, Munich last checked 2026-08.</li><li>German public health insurance is about 14.6 percent of gross income, split with your employer, and already deducted before your net pay lands. It does not change from city to city.</li><li>Net-pay figures use a simplified single-filer 2026 model and will differ from your real payslip. Always run a real offer through a proper calculator before you accept it.</li></ul></section>
       </div>
       <!-- CALC:DEFAULT end -->
     </div>
@@ -340,20 +341,20 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
     <div class="shell">
       <div class="methodology">
         <h2>How these numbers are estimated</h2>
-        <p>Every figure here is an informed estimate, not an invoice. We anchor each category to published cost-of-living indices and to real city rent data, then review the outliers by hand so a cheap city reads cheap and an expensive one reads expensive. US figures are in dollars, German figures in euros, and the headline converts between them at a fixed rate set on the data date. Each city carries the month it was last checked, shown in the context notes, because prices go stale.</p>
-        <p>The take-home pay figures use a simplified 2026 single-filer tax model: US federal brackets plus FICA plus an effective state and local rate, and German income tax plus the solidarity surcharge plus the mandatory social-insurance contributions. They will not match your exact payslip, so treat them as a realistic ballpark and always run a real offer through a proper calculator before you accept it.</p>
-        <p class="attr">Data sources: WhereNext (CC BY 4.0), Destatis, U.S. Bureau of Labor Statistics and Census.</p>
+        <p>Every figure here is an informed estimate, not an invoice. We anchor each category to published cost-of-living indices and to real city rent data, then review the outliers by hand so a cheap city reads cheap and an expensive one reads expensive. All figures are in euros. Each city carries the month it was last checked, shown in the context notes, because prices go stale.</p>
+        <p>The take-home pay figures use a simplified 2026 single-filer tax model: German income tax plus the solidarity surcharge plus the mandatory social-insurance contributions. Income tax and social insurance are set nationally, so take-home pay does not change from city to city. The figures will not match your exact payslip, so treat them as a realistic ballpark and always run a real offer through a proper calculator before you accept it.</p>
+        <p class="attr">Data sources: WhereNext (CC BY 4.0), Destatis.</p>
       </div>
 
       <div class="popular">
         <h2>Popular comparisons</h2>
         <ul>
-          <li><a href="/cost-of-living-calculator?from=new-york-ny&amp;to=berlin">New York vs Berlin</a></li>
-          <li><a href="/cost-of-living-calculator?from=san-francisco-ca&amp;to=munich">San Francisco vs Munich</a></li>
-          <li><a href="/cost-of-living-calculator?from=chicago-il&amp;to=leipzig">Chicago vs Leipzig</a></li>
-          <li><a href="/cost-of-living-calculator?from=san-francisco-ca&amp;to=berlin">San Francisco vs Berlin</a></li>
-          <li><a href="/cost-of-living-calculator?from=new-york-ny&amp;to=munich">New York vs Munich</a></li>
-          <li><a href="/cost-of-living-calculator?from=chicago-il&amp;to=berlin">Chicago vs Berlin</a></li>
+          <li><a href="/cost-of-living-calculator?from=berlin&amp;to=munich">Berlin vs Munich</a></li>
+          <li><a href="/cost-of-living-calculator?from=berlin&amp;to=leipzig">Berlin vs Leipzig</a></li>
+          <li><a href="/cost-of-living-calculator?from=munich&amp;to=hamburg">Munich vs Hamburg</a></li>
+          <li><a href="/cost-of-living-calculator?from=frankfurt-am-main&amp;to=berlin">Frankfurt vs Berlin</a></li>
+          <li><a href="/cost-of-living-calculator?from=cologne&amp;to=dusseldorf">Cologne vs Dusseldorf</a></li>
+          <li><a href="/cost-of-living-calculator?from=leipzig&amp;to=dresden">Leipzig vs Dresden</a></li>
         </ul>
       </div>
     </div>
