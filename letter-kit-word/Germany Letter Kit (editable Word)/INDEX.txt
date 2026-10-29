@@ -1,0 +1,30 @@
+THE GERMANY LETTER KIT — EDITABLE WORD LETTERS (25)
+German-only, fill-in letters. Open the one you need, replace the
+highlighted [blanks], then print or send. Use the PDF for the
+English translation, the 'Watch out' notes and the phrase bank.
+
+01  [Housing]  Mängelanzeige an den Vermieter — Report a defect to your landlord
+02  [Housing]  Kündigung des Mietvertrags — End your lease
+03  [Housing]  Anforderung der Belege zur Nebenkostenabrechnung — Request the bills documents
+04  [Housing]  Widerspruch gegen die Nebenkostenabrechnung — Dispute the utilities bill
+05  [Housing]  Antrag auf Erlaubnis zur Untervermietung — Ask permission to sublet
+06  [Housing]  Rückforderung der Mietkaution — Ask for your deposit back
+07  [Work]  Krankmeldung an den Arbeitgeber — Sick notice to your employer
+08  [Work]  Kündigung des Arbeitsverhältnisses — Resign from your job
+09  [Work]  Urlaubsantrag — Vacation request
+10  [Work]  Bitte um ein Arbeitszeugnis — Request a reference letter
+11  [Work]  Bitte um eine Gehaltserhöhung — Ask for a raise
+12  [Insurance and contracts]  Allgemeine Kündigung — Cancel a contract (phone, internet, gym)
+13  [Insurance and contracts]  Sonderkündigung nach Preiserhöhung — Cancel after a price increase
+14  [Insurance and contracts]  Kostenerstattung von der Krankenkasse — Reimbursement from health insurance
+15  [Insurance and contracts]  Schadensmeldung an die Versicherung — Report a claim
+16  [School and Kita]  Entschuldigung für die Schule — Excuse your child from school
+17  [School and Kita]  Anfrage nach einem Kita-Platz — Ask about a daycare place
+18  [School and Kita]  Antrag auf Beurlaubung vom Unterricht — Request time off school
+19  [Complaints and authorities]  Reklamation eines mangelhaften Produkts — Complain about a defective product
+20  [Complaints and authorities]  Widerspruch gegen einen Bescheid — Appeal an official decision
+21  [Complaints and authorities]  Terminanfrage bei einer Behörde — Ask for an appointment
+22  [Complaints and authorities]  Widerspruch gegen eine Mahnung — Dispute a payment reminder
+23  [Complaints and authorities]  Einspruch gegen einen Bußgeldbescheid — Contest a fine
+24  [Complaints and authorities]  Bitte um Fristverlängerung — Ask for a deadline extension
+25  [Complaints and authorities]  Förmliche Beschwerde — Formal complaint
