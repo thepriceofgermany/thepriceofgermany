@@ -6,7 +6,7 @@
   'use strict';
 
   var DATA = null, renderer = null;
-  var DEFAULT_FROM = 'new-york-ny', DEFAULT_TO = 'berlin';
+  var DEFAULT_FROM = 'berlin', DEFAULT_TO = 'munich';
 
   function esc(s) {
     return String(s).replace(/[&<>"]/g, function (c) {
@@ -19,8 +19,7 @@
       return cities[a].name.localeCompare(cities[b].name);
     });
     sel.innerHTML = keys.map(function (k) {
-      var label = cities[k].name + (cities[k].state ? ', ' + cities[k].state : '');
-      return '<option value="' + k + '"' + (k === selected ? ' selected' : '') + '>' + esc(label) + '</option>';
+      return '<option value="' + k + '"' + (k === selected ? ' selected' : '') + '>' + esc(cities[k].name) + '</option>';
     }).join('');
   }
 
@@ -52,10 +51,10 @@
     var params = new URLSearchParams(location.search);
     var from = params.get('from'), to = params.get('to');
     var salary = parseInt(params.get('salary'), 10) || '';
-    if (!DATA.usCities[from]) from = DEFAULT_FROM;
+    if (!DATA.deCities[from]) from = DEFAULT_FROM;
     if (!DATA.deCities[to]) to = DEFAULT_TO;
 
-    fillSelect(document.getElementById('sel-from'), DATA.usCities, from);
+    fillSelect(document.getElementById('sel-from'), DATA.deCities, from);
     fillSelect(document.getElementById('sel-to'), DATA.deCities, to);
     if (salary) document.getElementById('salary').value = salary;
 

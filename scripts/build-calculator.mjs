@@ -13,8 +13,8 @@ const PAGE = path.join(SITE, 'cost-of-living-calculator.html');
 const RENDER = path.join(SITE, 'assets', 'calc-render.js');
 const DATA_FILE = path.join(SITE, 'assets', 'cost-data.json');
 
-const DEFAULT_FROM = 'new-york-ny';
-const DEFAULT_TO = 'berlin';
+const DEFAULT_FROM = 'berlin';
+const DEFAULT_TO = 'munich';
 const START = '<!-- CALC:DEFAULT start -->';
 const END = '<!-- CALC:DEFAULT end -->';
 
@@ -40,4 +40,4 @@ html = html.slice(0, startIdx) + block + html.slice(endIdx + END.length);
 fs.writeFileSync(PAGE, html);
 
 const emdash = /[–—]/.test(resultsHTML);
-console.log(`calculator default baked: ${DATA.usCities[DEFAULT_FROM].name} vs ${DATA.deCities[DEFAULT_TO].name} (${resultsHTML.length} chars)${emdash ? ' [WARN: en/em dash in output]' : ''}`);
+console.log(`calculator default baked: ${DATA.deCities[DEFAULT_FROM].name} vs ${DATA.deCities[DEFAULT_TO].name} (${resultsHTML.length} chars)${emdash ? ' [WARN: en/em dash in output]' : ''}`);
