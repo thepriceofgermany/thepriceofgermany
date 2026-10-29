@@ -75,7 +75,7 @@
     update();
   }
 
-  fetch('/assets/cost-data.json')
+  fetch('/assets/cost-data.json?v=2')
     .then(function (r) { return r.json(); })
     .then(function (d) {
       DATA = d;
