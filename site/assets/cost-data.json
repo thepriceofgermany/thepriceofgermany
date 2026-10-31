@@ -14,7 +14,12 @@
     {
       "id": "headline",
       "label": "Headline",
-      "blurb": "One shareable top-line: what a comparable single-person month of essentials costs in each city."
+      "blurb": "One shareable top-line: what your household takes home and what is left after core costs in this city."
+    },
+    {
+      "id": "costs",
+      "label": "Monthly living costs",
+      "blurb": "The core monthly basket for your household in this city: rent, groceries, getting around, and utilities. Rent is the figure you chose; groceries scale with household size."
     },
     {
       "id": "housing",
@@ -38,8 +43,8 @@
     },
     {
       "id": "taxes",
-      "label": "Taxes and net income",
-      "blurb": "Enter a gross annual salary and see estimated take-home pay. German income tax and social insurance are national, so this is the same wherever in Germany you live. A large slice comes off the top, most of it mandatory insurance rather than tax."
+      "label": "Take-home pay",
+      "blurb": "What actually lands in your account each month after German income tax, the solidarity surcharge, and mandatory social insurance. Income tax and social insurance are national, so this is the same wherever in Germany you live. A large slice comes off the top, most of it mandatory insurance rather than tax."
     },
     {
       "id": "context",

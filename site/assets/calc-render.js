@@ -12,14 +12,6 @@
    * adds the disclosure line. One slot per category id.                  *
    * ------------------------------------------------------------------ */
   var RESOURCE_SLOTS = {
-    housing: {
-      label: 'Recommended',
-      heading: 'Find a place before you land',
-      blurb: 'Housing is the hardest thing to sort out from abroad. This is where a relocation or apartment-search resource goes.',
-      ctaText: 'Browse housing help',
-      href: '',
-      affiliate: false
-    },
     taxes: {
       label: 'Recommended',
       heading: 'Insurance built for expats in Germany',
@@ -29,6 +21,10 @@
       affiliate: true
     }
   };
+
+  /* 2026-approx constants used by the net-pay model. */
+  var KINDERGELD_MONTHLY = 255;   // per child, 2026
+  var CHURCH_TAX_RATE = 0.09;     // 9% of income tax (most states)
 
   /* ------------------------------ helpers ------------------------------ */
   function eur(n) { return '€' + Math.round(n).toLocaleString('en-US'); }
@@ -40,7 +36,7 @@
   }
 
   /* --------------------------- net-pay model --------------------------- */
-  // German income tax, 2026-approx piecewise formula (single, tax class I).
+  // German income tax, 2026-approx piecewise formula on taxable income (zvE).
   function deIncomeTax(zvE) {
     if (zvE <= 12096) return 0;
     if (zvE <= 17443) { var y = (zvE - 12096) / 10000; return (932.30 * y + 1400) * y; }
@@ -48,21 +44,71 @@
     if (zvE <= 277825) return 0.42 * zvE - 10911.92;
     return 0.45 * zvE - 19246.67;
   }
-  function germanNet(gross) {
-    var tax = deIncomeTax(gross);
-    var soliThreshold = 19950;
-    var soli = tax <= soliThreshold ? 0 : Math.min(0.055 * tax, 0.119 * (tax - soliThreshold));
+
+  // Employee-side social insurance on one person's own gross wage.
+  function socialInsurance(gross, childless) {
     var pensionUnempCeil = 96600, healthCareCeil = 66150;
     var pension = 0.093 * Math.min(gross, pensionUnempCeil);
     var unemployment = 0.013 * Math.min(gross, pensionUnempCeil);
     var health = 0.0855 * Math.min(gross, healthCareCeil);
-    var care = 0.018 * Math.min(gross, healthCareCeil);
-    var social = pension + unemployment + health + care;
-    var net = gross - tax - soli - social;
+    // Long-term care: 1.8% employee share, +0.6% surcharge if childless (23+).
+    var careRate = childless ? 0.024 : 0.018;
+    var care = careRate * Math.min(gross, healthCareCeil);
     return {
-      currency: 'eur', gross: gross, incomeTax: tax, soli: soli,
-      social: social, health: health, pension: pension, care: care,
-      unemployment: unemployment, net: net, pctNet: (net / gross) * 100
+      pension: pension, unemployment: unemployment, health: health, care: care,
+      total: pension + unemployment + health + care
+    };
+  }
+
+  // Full household model. Returns annual + monthly figures.
+  //   p = { income, married, spouseIncome, children, churchTax }
+  function householdNet(p) {
+    var income = Math.max(0, p.income || 0);
+    var married = !!p.married;
+    var spouse = married ? Math.max(0, p.spouseIncome || 0) : 0;
+    var children = Math.max(0, p.children || 0);
+    var childless = children === 0;
+
+    // Income tax: Ehegattensplitting for married couples, otherwise class I.
+    var incomeTax;
+    if (married) {
+      incomeTax = 2 * deIncomeTax((income + spouse) / 2);
+    } else {
+      incomeTax = deIncomeTax(income);
+    }
+
+    // Solidarity surcharge: threshold doubles for married filers.
+    var soliThreshold = married ? 39900 : 19950;
+    var soli = incomeTax <= soliThreshold
+      ? 0
+      : Math.min(0.055 * incomeTax, 0.119 * (incomeTax - soliThreshold));
+
+    var church = p.churchTax ? CHURCH_TAX_RATE * incomeTax : 0;
+
+    // Social insurance is per-earner on each person's own gross.
+    var socA = socialInsurance(income, childless);
+    var socB = married && spouse > 0 ? socialInsurance(spouse, childless)
+      : { pension: 0, unemployment: 0, health: 0, care: 0, total: 0 };
+    var social = socA.total + socB.total;
+
+    var grossTotal = income + spouse;
+    var net = grossTotal - incomeTax - soli - church - social;
+    var kindergeldYear = children * KINDERGELD_MONTHLY * 12;
+    var takeHome = net + kindergeldYear;
+
+    return {
+      married: married, children: children, churchTax: !!p.churchTax,
+      gross: grossTotal, grossMonthly: grossTotal / 12,
+      incomeTax: incomeTax, soli: soli, church: church,
+      social: social,
+      pension: socA.pension + socB.pension,
+      unemployment: socA.unemployment + socB.unemployment,
+      health: socA.health + socB.health,
+      care: socA.care + socB.care,
+      net: net, netMonthly: net / 12,
+      kindergeldMonthly: children * KINDERGELD_MONTHLY,
+      takeHome: takeHome, takeHomeMonthly: takeHome / 12,
+      pctNet: grossTotal > 0 ? (net / grossTotal) * 100 : 0
     };
   }
 
@@ -72,9 +118,21 @@
       var c = (DATA.categories || []).filter(function (x) { return x.id === id; })[0];
       return c ? c.blurb : '';
     }
-    function basket(city) {
-      return city.housing.outside1br + city.groceriesSingle + city.transport.transitPass +
-        city.utilities.electricity + city.utilities.heating + city.utilities.internet;
+    var HOUSING_LABELS = {
+      center1br: '1-bedroom, city center',
+      outside1br: '1-bedroom, outside center',
+      family3br: '3-bedroom family apartment'
+    };
+    function rentFor(city, housing) {
+      var h = city.housing || {};
+      return h[housing] != null ? h[housing] : h.outside1br;
+    }
+    // Groceries scale between the single (1 person) and family-of-four points.
+    function groceriesFor(city, people) {
+      var single = city.groceriesSingle, family = city.groceriesFamily;
+      var n = Math.max(1, people);
+      if (n >= 4) return family;
+      return single + (n - 1) * (family - single) / 3;
     }
     function slotHTML(id) {
       var s = RESOURCE_SLOTS[id];
@@ -88,15 +146,10 @@
         '<a class="rec-btn" href="' + esc(s.href) + '" target="_blank" rel="noopener sponsored">' +
         esc(s.ctaText) + ' →</a></div>' + disclosure;
     }
-    function row2(label, aText, bText) {
-      return '<div class="cmp-line"><span class="cmp-label">' + esc(label) + '</span>' +
-        '<span class="cmp-us">' + aText + '</span>' +
-        '<span class="cmp-de">' + bText + '</span></div>';
-    }
-    function compareBox(title, aName, bName, rowsHTML) {
-      return '<div class="cmp"><div class="cmp-head"><span class="cmp-title">' + esc(title) + '</span>' +
-        '<span class="cmp-us head">' + esc(aName) + '</span>' +
-        '<span class="cmp-de head">' + esc(bName) + '</span></div>' + rowsHTML + '</div>';
+    function costRow(label, value, note) {
+      return '<div class="cost-line"><span class="cost-label">' + esc(label) +
+        (note ? ' <span class="cost-note">' + esc(note) + '</span>' : '') +
+        '</span><span class="cost-value">' + value + '</span></div>';
     }
     function pRow(label, value) {
       return '<div class="payslip-row"><span class="label">' + esc(label) + '</span><span class="value">' + value + '</span></div>';
@@ -104,78 +157,113 @@
     function pTotal(label, value) {
       return '<div class="payslip-total"><span>' + esc(label) + '</span><span class="value">' + value + '</span></div>';
     }
-    function netPayHTML(salary) {
-      if (!salary) {
-        return '<div class="cmp salary-empty"><p>Enter a gross annual salary above to see estimated take-home pay on a German payslip.</p></div>';
-      }
-      var d = germanNet(salary);
-      var box = '<div class="payslip payslip-solo"><div class="compare-title">' + eur(salary) + ' gross · Germany</div>' +
-        pRow('Income tax + solidarity surcharge', eur(d.incomeTax + d.soli)) +
-        pRow('Pension + unemployment insurance', eur(d.pension + d.unemployment)) +
-        pRow('Health + long-term care insurance', eur(d.health + d.care)) +
-        pTotal('Take-home', eur(d.net) + ' (' + pct(d.pctNet) + ')') + '</div>';
-      return '<div class="payslip-single">' + box + '</div>' +
-        '<p class="cat-note">German income tax and social insurance are set nationally, so your take-home pay is the same in every city here. A large part of the deductions is mandatory insurance (pension, health, care, unemployment) rather than tax.</p>';
-    }
 
-    function renderResults(fromKey, toKey, salary) {
-      var a = DATA.deCities[fromKey], b = DATA.deCities[toKey];
-      if (!a || !b) return '<p>Pick two German cities to compare.</p>';
-      var aB = basket(a), bB = basket(b);
-      var ratio = (bB / aB) * 100;
+    // input: { city, income, married, spouseIncome, children, housing, transport, church }
+    function renderResults(input) {
+      input = input || {};
+      var city = DATA.deCities[input.city];
+      if (!city) return '<p>Pick a German city to see your estimate.</p>';
+
+      var married = !!input.married;
+      var children = Math.max(0, input.children || 0);
+      var people = (married ? 2 : 1) + children;
+      var housing = HOUSING_LABELS[input.housing] ? input.housing
+        : (people >= 3 ? 'family3br' : 'outside1br');
+      var useCar = input.transport === 'car';
+
+      var rent = rentFor(city, housing);
+      var groceries = groceriesFor(city, people);
+      var transport = useCar ? city.transport.carMonthly : city.transport.transitPass;
+      var utilities = city.utilities.electricity + city.utilities.heating + city.utilities.internet;
+      var living = rent + groceries + transport + utilities;
+
+      var income = Math.max(0, input.income || 0);
+      var hasIncome = income > 0;
+      var net = householdNet({
+        income: income, married: married, spouseIncome: input.spouseIncome,
+        children: children, churchTax: input.church
+      });
+
+      var householdLabel = married
+        ? 'a couple' + (children ? ' with ' + children + (children === 1 ? ' child' : ' children') : '')
+        : (children ? 'a single parent with ' + children + (children === 1 ? ' child' : ' children') : 'a single person');
+
       var out = [];
 
-      var verdict = ratio < 100 ? 'about ' + pct(100 - ratio) + ' less' : 'about ' + pct(ratio - 100) + ' more';
-      out.push('<section class="cat-block headline" id="cat-headline">' +
-        '<p class="headline-line">A single person’s core monthly essentials cost <strong>' +
-        eur(aB) + '</strong> in ' + esc(a.name) + ' and about <strong>' + eur(bB) +
-        '</strong> in ' + esc(b.name) + '.</p>' +
-        '<p class="headline-sub">Living in ' + esc(b.name) + ' costs <strong>' + verdict +
-        '</strong> than ' + esc(a.name) + ' for the same rent-plus-groceries-plus-transport-plus-utilities basket.</p>' +
+      /* ---------- headline / bottom line ---------- */
+      if (hasIncome) {
+        var leftover = net.takeHomeMonthly - living;
+        var verdict = leftover >= 0
+          ? 'leaves about <strong>' + eur(leftover) + ' a month</strong> after these core costs'
+          : 'falls about <strong>' + eur(-leftover) + ' a month short</strong> of these core costs';
+        out.push('<section class="cat-block headline" id="cat-headline">' +
+          '<p class="headline-line">In <strong>' + esc(city.name) + '</strong>, ' + esc(householdLabel) +
+          ' on <strong>' + eur(net.gross) + '</strong> gross takes home about <strong>' +
+          eur(net.takeHomeMonthly) + ' a month</strong>.</p>' +
+          '<p class="headline-sub">Against roughly <strong>' + eur(living) +
+          '</strong> in core monthly costs, that ' + verdict + '.</p>' +
+          '</section>');
+      } else {
+        out.push('<section class="cat-block headline" id="cat-headline">' +
+          '<p class="headline-line">Core monthly essentials for ' + esc(householdLabel) +
+          ' in <strong>' + esc(city.name) + '</strong> come to about <strong>' + eur(living) + '</strong>.</p>' +
+          '<p class="headline-sub">Add your gross annual income above to see estimated take-home pay and what is left each month.</p>' +
+          '</section>');
+      }
+
+      /* ---------- take-home pay ---------- */
+      out.push('<section class="cat-block" id="cat-taxes"><h2>Take-home pay</h2>' +
+        '<p class="cat-blurb">' + esc(catBlurb('taxes')) + '</p>' +
+        netPayHTML(net, hasIncome) + slotHTML('taxes') + '</section>');
+
+      /* ---------- monthly living costs ---------- */
+      var carNote = useCar ? 'car, all-in' : 'Deutschlandticket';
+      out.push('<section class="cat-block" id="cat-costs"><h2>Monthly living costs</h2>' +
+        '<p class="cat-blurb">' + esc(catBlurb('costs')) + '</p>' +
+        '<div class="cost-box">' +
+        costRow('Rent', eur(rent), HOUSING_LABELS[housing]) +
+        costRow('Groceries', eur(groceries), people + (people === 1 ? ' person' : ' people')) +
+        costRow('Transport', eur(transport), carNote) +
+        costRow('Utilities', eur(utilities), 'electricity, heating, internet') +
+        '<div class="cost-total"><span>Core total</span><span class="cost-value">' + eur(living) + '/mo</span></div>' +
+        '</div>' +
+        '<p class="cat-note">Rent is cold rent (Kaltmiete); heating and other utilities are listed separately. Groceries scale between a single person and a family of four. This is a core basket, not a full budget: it leaves out eating out, childcare, insurance premiums, and savings.</p>' +
         '</section>');
 
-      out.push('<section class="cat-block" id="cat-housing"><h2>Housing</h2>' +
-        '<p class="cat-blurb">' + esc(catBlurb('housing')) + '</p>' +
-        compareBox('Monthly rent', a.name, b.name,
-          row2('1-bed, city center', eur(a.housing.center1br), eur(b.housing.center1br)) +
-          row2('1-bed, outside center', eur(a.housing.outside1br), eur(b.housing.outside1br)) +
-          row2('3-bed family', eur(a.housing.family3br), eur(b.housing.family3br))) +
-        slotHTML('housing') + '</section>');
-
-      out.push('<section class="cat-block" id="cat-groceries"><h2>Groceries</h2>' +
-        '<p class="cat-blurb">' + esc(catBlurb('groceries')) + '</p>' +
-        compareBox('Monthly groceries', a.name, b.name,
-          row2('Single person', eur(a.groceriesSingle), eur(b.groceriesSingle)) +
-          row2('Family of four', eur(a.groceriesFamily), eur(b.groceriesFamily))) +
-        '</section>');
-
-      out.push('<section class="cat-block" id="cat-transport"><h2>Transportation</h2>' +
-        '<p class="cat-blurb">' + esc(catBlurb('transport')) + '</p>' +
-        compareBox('Getting around', a.name, b.name,
-          row2('Car ownership (all-in)', eur(a.transport.carMonthly) + '/mo', eur(b.transport.carMonthly) + '/mo') +
-          row2('Monthly transit pass', eur(a.transport.transitPass) + ' (Deutschlandticket)', eur(b.transport.transitPass) + ' (Deutschlandticket)')) +
-        '</section>');
-
-      out.push('<section class="cat-block" id="cat-utilities"><h2>Utilities</h2>' +
-        '<p class="cat-blurb">' + esc(catBlurb('utilities')) + '</p>' +
-        compareBox('Monthly utilities', a.name, b.name,
-          row2('Electricity', eur(a.utilities.electricity), eur(b.utilities.electricity)) +
-          row2('Heating', eur(a.utilities.heating), eur(b.utilities.heating)) +
-          row2('Home internet', eur(a.utilities.internet), eur(b.utilities.internet))) +
-        '</section>');
-
-      out.push('<section class="cat-block" id="cat-taxes"><h2>Taxes and net income</h2>' +
-        '<p class="cat-blurb">' + esc(catBlurb('taxes')) + '</p>' + netPayHTML(salary) +
-        slotHTML('taxes') + '</section>');
-
+      /* ---------- context ---------- */
       out.push('<section class="cat-block" id="cat-context"><h2>Context notes</h2><ul class="context-list">' +
-        '<li>Figures are monthly unless stated, in euros.</li>' +
-        '<li>These are informed estimates anchored to published indices and city rent data, not invoices. ' + esc(a.name) + ' last checked ' + esc(a.lastVerified) + ', ' + esc(b.name) + ' last checked ' + esc(b.lastVerified) + '.</li>' +
-        '<li>German public health insurance is about 14.6 percent of gross income, split with your employer, and already deducted before your net pay lands. It does not change from city to city.</li>' +
-        '<li>Net-pay figures use a simplified single-filer 2026 model and will differ from your real payslip. Always run a real offer through a proper calculator before you accept it.</li>' +
+        '<li>Figures are monthly unless stated, in euros. ' + esc(city.name) + ' last checked ' + esc(city.lastVerified) + '.</li>' +
+        '<li>City cost data is an informed estimate anchored to published indices and city rent data, not an invoice.</li>' +
+        '<li>Income tax and social insurance are set nationally, so take-home pay does not change from city to city; only your living costs do.</li>' +
+        (married ? '<li>Married couples are taxed with Ehegattensplitting, which is why a single high earner with a lower-earning spouse keeps more than two separate singles would.</li>' : '') +
+        (children ? '<li>Kindergeld of ' + eur(KINDERGELD_MONTHLY) + ' per child per month is added to take-home pay. A non-earning spouse and children are usually co-insured on public health insurance at no extra premium.</li>' : '') +
+        '<li>Net-pay figures use a simplified 2026 model (single filer or splitting) and will differ from your real payslip. Always run a real offer through a proper calculator before you accept it.</li>' +
         '</ul></section>');
 
       return out.join('\n');
+    }
+
+    function netPayHTML(net, hasIncome) {
+      if (!hasIncome) {
+        return '<div class="payslip salary-empty"><p>Enter a gross annual income above to see estimated take-home pay on a German payslip.</p></div>';
+      }
+      var grossRow = net.married
+        ? pRow('Household gross (monthly)', eur(net.grossMonthly))
+        : pRow('Gross (monthly)', eur(net.grossMonthly));
+      var kinder = net.kindergeldMonthly > 0
+        ? pRow('Kindergeld (' + net.children + (net.children === 1 ? ' child' : ' children') + ')', '+ ' + eur(net.kindergeldMonthly))
+        : '';
+      var church = net.church > 0 ? pRow('Church tax', eur(net.church / 12)) : '';
+      var box = '<div class="payslip payslip-solo"><div class="compare-title">' +
+        eur(net.gross) + ' gross · ' + (net.married ? 'couple' : 'single') + '</div>' +
+        grossRow +
+        pRow('Income tax + solidarity surcharge', eur((net.incomeTax + net.soli) / 12)) +
+        church +
+        pRow('Pension + unemployment insurance', eur((net.pension + net.unemployment) / 12)) +
+        pRow('Health + long-term care insurance', eur((net.health + net.care) / 12)) +
+        (kinder ? pRow('Net pay', eur(net.netMonthly)) + kinder : '') +
+        pTotal('Take-home', eur(net.takeHomeMonthly) + '/mo (' + pct(net.pctNet) + ' of gross)') + '</div>';
+      return '<div class="payslip-single">' + box + '</div>';
     }
 
     return { renderResults: renderResults };
@@ -184,6 +272,6 @@
   root.CalcRender = {
     RESOURCE_SLOTS: RESOURCE_SLOTS,
     makeRenderer: makeRenderer,
-    germanNet: germanNet
+    householdNet: householdNet
   };
 })(typeof globalThis !== 'undefined' ? globalThis : this);
