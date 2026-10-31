@@ -65,6 +65,9 @@
   }
   .back-link { font-size: 13.5px; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
   .back-link:hover { color: var(--ink); }
+  .nav-right { display: flex; align-items: center; gap: 22px; font-size: 13.5px; font-weight: 500; }
+  .nav-right a { color: var(--ink-soft); text-decoration: none; }
+  .nav-right a:hover { color: var(--ink); }
 
   /* ---------------- HEADER ---------------- */
   header.tool-head { padding: 52px 0 8px; }
@@ -302,7 +305,10 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
   <nav>
     <div class="nav-inner">
       <a class="logo" href="/">The Price of Germany <span class="tag">$ → €</span></a>
-      <a class="back-link" href="/#reports">All reports</a>
+      <div class="nav-right">
+        <a href="/calculators">Calculators</a>
+        <a href="/#reports">All reports</a>
+      </div>
     </div>
   </nav>
 
@@ -424,7 +430,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
       <div class="footer-links">
         <a href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">YouTube</a>
         <a href="/#reports">All reports</a>
-        <a href="/cost-of-living-calculator">Calculator</a>
+        <a href="/calculators">Calculators</a>
         <a href="/imprint">Imprint</a>
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>

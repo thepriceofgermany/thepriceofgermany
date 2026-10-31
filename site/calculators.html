@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics (loaded only after cookie consent) -->
+<script src="/assets/consent.js" defer></script>
+<title>Free Germany Calculators: Cost of Living & Mortgage | The Price of Germany</title>
+<meta name="description" content="Free, no-sign-up calculators for life in Germany: estimate your take-home pay and monthly living costs by city, and work out a German mortgage with a rent-vs-buy break-even.">
+<meta property="og:title" content="Germany Calculators">
+<meta property="og:description" content="Free calculators for life in Germany: cost of living by city, and a German mortgage calculator with a rent-vs-buy break-even.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://thepriceofgermany.com/calculators">
+<meta property="og:url" content="https://thepriceofgermany.com/calculators">
+<style>
+  :root {
+    --cream: #FFFDF6;
+    --paper: #FFFDF6;
+    --ink: #121210;
+    --ink-soft: #67665F;
+    --coral: #D83A2E;
+    --coral-dark: #AE2E24;
+    --yellow: #D83A2E;
+    --line: #E6E1D4;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+  }
+  a { color: inherit; }
+  .shell { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(255, 253, 246, 0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--ink);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 820px; margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.05rem;
+    text-decoration: none; display: flex; align-items: center; gap: 8px;
+  }
+  .logo .tag {
+    background: var(--coral); color: #fff; font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px;
+  }
+  .nav-right { display: flex; align-items: center; gap: 22px; font-size: 13.5px; font-weight: 500; }
+  .nav-right a { color: var(--ink-soft); text-decoration: none; }
+  .nav-right a:hover { color: var(--ink); }
+  .nav-right a.active { color: var(--ink); }
+
+  /* HEADER */
+  header.tool-head { padding: 52px 0 10px; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--coral); font-weight: 500;
+    display: inline-block; margin-bottom: 18px;
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.08; margin: 0 0 18px;
+    letter-spacing: -0.02em;
+  }
+  h1 .hl { position: relative; display: inline-block; }
+  h1 .hl::after {
+    content: ""; position: absolute; left: -2px; right: -2px; bottom: 0.06em;
+    height: 0.26em; background: var(--coral); z-index: -1; opacity: 0.85;
+  }
+  .dek { font-size: 1.1rem; color: var(--ink-soft); line-height: 1.6; margin: 0; max-width: 640px; }
+
+  /* CARDS */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 30px 0 10px; }
+  @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+  .calc-card {
+    display: flex; flex-direction: column; text-decoration: none; color: inherit;
+    background: var(--paper); border: 1.5px solid var(--line); border-radius: 16px;
+    padding: 24px 24px 22px; transition: border-color .15s ease, transform .15s ease;
+  }
+  .calc-card:hover { border-color: var(--coral); transform: translateY(-2px); }
+  .calc-card .kicker {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--coral); margin-bottom: 12px;
+  }
+  .calc-card h2 {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.35rem;
+    margin: 0 0 10px; letter-spacing: -0.01em;
+  }
+  .calc-card p { font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); margin: 0 0 18px; flex: 1; }
+  .calc-card .go {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; color: var(--ink);
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .calc-card:hover .go { color: var(--coral-dark); }
+  .calc-card ul { margin: 0 0 18px; padding-left: 18px; }
+  .calc-card li { font-size: 13.5px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 5px; }
+
+  .note { font-size: 14px; color: var(--ink-soft); line-height: 1.7; margin: 24px 0 0; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--line); padding: 36px 0 44px; margin-top: 40px; }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    max-width: 820px; margin: 0 auto; padding: 0 24px;
+  }
+  .footer-inner .brand { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--ink-soft); }
+  .footer-links { display: flex; gap: 20px; font-size: 13.5px; flex-wrap: wrap; }
+  .footer-links a { text-decoration: none; color: var(--ink-soft); }
+  .footer-links a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">The Price of Germany <span class="tag">$ &rarr; &euro;</span></a>
+      <div class="nav-right">
+        <a href="/calculators" class="active">Calculators</a>
+        <a href="/#reports">All reports</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="tool-head">
+    <div class="shell">
+      <span class="eyebrow">Free tools</span>
+      <h1>Germany <span class="hl">calculators</span></h1>
+      <p class="dek">Free to use, no sign-up, no email. Straightforward tools for the money questions that come with living in Germany &mdash; built the same way as the reports: honest numbers, clear assumptions.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="shell">
+      <div class="cards">
+
+        <a class="calc-card" href="/cost-of-living-calculator">
+          <span class="kicker">Cost of living</span>
+          <h2>Cost of Living Calculator</h2>
+          <p>Pick a German city and add your income and household to estimate your take-home pay after German taxes, plus rent, groceries, transport, and utilities &mdash; and what is left each month.</p>
+          <ul>
+            <li>Net pay after income tax and social insurance</li>
+            <li>Real rent, groceries, transport and utility costs by city</li>
+            <li>Single, married, and family scenarios</li>
+          </ul>
+          <span class="go">Open the calculator &rarr;</span>
+        </a>
+
+        <a class="calc-card" href="/mortgage-calculator">
+          <span class="kicker">Buying a home</span>
+          <h2>Mortgage Calculator</h2>
+          <p>Work out your real monthly payment on a German mortgage, including the closing costs you pay on top of the price and what you still owe when the fixed-rate period ends &mdash; plus a rent-vs-buy break-even.</p>
+          <ul>
+            <li>Monthly Rate, closing costs and loan-to-value</li>
+            <li>Remaining debt after your Zinsbindung</li>
+            <li>Rent-vs-buy break-even for current renters</li>
+          </ul>
+          <span class="go">Open the calculator &rarr;</span>
+        </a>
+
+      </div>
+      <p class="note">Every calculator gives an informed estimate, not financial advice or an offer from a bank. Each one lists the assumptions behind its numbers, so you can see exactly what goes in. Run any real figure through a bank or tax adviser before you act on it.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="brand">thepriceofgermany.com</span>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">YouTube</a>
+        <a href="/#reports">All reports</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/imprint">Imprint</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/refund">Refunds</a>
+        <a href="mailto:contact@thepriceofgermany.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
