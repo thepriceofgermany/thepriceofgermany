@@ -432,7 +432,7 @@
           <button type="button" class="pdf-gate-close" id="pdf-gate-close" aria-label="Close">&times;</button>
           <span class="rec-label">Subscriber tool</span>
           <h3>Subscribe to download your PDF</h3>
-          <p>Your estimate is free &mdash; join the newsletter and your personalized PDF unlocks right here on the page. You&rsquo;ll also get new Germany cost breakdowns by email. No spam, unsubscribe any time.</p>
+          <p>Your estimate is free &mdash; join the newsletter and confirm your email, and your personalized PDF opens automatically back here. You&rsquo;ll also get new Germany cost breakdowns by email. No spam, unsubscribe any time.</p>
           <div class="ml-embedded" data-form="Fszcvh"></div>
           <p class="pdf-fallback" id="pdf-fallback" hidden>Having trouble with the signup form (an ad or tracking blocker can hide it)? You can also subscribe on the <a href="/free-guides">free guides page</a>, then come back here.</p>
         </div>
@@ -874,18 +874,46 @@
   </script>
 
   <script>
-  // Save-as-PDF, gated behind a MailerLite subscribe. The PDF is the browser's
-  // own "Save as PDF" over a print stylesheet, so nothing leaves the device.
+  // Save-as-PDF, gated behind a MailerLite subscribe with double opt-in.
+  // The PDF only unlocks once the visitor CONFIRMS their email: MailerLite's
+  // confirmation link returns them to /mortgage-calculator?pdf=ready, which
+  // restores the inputs we saved and opens the browser's own "Save as PDF".
   (function () {
     var ACCOUNT = '2705592';
-    var KEY = 'tpog_mortgage_pdf';           // remembers an unlocked visitor
+    var KEY = 'tpog_mortgage_pdf';            // set only after email confirmation
+    var INPUT_KEY = 'tpog_mortgage_inputs';   // the scenario to restore afterwards
+    var INPUTS = ['price', 'equity', 'state', 'makler', 'rate', 'tilgung', 'fixed', 'rent', 'rentgrow', 'appr', 'invest'];
     var btn = document.getElementById('save-pdf');
     var gate = document.getElementById('pdf-gate');
     var closeBtn = document.getElementById('pdf-gate-close');
+    var form = document.getElementById('calc-form');
     if (!btn || !gate) return;
 
     function isUnlocked() { try { return localStorage.getItem(KEY) === '1'; } catch (e) { return false; } }
     function setUnlocked() { try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+
+    function saveInputs() {
+      try {
+        var data = {};
+        INPUTS.forEach(function (id) { var el = document.getElementById(id); if (el) data[id] = el.value; });
+        var be = document.getElementById('be-on'); data.beOn = be ? be.checked : false;
+        localStorage.setItem(INPUT_KEY, JSON.stringify(data));
+      } catch (e) {}
+    }
+    function restoreInputs() {
+      try {
+        var raw = localStorage.getItem(INPUT_KEY); if (!raw) return;
+        var data = JSON.parse(raw);
+        INPUTS.forEach(function (id) {
+          if (data[id] != null) { var el = document.getElementById(id); if (el) el.value = data[id]; }
+        });
+        if (data.beOn) {
+          var be = document.getElementById('be-on'); if (be) be.checked = true;
+          var bf = document.getElementById('be-fields'); if (bf) bf.hidden = false;
+        }
+        if (form) form.dispatchEvent(new Event('input', { bubbles: true })); // re-render
+      } catch (e) {}
+    }
 
     function printReport() {
       var d = document.getElementById('print-date');
@@ -904,30 +932,48 @@
       window.ml('account', ACCOUNT);
     }
 
-    // Watch the injected MailerLite form for its success state, then unlock.
+    // After the form is submitted MailerLite shows its success message; we then
+    // make clear the PDF comes after confirming the email (we do NOT unlock yet).
     var observer = null;
-    function watchForSuccess() {
+    function watchForSubmit() {
       if (observer) return;
       observer = new MutationObserver(function () {
         var s = gate.querySelector('.ml-form-successBody');
         if (s && getComputedStyle(s).display !== 'none') {
           observer.disconnect(); observer = null;
-          setUnlocked();
-          showUnlocked();
-          setTimeout(printReport, 1000);
+          showPending();
         }
       });
       observer.observe(gate, { subtree: true, childList: true, attributes: true, attributeFilter: ['style', 'class'] });
     }
 
-    function showUnlocked() {
+    function showPending() {
       gate.innerHTML = '<div class="pdf-gate-card pdf-gate-ok">'
-        + '<span class="rec-label">You’re in</span>'
-        + '<h3>Thanks for subscribing!</h3>'
-        + '<p>Your estimate is ready. Your browser’s print dialog will open — pick <strong>Save as PDF</strong> as the destination. '
+        + '<span class="rec-label">Almost there</span>'
+        + '<h3>Check your inbox to confirm</h3>'
+        + '<p>We just sent you a confirmation email. Click the link in it and your personalized PDF '
+        + 'opens automatically back here. Didn’t get it? Check your spam folder.</p></div>';
+    }
+
+    // Returning from the confirmation link: unlock, restore the saved scenario,
+    // and open Save-as-PDF.
+    function handleConfirmedReturn() {
+      var isReturn = /[?&]pdf=ready(&|$)/.test(location.search);
+      if (!isReturn) return false;
+      setUnlocked();
+      restoreInputs();
+      try { history.replaceState({}, '', location.pathname); } catch (e) {}
+      gate.hidden = false;
+      gate.innerHTML = '<div class="pdf-gate-card pdf-gate-ok">'
+        + '<span class="rec-label">Confirmed</span>'
+        + '<h3>Thanks for confirming — your PDF is ready</h3>'
+        + '<p>Your browser’s print dialog will open; pick <strong>Save as PDF</strong> as the destination. '
         + 'Didn’t open? <button type="button" class="pdf-btn" id="pdf-now">Open it now</button></p></div>';
       var now = document.getElementById('pdf-now');
       if (now) now.addEventListener('click', printReport);
+      gate.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(printReport, 1400);
+      return true;
     }
 
     // If the embedded form never renders (slow network, or a blocker hides
@@ -935,7 +981,6 @@
     // container, or a form that loads late would be destroyed.
     function armFallback() {
       setTimeout(function () {
-        if (isUnlocked()) return;
         if (gate.querySelector('form')) return; // the form did render
         var note = document.getElementById('pdf-fallback');
         if (note) note.hidden = false;
@@ -943,18 +988,21 @@
     }
 
     btn.addEventListener('click', function () {
-      if (isUnlocked()) { printReport(); return; }
+      if (isUnlocked()) { printReport(); return; }   // already confirmed earlier
+      saveInputs();                                   // remember this scenario for after confirmation
       gate.hidden = false;
       if (!gate.__loaded) {
         gate.__loaded = true;
         loadMailerLite();
-        watchForSuccess();
+        watchForSubmit();
         armFallback();
       }
       gate.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
     if (closeBtn) closeBtn.addEventListener('click', function () { gate.hidden = true; });
+
+    handleConfirmedReturn();
   })();
   </script>
 </body>
