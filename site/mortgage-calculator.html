@@ -186,6 +186,32 @@
   .calc-empty { background: var(--paper); border: 1.5px dashed var(--line); border-radius: 16px; padding: 30px 24px; text-align: center; margin: 6px 0; }
   .calc-empty p { color: var(--ink-soft); font-size: 15px; margin: 0; }
 
+  /* affiliate rec-card reused from post pages */
+  .rec-card {
+    background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px;
+    padding: 22px 22px 20px; margin: 30px 0 8px; position: relative; box-shadow: none;
+  }
+  .rec-hole {
+    position: absolute; top: -8px; left: 22px; width: 16px; height: 16px;
+    background: var(--cream); border: 1.5px solid var(--line); border-radius: 50%;
+  }
+  .rec-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--coral-dark); margin-bottom: 8px; display: block;
+  }
+  .rec-card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; }
+  .rec-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.6; }
+  .rec-btn {
+    display: inline-flex; align-items: center; gap: 6px; background: var(--coral);
+    color: #fff !important; text-decoration: none; font-weight: 600; font-size: 14px;
+    padding: 10px 20px; border-radius: 8px; box-shadow: none;
+  }
+  .rec-btn:hover { transform: translateY(-1px); }
+  .disclosure {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-soft);
+    border-top: 1px solid var(--line); padding-top: 14px; margin: 6px 0 0; line-height: 1.6;
+  }
+
   /* methodology + popular (shared look) */
   .methodology, .popular {
     background: var(--paper); border: 1.5px solid var(--line); border-radius: 16px;
@@ -323,6 +349,19 @@
   <section>
     <div class="shell">
       <div id="results"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shell">
+      <div class="rec-card">
+        <span class="rec-hole"></span>
+        <span class="rec-label">Recommended</span>
+        <h3>Contents insurance for your new home</h3>
+        <p>The mortgage covers the walls; it does not cover what is inside them. German household contents insurance (<em>Hausratversicherung</em>) replaces your furniture, electronics, and belongings after a fire, burst pipe, burglary, or storm &mdash; and it is cheap. Feather is the English-language service I point expats toward, so you can compare and sign up without wrestling German paperwork or a commission-driven agent.</p>
+        <a class="rec-btn" href="https://feather-insurance.com/household-insurance?utm_source=the-price-of-germany" target="_blank" rel="noopener sponsored">Get household insurance with Feather &rarr;</a>
+        <div class="disclosure">DISCLOSURE: The link above is an affiliate link. If you sign up through it, I may earn a commission at no extra cost to you, it helps support the site.</div>
+      </div>
     </div>
   </section>
 
