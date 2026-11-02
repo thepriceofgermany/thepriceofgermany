@@ -19,6 +19,7 @@
     '.tpog-nl-btn:hover{background:var(--coral,#D83A2E);border-color:var(--coral,#D83A2E)}' +
     '.tpog-nl-note{margin:14px 0 0!important;font-size:12.5px!important;line-height:1.5!important}' +
     '.tpog-nl-note a{color:inherit}' +
+    '.tpog-nl-spam{margin:12px 0 0;font-size:12.5px;line-height:1.5;color:var(--ink-soft,#67665F)}' +
     '.tpog-newsletter .ml-embedded{margin-top:4px}' +
     '.wrap .tpog-newsletter{padding:0;margin:26px auto 0}';
   var st = document.createElement('style');
@@ -50,7 +51,7 @@
       '<h3></h3>' +
       '<p class="tpog-nl-text"></p>' +
       '<button type="button" class="tpog-nl-btn">Subscribe</button>' +
-      '<p class="tpog-nl-note">Clicking Subscribe loads the signup form from our email provider, MailerLite. You will get a confirmation email first, and the download opens after you confirm. See the <a href="/privacy">Privacy Policy</a>.</p>' +
+      '<p class="tpog-nl-note">Clicking Subscribe loads the signup form from our email provider, MailerLite. You will get a confirmation email first (check your spam or promotions folder if it is not in your inbox), and the download opens after you confirm. See the <a href="/privacy">Privacy Policy</a>.</p>' +
       '</div>';
     box.querySelector('.tpog-nl-tag').textContent = tag;
     box.querySelector('h3').textContent = title;
@@ -62,6 +63,10 @@
       holder.setAttribute('data-form', form);
       card.innerHTML = '';
       card.appendChild(holder);
+      var spam = document.createElement('p');
+      spam.className = 'tpog-nl-spam';
+      spam.innerHTML = 'After you subscribe, check your <strong>spam or promotions folder</strong> for the confirmation email — it comes from MailerLite, and your download opens once you confirm.';
+      card.appendChild(spam);
       loadMailerLite();
     });
   });
