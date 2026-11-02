@@ -260,11 +260,67 @@
   .footer-links { display: flex; gap: 20px; font-size: 13.5px; flex-wrap: wrap; }
   .footer-links a { text-decoration: none; color: var(--ink-soft); }
   .footer-links a:hover { color: var(--ink); }
+
+  /* ---------------- SAVE AS PDF + GATE ---------------- */
+  .pdf-bar {
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    margin: 14px 0 0;
+  }
+  .pdf-btn {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14.5px; cursor: pointer;
+    background: var(--ink); color: #fff; border: 1.5px solid var(--ink);
+    padding: 12px 20px; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .pdf-btn:hover { background: var(--coral); border-color: var(--coral); }
+  .pdf-bar-note { font-size: 12.5px; color: var(--ink-soft); }
+  .pdf-gate { margin: 18px 0 4px; }
+  .pdf-gate[hidden] { display: none; }
+  .pdf-gate-card {
+    position: relative; background: var(--paper); border: 1.5px solid var(--ink);
+    border-radius: 14px; padding: 24px 24px 20px;
+  }
+  .pdf-gate-card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.3rem; margin: 6px 0 8px; letter-spacing: -0.01em; }
+  .pdf-gate-card p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 14px; }
+  .pdf-gate-card p strong { color: var(--ink); }
+  .pdf-gate-close {
+    position: absolute; top: 12px; right: 14px; background: none; border: 0; cursor: pointer;
+    font-size: 22px; line-height: 1; color: var(--ink-soft);
+  }
+  .pdf-gate-close:hover { color: var(--ink); }
+  .pdf-gate .ml-embedded { margin-top: 4px; }
+  .pdf-gate-ok { border-color: var(--line); }
+
+  /* print-only report header, hidden on screen */
+  .print-only { display: none; }
+  .print-head { margin: 0 0 18px; }
+  .print-head .ph-brand { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral-dark); }
+  .print-head .ph-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.7rem; margin: 6px 0 4px; letter-spacing: -0.02em; }
+  .print-head .ph-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-soft); }
+
+  /* ---------------- PRINT / SAVE-AS-PDF LAYOUT ---------------- */
+  @media print {
+    @page { margin: 15mm; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .no-print { display: none !important; }
+    .print-only { display: block !important; }
+    body { background: #fff; color: var(--ink); }
+    nav { display: none !important; }
+    .shell { max-width: none; padding: 0; margin: 0; }
+    header.tool-head { display: none !important; }
+    #results { font-size: 12px; }
+    .cat-block h2 { margin: 16px 0 8px; font-size: 1.2rem; }
+    .headline, .cost-box, .be-chart-wrap, .be-table, .verdict, .warn { break-inside: avoid; page-break-inside: avoid; }
+    .verdict { background: #fff !important; color: var(--ink) !important; border: 1.5px solid var(--ink); }
+    .verdict .v-line em { color: var(--coral-dark) !important; }
+    .verdict .v-sub { color: var(--ink-soft) !important; }
+    .be-chart { page-break-inside: avoid; }
+    .print-foot { margin-top: 20px; padding-top: 10px; border-top: 1px solid var(--line); font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--ink-soft); line-height: 1.5; }
+  }
 </style>
 </head>
 <body>
 
-  <nav>
+  <nav class="no-print">
     <div class="nav-inner">
       <a class="logo" href="/">The Price of Germany <span class="tag">$ &rarr; &euro;</span></a>
       <div class="nav-right">
@@ -274,7 +330,7 @@
     </div>
   </nav>
 
-  <header class="tool-head">
+  <header class="tool-head no-print">
     <div class="shell">
       <span class="eyebrow">Interactive tool</span>
       <h1>German <span class="hl">mortgage</span> calculator</h1>
@@ -282,13 +338,13 @@
     </div>
   </header>
 
-  <section class="intro">
+  <section class="intro no-print">
     <div class="shell">
       <p>A German mortgage is an <em>Annuit&auml;tendarlehen</em>: you pick an interest rate and a starting repayment rate (<em>Tilgung</em>), and together they set a fixed monthly payment. But the price on the listing is never what buying actually costs. Property transfer tax, the notary, and the agent add roughly 9&ndash;12% on top, and in Germany those closing costs come out of your own pocket, not the loan. This tool shows the whole picture, then, for renters, whether all of that beats just paying rent.</p>
     </div>
   </section>
 
-  <section>
+  <section class="no-print">
     <div class="shell">
       <form class="calc-form" id="calc-form">
         <div class="field-row">
@@ -363,16 +419,39 @@
 
         <p class="calc-hint">All fields marked <span class="req">*</span> are required. The result updates as you type. Closing costs assume a notary and land-registry fee of 1.5% of the price; property transfer tax is set by the state you pick. Figures are estimates, not an offer from a bank.</p>
       </form>
+
+      <div class="pdf-bar">
+        <button type="button" class="pdf-btn" id="save-pdf">&#128462;&nbsp; Save this estimate as a PDF</button>
+        <span class="pdf-bar-note">Free for subscribers &mdash; opens your browser&rsquo;s &ldquo;Save as PDF&rdquo;.</span>
+      </div>
+
+      <div class="pdf-gate" id="pdf-gate" hidden>
+        <div class="pdf-gate-card">
+          <button type="button" class="pdf-gate-close" id="pdf-gate-close" aria-label="Close">&times;</button>
+          <span class="rec-label">Subscriber tool</span>
+          <h3>Subscribe to download your PDF</h3>
+          <p>Your estimate is free &mdash; join the newsletter and your personalized PDF unlocks right here on the page. You&rsquo;ll also get new Germany cost breakdowns by email. No spam, unsubscribe any time.</p>
+          <div class="ml-embedded" data-form="Fszcvh"></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section>
     <div class="shell">
+      <div class="print-head print-only">
+        <div class="ph-brand">The Price of Germany</div>
+        <div class="ph-title">Your German mortgage estimate</div>
+        <div class="ph-meta">thepriceofgermany.com/mortgage-calculator &middot; generated <span id="print-date"></span></div>
+      </div>
       <div id="results"></div>
+      <div class="print-foot print-only">
+        Estimate only, not financial advice or an offer from a bank. Closing-cost and tax rates as of 2026; run any real figure past a bank or tax adviser before acting on it. &copy; The Price of Germany.
+      </div>
     </div>
   </section>
 
-  <section>
+  <section class="no-print">
     <div class="shell">
       <div class="rec-card">
         <span class="rec-hole"></span>
@@ -385,7 +464,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="no-print">
     <div class="shell">
       <div class="methodology">
         <h2>How these numbers are worked out</h2>
@@ -409,7 +488,7 @@
     </div>
   </section>
 
-  <footer>
+  <footer class="no-print">
     <div class="footer-inner">
       <span class="brand">thepriceofgermany.com</span>
       <div class="footer-links">
@@ -788,6 +867,92 @@
     $('calc-form').addEventListener('input', render);
     $('calc-form').addEventListener('change', render);
     render();
+  })();
+  </script>
+
+  <script>
+  // Save-as-PDF, gated behind a MailerLite subscribe. The PDF is the browser's
+  // own "Save as PDF" over a print stylesheet, so nothing leaves the device.
+  (function () {
+    var ACCOUNT = '2705592';
+    var KEY = 'tpog_mortgage_pdf';           // remembers an unlocked visitor
+    var btn = document.getElementById('save-pdf');
+    var gate = document.getElementById('pdf-gate');
+    var closeBtn = document.getElementById('pdf-gate-close');
+    if (!btn || !gate) return;
+
+    function isUnlocked() { try { return localStorage.getItem(KEY) === '1'; } catch (e) { return false; } }
+    function setUnlocked() { try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+
+    function printReport() {
+      var d = document.getElementById('print-date');
+      if (d) d.textContent = new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+      window.print();
+    }
+
+    function loadMailerLite() {
+      if (window.__tpogMl) return;
+      window.__tpogMl = true;
+      (function (w, d, e, u, f, l, n) {
+        w[f] = w[f] || function () { (w[f].q = w[f].q || []).push(arguments); };
+        l = d.createElement(e); l.async = 1; l.src = u;
+        n = d.getElementsByTagName(e)[0]; n.parentNode.insertBefore(l, n);
+      })(window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+      window.ml('account', ACCOUNT);
+    }
+
+    // Watch the injected MailerLite form for its success state, then unlock.
+    var observer = null;
+    function watchForSuccess() {
+      if (observer) return;
+      observer = new MutationObserver(function () {
+        var s = gate.querySelector('.ml-form-successBody');
+        if (s && getComputedStyle(s).display !== 'none') {
+          observer.disconnect(); observer = null;
+          setUnlocked();
+          showUnlocked();
+          setTimeout(printReport, 1000);
+        }
+      });
+      observer.observe(gate, { subtree: true, childList: true, attributes: true, attributeFilter: ['style', 'class'] });
+    }
+
+    function showUnlocked() {
+      gate.innerHTML = '<div class="pdf-gate-card pdf-gate-ok">'
+        + '<span class="rec-label">You’re in</span>'
+        + '<h3>Thanks for subscribing!</h3>'
+        + '<p>Your estimate is ready. Your browser’s print dialog will open — pick <strong>Save as PDF</strong> as the destination. '
+        + 'Didn’t open? <button type="button" class="pdf-btn" id="pdf-now">Open it now</button></p></div>';
+      var now = document.getElementById('pdf-now');
+      if (now) now.addEventListener('click', printReport);
+    }
+
+    // If the embedded form never renders (e.g. not yet designed in MailerLite),
+    // don't leave a blank box — point the visitor at the main signup.
+    function armFallback() {
+      setTimeout(function () {
+        var emb = gate.querySelector('.ml-embedded');
+        if (emb && emb.innerHTML.trim() === '' && !isUnlocked()) {
+          emb.innerHTML = '<p style="font-size:14px;color:var(--ink-soft);line-height:1.6;margin:4px 0 0">'
+            + 'The signup form is taking a moment. You can also subscribe on the '
+            + '<a href="/free-guides">free guides page</a> &mdash; once you&rsquo;ve confirmed your email, reload this page and your PDF will unlock.</p>';
+        }
+      }, 6000);
+    }
+
+    btn.addEventListener('click', function () {
+      if (isUnlocked()) { printReport(); return; }
+      gate.hidden = false;
+      if (!gate.__loaded) {
+        gate.__loaded = true;
+        loadMailerLite();
+        watchForSuccess();
+        armFallback();
+      }
+      gate.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', function () { gate.hidden = true; });
   })();
   </script>
 </body>
