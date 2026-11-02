@@ -183,6 +183,26 @@
   .be-table .rent { color: var(--coral-dark); font-weight: 700; }
   .be-table tr.cross td { background: rgba(216, 58, 46, 0.06); }
 
+  /* break-even chart (inline SVG) */
+  .be-chart-wrap { margin: 18px 0 8px; }
+  .be-chart { width: 100%; height: auto; display: block; overflow: visible; }
+  .be-grid { stroke: var(--line); stroke-width: 1; }
+  .be-ylab { fill: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-anchor: end; }
+  .be-xlab { fill: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-anchor: middle; }
+  .be-axis-title { fill: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; text-anchor: middle; }
+  .be-line-own { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+  .be-line-rent { fill: none; stroke: var(--coral); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+  .be-cross-line { stroke: var(--ink); stroke-width: 1.3; stroke-dasharray: 4 4; opacity: 0.5; }
+  .be-cross-dot { fill: var(--cream); stroke: var(--ink); stroke-width: 2.5; }
+  .be-cross-lab { fill: var(--ink); font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 700; letter-spacing: 0.03em; }
+  .be-cross-lab2 { fill: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; font-size: 10px; }
+  .be-legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 12px 2px 0; }
+  .be-leg { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink-soft); }
+  .be-swatch { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+  .be-swatch.own { background: var(--ink); }
+  .be-swatch.rent { background: var(--coral); }
+  .be-swatch.cross { height: 0; border-top: 2px dashed var(--ink); background: none; }
+
   .calc-empty { background: var(--paper); border: 1.5px dashed var(--line); border-radius: 16px; padding: 30px 24px; text-align: center; margin: 6px 0; }
   .calc-empty p { color: var(--ink-soft); font-size: 15px; margin: 0; }
 
@@ -594,8 +614,10 @@
       var upkeepMonthly = price * UPKEEP_PCT / 100 / 12;
 
       var crossoverMonth = null;
+      var crossOwn = null;           // owner net worth at the crossover month
       var snapshots = {};            // year -> {own, rent}
       var snapYears = [5, 10, 15, 20, 30];
+      var series = [{ y: 0, own: homeValue - Math.max(balance, 0), rent: renterPortfolio }];
 
       for (var m = 1; m <= PROJECT_YEARS * 12; m++) {
         // Owner side: mortgage + upkeep this month.
@@ -626,11 +648,14 @@
         var ownerNet = (homeValue - Math.max(balance, 0)) + ownerSurplus;
         var renterNet = renterPortfolio;
 
-        if (crossoverMonth === null && ownerNet >= renterNet) crossoverMonth = m;
+        if (crossoverMonth === null && ownerNet >= renterNet) { crossoverMonth = m; crossOwn = ownerNet; }
 
         var y = m / 12;
-        if (m % 12 === 0 && snapYears.indexOf(y) !== -1) {
-          snapshots[y] = { own: ownerNet, rent: renterNet, cross: crossoverMonth !== null && crossoverMonth <= m && (crossoverMonth > (m - 12)) };
+        if (m % 12 === 0) {
+          series.push({ y: y, own: ownerNet, rent: renterNet });
+          if (snapYears.indexOf(y) !== -1) {
+            snapshots[y] = { own: ownerNet, rent: renterNet, cross: crossoverMonth !== null && crossoverMonth <= m && (crossoverMonth > (m - 12)) };
+          }
         }
       }
 
@@ -649,6 +674,9 @@
           + '<p class="v-sub">Stay past that point and owning leaves you wealthier than renting and investing the difference. Sell or move before it, and renting would have won. This ignores selling costs and tax on gains, so give the real break-even a year or two of cushion.</p></div>';
       }
 
+      // Chart of the two net-worth paths with the crossover marked.
+      html += buildBreakEvenChart(series, crossoverMonth, crossOwn);
+
       // Snapshot table.
       html += '<table class="be-table"><thead><tr><th>Net worth at</th><th>Owning</th><th>Renting</th></tr></thead><tbody>';
       snapYears.forEach(function (y) {
@@ -663,6 +691,93 @@
       html += '<p class="cat-note">Net worth for the owner is the home&rsquo;s value minus what is still owed, plus any months the mortgage cost less than rent (invested). Upkeep is estimated at ' + pct(UPKEEP_PCT) + ' of the price a year. These are projections on the rates you entered, not a forecast.</p>';
       html += '</section>';
       return html;
+    }
+
+    // ---- Break-even chart (inline SVG, no dependencies) ----
+    function niceStep(x) {
+      if (x <= 0) return 1;
+      var exp = Math.floor(Math.log(x) / Math.LN10);
+      var base = Math.pow(10, exp);
+      var f = x / base;
+      var nice = f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10;
+      return nice * base;
+    }
+    function eurShort(v) {
+      if (v >= 1e6) return '€' + (v / 1e6).toLocaleString('de-DE', { maximumFractionDigits: 1 }) + 'M';
+      if (v >= 1e3) return '€' + Math.round(v / 1e3) + 'k';
+      return '€' + Math.round(v);
+    }
+    function crossYearLabel(months) {
+      var yr = Math.floor(months / 12);
+      var mo = months % 12;
+      return mo === 0 ? yr + ' yrs' : yr + 'y ' + mo + 'm';
+    }
+
+    function buildBreakEvenChart(series, crossoverMonth, crossOwn) {
+      var crossY = crossoverMonth !== null ? crossoverMonth / 12 : null;
+      var maxYear = crossY !== null
+        ? Math.min(PROJECT_YEARS, Math.max(20, Math.ceil(crossY) + 8))
+        : PROJECT_YEARS;
+      var pts = series.filter(function (p) { return p.y <= maxYear; });
+
+      var W = 680, H = 340, padL = 58, padR = 18, padT = 18, padB = 40;
+      var x0 = padL, x1 = W - padR, y0 = padT, y1 = H - padB;
+
+      var maxVal = 0;
+      pts.forEach(function (p) { maxVal = Math.max(maxVal, p.own, p.rent); });
+      var step = niceStep(maxVal / 4);
+      var yMax = step * 4 || 1;
+
+      var sx = function (yr) { return x0 + (yr / maxYear) * (x1 - x0); };
+      var sy = function (v) { return y1 - (v / yMax) * (y1 - y0); };
+      var path = function (key) {
+        return pts.map(function (p, i) {
+          return (i ? 'L' : 'M') + sx(p.y).toFixed(1) + ' ' + sy(p[key]).toFixed(1);
+        }).join(' ');
+      };
+
+      var svg = '<svg class="be-chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" '
+        + 'aria-label="Net worth over time: owning versus renting, with the break-even point marked." '
+        + 'preserveAspectRatio="xMidYMid meet">';
+
+      // Horizontal gridlines + euro labels.
+      for (var i = 0; i <= 4; i++) {
+        var gv = step * i, gy = sy(gv);
+        svg += '<line x1="' + x0 + '" y1="' + gy.toFixed(1) + '" x2="' + x1 + '" y2="' + gy.toFixed(1) + '" class="be-grid"/>';
+        svg += '<text x="' + (x0 - 8) + '" y="' + (gy + 3.5).toFixed(1) + '" class="be-ylab">' + eurShort(gv) + '</text>';
+      }
+      // X-axis year ticks.
+      var tick = maxYear > 24 ? 10 : 5;
+      for (var yr = 0; yr <= maxYear; yr += tick) {
+        svg += '<text x="' + sx(yr).toFixed(1) + '" y="' + (y1 + 20) + '" class="be-xlab">' + yr + '</text>';
+      }
+      svg += '<text x="' + ((x0 + x1) / 2).toFixed(1) + '" y="' + (H - 4) + '" class="be-axis-title">Years from purchase</text>';
+
+      // Crossover guide line, dot, and label.
+      if (crossY !== null && crossY <= maxYear) {
+        var cx = sx(crossY), cyv = sy(crossOwn);
+        svg += '<line x1="' + cx.toFixed(1) + '" y1="' + y0 + '" x2="' + cx.toFixed(1) + '" y2="' + y1 + '" class="be-cross-line"/>';
+        var leftSide = cx > (x0 + x1) / 2;
+        var anchor = leftSide ? 'end' : 'start';
+        var lx = leftSide ? cx - 9 : cx + 9;
+        var labY = Math.max(y0 + 11, cyv - 14);
+        svg += '<text x="' + lx.toFixed(1) + '" y="' + labY.toFixed(1) + '" class="be-cross-lab" text-anchor="' + anchor + '">Break-even</text>';
+        svg += '<text x="' + lx.toFixed(1) + '" y="' + (labY + 14).toFixed(1) + '" class="be-cross-lab2" text-anchor="' + anchor + '">~' + crossYearLabel(crossoverMonth) + '</text>';
+        svg += '<circle cx="' + cx.toFixed(1) + '" cy="' + cyv.toFixed(1) + '" r="5" class="be-cross-dot"/>';
+      }
+
+      // The two net-worth paths (renting underneath, owning on top).
+      svg += '<path d="' + path('rent') + '" class="be-line-rent"/>';
+      svg += '<path d="' + path('own') + '" class="be-line-own"/>';
+      svg += '</svg>';
+
+      var legend = '<div class="be-legend">'
+        + '<span class="be-leg"><span class="be-swatch own"></span>Owning &middot; home equity + savings</span>'
+        + '<span class="be-leg"><span class="be-swatch rent"></span>Renting &middot; money invested</span>'
+        + (crossY !== null && crossY <= maxYear ? '<span class="be-leg"><span class="be-swatch cross"></span>Break-even</span>' : '')
+        + '</div>';
+
+      return '<figure class="be-chart-wrap">' + svg + legend + '</figure>';
     }
 
     // Wire up.
