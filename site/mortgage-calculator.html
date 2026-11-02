@@ -289,6 +289,8 @@
   .pdf-gate-close:hover { color: var(--ink); }
   .pdf-gate .ml-embedded { margin-top: 4px; }
   .pdf-gate-ok { border-color: var(--line); }
+  .pdf-fallback { font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; margin: 10px 0 0; }
+  .pdf-fallback[hidden] { display: none; }
 
   /* print-only report header, hidden on screen */
   .print-only { display: none; }
@@ -432,6 +434,7 @@
           <h3>Subscribe to download your PDF</h3>
           <p>Your estimate is free &mdash; join the newsletter and your personalized PDF unlocks right here on the page. You&rsquo;ll also get new Germany cost breakdowns by email. No spam, unsubscribe any time.</p>
           <div class="ml-embedded" data-form="Fszcvh"></div>
+          <p class="pdf-fallback" id="pdf-fallback" hidden>Having trouble with the signup form (an ad or tracking blocker can hide it)? You can also subscribe on the <a href="/free-guides">free guides page</a>, then come back here.</p>
         </div>
       </div>
     </div>
@@ -927,17 +930,16 @@
       if (now) now.addEventListener('click', printReport);
     }
 
-    // If the embedded form never renders (e.g. not yet designed in MailerLite),
-    // don't leave a blank box — point the visitor at the main signup.
+    // If the embedded form never renders (slow network, or a blocker hides
+    // MailerLite), reveal a sibling note — but NEVER overwrite the form
+    // container, or a form that loads late would be destroyed.
     function armFallback() {
       setTimeout(function () {
-        var emb = gate.querySelector('.ml-embedded');
-        if (emb && emb.innerHTML.trim() === '' && !isUnlocked()) {
-          emb.innerHTML = '<p style="font-size:14px;color:var(--ink-soft);line-height:1.6;margin:4px 0 0">'
-            + 'The signup form is taking a moment. You can also subscribe on the '
-            + '<a href="/free-guides">free guides page</a> &mdash; once you&rsquo;ve confirmed your email, reload this page and your PDF will unlock.</p>';
-        }
-      }, 6000);
+        if (isUnlocked()) return;
+        if (gate.querySelector('form')) return; // the form did render
+        var note = document.getElementById('pdf-fallback');
+        if (note) note.hidden = false;
+      }, 12000);
     }
 
     btn.addEventListener('click', function () {
