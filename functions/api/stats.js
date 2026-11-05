@@ -7,6 +7,7 @@
 // with /affiliate-inventory.json (public, derivable from page HTML anyway). Only
 // the click counts and revenue, which are your private data, live behind this token.
 import revenue from '../lib/revenue.json';
+import links from '../lib/links.json';
 
 export async function onRequestGet(context) {
   const { request, env } = context;
@@ -51,6 +52,7 @@ export async function onRequestGet(context) {
       byCountry: byCountry.results || [],
       currency: revenue.currency || 'EUR',
       revenue: revenue.revenue || {},
+      links,
     }, 200, { 'cache-control': 'no-store' });
   } catch (e) {
     return json({ error: 'query_failed', message: String(e && e.message || e) }, 500);

@@ -39,6 +39,9 @@
   th{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft);cursor:pointer;user-select:none}
   tbody tr:hover{background:#faf6ea}
   .merch{font-weight:600}
+  td.lcell,th.lcell{text-align:left;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  td.lcell a{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--coral);text-decoration:none}
+  td.lcell a:hover{text-decoration:underline}
   .tag{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:2px 7px}
   .muted{color:var(--ink-soft)}
   .bars{display:flex;align-items:flex-end;gap:3px;height:120px;margin:6px 0 10px}
@@ -113,6 +116,7 @@
         <table id="linkTable">
           <thead><tr>
             <th data-k="merchant">Merchant</th><th data-k="id">ID</th><th data-k="network">Network</th>
+            <th data-k="url" class="lcell">Link</th>
             <th data-k="clicks">Clicks</th><th data-k="pages">Pages</th>
             <th data-k="revenue">Revenue</th><th data-k="epc">EPC</th><th data-k="last">Last click</th>
           </tr></thead>
@@ -221,11 +225,12 @@ function render(){
   const linkRows = [...ids].map(id=>{
     const m = meta[id]||{}; const clicks = (clicksById[id]||{}).clicks||0;
     const revenue = +(DATA.revenue||{})[id]||0;
-    return { id, merchant:m.merchant||id, network:m.network||'—', pages:(m.pages||[]).length,
+    return { id, merchant:m.merchant||id, network:m.network||'—', url:(DATA.links||{})[id]||'', pages:(m.pages||[]).length,
       clicks, revenue, epc: clicks?revenue/clicks:0, last:lastById[id]||null };
   });
   renderTable('#linkTable', linkRows, linkSort, r=>`
     <td class="merch">${esc(r.merchant)}</td><td class="muted">${esc(r.id)}</td><td><span class="tag">${esc(r.network)}</span></td>
+    <td class="lcell">${r.url?`<a href="${esc(r.url)}" target="_blank" rel="noopener" title="${esc(r.url)}">${esc(shortUrl(r.url))}</a>`:'—'}</td>
     <td>${fmtInt(r.clicks)}</td><td>${r.pages}</td><td>${fmtMoney(r.revenue)}</td>
     <td>${r.clicks?fmtMoney(r.epc):'—'}</td><td class="muted">${fmtDate(r.last)}</td>`);
 
@@ -269,6 +274,11 @@ function renderTable(sel, rows, sort, rowHtml, limit){
   });
 }
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function shortUrl(u){
+  try{ const x=new URL(u); let s=x.host.replace(/^www\./,'')+x.pathname.replace(/\/$/,'')+(x.search||'');
+    return s.length>46 ? s.slice(0,46)+'…' : s; }
+  catch{ return u.length>46 ? u.slice(0,46)+'…' : u; }
+}
 
 // events
 $('#enter').onclick=()=>{ const v=$('#token').value.trim(); if(!v) return; localStorage.setItem(TKEY,v); load(); };
