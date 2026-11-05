@@ -6,7 +6,17 @@
     <atom:link href="https://thepriceofgermany.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Videos, guides and cost breakdowns about life and money in Germany.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Nov 2026 13:12:50 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 10:17:58 GMT</lastBuildDate>
+    <item>
+      <title>Buying a House in Germany: What It Really Costs</title>
+      <link>https://thepriceofgermany.com/buying-a-house-in-germany</link>
+      <guid isPermaLink="true">https://thepriceofgermany.com/buying-a-house-in-germany</guid>
+      <pubDate>Wed, 04 Nov 2026 08:00:00 GMT</pubDate>
+      <category>Housing</category>
+      <description>I bought a house in Baden-Württemberg for 690,000 euros and pay 3,766 euros a month to keep it. Here is what it really costs to buy a house in Germany: the loan, the buying costs, the market right now, and my own real bills.</description>
+      <media:content url="https://i.ytimg.com/vi/hVAD4FpPN5A/maxresdefault.jpg" medium="image" />
+      <enclosure url="https://i.ytimg.com/vi/hVAD4FpPN5A/maxresdefault.jpg" type="image/jpeg" length="0" />
+    </item>
     <item>
       <title>Why Nobody Riots Over the German Pension Bill</title>
       <link>https://thepriceofgermany.com/why-nobody-riots-over-the-german-pension</link>
@@ -296,16 +306,6 @@
       <description>Two new dads, two very different bills. Where Germany quietly saves you tens of thousands, and where it will make your eyes water.</description>
       <media:content url="https://i.ytimg.com/vi/cXoLFiXZU7U/maxresdefault.jpg" medium="image" />
       <enclosure url="https://i.ytimg.com/vi/cXoLFiXZU7U/maxresdefault.jpg" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Study in Germany vs. USA: Is the Debt Worth It?</title>
-      <link>https://thepriceofgermany.com/study-in-germany-vs-usa</link>
-      <guid isPermaLink="true">https://thepriceofgermany.com/study-in-germany-vs-usa</guid>
-      <pubDate>Sun, 02 Aug 2026 08:00:00 GMT</pubDate>
-      <category>Education</category>
-      <description>Everyone says German uni is free. The real numbers: semester fees, health insurance, the blocked account, and the one catch that isn't money at all.</description>
-      <media:content url="https://i.ytimg.com/vi/NKM6eLVZfjQ/maxresdefault.jpg" medium="image" />
-      <enclosure url="https://i.ytimg.com/vi/NKM6eLVZfjQ/maxresdefault.jpg" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>

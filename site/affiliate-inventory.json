@@ -1,0 +1,160 @@
+{
+  "generatedAt": "2026-11-05T08:24:22.823Z",
+  "links": [
+    {
+      "id": "adria",
+      "merchant": "Adria Science",
+      "network": "direct",
+      "category": "health",
+      "pages": [
+        "why-peptides-cost-more-in-the-usa-than-germany"
+      ]
+    },
+    {
+      "id": "amazon-b01n9kha3",
+      "merchant": "Amazon",
+      "network": "amazon-associates",
+      "category": "shopping",
+      "pages": [
+        "why-german-electricity-costs-2x-the-us"
+      ]
+    },
+    {
+      "id": "amazon-b033dk56l",
+      "merchant": "Amazon",
+      "network": "amazon-associates",
+      "category": "shopping",
+      "pages": [
+        "emotional-tax-germany"
+      ]
+    },
+    {
+      "id": "amazon-b034jh9cf",
+      "merchant": "Amazon",
+      "network": "amazon-associates",
+      "category": "shopping",
+      "pages": [
+        "study-in-germany-vs-usa"
+      ]
+    },
+    {
+      "id": "axa",
+      "merchant": "AXA",
+      "network": "awin",
+      "category": "insurance",
+      "pages": [
+        "daycare-in-germany-vs-usa",
+        "ev-charging-cost-germany-vs-usa",
+        "insurance-in-germany-vs-usa",
+        "the-real-cost-of-owning-a-car-in-germany-vs-the-usa",
+        "what-an-afd-win-costs-germany"
+      ]
+    },
+    {
+      "id": "dkb",
+      "merchant": "DKB",
+      "network": "awin",
+      "category": "finance",
+      "pages": [
+        "is-germany-cheaper-than-america",
+        "moving-to-germany-cost",
+        "renting-in-germany-vs-usa",
+        "unemployment-benefits-germany-vs-usa",
+        "why-germans-dont-invest"
+      ]
+    },
+    {
+      "id": "elevenlabs",
+      "merchant": "ElevenLabs",
+      "network": "direct",
+      "category": "tools",
+      "pages": [
+        "afd-bot-chart-fact-check",
+        "berlin-seize-240000-apartments",
+        "cost-of-having-a-baby-germany-vs-usa",
+        "eu-disinfo-lab-funding",
+        "eu-dsa-censorship-machine",
+        "german-gas-prices-vs-usa",
+        "germany-chancellor-crisis-cost",
+        "minimum-wage-germany-vs-usa"
+      ]
+    },
+    {
+      "id": "feather",
+      "merchant": "Feather Insurance",
+      "network": "direct",
+      "category": "insurance",
+      "pages": [
+        "buying-a-house-in-germany",
+        "cost-of-living-calculator",
+        "german-retirement-accounts-explained",
+        "investing-as-an-expat-in-germany",
+        "why-nobody-riots-over-the-german-pension"
+      ]
+    },
+    {
+      "id": "feather-household",
+      "merchant": "Feather Insurance",
+      "network": "direct",
+      "category": "insurance",
+      "pages": [
+        "mortgage-calculator"
+      ]
+    },
+    {
+      "id": "grandclassicballet",
+      "merchant": "Grand Classic Ballet",
+      "network": "awin",
+      "category": "events",
+      "pages": [
+        "grand-classic-ballet-tickets-germany",
+        "index"
+      ]
+    },
+    {
+      "id": "schufa",
+      "merchant": "Meine SCHUFA",
+      "network": "direct",
+      "category": "finance",
+      "pages": [
+        "renting-in-germany-vs-usa"
+      ]
+    },
+    {
+      "id": "myexpattaxes",
+      "merchant": "MyExpatTaxes",
+      "network": "direct",
+      "category": "taxes",
+      "pages": [
+        "cost-of-raising-a-child-germany-vs-usa",
+        "drone-cost-germany-billions",
+        "east-vs-west-germany-divide",
+        "freelancers-pensions-germany-vs-usa",
+        "germany-10-billion-tax-cut",
+        "heating-bill-germany-afd-surge",
+        "parental-leave-germany-vs-usa",
+        "the-end-of-made-in-germany",
+        "us-missile-deal-german-tax-bill",
+        "why-germany-voted-afd"
+      ]
+    },
+    {
+      "id": "nordvpn",
+      "merchant": "NordVPN",
+      "network": "awin",
+      "category": "tools",
+      "pages": [
+        "moving-to-germany-cost"
+      ]
+    },
+    {
+      "id": "taxfix",
+      "merchant": "Taxfix",
+      "network": "direct",
+      "category": "taxes",
+      "pages": [
+        "salary-in-germany-vs-usa"
+      ]
+    }
+  ]
+}

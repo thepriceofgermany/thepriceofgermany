@@ -1,0 +1,20 @@
+{
+  "currency": "EUR",
+  "note": "Cumulative revenue per link id. Edit the numbers, redeploy. Most of your partners have no API, so this is manual.",
+  "revenue": {
+    "myexpattaxes": 0,
+    "elevenlabs": 0,
+    "feather": 0,
+    "feather-household": 0,
+    "taxfix": 0,
+    "adria": 0,
+    "schufa": 0,
+    "amazon-b034jh9cf": 0,
+    "amazon-b033dk56l": 0,
+    "amazon-b01n9kha3": 0,
+    "dkb": 0,
+    "axa": 0,
+    "grandclassicballet": 0,
+    "nordvpn": 0
+  }
+}

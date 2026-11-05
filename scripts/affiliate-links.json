@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "comment": "Single source of truth for affiliate links. Content pages link to /go/<id>; the Cloudflare Pages Function at functions/go/[id].js logs the click and redirects to `url`. Add a link here, run `npm run affiliate`, and the build rewrites matching .rec-btn hrefs across site/*.html. Keep `url` exactly as the network issued it (tracking params matter).",
+  "links": {
+    "myexpattaxes": {
+      "merchant": "MyExpatTaxes",
+      "network": "direct",
+      "category": "taxes",
+      "url": "https://app.myexpattaxes.com/wizard?ref=fwefphge",
+      "notes": "US expat tax filing. Direct ref param, no API — enter revenue manually."
+    },
+    "elevenlabs": {
+      "merchant": "ElevenLabs",
+      "network": "direct",
+      "category": "tools",
+      "url": "https://try.elevenlabs.io/mcjpkrtj3pnc",
+      "notes": "AI voiceover. Direct partner link, no API — enter revenue manually."
+    },
+    "feather": {
+      "merchant": "Feather Insurance",
+      "network": "direct",
+      "category": "insurance",
+      "url": "https://feather-insurance.com?utm_source=the-price-of-germany",
+      "notes": "Homepage. UTM-tagged partner link — revenue via Feather dashboard."
+    },
+    "feather-household": {
+      "merchant": "Feather Insurance",
+      "network": "direct",
+      "category": "insurance",
+      "url": "https://feather-insurance.com/household-insurance?utm_source=the-price-of-germany",
+      "notes": "Household insurance landing page."
+    },
+    "taxfix": {
+      "merchant": "Taxfix",
+      "network": "direct",
+      "category": "taxes",
+      "url": "https://taxfix.de/",
+      "notes": "No tracking param on this link yet — add one if Taxfix provides it."
+    },
+    "adria": {
+      "merchant": "Adria Science",
+      "network": "direct",
+      "category": "health",
+      "url": "https://adriascience.com/ref/ADRIAE9CY8PL42359/",
+      "notes": "Peptides. Direct ref code."
+    },
+    "schufa": {
+      "merchant": "Meine SCHUFA",
+      "network": "direct",
+      "category": "finance",
+      "url": "https://www.meineschufa.de/",
+      "notes": "No tracking param on this link yet — verify it is actually an affiliate/partner link."
+    },
+    "amazon-b034jh9cf": {
+      "merchant": "Amazon",
+      "network": "amazon-associates",
+      "category": "shopping",
+      "url": "https://link.amazon/B034Jh9cf",
+      "notes": "Amazon product. Use ascsubtag for per-page attribution in Amazon reports."
+    },
+    "amazon-b033dk56l": {
+      "merchant": "Amazon",
+      "network": "amazon-associates",
+      "category": "shopping",
+      "url": "https://link.amazon/B033dK56l",
+      "notes": "Amazon product."
+    },
+    "amazon-b01n9kha3": {
+      "merchant": "Amazon",
+      "network": "amazon-associates",
+      "category": "shopping",
+      "url": "https://link.amazon/B01n9kHa3",
+      "notes": "Amazon product."
+    },
+    "dkb": {
+      "merchant": "DKB",
+      "network": "awin",
+      "category": "finance",
+      "url": "https://tidd.ly/4yKrvCk",
+      "notes": "DKB Girokonto (checking account). Awin shortlink — keep as-is to preserve attribution."
+    },
+    "axa": {
+      "merchant": "AXA",
+      "network": "awin",
+      "category": "insurance",
+      "url": "https://tidd.ly/4bBrJ4X",
+      "notes": "AXA insurance. Awin shortlink."
+    },
+    "grandclassicballet": {
+      "merchant": "Grand Classic Ballet",
+      "network": "awin",
+      "category": "events",
+      "url": "https://tidd.ly/3V9Y6lT",
+      "notes": "Grand Classic Ballet tickets. Awin shortlink."
+    },
+    "nordvpn": {
+      "merchant": "NordVPN",
+      "network": "awin",
+      "category": "tools",
+      "url": "https://tidd.ly/44QCFI2",
+      "notes": "NordVPN. Awin shortlink."
+    }
+  }
+}

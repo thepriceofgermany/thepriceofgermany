@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Affiliate Analytics · The Price of Germany</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#D83A2E;--coral-dark:#AE2E24;--paper:#FFFDF6;--cream:#FFFDF6;
+    --ink:#121210;--ink-soft:#67665F;--line:#E6E1D4;--ok:#1E7A4D;--bg:#F5F1E6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.5}
+  a{color:var(--coral)}
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 20px 80px}
+  header.top{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;margin-bottom:28px}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.7rem;margin:0}
+  .sub{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+  .controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .controls[hidden]{display:none}
+  select,button,input{font-family:'IBM Plex Mono',monospace;font-size:.8rem;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:9px;padding:8px 11px}
+  button{cursor:pointer}
+  button.primary{background:var(--coral);border-color:var(--coral);color:#fff;font-weight:600}
+  button.ghost{background:transparent}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:26px}
+  .kpi{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .kpi .label{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft)}
+  .kpi .val{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.7rem;margin-top:4px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 18px 8px;margin-bottom:22px}
+  .card h2{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.1rem;margin:0 0 4px}
+  .card .hint{font-size:.8rem;color:var(--ink-soft);margin:0 0 12px}
+  table{width:100%;border-collapse:collapse;font-size:.86rem}
+  th,td{text-align:right;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  th{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft);cursor:pointer;user-select:none}
+  tbody tr:hover{background:#faf6ea}
+  .merch{font-weight:600}
+  .tag{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:2px 7px}
+  .muted{color:var(--ink-soft)}
+  .bars{display:flex;align-items:flex-end;gap:3px;height:120px;margin:6px 0 10px}
+  .bars .bar{flex:1;background:var(--coral);border-radius:3px 3px 0 0;min-height:2px;position:relative}
+  .bars .bar:hover{background:var(--coral-dark)}
+  .axis{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--ink-soft)}
+  .notice{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--coral);border-radius:10px;padding:18px 20px;font-size:.9rem}
+  .notice code{background:#f0ead9;padding:2px 6px;border-radius:5px;font-size:.82rem}
+  .gate{max-width:440px;margin:60px auto;text-align:center}
+  .gate .card{padding:26px}
+  .flex{display:flex;gap:8px}
+  .flex input{flex:1}
+  .hide{display:none}
+  @media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}h1{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Affiliate Analytics</h1>
+      <div class="sub">The Price of Germany · click tracking</div>
+    </div>
+    <div class="controls" id="controls" hidden>
+      <select id="window">
+        <option value="0">All time</option>
+        <option value="90">Last 90 days</option>
+        <option value="30">Last 30 days</option>
+        <option value="7">Last 7 days</option>
+      </select>
+      <button class="ghost" id="refresh">Refresh</button>
+      <button class="ghost" id="signout" title="Forget token">Sign out</button>
+    </div>
+  </header>
+
+  <!-- token gate -->
+  <div id="gate" class="gate hide">
+    <div class="card">
+      <h2>Enter access token</h2>
+      <p class="hint">This dashboard shows private click &amp; revenue data. Enter the <code>ANALYTICS_TOKEN</code> you set on the Pages project.</p>
+      <div class="flex">
+        <input id="token" type="password" placeholder="token" autocomplete="off">
+        <button class="primary" id="enter">View</button>
+      </div>
+      <p class="hint" id="gateErr" style="color:var(--coral)"></p>
+    </div>
+  </div>
+
+  <!-- setup notice (when backend not configured) -->
+  <div id="setup" class="notice hide"></div>
+
+  <!-- dashboard -->
+  <div id="dash" class="hide">
+    <div class="kpis">
+      <div class="kpi"><div class="label">Total clicks</div><div class="val" id="k-clicks">–</div></div>
+      <div class="kpi"><div class="label">Revenue</div><div class="val" id="k-rev">–</div></div>
+      <div class="kpi"><div class="label">Overall EPC</div><div class="val" id="k-epc">–</div></div>
+      <div class="kpi"><div class="label">Active links</div><div class="val" id="k-active">–</div></div>
+    </div>
+
+    <div class="card">
+      <h2>Clicks over time</h2>
+      <p class="hint" id="chart-range"></p>
+      <div class="bars" id="bars"></div>
+      <div class="axis" id="axis"></div>
+    </div>
+
+    <div class="card">
+      <h2>By link</h2>
+      <p class="hint">Revenue is what you enter in <code>functions/lib/revenue.json</code>. EPC = revenue ÷ clicks. Click a header to sort.</p>
+      <div style="overflow-x:auto">
+        <table id="linkTable">
+          <thead><tr>
+            <th data-k="merchant">Merchant</th><th data-k="id">ID</th><th data-k="network">Network</th>
+            <th data-k="clicks">Clicks</th><th data-k="pages">Pages</th>
+            <th data-k="revenue">Revenue</th><th data-k="epc">EPC</th><th data-k="last">Last click</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>By page</h2>
+      <p class="hint">Which articles drive the clicks. Top 40 page × link rows.</p>
+      <div style="overflow-x:auto">
+        <table id="pageTable">
+          <thead><tr><th data-k="page">Page</th><th data-k="merchant">Merchant</th><th data-k="clicks">Clicks</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>By country</h2>
+      <div style="overflow-x:auto">
+        <table id="countryTable">
+          <thead><tr><th data-k="country">Country</th><th data-k="clicks">Clicks</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const TKEY = 'tpog_analytics_token';
+let INVENTORY = null, DATA = null, CUR = 'EUR';
+let linkSort = {k:'clicks', dir:-1}, pageSort = {k:'clicks', dir:-1};
+
+function fmtInt(n){ return (n||0).toLocaleString('en-US'); }
+function fmtMoney(n){ return new Intl.NumberFormat('en-US',{style:'currency',currency:CUR,maximumFractionDigits:2}).format(n||0); }
+function fmtDate(s){ if(!s) return '—'; const d=new Date(s.replace(' ','T')+'Z'); return isNaN(d)? s : d.toISOString().slice(0,10); }
+const COUNTRY = new Intl.DisplayNames(['en'],{type:'region'});
+function countryName(c){ if(!c||c==='??'||c==='T1') return 'Unknown'; try{ return COUNTRY.of(c)||c; }catch{ return c; } }
+
+async function load(){
+  const token = localStorage.getItem(TKEY) || '';
+  if(!token){ showGate(); return; }
+  const days = $('#window').value;
+  try{
+    const [invR, statR] = await Promise.all([
+      fetch('/affiliate-inventory.json', {cache:'no-store'}).then(r=>r.ok?r.json():{links:[]}).catch(()=>({links:[]})),
+      fetch('/api/stats?days='+encodeURIComponent(days), {headers:{authorization:'Bearer '+token},cache:'no-store'})
+    ]);
+    INVENTORY = invR;
+    if(statR.status===401){ localStorage.removeItem(TKEY); showGate('That token was rejected.'); return; }
+    const j = await statR.json();
+    if(statR.status===503){ showSetup(j); return; }
+    if(!statR.ok || !j.ok){ showSetup({message: j.message || ('Error '+statR.status)}); return; }
+    DATA = j; CUR = j.currency || 'EUR';
+    render();
+  }catch(e){ showSetup({message:String(e)}); }
+}
+
+function showGate(err){ hideAll(); $('#gate').classList.remove('hide'); $('#gateErr').textContent = err||''; }
+function showSetup(j){
+  hideAll(); $('#controls').hidden=false;
+  const el=$('#setup'); el.classList.remove('hide');
+  const steps = `
+    <h2 style="font-family:'Space Grotesk';margin:0 0 8px">Backend not ready yet</h2>
+    <p style="margin:0 0 10px">${j.message||'The stats API is not fully configured.'}</p>
+    <p style="margin:0 0 6px">One-time setup (from the repo root):</p>
+    <ol style="margin:0;padding-left:20px;font-size:.84rem;line-height:1.8">
+      <li><code>wrangler d1 create thepriceofgermany-affiliate</code></li>
+      <li>Add the printed <code>database_id</code> to the Pages project as a D1 binding named <code>DB</code></li>
+      <li><code>wrangler d1 execute thepriceofgermany-affiliate --remote --file=./schema.sql</code></li>
+      <li><code>wrangler pages secret put ANALYTICS_TOKEN</code></li>
+      <li>Redeploy: <code>npm run deploy</code></li>
+    </ol>`;
+  el.innerHTML = steps;
+}
+function hideAll(){ ['gate','setup','dash'].forEach(id=>$('#'+id).classList.add('hide')); $('#controls').hidden=true; }
+
+function render(){
+  hideAll(); $('#controls').hidden=false; $('#dash').classList.remove('hide');
+
+  const meta = {}; // id -> {merchant,network,category,pages[]}
+  (INVENTORY.links||[]).forEach(l=> meta[l.id]=l);
+  const clicksById = {}; let totalClicks=0;
+  (DATA.byLink||[]).forEach(r=>{ clicksById[r.link_id]=r; totalClicks+=r.clicks; });
+  const lastById = {}; (DATA.byLink||[]).forEach(r=> lastById[r.link_id]=r.last_click);
+
+  // KPIs
+  let totalRev=0; Object.values(DATA.revenue||{}).forEach(v=> totalRev+=(+v||0));
+  const activeIds = new Set((DATA.byLink||[]).filter(r=>r.clicks>0).map(r=>r.link_id));
+  $('#k-clicks').textContent = fmtInt(totalClicks);
+  $('#k-rev').textContent = fmtMoney(totalRev);
+  $('#k-epc').textContent = totalClicks ? fmtMoney(totalRev/totalClicks) : '—';
+  $('#k-active').textContent = activeIds.size + ' / ' + (INVENTORY.links||[]).length;
+
+  // chart
+  renderChart(DATA.byDay||[]);
+  const t=DATA.totals||{};
+  $('#chart-range').textContent = t.first_click ? `${fmtDate(t.first_click)} → ${fmtDate(t.last_click)}` : 'No clicks recorded yet.';
+
+  // by link rows
+  const ids = new Set([...Object.keys(meta), ...Object.keys(clicksById), ...Object.keys(DATA.revenue||{})]);
+  const linkRows = [...ids].map(id=>{
+    const m = meta[id]||{}; const clicks = (clicksById[id]||{}).clicks||0;
+    const revenue = +(DATA.revenue||{})[id]||0;
+    return { id, merchant:m.merchant||id, network:m.network||'—', pages:(m.pages||[]).length,
+      clicks, revenue, epc: clicks?revenue/clicks:0, last:lastById[id]||null };
+  });
+  renderTable('#linkTable', linkRows, linkSort, r=>`
+    <td class="merch">${esc(r.merchant)}</td><td class="muted">${esc(r.id)}</td><td><span class="tag">${esc(r.network)}</span></td>
+    <td>${fmtInt(r.clicks)}</td><td>${r.pages}</td><td>${fmtMoney(r.revenue)}</td>
+    <td>${r.clicks?fmtMoney(r.epc):'—'}</td><td class="muted">${fmtDate(r.last)}</td>`);
+
+  // by page rows
+  const pageRows = (DATA.byLinkPage||[]).map(r=>({
+    page:r.page, merchant:(meta[r.link_id]||{}).merchant||r.link_id, clicks:r.clicks
+  }));
+  renderTable('#pageTable', pageRows, pageSort, r=>`
+    <td>${esc(r.page)}</td><td class="merch">${esc(r.merchant)}</td><td>${fmtInt(r.clicks)}</td>`, 40);
+
+  // countries
+  const cRows = (DATA.byCountry||[]).map(r=>({country:countryName(r.country), clicks:r.clicks}));
+  renderTable('#countryTable', cRows, {k:'clicks',dir:-1}, r=>`<td>${esc(r.country)}</td><td>${fmtInt(r.clicks)}</td>`);
+}
+
+function renderChart(byDay){
+  const bars=$('#bars'), axis=$('#axis'); bars.innerHTML=''; axis.innerHTML='';
+  if(!byDay.length){ bars.innerHTML='<div class="muted" style="font-size:.85rem">No clicks yet.</div>'; return; }
+  const max = Math.max(...byDay.map(d=>d.clicks),1);
+  byDay.forEach(d=>{
+    const b=document.createElement('div'); b.className='bar';
+    b.style.height=(d.clicks/max*100)+'%'; b.title=`${d.day}: ${d.clicks}`;
+    bars.appendChild(b);
+  });
+  const a=document.createElement('span'); a.textContent=byDay[0].day;
+  const z=document.createElement('span'); z.textContent=byDay[byDay.length-1].day;
+  axis.append(a,z);
+}
+
+function renderTable(sel, rows, sort, rowHtml, limit){
+  const table=$(sel), tb=table.querySelector('tbody');
+  rows.sort((x,y)=>{
+    let a=x[sort.k], b=y[sort.k];
+    if(typeof a==='string'){ a=(a||'').toLowerCase(); b=(b||'').toLowerCase(); return a<b?-sort.dir:a>b?sort.dir:0; }
+    return ((a||0)-(b||0))*sort.dir;
+  });
+  const shown = limit?rows.slice(0,limit):rows;
+  tb.innerHTML = shown.map(r=>`<tr>${rowHtml(r)}</tr>`).join('') || `<tr><td colspan="9" class="muted">No data.</td></tr>`;
+  table.querySelectorAll('th').forEach(th=>{
+    th.onclick=()=>{ const k=th.dataset.k; if(sort.k===k) sort.dir*=-1; else {sort.k=k; sort.dir=(k==='merchant'||k==='id'||k==='page'||k==='country')?1:-1;} render(); };
+  });
+}
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+// events
+$('#enter').onclick=()=>{ const v=$('#token').value.trim(); if(!v) return; localStorage.setItem(TKEY,v); load(); };
+$('#token').addEventListener('keydown',e=>{ if(e.key==='Enter') $('#enter').click(); });
+$('#refresh').onclick=load;
+$('#window').onchange=load;
+$('#signout').onclick=()=>{ localStorage.removeItem(TKEY); showGate(); };
+load();
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+NEWSLETTER FOR: Buying a House in Germany: What It Really Costs
+Post: https://thepriceofgermany.com/buying-a-house-in-germany
+Video: https://youtu.be/hVAD4FpPN5A
+Published: Nov 4, 2026
+
+Campaign name:   buying-a-house-in-germany
+Subject line:    My house costs me 3,766 euros a month
+Preview text:    My real bills, the buying costs nobody warns you about, and a free mortgage calculator.
+From:            The Price of Germany <contact@thepriceofgermany.com>
+Send to:         group "Website subscribers"
+
+Contains: video link, post link, mortgage calculator link, subscriber library link. No affiliate link.
+Image: https://thepriceofgermany.com/assets/house-thumbnail-brand.jpg (live after the site is deployed)
+
+BEFORE YOU SEND: deploy the site first (post, image and library page must be live), send a test email, check every link.
