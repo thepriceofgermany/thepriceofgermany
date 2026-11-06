@@ -2,5 +2,8 @@ User-agent: *
 Allow: /
 Disallow: /downloads/
 Disallow: /free-guides-thanks
+Disallow: /go/
+Disallow: /analytics
+Disallow: /api/
 
 Sitemap: https://thepriceofgermany.com/sitemap.xml
