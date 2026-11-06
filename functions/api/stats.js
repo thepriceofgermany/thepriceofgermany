@@ -29,22 +29,31 @@ export async function onRequestGet(context) {
 
   // Optional rolling window, e.g. /api/stats?days=30. Default: all time.
   const days = Math.max(0, Math.min(3650, parseInt(url.searchParams.get('days') || '0', 10) || 0));
+  const includeBots = url.searchParams.get('bots') === '1';
   const since = days ? `datetime('now', '-${days} days')` : null;
-  const where = since ? `WHERE ts >= ${since}` : '';
+  // Human clicks only by default; is_bot=1 rows are excluded unless ?bots=1.
+  const conds = [];
+  if (since) conds.push(`ts >= ${since}`);
+  if (!includeBots) conds.push('is_bot = 0');
+  const where = conds.length ? 'WHERE ' + conds.join(' AND ') : '';
+  const botWhere = since ? `WHERE ts >= ${since} AND is_bot = 1` : 'WHERE is_bot = 1';
 
   try {
-    const [byLink, byLinkPage, byDay, byCountry, totals] = await Promise.all([
+    const [byLink, byLinkPage, byDay, byCountry, totals, botRow] = await Promise.all([
       env.DB.prepare(`SELECT link_id, COUNT(*) AS clicks, MAX(ts) AS last_click FROM clicks ${where} GROUP BY link_id`).all(),
       env.DB.prepare(`SELECT link_id, COALESCE(page,'(unknown)') AS page, COUNT(*) AS clicks FROM clicks ${where} GROUP BY link_id, page`).all(),
       env.DB.prepare(`SELECT substr(ts,1,10) AS day, COUNT(*) AS clicks FROM clicks ${where} GROUP BY day ORDER BY day`).all(),
       env.DB.prepare(`SELECT COALESCE(country,'??') AS country, COUNT(*) AS clicks FROM clicks ${where} GROUP BY country ORDER BY clicks DESC LIMIT 25`).all(),
       env.DB.prepare(`SELECT COUNT(*) AS clicks, MIN(ts) AS first_click, MAX(ts) AS last_click FROM clicks ${where}`).first(),
+      env.DB.prepare(`SELECT COUNT(*) AS bots FROM clicks ${botWhere}`).first(),
     ]);
 
     return json({
       ok: true,
       generatedAt: new Date().toISOString(),
       windowDays: days || null,
+      includeBots,
+      botTotal: (botRow && botRow.bots) || 0,
       totals: totals || { clicks: 0, first_click: null, last_click: null },
       byLink: byLink.results || [],
       byLinkPage: byLinkPage.results || [],

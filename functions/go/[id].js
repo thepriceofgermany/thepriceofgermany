@@ -10,6 +10,22 @@
 import links from '../lib/links.json';
 
 const SLUG = /^[a-z0-9][a-z0-9-]{0,80}$/;
+const SITE_HOST = /(^|\.)thepriceofgermany\.com$/i;
+const BOT_UA = /bot|crawl|spider|slurp|bingpreview|headless|phantom|python-requests|curl|wget|libwww|httpclient|java\/|go-http|node-fetch|axios|okhttp|facebookexternalhit|embedly|slackbot|telegrambot|whatsapp|discordbot|twitterbot|linkedinbot|pinterest|preview|monitor|uptime|pingdom|datadog|lighthouse|ahrefs|semrush|mj12|dotbot|petalbot|bytespider|gptbot|claudebot|ccbot|archive\.org|scrapy/i;
+
+// A real /go click is only reachable from a button on one of our own pages, so a
+// genuine click carries a same-site referer. No/foreign referer, a known crawler
+// UA, or a low Cloudflare bot score ⇒ treat as a bot.
+function classifyBot(referer, ua, score) {
+  if (!referer) return 1;
+  try {
+    const h = new URL(referer).host;
+    if (!SITE_HOST.test(h) && !h.endsWith('.thepriceofgermany.pages.dev') && !h.endsWith('.localhost') && h !== 'localhost') return 1;
+  } catch { return 1; }
+  if (ua && BOT_UA.test(ua)) return 1;
+  if (typeof score === 'number' && score > 0 && score < 30) return 1;
+  return 0;
+}
 
 export async function onRequestGet(context) {
   const { params, request, env } = context;
@@ -34,10 +50,14 @@ export async function onRequestGet(context) {
       }
       const country = request.headers.get('cf-ipcountry') || (request.cf && request.cf.country) || null;
       const referer = request.headers.get('referer') || null;
+      const ua = request.headers.get('user-agent') || null;
+      const score = (request.cf && request.cf.botManagement && typeof request.cf.botManagement.score === 'number')
+        ? request.cf.botManagement.score : null;
+      const isBot = classifyBot(referer, ua, score);
       context.waitUntil(
         env.DB.prepare(
-          'INSERT INTO clicks (link_id, page, country, referer) VALUES (?1, ?2, ?3, ?4)'
-        ).bind(id, page, country, referer).run().catch(() => {})
+          'INSERT INTO clicks (link_id, page, country, referer, user_agent, bot_score, is_bot) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)'
+        ).bind(id, page, country, referer, ua, score, isBot).run().catch(() => {})
       );
     }
   } catch (_) {

@@ -22,6 +22,7 @@
   .sub{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
   .controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
   .controls[hidden]{display:none}
+  .chk{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--ink-soft);display:flex;align-items:center;gap:5px;cursor:pointer}
   select,button,input{font-family:'IBM Plex Mono',monospace;font-size:.8rem;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:9px;padding:8px 11px}
   button{cursor:pointer}
   button.primary{background:var(--coral);border-color:var(--coral);color:#fff;font-weight:600}
@@ -72,6 +73,7 @@
         <option value="30">Last 30 days</option>
         <option value="7">Last 7 days</option>
       </select>
+      <label class="chk"><input type="checkbox" id="bots"> Include bots</label>
       <button class="ghost" id="refresh">Refresh</button>
       <button class="ghost" id="signout" title="Forget token">Sign out</button>
     </div>
@@ -96,11 +98,12 @@
   <!-- dashboard -->
   <div id="dash" class="hide">
     <div class="kpis">
-      <div class="kpi"><div class="label">Total clicks</div><div class="val" id="k-clicks">–</div></div>
+      <div class="kpi"><div class="label" id="k-clicks-label">Human clicks</div><div class="val" id="k-clicks">–</div></div>
       <div class="kpi"><div class="label">Revenue</div><div class="val" id="k-rev">–</div></div>
       <div class="kpi"><div class="label">Overall EPC</div><div class="val" id="k-epc">–</div></div>
-      <div class="kpi"><div class="label">Active links</div><div class="val" id="k-active">–</div></div>
+      <div class="kpi"><div class="label">Bots filtered</div><div class="val" id="k-bots">–</div></div>
     </div>
+    <p class="muted" id="botnote" style="font-size:.8rem;margin:-10px 0 22px"></p>
 
     <div class="card">
       <h2>Clicks over time</h2>
@@ -164,10 +167,11 @@ async function load(){
   const token = localStorage.getItem(TKEY) || '';
   if(!token){ showGate(); return; }
   const days = $('#window').value;
+  const bots = ($('#bots') && $('#bots').checked) ? '&bots=1' : '';
   try{
     const [invR, statR] = await Promise.all([
       fetch('/affiliate-inventory.json', {cache:'no-store'}).then(r=>r.ok?r.json():{links:[]}).catch(()=>({links:[]})),
-      fetch('/api/stats?days='+encodeURIComponent(days), {headers:{authorization:'Bearer '+token},cache:'no-store'})
+      fetch('/api/stats?days='+encodeURIComponent(days)+bots, {headers:{authorization:'Bearer '+token},cache:'no-store'})
     ]);
     INVENTORY = invR;
     if(statR.status===401){ localStorage.removeItem(TKEY); showGate('That token was rejected.'); return; }
@@ -209,11 +213,14 @@ function render(){
 
   // KPIs
   let totalRev=0; Object.values(DATA.revenue||{}).forEach(v=> totalRev+=(+v||0));
-  const activeIds = new Set((DATA.byLink||[]).filter(r=>r.clicks>0).map(r=>r.link_id));
+  $('#k-clicks-label').textContent = DATA.includeBots ? 'All clicks' : 'Human clicks';
   $('#k-clicks').textContent = fmtInt(totalClicks);
   $('#k-rev').textContent = fmtMoney(totalRev);
   $('#k-epc').textContent = totalClicks ? fmtMoney(totalRev/totalClicks) : '—';
-  $('#k-active').textContent = activeIds.size + ' / ' + (INVENTORY.links||[]).length;
+  $('#k-bots').textContent = fmtInt(DATA.botTotal||0);
+  $('#botnote').textContent = DATA.includeBots
+    ? 'Showing all traffic, bots included. Untick “Include bots” for human clicks only.'
+    : 'Bot traffic (no same-site referer, known crawlers, or low bot score) is excluded from these numbers.';
 
   // chart
   renderChart(DATA.byDay||[]);
@@ -285,6 +292,7 @@ $('#enter').onclick=()=>{ const v=$('#token').value.trim(); if(!v) return; local
 $('#token').addEventListener('keydown',e=>{ if(e.key==='Enter') $('#enter').click(); });
 $('#refresh').onclick=load;
 $('#window').onchange=load;
+$('#bots').onchange=load;
 $('#signout').onclick=()=>{ localStorage.removeItem(TKEY); showGate(); };
 load();
 </script>
