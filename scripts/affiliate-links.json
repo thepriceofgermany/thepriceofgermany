@@ -99,6 +99,13 @@
       "category": "tools",
       "url": "https://tidd.ly/44QCFI2",
       "notes": "NordVPN. Awin shortlink."
+    },
+    "einbuergerungsapp": {
+      "merchant": "Einbürgerungsapp",
+      "network": "direct",
+      "category": "citizenship",
+      "url": "https://einbuergerungsapp.de/r/thepriceofgermany",
+      "notes": "Einbürgerungstest / citizenship-test practice app. Partner referral link; readers get 20% off at checkout with this link. No API — enter revenue manually."
     }
   }
 }

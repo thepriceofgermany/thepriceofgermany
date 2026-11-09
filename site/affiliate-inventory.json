@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T08:21:41.899Z",
+  "generatedAt": "2026-11-09T12:06:37.785Z",
   "links": [
     {
       "id": "adria",
@@ -61,6 +61,19 @@
         "renting-in-germany-vs-usa",
         "unemployment-benefits-germany-vs-usa",
         "why-germans-dont-invest"
+      ]
+    },
+    {
+      "id": "einbuergerungsapp",
+      "merchant": "Einbürgerungsapp",
+      "network": "direct",
+      "category": "citizenship",
+      "pages": [
+        "checklist",
+        "citizenship-checklist-thanks",
+        "free-guides",
+        "moving-to-germany-cost",
+        "study-in-germany-vs-usa"
       ]
     },
     {
