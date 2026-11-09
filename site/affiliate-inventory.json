@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T18:39:59.187Z",
+  "generatedAt": "2026-11-09T22:55:37.280Z",
   "links": [
     {
       "id": "adria",
@@ -98,6 +98,7 @@
       "network": "direct",
       "category": "insurance",
       "pages": [
+        "70k-euro-german-payslip",
         "buying-a-house-in-germany",
         "cost-of-living-calculator",
         "german-retirement-accounts-explained",

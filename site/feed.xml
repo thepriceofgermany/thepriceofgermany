@@ -6,7 +6,17 @@
     <atom:link href="https://thepriceofgermany.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Videos, guides and cost breakdowns about life and money in Germany.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Nov 2026 18:40:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 22:55:38 GMT</lastBuildDate>
+    <item>
+      <title>Inside a 70k Euro German Payslip: Where Your Salary Goes</title>
+      <link>https://thepriceofgermany.com/70k-euro-german-payslip</link>
+      <guid isPermaLink="true">https://thepriceofgermany.com/70k-euro-german-payslip</guid>
+      <pubDate>Tue, 10 Nov 2026 08:00:00 GMT</pubDate>
+      <category>Salary</category>
+      <description>A 70,000 euro salary in Germany lands as about 3,575 euros a month. Here is the payslip line by line, what the deductions buy you, how it compares with the same salary in the US, and what is left after rent.</description>
+      <media:content url="https://thepriceofgermany.com/assets/payslip-thumbnail-brand.jpg" medium="image" />
+      <enclosure url="https://thepriceofgermany.com/assets/payslip-thumbnail-brand.jpg" type="image/jpeg" length="0" />
+    </item>
     <item>
       <title>The Best Dental Insurance in Germany (and Why You Actually Need It)</title>
       <link>https://thepriceofgermany.com/best-dental-insurance-germany</link>
@@ -296,16 +306,6 @@
       <description>The same peptide can cost $1,297 in the USA and 61 euros in Germany. Same ingredient, wildly different price. Here is exactly why.</description>
       <media:content url="https://thepriceofgermany.com/assets/video/peptide-poster.jpg" medium="image" />
       <enclosure url="https://thepriceofgermany.com/assets/video/peptide-poster.jpg" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>The REAL Cost of Owning a Car in Germany vs the USA</title>
-      <link>https://thepriceofgermany.com/the-real-cost-of-owning-a-car-in-germany-vs-the-usa</link>
-      <guid isPermaLink="true">https://thepriceofgermany.com/the-real-cost-of-owning-a-car-in-germany-vs-the-usa</guid>
-      <pubDate>Wed, 05 Aug 2026 08:00:00 GMT</pubDate>
-      <category>Cost of Living</category>
-      <description>Gas costs over $9 a gallon in Germany, so owning a car must cost a fortune, right? Not even close.</description>
-      <media:content url="https://i.ytimg.com/vi/pnt2nv1DJEs/maxresdefault.jpg" medium="image" />
-      <enclosure url="https://i.ytimg.com/vi/pnt2nv1DJEs/maxresdefault.jpg" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>

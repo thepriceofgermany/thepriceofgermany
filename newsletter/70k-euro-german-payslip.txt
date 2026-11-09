@@ -1,0 +1,13 @@
+NEWSLETTER FOR: Inside a 70k Euro German Payslip: Where Your Salary Goes
+Post: https://thepriceofgermany.com/70k-euro-german-payslip
+Video: https://youtu.be/Diu_SbRWUXY   (private until it publishes: scheduled 2026-11-10 17:00 UTC)
+Worksheet: https://thepriceofgermany.com/take-home-pay-worksheet
+Dental post linked: https://thepriceofgermany.com/best-dental-insurance-germany
+
+MailerLite DRAFT campaign id 203699630033078055 (group "Website subscribers", 14 active). NOT scheduled, NOT sent.
+Subject line:    A 70,000 euro salary lands as 3,575 euros a month
+Preview text:    The payslip line by line, what the deductions buy, the US comparison, and a free take home pay worksheet.
+Image: https://thepriceofgermany.com/assets/payslip-thumbnail-brand.jpg (live after the site is deployed)
+
+BEFORE YOU SEND: deploy the site first (post, worksheet page, image and library page must be live), wait until the video is public, send a test email, check every link.
+Contains: video, post, worksheet page, dental insurance post (affiliate note added), subscriber library link.

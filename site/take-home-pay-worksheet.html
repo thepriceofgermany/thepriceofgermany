@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics (loaded only after cookie consent) -->
+<script src="/assets/consent.js" defer></script>
+<script src="/assets/newsletter.js?v=20261102a" defer></script>
+<title>Free Worksheet: Take Home Pay in Germany: The Price of Germany</title>
+<meta name="description" content="A free one-page worksheet to work out your take home pay in Germany, in English: the 2026 rates and ceilings, the tax formula and a column for your own numbers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://thepriceofgermany.com/take-home-pay-worksheet">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Price of Germany">
+<meta property="og:url" content="https://thepriceofgermany.com/take-home-pay-worksheet">
+<meta property="og:title" content="Free Worksheet: Take Home Pay in Germany">
+<meta property="og:description" content="A free one page worksheet that takes you from gross salary to net pay in Germany, line by line: the 2026 social insurance rates and ceilings, the income tax formula, the 70,000 euro example from my video filled in, and a column for your own numbers. Status November 2026.">
+<meta property="og:image" content="https://thepriceofgermany.com/assets/take-home-pay-worksheet-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Worksheet: Take Home Pay in Germany">
+<meta name="twitter:description" content="A free one page worksheet that takes you from gross salary to net pay in Germany, line by line: the 2026 social insurance rates and ceilings, the income tax formula, the 70,000 euro example from my video filled in, and a column for your own numbers. Status November 2026.">
+<meta name="twitter:image" content="https://thepriceofgermany.com/assets/take-home-pay-worksheet-og.png">
+<style>
+  :root {
+    --cream: #FFFDF6;
+    --paper: #FFFDF6;
+    --ink: #121210;
+    --ink-soft: #67665F;
+    --coral: #D83A2E;
+    --coral-dark: #AE2E24;
+    --teal: #121210;
+    --teal-dark: #121210;
+    --yellow: #D83A2E;
+    --line: #E6E1D4;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    
+    
+  }
+
+  a { color: inherit; }
+
+  .shell { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------------- NAV ---------------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(253, 248, 240, 0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo .tag {
+    background: var(--coral);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .back-link { font-size: 13.5px; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
+  .back-link:hover { color: var(--ink); }
+
+  /* ---------------- ARTICLE HEADER ---------------- */
+  header.post-head { padding: 56px 0 32px; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    background: rgba(31, 166, 160, 0.1);
+    border: 1px solid rgba(31, 166, 160, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.08;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .dek { font-size: 1.1rem; color: var(--ink-soft); line-height: 1.6; margin: 0; max-width: 620px; }
+
+  /* ---------------- VIDEO EMBED ---------------- */
+  .video-wrap {
+    margin: 32px 0 8px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--line);
+    box-shadow: none;
+    position: relative;
+    padding-top: 56.25%;
+    background: #000;
+  }
+  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ---------------- ARTICLE BODY ---------------- */
+  article { padding: 24px 0 64px; }
+  article h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 46px 0 16px;
+    letter-spacing: -0.005em;
+  }
+  article p { font-size: 16.5px; line-height: 1.75; margin: 0 0 18px; color: var(--ink); }
+  article p.lede { font-size: 1.15rem; color: var(--ink); }
+  article strong { color: var(--ink); }
+
+  .payslip {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 26px 0;
+    box-shadow: none;
+  }
+  .payslip .compare-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .payslip-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13.5px;
+    padding: 9px 0;
+    border-top: 1.5px dashed var(--line);
+    gap: 12px;
+  }
+  .payslip-row:first-of-type { border-top: none; }
+  .payslip-row .label { color: var(--ink-soft); font-size: 12.5px; }
+  .payslip-row .value { font-weight: 700; color: var(--coral-dark); text-align: right; white-space: nowrap; }
+  .payslip-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'IBM Plex Mono', monospace;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1.5px solid var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .payslip-total .value { color: var(--teal-dark); }
+
+  .compare {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 26px 0;
+    box-shadow: none;
+  }
+  .compare .compare-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .compare-row2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    padding: 9px 0;
+    border-top: 1.5px dashed var(--line);
+  }
+  .compare-row2:first-of-type { border-top: none; }
+  .compare-row2 .country { color: var(--ink-soft); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 10px; }
+  .compare-row2 .value { font-weight: 700; text-align: right; }
+  .compare-row2.us .value { color: var(--coral-dark); }
+  .compare-row2.de .value { color: var(--teal-dark); }
+
+  .rec-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 22px 20px;
+    margin: 30px 0;
+    position: relative;
+    box-shadow: none;
+  }
+  .rec-hole {
+    position: absolute; top: -8px; left: 22px;
+    width: 16px; height: 16px;
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: 50%;
+  }
+  .rec-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--coral-dark);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .rec-card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; }
+  .rec-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
+  .rec-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--coral); color: #fff !important; text-decoration: none;
+    font-weight: 600; font-size: 14px; padding: 10px 20px; border-radius: 8px;
+    box-shadow: none;
+  }
+  .rec-btn:hover { transform: translateY(-1px); }
+
+  .action-list { list-style: none; margin: 0 0 18px; padding: 0; counter-reset: action; }
+  .action-list li { counter-increment: action; display: flex; gap: 16px; padding: 16px 0; border-top: 1.5px dashed var(--line); }
+  .action-list li:first-child { border-top: none; }
+  .action-list li::before {
+    content: counter(action);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--coral);
+    flex-shrink: 0;
+    width: 28px;
+  }
+  .action-list p { margin: 0; font-size: 15.5px; line-height: 1.65; }
+
+  blockquote {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--ink);
+    border-left: 4px solid var(--yellow);
+    padding: 4px 0 4px 22px;
+    margin: 34px 0;
+  }
+
+  .disclosure {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    margin-top: 40px;
+    line-height: 1.6;
+  }
+  .disclaimer {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  /* ---------------- FOOTER ---------------- */
+  footer { border-top: 1px solid var(--line); padding: 36px 0 44px; }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    max-width: 760px; margin: 0 auto; padding: 0 24px;
+  }
+  .footer-inner .brand { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--ink-soft); }
+  .footer-links { display: flex; gap: 20px; font-size: 13.5px; }
+  .footer-links a { text-decoration: none; color: var(--ink-soft); }
+  .footer-links a:hover { color: var(--ink); }
+
+  .inside { padding-left: 20px; margin: 0 0 18px; }
+  .inside li { font-size: 16.5px; line-height: 1.7; margin-bottom: 6px; }
+  .cover-img { display: block; width: 100%; max-width: 340px; height: auto; border-radius: 12px; border: 1.5px solid var(--line); box-shadow: 0 4px 0 var(--line); margin: 6px 0 30px; }
+</style>
+<style id="index-skin">
+/* ---- The Index: modern grotesk reskin (overrides cartoon template) ---- */
+:root{ --red:#D83A2E; --red-dark:#AE2E24; --paper:#FFFDF6; }
+body{ background:var(--paper); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+h1,h2,h3,h4,.logo{ font-family:'Space Grotesk',system-ui,sans-serif; letter-spacing:-0.02em; }
+h1{ font-weight:700; }
+nav{ background:rgba(255,253,246,0.85)!important; border-bottom:1px solid var(--ink)!important; backdrop-filter:blur(8px); }
+.logo .tag{ background:var(--red); border-radius:3px; font-family:'IBM Plex Mono',monospace; }
+.nav-cta{ border-radius:4px!important; }
+/* eyebrow: squared mono label instead of teal pill */
+.eyebrow{ background:transparent!important; border:0!important; border-radius:0!important; padding:0!important; color:var(--red)!important; font-family:'IBM Plex Mono',monospace!important; font-weight:500; letter-spacing:0.12em!important; }
+/* h1 highlighter: thin red swash, no skew */
+h1 .hl{ color:inherit; }
+h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:0.06em!important; transform:none!important; opacity:0.85; }
+/* buttons: flat + squared */
+.btn{ border-radius:4px!important; box-shadow:none!important; font-family:'Space Grotesk',sans-serif; font-weight:600; transition:background .15s ease,color .15s ease,border-color .15s ease!important; }
+.btn:hover{ transform:none!important; }
+.btn-primary{ background:var(--ink)!important; color:#FFFDF6!important; box-shadow:none!important; }
+.btn-primary:hover{ background:var(--red)!important; color:#FFFDF6!important; }
+.btn-primary:active{ transform:none!important; box-shadow:none!important; }
+.btn-outline{ border:1px solid var(--ink)!important; }
+.btn-outline:hover{ background:var(--ink)!important; color:#FFFDF6!important; }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="/">The Price of Germany <span class="tag">$ → €</span></a>
+      <a class="back-link" href="/#reports">All reports</a>
+    </div>
+  </nav>
+
+  <header class="post-head">
+    <div class="shell">
+      <span class="eyebrow">Free worksheet</span>
+      <h1>Take Home Pay Worksheet: Gross to Net in Germany</h1>
+      <p class="dek">Work out what lands in your bank account, line by line, with the 2026 rates and the tax formula. The 70,000 euro example from my video is filled in. Status November 2026.</p>
+    </div>
+  </header>
+
+  <article>
+    <div class="shell">
+      <img class="cover-img" src="/assets/take-home-pay-worksheet-cover.png" alt="The one page Take Home Pay Worksheet" width="1588" height="2246">
+      <p class="disclaimer">Preview only. The full one page worksheet opens after you subscribe below.</p>
+
+      <p>Subscribe below, confirm your email, and the free guides page opens with every download, including this one A4 page.</p>
+
+      <h2>What is inside</h2>
+      <ul class="inside">
+        <li>The four social insurance lines with the 2026 rates and ceilings: pension, unemployment, health (with the extra charge of your fund) and long term care</li>
+        <li>From gross to taxable income: the allowances and the deductible contributions</li>
+        <li>The 2026 income tax formula for a single person, and when the Soli and church tax apply</li>
+        <li>Net per year, net per month and the share of your gross that reaches you</li>
+        <li>The 70,000 euro example from the video in one column and an empty column for your own numbers</li>
+        <li>What the worksheet leaves out, and how to check your result</li>
+      </ul>
+
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/Diu_SbRWUXY" title="Inside a 70k Euro German Payslip: Where Your Salary Goes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+      <p>Want the full walkthrough? <a href="https://youtu.be/Diu_SbRWUXY" target="_blank" rel="noopener">Watch the video on YouTube</a> or <a href="/70k-euro-german-payslip">read the post</a>.</p>
+
+      <p class="disclaimer">General information and an illustrative calculation, not tax or financial advice. Figures are for 2026, status November 2026, and the worksheet is a simplified calculation, so your payslip will differ. Rates, thresholds and rules change. For your own situation, ask a Steuerberater.</p>
+    </div>
+  </article>
+
+  <!-- Email gate: the shared MailerLite "Website Form" (default id in assets/newsletter.js). Its confirmation redirect goes to /free-guides-thanks. -->
+  <div class="tpog-newsletter" data-tag="Free worksheet" data-title="Get the free Take Home Pay Worksheet" data-text="Subscribe and confirm your email to open the one page take home pay worksheet, plus every other free guide. You will also get new videos and cost breakdowns about life in Germany. No spam, and you can unsubscribe any time."></div>
+  <div class="shell"><p class="disclaimer"><a href="/free-guides">See all free guides</a></p></div>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="brand">thepriceofgermany.com</span>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">YouTube</a>
+        <a href="/#reports">All reports</a>
+        <a href="/#about">About</a>
+        <a href="/imprint">Imprint</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/refund">Refunds</a>
+        <a href="mailto:contact@thepriceofgermany.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

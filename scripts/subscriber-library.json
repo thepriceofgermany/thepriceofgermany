@@ -22,9 +22,21 @@
       "file": "/downloads/investing-in-germany-expat-checklist-589ba014f7f02920.pdf",
       "btn": "Download the checklist",
       "meta": "1 page · Figures for 2026"
+    },
+    {
+      "title": "Take Home Pay Worksheet",
+      "desc": "Gross to net in Germany on one A4 page: the 2026 rates and ceilings for pension, unemployment, health and care insurance, the income tax formula, the 70,000 euro example and a column for your own numbers.",
+      "file": "/downloads/take-home-pay-worksheet-c518c769ae11b55d.pdf",
+      "btn": "Download the worksheet",
+      "meta": "1 page · Figures for 2026"
     }
   ],
   "videos": [
+    {
+      "title": "Inside a 70k Euro German Payslip: Where Your Salary Goes",
+      "post": "/70k-euro-german-payslip",
+      "video": "https://youtu.be/Diu_SbRWUXY"
+    },
     {
       "title": "Buying a House in Germany: What It Really Costs",
       "post": "/buying-a-house-in-germany",
