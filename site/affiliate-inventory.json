@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T14:48:42.353Z",
+  "generatedAt": "2026-11-09T18:10:05.963Z",
   "links": [
     {
       "id": "adria",
@@ -103,6 +103,15 @@
         "german-retirement-accounts-explained",
         "investing-as-an-expat-in-germany",
         "why-nobody-riots-over-the-german-pension"
+      ]
+    },
+    {
+      "id": "feather-dental",
+      "merchant": "Feather Insurance",
+      "network": "direct",
+      "category": "insurance",
+      "pages": [
+        "best-dental-insurance-germany"
       ]
     },
     {

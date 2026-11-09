@@ -30,6 +30,13 @@
       "url": "https://feather-insurance.com/household-insurance?utm_source=the-price-of-germany",
       "notes": "Household insurance landing page."
     },
+    "feather-dental": {
+      "merchant": "Feather Insurance",
+      "network": "direct",
+      "category": "insurance",
+      "url": "https://feather-insurance.com/dental-insurance?utm_source=the-price-of-germany",
+      "notes": "Dental insurance (Zahnzusatzversicherung) landing page."
+    },
     "taxfix": {
       "merchant": "Taxfix",
       "network": "direct",

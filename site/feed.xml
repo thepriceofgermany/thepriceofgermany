@@ -6,7 +6,17 @@
     <atom:link href="https://thepriceofgermany.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Videos, guides and cost breakdowns about life and money in Germany.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Nov 2026 14:48:43 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 18:10:10 GMT</lastBuildDate>
+    <item>
+      <title>The Best Dental Insurance in Germany (and Why You Actually Need It)</title>
+      <link>https://thepriceofgermany.com/best-dental-insurance-germany</link>
+      <guid isPermaLink="true">https://thepriceofgermany.com/best-dental-insurance-germany</guid>
+      <pubDate>Mon, 09 Nov 2026 08:00:00 GMT</pubDate>
+      <category>Insurance</category>
+      <description>German public insurance covers the check-up and almost nothing else. A single implant can cost 3,000 euros out of pocket. Here is how Zahnzusatzversicherung works, what it really costs, and the best dental cover to buy as a foreigner.</description>
+      <media:content url="https://thepriceofgermany.com/assets/justin-photo.jpg" medium="image" />
+      <enclosure url="https://thepriceofgermany.com/assets/justin-photo.jpg" type="image/jpeg" length="0" />
+    </item>
     <item>
       <title>Buying a House in Germany: What It Really Costs</title>
       <link>https://thepriceofgermany.com/buying-a-house-in-germany</link>
@@ -296,16 +306,6 @@
       <description>Gas costs over $9 a gallon in Germany, so owning a car must cost a fortune, right? Not even close.</description>
       <media:content url="https://i.ytimg.com/vi/pnt2nv1DJEs/maxresdefault.jpg" medium="image" />
       <enclosure url="https://i.ytimg.com/vi/pnt2nv1DJEs/maxresdefault.jpg" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Is Germany Cheaper Than America? The Honest Numbers</title>
-      <link>https://thepriceofgermany.com/is-germany-cheaper-than-america</link>
-      <guid isPermaLink="true">https://thepriceofgermany.com/is-germany-cheaper-than-america</guid>
-      <pubDate>Mon, 03 Aug 2026 08:00:00 GMT</pubDate>
-      <category>Cost of Living</category>
-      <description>Two new dads, two very different bills. Where Germany quietly saves you tens of thousands, and where it will make your eyes water.</description>
-      <media:content url="https://i.ytimg.com/vi/cXoLFiXZU7U/maxresdefault.jpg" medium="image" />
-      <enclosure url="https://i.ytimg.com/vi/cXoLFiXZU7U/maxresdefault.jpg" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>
