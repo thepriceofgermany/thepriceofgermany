@@ -357,6 +357,108 @@
     line-height: 1.6;
   }
 
+  /* ---------------- FIGURES / GRAPHICS ---------------- */
+  figure { margin: 30px 0; }
+  figure svg { width: 100%; height: auto; display: block; }
+  figcaption {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* ---------------- COMPARISON TABLE ---------------- */
+  .cmp-wrap { margin: 30px 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table.cmp {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1.5px solid var(--line);
+    vertical-align: top;
+    line-height: 1.45;
+  }
+  table.cmp thead th {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    border-bottom: 2px solid var(--ink);
+  }
+  table.cmp tbody th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  table.cmp col.pick, table.cmp .pick-col { background: rgba(216, 58, 46, 0.06); }
+  table.cmp thead th.pick-col {
+    color: var(--coral-dark);
+    border-bottom-color: var(--coral);
+  }
+  .pick-badge {
+    display: inline-block;
+    background: var(--coral);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-left: 7px;
+    vertical-align: middle;
+  }
+  table.cmp .yes { color: var(--teal-dark); font-weight: 700; }
+  table.cmp .no { color: var(--coral-dark); font-weight: 700; }
+
+  .verdict {
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 14px;
+    padding: 24px 24px 22px;
+    margin: 30px 0;
+  }
+  .verdict .v-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .verdict h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin: 0 0 10px;
+    color: var(--cream);
+  }
+  .verdict p { color: #D9D6CC; font-size: 15px; line-height: 1.6; margin: 0 0 16px; }
+  .verdict .rec-btn { background: var(--coral); }
+  .verdict .rec-btn:hover { background: #fff; color: var(--ink) !important; }
+
+  /* inline text CTA */
+  .inline-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--coral-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
   /* ---------------- FOOTER ---------------- */
   footer { border-top: 1px solid var(--line); padding: 36px 0 44px; }
   .footer-inner {
@@ -442,6 +544,41 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
 
       <p>Professional cleaning is the sneaky one. Most dentists here recommend it once or twice a year, most patients get it, and the public system covers little to none of it. Call it 100 to 240 euros a year that nobody warned you about. Everything below that line, the inlays, crowns, bridges, and implants, is where a bad year can cost more than your rent.</p>
 
+      <figure>
+        <svg viewBox="0 0 700 200" role="img" aria-label="On a 3,000 euro implant, public insurance pays a small fixed subsidy and you pay the rest. A dental policy can cover almost all of it.">
+          <style>
+            .bar-lbl{font-family:'IBM Plex Mono',monospace;font-size:12px;fill:#67665F;}
+            .bar-val{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;}
+            .bar-cap{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;fill:#121210;}
+          </style>
+          <text x="0" y="22" class="bar-cap">One ceramic implant + crown: €3,000</text>
+
+          <!-- Row 1: public only -->
+          <text x="0" y="66" class="bar-lbl">Public only</text>
+          <rect x="120" y="52" width="72" height="22" rx="3" fill="#121210"/>
+          <rect x="192" y="52" width="488" height="22" rx="3" fill="#D83A2E"/>
+          <text x="124" y="68" class="bar-val" fill="#FFFDF6">€450</text>
+          <text x="672" y="68" class="bar-val" fill="#FFFDF6" text-anchor="end">You pay €2,550</text>
+
+          <!-- Row 2: with Feather Advanced -->
+          <text x="0" y="122" class="bar-lbl">+ dental policy</text>
+          <rect x="120" y="108" width="72" height="22" rx="3" fill="#121210"/>
+          <rect x="192" y="108" width="452" height="22" rx="3" fill="#1FA6A0"/>
+          <rect x="644" y="108" width="36" height="22" rx="3" fill="#D83A2E"/>
+          <text x="124" y="124" class="bar-val" fill="#FFFDF6">€450</text>
+          <text x="400" y="124" class="bar-val" fill="#FFFDF6" text-anchor="middle">Policy pays the rest</text>
+
+          <!-- legend -->
+          <rect x="0" y="168" width="13" height="13" rx="2" fill="#121210"/>
+          <text x="20" y="179" class="bar-lbl">Public subsidy</text>
+          <rect x="150" y="168" width="13" height="13" rx="2" fill="#1FA6A0"/>
+          <text x="170" y="179" class="bar-lbl">Covered by policy</text>
+          <rect x="330" y="168" width="13" height="13" rx="2" fill="#D83A2E"/>
+          <text x="350" y="179" class="bar-lbl">Out of your pocket</text>
+        </svg>
+        <figcaption>Illustrative. Exact subsidy and reimbursement depend on your plan, tier, and how long you have held the policy.</figcaption>
+      </figure>
+
       <h2>Germany vs the USA: closer than you would think</h2>
       <p>This is the part that breaks the usual story. On most healthcare, America is the expensive one. On teeth, the two systems rhyme, because in both countries dental is treated as a semi-separate thing you are expected to top up yourself.</p>
 
@@ -466,26 +603,132 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
       <p>This is the rule that trips people up. Most plans cap how much they pay in the first few years. You might be limited to a few hundred euros in year one, rising each year until the cap disappears entirely around year four or five. The policy is designed to be bought <strong>before</strong> you need it, not the week a crown breaks. There is usually also no coverage for treatment a dentist has already recommended or started before you signed up.</p>
 
       <h3>The Heil- und Kostenplan</h3>
-      <p>Before any big treatment, your dentist writes a Heil- und Kostenplan, an itemized cost estimate. You send it to your insurer first and they tell you what they will pay. Skipping this step can mean skipping your reimbursement, so for anything expensive, get the plan and submit it before the drill comes out.</p>
+      <p>Before any big treatment, your dentist writes a Heil- und Kostenplan, an itemized cost estimate. You send it to your insurer first and they tell you what they will pay. Skipping this step can mean skipping your reimbursement, so for anything expensive, get the plan and submit it before the drill comes out. If you would rather just see your options in plain English, you can <a class="inline-cta" href="/go/feather-dental?p=best-dental-insurance-germany" target="_blank" rel="noopener sponsored">check Feather's dental plans here →</a></p>
 
-      <h2>The best dental insurance in Germany for expats</h2>
-      <p>For foreigners, the practical problem is not just which plan, it is which plan you can actually sign up for and understand in English, without a German friend translating clauses about Festzuschuss at your kitchen table.</p>
+      <h2>Feather vs Getsafe vs Ottonova: the three expats actually compare</h2>
+      <p>Three providers come up again and again when internationals shop for dental cover in Germany, because all three are modern, app-first, and at least partly in English: <strong>Feather</strong>, <strong>Getsafe</strong>, and <strong>Ottonova</strong>. They are all legitimate. The difference that matters for a foreigner is not who has the fanciest tier, it is which one you can actually sign up for, understand, and claim with in English without a German speaker next to you.</p>
 
-      <p>That is why I point people toward Feather. It is an insurance platform built specifically for internationals in Germany, the whole thing is in plain English, and their dental plans are structured the normal German way: a basic tier for people who mostly want cleanings and small work covered, and a comprehensive tier that pays for the expensive stuff, crowns, bridges, implants, once the first-year limits pass.</p>
-
-      <div class="compare">
-        <div class="compare-title">Supplementary dental policy, rough monthly premium</div>
-        <div class="compare-row de"><span class="country">Basic plan</span><span class="value">around €9 to €11/mo (cleanings + small work)</span></div>
-        <div class="compare-row de"><span class="country">Comprehensive plan</span><span class="value">around €16 to €30/mo depending on age</span></div>
+      <div class="cmp-wrap">
+        <table class="cmp">
+          <colgroup><col><col class="pick"><col><col></colgroup>
+          <thead>
+            <tr>
+              <th></th>
+              <th class="pick-col">Feather <span class="pick-badge">Best for expats</span></th>
+              <th>Getsafe</th>
+              <th>Ottonova</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Starts at</th>
+              <td class="pick-col"><strong>~€10.90/mo</strong></td>
+              <td>~€16.50/mo</td>
+              <td>~€8.80/mo</td>
+            </tr>
+            <tr>
+              <th scope="row">Comprehensive tier</th>
+              <td class="pick-col">~€16/mo and up</td>
+              <td>~€20 to €30/mo</td>
+              <td>First Class, higher</td>
+            </tr>
+            <tr>
+              <th scope="row">Sign up fully in English</th>
+              <td class="pick-col"><span class="yes">Yes</span></td>
+              <td><span class="yes">Yes</span></td>
+              <td><span class="no">No, signup in German</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Built for internationals</th>
+              <td class="pick-col"><span class="yes">Yes, that is the whole point</span></td>
+              <td>Partly</td>
+              <td>German-first, English support</td>
+            </tr>
+            <tr>
+              <th scope="row">Waiting period</th>
+              <td class="pick-col">None</td>
+              <td>None</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <th scope="row">First-years cap, then</th>
+              <td class="pick-col">Limited ~4 yrs, then high/unlimited</td>
+              <td>€1,500 to €4,500, unlimited yr 4</td>
+              <td>€800 to €5,000, unlimited yr 5</td>
+            </tr>
+            <tr>
+              <th scope="row">Minimum term</th>
+              <td class="pick-col">Short</td>
+              <td>12 months</td>
+              <td>24 months</td>
+            </tr>
+            <tr>
+              <th scope="row">Cleaning covered</th>
+              <td class="pick-col">Yes, up to annual limit</td>
+              <td>Yes, unlimited</td>
+              <td>Yes, €70 to €200/yr by tier</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+      <p style="font-size:12.5px;color:var(--ink-soft);font-family:'IBM Plex Mono',monospace;margin-top:-8px;">Figures are entry-level starting prices and typical terms; your exact premium depends on age and tier. Always confirm current terms on the provider's site before buying.</p>
 
-      <p>Premiums rise with the age you sign up at, so the single biggest lever on lifetime cost is buying while you are younger and your teeth are boring. A 30-something who locks in a comprehensive plan now pays far less over the years than the same person waiting until a molar actually cracks.</p>
+      <h3>Where each one wins, and loses</h3>
+      <p><strong>Ottonova</strong> has the lowest sticker price and a genuinely strong top tier, but there is a catch that specifically bites foreigners: you can browse the site in English, yet the actual online signup is in German. For a lot of new arrivals that is a wall, and their minimum term is two years.</p>
+
+      <p><strong>Getsafe</strong> is slick, fully English, unlimited cleaning, and runs a clever prevention perk (do a cleaning, get a gadget). But its entry premium is the highest of the three, and the promo-heavy framing means the real cost depends on your profile.</p>
+
+      <p><strong>Feather</strong> is the one built from the ground up for internationals. The whole thing, quote, signup, policy documents, and claims, happens in English, the entry price is low, and the comprehensive tier covers the expensive work: crowns, bridges, implants, inlays, once the first-year limits pass. It is the fewest-surprises option for someone who does not yet speak insurance-grade German.</p>
+
+      <figure>
+        <svg viewBox="0 0 700 220" role="img" aria-label="Monthly premium rises the older you are when you sign up, so buying earlier costs less over time.">
+          <style>
+            .ax{stroke:#E6E1D4;stroke-width:1.5;}
+            .gl{stroke:#E6E1D4;stroke-width:1;stroke-dasharray:3 4;}
+            .tk{font-family:'IBM Plex Mono',monospace;font-size:11px;fill:#67665F;}
+            .dot-lbl{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12px;fill:#121210;}
+            .ttl{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;fill:#121210;}
+          </style>
+          <text x="0" y="18" class="ttl">The cost of waiting: monthly premium by sign-up age</text>
+          <!-- axes -->
+          <line class="ax" x1="55" y1="40" x2="55" y2="175"/>
+          <line class="ax" x1="55" y1="175" x2="670" y2="175"/>
+          <!-- gridlines + y labels -->
+          <line class="gl" x1="55" y1="135" x2="670" y2="135"/>
+          <line class="gl" x1="55" y1="95" x2="670" y2="95"/>
+          <line class="gl" x1="55" y1="55" x2="670" y2="55"/>
+          <text x="48" y="179" class="tk" text-anchor="end">€0</text>
+          <text x="48" y="139" class="tk" text-anchor="end">€12</text>
+          <text x="48" y="99" class="tk" text-anchor="end">€24</text>
+          <text x="48" y="59" class="tk" text-anchor="end">€36</text>
+          <!-- line: age 20 ~17, 30 ~20, 40 ~30 (illustrative, Getsafe-style) -->
+          <polyline fill="none" stroke="#D83A2E" stroke-width="3" points="130,118 400,108 650,75"/>
+          <circle cx="130" cy="118" r="5.5" fill="#D83A2E"/>
+          <circle cx="400" cy="108" r="5.5" fill="#D83A2E"/>
+          <circle cx="650" cy="75" r="5.5" fill="#D83A2E"/>
+          <text x="130" y="105" class="dot-lbl" text-anchor="middle">~€17</text>
+          <text x="400" y="95" class="dot-lbl" text-anchor="middle">~€20</text>
+          <text x="650" y="62" class="dot-lbl" text-anchor="middle">~€30</text>
+          <!-- x labels -->
+          <text x="130" y="192" class="tk" text-anchor="middle">Age 20</text>
+          <text x="400" y="192" class="tk" text-anchor="middle">Age 30</text>
+          <text x="650" y="192" class="tk" text-anchor="middle">Age 40</text>
+        </svg>
+        <figcaption>Illustrative age curve. The pattern is the point: premiums lock to the age you join at, so joining earlier is cheaper for life.</figcaption>
+      </figure>
+
+      <div class="verdict">
+        <span class="v-label">The pick</span>
+        <h3>For most foreigners in Germany, Feather is the one to get</h3>
+        <p>Cheapest honest entry price of the three, a comprehensive tier that actually pays for implants and crowns, no waiting period, and the only one where quote, signup, and claims are all in plain English. If you want one less German wall to climb, this is it. Lock in your age now, your teeth will not get cheaper to insure later.</p>
+        <a class="rec-btn" href="/go/feather-dental?p=best-dental-insurance-germany" target="_blank" rel="noopener sponsored">Get Feather dental insurance →</a>
+      </div>
 
       <div class="rec-card">
         <span class="rec-hole"></span>
         <span class="rec-label">Recommended</span>
-        <h3>Compare German dental plans in plain English</h3>
-        <p>Feather is the platform I recommend for setting up dental insurance as a foreigner. The plans are explained in English, you can see exactly what each tier reimburses, and you can sign up without a German bank-branch appointment. It is the straightforward way to get Zahnzusatzversicherung sorted before you need it.</p>
+        <h3>Compare Feather's dental plans in plain English</h3>
+        <p>See exactly what each tier reimburses, get a quote in a couple of minutes, and sign up without a German bank-branch appointment. It is the straightforward way to get your Zahnzusatzversicherung sorted before you need it.</p>
         <a class="rec-btn" href="/go/feather-dental?p=best-dental-insurance-germany" target="_blank" rel="noopener sponsored">See Feather dental plans →</a>
       </div>
 
@@ -502,7 +745,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
       <p>If you are living in Germany on public insurance, here is the short version.</p>
 
       <ol class="action-list">
-        <li><p><strong>Buy before you need it.</strong> The ramp-up limits mean a policy bought the week your tooth breaks pays you almost nothing. Sign up while your teeth are healthy and boring.</p></li>
+        <li><p><strong>Buy before you need it.</strong> The ramp-up limits mean a policy bought the week your tooth breaks pays you almost nothing. Sign up while your teeth are healthy and boring, you can <a class="inline-cta" href="/go/feather-dental?p=best-dental-insurance-germany" target="_blank" rel="noopener sponsored">start a Feather quote here →</a></p></li>
         <li><p><strong>Compare the reimbursement percentage and the cover limits, not just the monthly price.</strong> A plan 4 euros more a month that pays 100 percent instead of 70 percent is not more expensive, it is cheaper the first time you need a crown.</p></li>
         <li><p><strong>Keep your Bonusheft stamped.</strong> Going to your check-up every year raises the public subsidy on dentures later. It is free money for showing up.</p></li>
         <li><p><strong>Always get the Heil- und Kostenplan and submit it first.</strong> For any expensive treatment, let the insurer confirm what they will pay before you start.</p></li>
