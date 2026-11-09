@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "new-post": "node scripts/new-post.mjs",
+    "new-affiliate-post": "node scripts/new-affiliate-post.mjs",
     "studio": "node scripts/studio.mjs",
     "sitemap": "node scripts/build-sitemap.mjs",
     "data": "node scripts/build-cost-data.mjs",
