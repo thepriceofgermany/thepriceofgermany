@@ -141,7 +141,7 @@ try {
 
   // ---- add the homepage card at the top of the grid (newest first) ----
   let index = fs.readFileSync(INDEX, 'utf8');
-  const card = `        <a class="tag-card" data-cat="${catKey}" href="/${slug}">
+  const card = `        <a class="tag-card reveal" data-cat="${catKey}" href="/${slug}">
           <span class="tag-hole"></span>
           <span class="tag-topic">${text(label)}</span>
           <h3>${text(title)}</h3>

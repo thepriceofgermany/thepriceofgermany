@@ -25,7 +25,7 @@ function ldBlocks(html) {
   return out;
 }
 
-const cardRe = /<a class="tag-card"[^>]*\bdata-cat="([^"]+)"[^>]*\bhref="([^"]+)"[\s\S]*?<span class="tag-topic">([\s\S]*?)<\/span>[\s\S]*?<h3>([\s\S]*?)<\/h3>[\s\S]*?<p>([\s\S]*?)<\/p>[\s\S]*?<div class="tag-compare">\s*<span>([\s\S]*?)<\/span>/g;
+const cardRe = /<a class="tag-card[^"]*"[^>]*\bdata-cat="([^"]+)"[^>]*\bhref="([^"]+)"[\s\S]*?<span class="tag-topic">([\s\S]*?)<\/span>[\s\S]*?<h3>([\s\S]*?)<\/h3>[\s\S]*?<p>([\s\S]*?)<\/p>[\s\S]*?<div class="tag-compare">\s*<span>([\s\S]*?)<\/span>/g;
 
 export function loadPosts() {
   const index = fs.readFileSync(path.join(SITE, 'index.html'), 'utf8');

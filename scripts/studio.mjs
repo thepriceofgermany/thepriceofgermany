@@ -204,7 +204,7 @@ function buildPost(d) {
 
   // ---- homepage card at top of grid ----
   let index = fs.readFileSync(INDEX, 'utf8');
-  const card = `        <a class="tag-card" data-cat="${catKey}" href="/${slug}">
+  const card = `        <a class="tag-card reveal" data-cat="${catKey}" href="/${slug}">
           <span class="tag-hole"></span>
           <span class="tag-topic">${escText(label)}</span>
           <h3>${escText(title)}</h3>
