@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T09:47:19.550Z",
+  "generatedAt": "2026-11-12T10:04:49.923Z",
   "links": [
     {
       "id": "adria",
@@ -112,6 +112,7 @@
       "network": "direct",
       "category": "insurance",
       "pages": [
+        "best-car-insurance-germany",
         "ev-charging-cost-germany-vs-usa",
         "german-gas-prices-vs-usa",
         "the-real-cost-of-owning-a-car-in-germany-vs-the-usa"

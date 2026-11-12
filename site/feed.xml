@@ -6,7 +6,17 @@
     <atom:link href="https://thepriceofgermany.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Videos, guides and cost breakdowns about life and money in Germany.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Nov 2026 22:55:38 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 10:04:51 GMT</lastBuildDate>
+    <item>
+      <title>The Best Car Insurance in Germany for Expats (AXA vs Feather vs DEVK)</title>
+      <link>https://thepriceofgermany.com/best-car-insurance-germany</link>
+      <guid isPermaLink="true">https://thepriceofgermany.com/best-car-insurance-germany</guid>
+      <pubDate>Thu, 12 Nov 2026 08:00:00 GMT</pubDate>
+      <category>Insurance</category>
+      <description>Car insurance is mandatory in Germany, and getting quoted as a foreigner is where most expats quietly overpay. Here is how AXA, Feather and DEVK actually compare, and the one I would pick.</description>
+      <media:content url="https://thepriceofgermany.com/assets/justin-photo.jpg" medium="image" />
+      <enclosure url="https://thepriceofgermany.com/assets/justin-photo.jpg" type="image/jpeg" length="0" />
+    </item>
     <item>
       <title>Inside a 70k Euro German Payslip: Where Your Salary Goes</title>
       <link>https://thepriceofgermany.com/70k-euro-german-payslip</link>
@@ -296,16 +306,6 @@
       <description>Mike charged his Tesla near Austin for $11. I charged a comparable amount off the Autobahn and paid nearly $50. Same car, wildly different bill.</description>
       <media:content url="https://i.ytimg.com/vi/IThZKp3R66o/maxresdefault.jpg" medium="image" />
       <enclosure url="https://i.ytimg.com/vi/IThZKp3R66o/maxresdefault.jpg" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Why Peptides Cost Up to 20x More in the USA Than Germany (Wegovy, Zepbound &amp; BPC-157)</title>
-      <link>https://thepriceofgermany.com/why-peptides-cost-more-in-the-usa-than-germany</link>
-      <guid isPermaLink="true">https://thepriceofgermany.com/why-peptides-cost-more-in-the-usa-than-germany</guid>
-      <pubDate>Thu, 06 Aug 2026 08:00:00 GMT</pubDate>
-      <category>Healthcare</category>
-      <description>The same peptide can cost $1,297 in the USA and 61 euros in Germany. Same ingredient, wildly different price. Here is exactly why.</description>
-      <media:content url="https://thepriceofgermany.com/assets/video/peptide-poster.jpg" medium="image" />
-      <enclosure url="https://thepriceofgermany.com/assets/video/peptide-poster.jpg" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>
