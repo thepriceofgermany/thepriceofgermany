@@ -798,29 +798,26 @@
     animation: tpog-reveal 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
   }
   .proof .pf b.counting { color: var(--red); }
-  /* euro <-> dollar coin: same font/size as the numbers, flips fast only while they count up */
+  /* euro / dollar: rests on €↔$ (black); flips fast only while the numbers count up, then returns to €↔$.
+     font: inherit keeps everything the same Space Grotesk size as the numbers (overrides the broad
+     .proof .pf span label style); no color override, so the glyphs stay ink-black, not gray/red. */
   .proof .pf b.flip-coin { perspective: 300px; display: inline-block; }
+  .proof .pf b.flip-coin .coin-rest { display: inline-block; font: inherit; color: var(--ink); }
   .proof .pf b.flip-coin .coin {
+    display: none;
     position: relative;
-    display: inline-block;
+    vertical-align: top;
     transform-style: preserve-3d;
-    font: inherit; /* match the number b (overrides the broad .proof .pf span label style) */
+    font: inherit;
+    color: var(--ink);
   }
-  .proof .pf b.flip-coin.flipping .coin { animation: coin-flip 0.4s linear infinite; }
-  .proof .pf b.flip-coin .coin-face { backface-visibility: hidden; display: inline-block; font: inherit; }
-  .proof .pf b.flip-coin .coin-back {
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: rotateY(180deg);
-    color: var(--red);
-  }
+  .proof .pf b.flip-coin .coin-face { backface-visibility: hidden; display: inline-block; font: inherit; color: var(--ink); }
+  .proof .pf b.flip-coin .coin-back { position: absolute; left: 0; top: 0; transform: rotateY(180deg); }
+  .proof .pf b.flip-coin.flipping .coin { display: inline-block; animation: coin-flip 0.4s linear infinite; }
+  .proof .pf b.flip-coin.flipping .coin-rest { display: none; }
   @keyframes coin-flip {
     from { transform: rotateY(0deg); }
     to   { transform: rotateY(360deg); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .proof .pf b.flip-coin.flipping .coin { animation: none; }
   }
   @media (prefers-reduced-motion: reduce) {
     html.js .reveal { opacity: 1 !important; }
@@ -866,7 +863,7 @@
           <div class="proof reveal" data-reveal-delay="350">
             <div class="pf"><b data-count="12" data-suffix="+">0+</b><span>Years in Germany</span></div>
             <div class="pf"><b data-count="35" data-suffix="+">0+</b><span>Cost breakdowns</span></div>
-            <div class="pf"><b class="flip-coin" aria-label="euro and dollar"><span class="coin"><span class="coin-face coin-front">&euro;</span><span class="coin-face coin-back">$</span></span></b><span>Real receipts, no guesses</span></div>
+            <div class="pf"><b class="flip-coin" aria-label="euro and dollar"><span class="coin"><span class="coin-face coin-front">&euro;</span><span class="coin-face coin-back">$</span></span><span class="coin-rest">&euro;&harr;$</span></b><span>Real receipts, no guesses</span></div>
           </div>
         </div>
       </div>
