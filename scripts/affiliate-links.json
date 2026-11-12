@@ -100,6 +100,13 @@
       "url": "https://tidd.ly/4bBrJ4X",
       "notes": "AXA insurance. Awin shortlink."
     },
+    "devk": {
+      "merchant": "DEVK",
+      "network": "direct",
+      "category": "insurance",
+      "url": "https://www.devk.de/kampagne/kfz/pkw-haftpflicht?PNR=103472&utm_source=the-price-of-germany",
+      "notes": "DEVK car insurance (Pkw-Haftpflicht) campaign page. Kept the PNR=103472 campaign ref; stripped the Google Ads per-click tokens (gclid, gad_source, gad_campaignid, gbraid) and the google/cpc utm params from the supplied URL, set utm_source=the-price-of-germany. Replace if DEVK issues a proper partner/affiliate link."
+    },
     "grandclassicballet": {
       "merchant": "Grand Classic Ballet",
       "network": "awin",

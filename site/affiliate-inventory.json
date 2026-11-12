@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T10:04:49.923Z",
+  "generatedAt": "2026-11-12T10:30:55.929Z",
   "links": [
     {
       "id": "adria",
@@ -43,11 +43,21 @@
       "network": "awin",
       "category": "insurance",
       "pages": [
+        "best-car-insurance-germany",
         "daycare-in-germany-vs-usa",
         "ev-charging-cost-germany-vs-usa",
         "insurance-in-germany-vs-usa",
         "the-real-cost-of-owning-a-car-in-germany-vs-the-usa",
         "what-an-afd-win-costs-germany"
+      ]
+    },
+    {
+      "id": "devk",
+      "merchant": "DEVK",
+      "network": "direct",
+      "category": "insurance",
+      "pages": [
+        "best-car-insurance-germany"
       ]
     },
     {
@@ -142,8 +152,7 @@
       "network": "awin",
       "category": "events",
       "pages": [
-        "grand-classic-ballet-tickets-germany",
-        "index"
+        "grand-classic-ballet-tickets-germany"
       ]
     },
     {
