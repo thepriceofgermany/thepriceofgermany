@@ -37,6 +37,20 @@
       "url": "https://feather-insurance.com/dental-insurance?utm_source=the-price-of-germany",
       "notes": "Dental insurance (Zahnzusatzversicherung) landing page."
     },
+    "getsafe": {
+      "merchant": "Getsafe",
+      "network": "direct",
+      "category": "insurance",
+      "url": "https://www.hellogetsafe.com/en-de/dental/prevention-campaign?utm_source=the-price-of-germany",
+      "notes": "Getsafe dental (Zahnzusatzversicherung) prevention-campaign page, competitor brand link in the dental post. Tracked outbound via utm_source; replace if Getsafe issues a proper partner/affiliate link."
+    },
+    "ottonova": {
+      "merchant": "ottonova",
+      "network": "direct",
+      "category": "insurance",
+      "url": "https://www.ottonova.de/en/v/dental-insurance-plan?utm_source=the-price-of-germany",
+      "notes": "ottonova dental top-up (Zahnzusatzversicherung) plan page, competitor brand link in the dental post. Tracked outbound via utm_source; replace if ottonova issues a proper partner/affiliate link."
+    },
     "feather-car": {
       "merchant": "Feather Insurance",
       "network": "direct",
