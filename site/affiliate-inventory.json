@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T10:30:55.929Z",
+  "generatedAt": "2026-11-12T12:00:59.030Z",
   "links": [
     {
       "id": "adria",
@@ -147,6 +147,15 @@
       ]
     },
     {
+      "id": "getsafe",
+      "merchant": "Getsafe",
+      "network": "direct",
+      "category": "insurance",
+      "pages": [
+        "best-dental-insurance-germany"
+      ]
+    },
+    {
       "id": "grandclassicballet",
       "merchant": "Grand Classic Ballet",
       "network": "awin",
@@ -189,6 +198,15 @@
       "category": "tools",
       "pages": [
         "moving-to-germany-cost"
+      ]
+    },
+    {
+      "id": "ottonova",
+      "merchant": "ottonova",
+      "network": "direct",
+      "category": "insurance",
+      "pages": [
+        "best-dental-insurance-germany"
       ]
     },
     {
