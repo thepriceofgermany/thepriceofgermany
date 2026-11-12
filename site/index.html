@@ -798,6 +798,30 @@
     animation: tpog-reveal 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
   }
   .proof .pf b.counting { color: var(--red); }
+  /* euro <-> dollar coin flip */
+  .proof .pf b.flip-coin { perspective: 300px; display: inline-block; }
+  .proof .pf b.flip-coin .coin {
+    position: relative;
+    display: inline-block;
+    transform-style: preserve-3d;
+    animation: coin-flip 3s ease-in-out infinite;
+  }
+  .proof .pf b.flip-coin .coin-face { backface-visibility: hidden; display: inline-block; }
+  .proof .pf b.flip-coin .coin-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: rotateY(180deg);
+    color: var(--red);
+  }
+  @keyframes coin-flip {
+    0%, 38%  { transform: rotateY(0deg); }
+    50%, 88% { transform: rotateY(180deg); }
+    100%     { transform: rotateY(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .proof .pf b.flip-coin .coin { animation: none; }
+  }
   @media (prefers-reduced-motion: reduce) {
     html.js .reveal { opacity: 1 !important; }
     html.js .reveal.in { animation: none !important; }
@@ -842,7 +866,7 @@
           <div class="proof reveal" data-reveal-delay="350">
             <div class="pf"><b data-count="12" data-suffix="+">0+</b><span>Years in Germany</span></div>
             <div class="pf"><b data-count="35" data-suffix="+">0+</b><span>Cost breakdowns</span></div>
-            <div class="pf"><b>&euro;&harr;$</b><span>Real receipts, no guesses</span></div>
+            <div class="pf"><b class="flip-coin" aria-label="euro and dollar"><span class="coin"><span class="coin-face coin-front">&euro;</span><span class="coin-face coin-back">$</span></span></b><span>Real receipts, no guesses</span></div>
           </div>
         </div>
       </div>
