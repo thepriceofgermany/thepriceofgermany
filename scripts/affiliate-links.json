@@ -37,6 +37,13 @@
       "url": "https://feather-insurance.com/dental-insurance?utm_source=the-price-of-germany",
       "notes": "Dental insurance (Zahnzusatzversicherung) landing page."
     },
+    "feather-car": {
+      "merchant": "Feather Insurance",
+      "network": "direct",
+      "category": "insurance",
+      "url": "https://feather-insurance.com/car-insurance?utm_source=the-price-of-germany",
+      "notes": "Car insurance (Kfz-Versicherung) landing page. Expat pitch: keep your no-claims SF class, bring EU/UK/CH/UA/BA driving history, eligible newcomers over 23 start at SF3, instant eVB number, fully in English. Switch deadline Nov 30. Revenue via Feather dashboard."
+    },
     "taxfix": {
       "merchant": "Taxfix",
       "network": "direct",

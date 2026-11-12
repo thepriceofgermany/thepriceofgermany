@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T22:55:37.280Z",
+  "generatedAt": "2026-11-12T09:47:19.550Z",
   "links": [
     {
       "id": "adria",
@@ -104,6 +104,17 @@
         "german-retirement-accounts-explained",
         "investing-as-an-expat-in-germany",
         "why-nobody-riots-over-the-german-pension"
+      ]
+    },
+    {
+      "id": "feather-car",
+      "merchant": "Feather Insurance",
+      "network": "direct",
+      "category": "insurance",
+      "pages": [
+        "ev-charging-cost-germany-vs-usa",
+        "german-gas-prices-vs-usa",
+        "the-real-cost-of-owning-a-car-in-germany-vs-the-usa"
       ]
     },
     {
