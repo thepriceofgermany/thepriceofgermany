@@ -6,7 +6,7 @@
     <atom:link href="https://thepriceofgermany.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Videos, guides and cost breakdowns about life and money in Germany.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Nov 2026 10:04:51 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 10:15:52 GMT</lastBuildDate>
     <item>
       <title>The Best Car Insurance in Germany for Expats (AXA vs Feather vs DEVK)</title>
       <link>https://thepriceofgermany.com/best-car-insurance-germany</link>
@@ -136,6 +136,16 @@
       <description>Two babies born the same night, 4,800 miles apart. Anna in Munich paid $0. Sarah in Florida got a $19,000 bill, with good insurance. Here is the entire first year, line by line.</description>
       <media:content url="https://i.ytimg.com/vi/UDBl4X__7Oo/maxresdefault.jpg" medium="image" />
       <enclosure url="https://i.ytimg.com/vi/UDBl4X__7Oo/maxresdefault.jpg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Grand Classic Ballet 2026/27: Swan Lake and The Nutcracker Tickets in Germany</title>
+      <link>https://thepriceofgermany.com/grand-classic-ballet-tickets-germany</link>
+      <guid isPermaLink="true">https://thepriceofgermany.com/grand-classic-ballet-tickets-germany</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 GMT</pubDate>
+      <category>Culture</category>
+      <description>The winter ballet tour hits 50 German cities with Swan Lake and The Nutcracker, from Berlin to Munich. Here are the dates, cities, prices from about 30 euros, and how to book your tickets.</description>
+      <media:content url="https://thepriceofgermany.com/assets/video/grand-classic-ballet-poster.jpg" medium="image" />
+      <enclosure url="https://thepriceofgermany.com/assets/video/grand-classic-ballet-poster.jpg" type="image/jpeg" length="0" />
     </item>
     <item>
       <title>The Hidden Bill Behind Germany's Chancellor Crisis</title>
@@ -296,16 +306,6 @@
       <description>Kevin in Phoenix pays $187 and shrugs. Lena in Leipzig watches her bill climb without touching the thermostat. Here is where German electricity money really goes.</description>
       <media:content url="https://i.ytimg.com/vi/zX7Ygqoqt90/maxresdefault.jpg" medium="image" />
       <enclosure url="https://i.ytimg.com/vi/zX7Ygqoqt90/maxresdefault.jpg" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>I Paid $50 to Charge My EV in Germany. My Friend Paid $11 in Texas.</title>
-      <link>https://thepriceofgermany.com/ev-charging-cost-germany-vs-usa</link>
-      <guid isPermaLink="true">https://thepriceofgermany.com/ev-charging-cost-germany-vs-usa</guid>
-      <pubDate>Sat, 08 Aug 2026 08:00:00 GMT</pubDate>
-      <category>Cost of Living</category>
-      <description>Mike charged his Tesla near Austin for $11. I charged a comparable amount off the Autobahn and paid nearly $50. Same car, wildly different bill.</description>
-      <media:content url="https://i.ytimg.com/vi/IThZKp3R66o/maxresdefault.jpg" medium="image" />
-      <enclosure url="https://i.ytimg.com/vi/IThZKp3R66o/maxresdefault.jpg" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>
