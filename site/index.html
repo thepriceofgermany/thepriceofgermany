@@ -10,7 +10,7 @@
 <meta name="description" content="An American expat in Germany breaks down what things actually cost, including rent, healthcare, groceries, and taxes, dollar for dollar, euro for euro.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -21,7 +21,13 @@
       "name": "The Price of Germany",
       "url": "https://thepriceofgermany.com/",
       "logo": "https://thepriceofgermany.com/favicon.svg",
-      "sameAs": ["https://www.youtube.com/@thepriceofgermany"]
+      "sameAs": [
+        "https://www.youtube.com/@thepriceofgermany",
+        "https://www.instagram.com/justinvsgermany",
+        "https://www.tiktok.com/@justinvsgermany",
+        "https://www.facebook.com/justinvsgermany",
+        "https://www.threads.com/@justinvsgermany"
+      ]
     },
     {
       "@type": "WebSite",
@@ -30,6 +36,15 @@
       "url": "https://thepriceofgermany.com/",
       "publisher": { "@id": "https://thepriceofgermany.com/#org" },
       "inLanguage": "en"
+    },
+    {
+      "@type": "ItemList",
+      "name": "Start here: real cost breakdowns, Germany vs the USA",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "url": "https://thepriceofgermany.com/is-germany-cheaper-than-america", "name": "Is Germany Cheaper Than America? The Honest Numbers" },
+        { "@type": "ListItem", "position": 2, "url": "https://thepriceofgermany.com/salary-in-germany-vs-usa", "name": "The German Salary Trap: Why Your Gross Pay Is A Lie" },
+        { "@type": "ListItem", "position": 3, "url": "https://thepriceofgermany.com/moving-to-germany-cost", "name": "What Moving to Germany Actually Costs" }
+      ]
     }
   ]
 }
@@ -46,18 +61,60 @@
 <meta property="og:image:width" content="640">
 <meta property="og:image:height" content="640">
 <meta name="twitter:card" content="summary_large_image">
+<script>
+  (function () {
+    document.documentElement.classList.add('js');
+    try {
+      var t = localStorage.getItem('tpog-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
 <style>
   :root {
-    --cream: #FFFDF6;
     --paper: #FFFDF6;
+    --cream: #FFFDF6;
     --ink: #121210;
     --ink-soft: #67665F;
-    --coral: #D83A2E;
-    --coral-dark: #AE2E24;
-    --teal: #121210;
-    --teal-dark: #121210;
-    --yellow: #D83A2E;
+    --red: #D83A2E;
+    --red-dark: #AE2E24;
     --line: #E6E1D4;
+    --nav-bg: rgba(255, 253, 246, 0.85);
+    --tint-bg: rgba(216, 58, 46, 0.06);
+    --tint-border: rgba(216, 58, 46, 0.22);
+    /* legacy aliases, kept so existing rules resolve to the brand red */
+    --coral: var(--red);
+    --coral-dark: var(--red-dark);
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #141310;
+      --cream: #141310;
+      --ink: #F4F1E8;
+      --ink-soft: #A5A298;
+      --red: #EF5346;
+      --red-dark: #D83A2E;
+      --line: #2C2A22;
+      --nav-bg: rgba(20, 19, 16, 0.85);
+      --tint-bg: rgba(239, 83, 70, 0.1);
+      --tint-border: rgba(239, 83, 70, 0.3);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #141310;
+    --cream: #141310;
+    --ink: #F4F1E8;
+    --ink-soft: #A5A298;
+    --red: #EF5346;
+    --red-dark: #D83A2E;
+    --line: #2C2A22;
+    --nav-bg: rgba(20, 19, 16, 0.85);
+    --tint-bg: rgba(239, 83, 70, 0.1);
+    --tint-border: rgba(239, 83, 70, 0.3);
+    color-scheme: dark;
   }
 
   * { box-sizing: border-box; }
@@ -66,14 +123,31 @@
 
   body {
     margin: 0;
-    background: var(--cream);
+    background: var(--paper);
     color: var(--ink);
     font-family: 'Inter', sans-serif;
-    
-    
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   a { color: inherit; }
+
+  h1, h2, h3, h4, .logo { letter-spacing: -0.02em; }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 16px;
+    border-radius: 0 0 8px 0;
+    z-index: 50;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .skip-link:focus { left: 0; }
 
   .shell { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
@@ -82,9 +156,9 @@
     position: sticky;
     top: 0;
     z-index: 20;
-    background: rgba(253, 248, 240, 0.88);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--line);
+    background: var(--nav-bg);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--ink);
   }
   .nav-inner {
     display: flex;
@@ -104,13 +178,13 @@
     gap: 8px;
   }
   .logo .tag {
-    background: var(--coral);
+    background: var(--red);
     color: #fff;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     font-weight: 700;
     padding: 2px 7px;
-    border-radius: 4px;
+    border-radius: 3px;
     letter-spacing: 0.04em;
   }
   .nav-links {
@@ -124,14 +198,71 @@
   .nav-links a:hover { color: var(--ink); }
   .nav-cta {
     background: var(--ink);
-    color: #fff !important;
+    color: var(--paper) !important;
     padding: 9px 18px;
-    border-radius: 8px;
+    border-radius: 4px;
     font-size: 13.5px;
     font-weight: 600;
   }
-  @media (max-width: 640px) {
-    .nav-links a:not(.nav-cta) { display: none; }
+  .theme-toggle {
+    background: transparent;
+    border: 1.5px solid var(--line);
+    color: var(--ink-soft);
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .theme-toggle:hover { color: var(--ink); border-color: var(--ink); }
+  .theme-toggle svg { width: 17px; height: 17px; display: block; }
+  .theme-toggle .moon { display: block; }
+  .theme-toggle .sun { display: none; }
+  :root[data-theme="dark"] .theme-toggle .moon { display: none; }
+  :root[data-theme="dark"] .theme-toggle .sun { display: block; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-toggle .moon { display: none; }
+    :root:not([data-theme="light"]) .theme-toggle .sun { display: block; }
+  }
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1.5px solid var(--line);
+    color: var(--ink);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .nav-toggle svg { width: 20px; height: 20px; display: block; }
+  @media (max-width: 720px) {
+    .nav-toggle { display: inline-flex; }
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      padding: 8px 24px 16px;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+      display: none;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+    .nav-links a:last-child { border-bottom: 0; }
+    .nav-links .nav-cta { margin-top: 10px; text-align: center; border-radius: 8px; }
+    .theme-toggle { align-self: flex-start; margin-top: 10px; }
   }
 
   /* ---------------- HERO ---------------- */
@@ -147,63 +278,13 @@
     gap: 16px;
   }
   .hero-text { flex: 1; min-width: 0; text-align: center; max-width: 640px; }
-  .hero-character {
-    flex-shrink: 0;
-    margin-top: 8px;
-    width: 100%;
-  }
-  .hero-stage {
-    position: relative;
-    width: min(660px, 94vw);
-    height: clamp(320px, 46vw, 440px);
-    margin: 0 auto;
-  }
-  .hero-stage .justin {
-    position: absolute;
-    left: 50%;
-    bottom: 11%;
-    transform: translateX(-50%);
-    width: clamp(211px, 40vw, 290px);
-    height: auto;
-    display: block;
-    z-index: 2;
-    filter: drop-shadow(0 18px 22px rgba(35, 38, 43, 0.16));
-    animation: bob 4.5s ease-in-out infinite;
-  }
-  .hero-stage .float {
-    position: absolute;
-    height: auto;
-    z-index: 1;
-    filter: drop-shadow(0 8px 12px rgba(35, 38, 43, 0.14));
-    animation: floaty 6s ease-in-out infinite;
-  }
-  .f-money    { top: 1%;   left: 3%;   width: clamp(72px, 15vw, 122px); animation-delay: 0s;   }
-  .f-house    { top: 3%;   right: 2%;  width: clamp(80px, 16vw, 134px); animation-delay: -1.2s; }
-  .f-laptop   { top: 38%;  left: 0%;   width: clamp(98px, 19vw, 160px); animation-delay: -2.4s; }
-  .f-suitcase { top: 31%;  right: 1%;  width: clamp(66px, 13vw, 110px); animation-delay: -3s;   }
-  .f-docs     { bottom: 2%; left: 3%;  width: clamp(66px, 13vw, 108px); animation-delay: -1.8s; }
-  .f-bill     { bottom: 4%; right: 2%; width: clamp(62px, 12vw, 102px); animation-delay: -3.6s; }
-  @keyframes bob {
-    0%, 100% { transform: translateX(-50%) translateY(0) rotate(-1.5deg); }
-    50% { transform: translateX(-50%) translateY(-10px) rotate(1.5deg); }
-  }
-  @keyframes floaty {
-    0%, 100% { transform: translateY(0) rotate(-2deg); }
-    50% { transform: translateY(-12px) rotate(2deg); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-stage .justin, .hero-stage .float { animation: none; }
-  }
   .eyebrow {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--teal-dark);
-    background: rgba(31, 166, 160, 0.1);
-    border: 1px solid rgba(31, 166, 160, 0.25);
-    padding: 6px 14px;
-    border-radius: 999px;
+    color: var(--red);
+    font-weight: 500;
     display: inline-block;
     margin-bottom: 24px;
   }
@@ -213,17 +294,18 @@
     font-size: clamp(2.4rem, 6vw, 4rem);
     line-height: 1.04;
     margin: 0 0 18px;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
   }
-  h1 .hl { position: relative; display: inline-block; }
+  h1 .hl { position: relative; display: inline-block; color: inherit; }
   h1 .hl::after {
     content: "";
     position: absolute;
-    left: -2px; right: -2px; bottom: 4px;
-    height: 0.3em;
-    background: var(--yellow);
+    left: -2px; right: -2px; bottom: 0.06em;
+    height: 0.26em;
+    background: var(--red);
+    opacity: 0.85;
     z-index: -1;
-    transform: skewX(-6deg);
   }
   .hero p.sub {
     max-width: 560px;
@@ -234,30 +316,58 @@
   }
   .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .btn {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     font-size: 15px;
     text-decoration: none;
     padding: 13px 26px;
-    border-radius: 10px;
+    border-radius: 4px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   }
   .btn-primary {
-    background: var(--coral);
-    color: #fff !important;
-    box-shadow: none;
+    background: var(--ink);
+    color: var(--paper) !important;
   }
-  .btn-primary:hover { transform: translateY(-2px); }
-  .btn-primary:active { transform: translateY(2px); box-shadow: none; }
+  .btn-primary:hover { background: var(--red); color: #fff !important; }
   .btn-outline {
     background: transparent;
-    border: 1.5px solid var(--ink);
+    border: 1px solid var(--ink);
     color: var(--ink) !important;
   }
-  .btn-outline:hover { background: var(--ink); color: #fff !important; }
+  .btn-outline:hover { background: var(--ink); color: var(--paper) !important; }
+
+  /* hero credibility strip */
+  .proof {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px 30px;
+    margin: 30px auto 0;
+    max-width: 560px;
+  }
+  .proof .pf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .proof .pf b {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .proof .pf span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
 
   /* exchange strip */
   .strip {
@@ -299,10 +409,18 @@
 
   .filter-bar {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 10px;
     margin-bottom: 26px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
   }
+  .filter-bar::-webkit-scrollbar { height: 6px; }
+  .filter-bar::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; }
+  .chip { flex: 0 0 auto; scroll-snap-align: start; }
   .chip {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11.5px;
@@ -363,7 +481,7 @@
     font-size: 10.5px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--teal-dark);
+    color: var(--red-dark);
     margin-bottom: 10px;
     display: block;
   }
@@ -411,8 +529,8 @@
   /* ---------------- TOOL BANNER ---------------- */
   section.tool-banner-wrap { padding: 10px 0 30px; }
   .tool-banner {
-    background: rgba(31, 166, 160, 0.1);
-    border: 1px solid rgba(31, 166, 160, 0.25);
+    background: var(--tint-bg);
+    border: 1px solid var(--tint-border);
     text-decoration: none;
     border-radius: 20px;
     padding: 40px 44px;
@@ -429,7 +547,7 @@
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--teal-dark);
+    color: var(--red-dark);
     margin-bottom: 12px;
     display: block;
   }
@@ -466,14 +584,6 @@
   @media (max-width: 640px) {
     .tool-banner { grid-template-columns: 1fr; padding: 32px 28px; text-align: left; }
   }
-
-  /* ---------------- PARTNER BANNER ---------------- */
-  section.partner-banner-wrap { padding: 0 0 30px; }
-  .partner-banner { text-align: center; }
-  .partner-banner .pb-label { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
-  .partner-banner img { display: block; width: 100%; max-width: 728px; height: auto; margin: 0 auto; border-radius: 10px; border: 1.5px solid var(--line); }
-  .partner-banner .pb-more { display: inline-block; margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--coral-dark); text-decoration: none; }
-  .partner-banner .pb-more:hover { text-decoration: underline; }
 
   /* ---------------- ABOUT ---------------- */
   section.about {
@@ -638,42 +748,83 @@
   @media (max-width: 760px) {
     .kit-banner { grid-template-columns: 1fr; padding: 22px; gap: 22px; }
   }
-</style>
-<style id="index-skin">
-/* ---- The Index: modern grotesk reskin (overrides cartoon template) ---- */
-:root{ --red:#D83A2E; --red-dark:#AE2E24; --paper:#FFFDF6; }
-body{ background:var(--paper); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
-h1,h2,h3,h4,.logo{ font-family:'Space Grotesk',system-ui,sans-serif; letter-spacing:-0.02em; }
-h1{ font-weight:700; }
-nav{ background:rgba(255,253,246,0.85)!important; border-bottom:1px solid var(--ink)!important; backdrop-filter:blur(8px); }
-.logo .tag{ background:var(--red); border-radius:3px; font-family:'IBM Plex Mono',monospace; }
-.nav-cta{ border-radius:4px!important; }
-/* eyebrow: squared mono label instead of teal pill */
-.eyebrow{ background:transparent!important; border:0!important; border-radius:0!important; padding:0!important; color:var(--red)!important; font-family:'IBM Plex Mono',monospace!important; font-weight:500; letter-spacing:0.12em!important; }
-/* h1 highlighter: thin red swash, no skew */
-h1 .hl{ color:inherit; }
-h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:0.06em!important; transform:none!important; opacity:0.85; }
-/* buttons: flat + squared */
-.btn{ border-radius:4px!important; box-shadow:none!important; font-family:'Space Grotesk',sans-serif; font-weight:600; transition:background .15s ease,color .15s ease,border-color .15s ease!important; }
-.btn:hover{ transform:none!important; }
-.btn-primary{ background:var(--ink)!important; color:#FFFDF6!important; box-shadow:none!important; }
-.btn-primary:hover{ background:var(--red)!important; color:#FFFDF6!important; }
-.btn-primary:active{ transform:none!important; box-shadow:none!important; }
-.btn-outline{ border:1px solid var(--ink)!important; }
-.btn-outline:hover{ background:var(--ink)!important; color:#FFFDF6!important; }
+
+  /* ---------------- START HERE ---------------- */
+  section.start-here { padding: 44px 0 6px; }
+  .start-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .start-card {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 14px;
+    padding: 22px 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 150px;
+    transition: transform 0.18s ease;
+  }
+  .start-card:hover { transform: translateY(-3px); }
+  .start-card .sc-topic { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); }
+  :root[data-theme="dark"] .start-card .sc-topic,
+  .start-card .sc-topic { color: #FF7A6E; }
+  .start-card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.15rem; line-height: 1.25; margin: 0; }
+  .start-card .sc-go { margin-top: auto; font-family: 'IBM Plex Mono', monospace; font-size: 11px; opacity: 0.75; }
+
+  /* ---------------- RESOURCE LIBRARY ---------------- */
+  section.resources { padding: 52px 0 8px; }
+  .res-intro { text-align: center; max-width: 620px; margin: 0 auto 28px; }
+  .res-intro h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.7rem; margin: 0 0 10px; }
+  .res-intro p { color: var(--ink-soft); font-size: 15px; line-height: 1.6; margin: 0; }
+  .res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+  .res-card { background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px; padding: 22px 20px; display: flex; flex-direction: column; gap: 8px; }
+  .res-card .rc-tag { align-self: flex-start; font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--red); padding: 3px 9px; border-radius: 5px; }
+  .res-card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.08rem; line-height: 1.25; margin: 4px 0 0; }
+  .res-card p { color: var(--ink-soft); font-size: 13.5px; line-height: 1.55; margin: 0; flex: 1; }
+  .res-card .rc-btn { margin-top: 4px; align-self: flex-start; font-weight: 600; font-size: 14px; color: var(--red-dark); text-decoration: none; }
+  .res-card .rc-btn:hover { text-decoration: underline; }
+  .res-foot { text-align: center; margin-top: 18px; font-size: 12.5px; color: var(--ink-soft); }
+  .res-foot a { color: var(--red-dark); }
+
+  /* ---------------- SCROLL / ENTRY MOTION ---------------- */
+  /* Hidden state only applies when JS is on, so no-JS users still see everything.
+     Uses the `translate` property (not `transform`) so card hover transforms stay intact. */
+  @keyframes tpog-reveal {
+    from { opacity: 0; translate: 0 18px; }
+    to   { opacity: 1; translate: 0 0; }
+  }
+  html.js .reveal { opacity: 0; }
+  html.js .reveal.in {
+    animation: tpog-reveal 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+  .proof .pf b.counting { color: var(--red); }
+  @media (prefers-reduced-motion: reduce) {
+    html.js .reveal { opacity: 1 !important; }
+    html.js .reveal.in { animation: none !important; }
+  }
 </style>
 </head>
 <body>
 
+  <a class="skip-link" href="#reports">Skip to reports</a>
+
   <nav>
     <div class="nav-inner">
       <a class="logo" href="/">The Price of Germany <span class="tag">$ → €</span></a>
-      <div class="nav-links">
+      <div class="nav-links" id="nav-links">
         <a href="/calculators">Calculators</a>
+        <a href="/free-guides">Free guides</a>
         <a href="#reports">Reports</a>
         <a href="#about">About</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
         <a class="nav-cta" href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">Watch on YouTube</a>
       </div>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </div>
   </nav>
 
@@ -681,12 +832,17 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
     <div class="shell">
       <div class="hero-grid">
         <div class="hero-text">
-          <span class="eyebrow">USA &rarr; Germany &middot; the real price</span>
-          <h1>What things <span class="hl">actually</span> cost<br>in Germany</h1>
-          <p class="sub">An American who's lived in Germany for over a decade, breaking down the real numbers: rent, healthcare, groceries, taxes, dollar for dollar, euro for euro.</p>
-          <div class="ctas">
+          <span class="eyebrow reveal" data-reveal-delay="0">USA &rarr; Germany &middot; the real price</span>
+          <h1 class="reveal" data-reveal-delay="80">What things <span class="hl">actually</span> cost in Germany</h1>
+          <p class="sub reveal" data-reveal-delay="170">An American who's lived in Germany for over a decade, breaking down the real numbers: rent, healthcare, groceries, taxes, dollar for dollar, euro for euro.</p>
+          <div class="ctas reveal" data-reveal-delay="260">
             <a class="btn btn-primary" href="#reports">See the reports</a>
             <a class="btn btn-outline" href="https://www.youtube.com/@thepriceofgermany" target="_blank" rel="noopener">Watch on YouTube</a>
+          </div>
+          <div class="proof reveal" data-reveal-delay="350">
+            <div class="pf"><b data-count="12" data-suffix="+">0+</b><span>Years in Germany</span></div>
+            <div class="pf"><b data-count="35" data-suffix="+">0+</b><span>Cost breakdowns</span></div>
+            <div class="pf"><b>&euro;&harr;$</b><span>Real receipts, no guesses</span></div>
           </div>
         </div>
       </div>
@@ -703,7 +859,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
 
   <section class="tool-banner-wrap">
     <div class="shell">
-      <a class="tool-banner" href="/cost-of-living-calculator">
+      <a class="tool-banner reveal" href="/cost-of-living-calculator">
         <div>
           <span class="tb-eyebrow">New interactive tool</span>
           <h2>Compare the cost of living in any two German cities</h2>
@@ -714,9 +870,35 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
     </div>
   </section>
 
+  <section class="start-here">
+    <div class="shell">
+      <div class="section-head reveal">
+        <h2>Start here</h2>
+        <span class="note">NEW? READ THESE FIRST</span>
+      </div>
+      <div class="start-grid">
+        <a class="start-card reveal" href="/is-germany-cheaper-than-america">
+          <span class="sc-topic">Cost of Living</span>
+          <h3>Is Germany cheaper than America? The honest numbers</h3>
+          <span class="sc-go">Read &rarr;</span>
+        </a>
+        <a class="start-card reveal" href="/salary-in-germany-vs-usa">
+          <span class="sc-topic">Salary</span>
+          <h3>The German salary trap: why your gross pay is a lie</h3>
+          <span class="sc-go">Read &rarr;</span>
+        </a>
+        <a class="start-card reveal" href="/moving-to-germany-cost">
+          <span class="sc-topic">Relocation</span>
+          <h3>What moving to Germany actually costs</h3>
+          <span class="sc-go">Read &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="reports" id="reports">
     <div class="shell">
-      <div class="section-head">
+      <div class="section-head reveal">
         <h2>Latest reports</h2>
         <span class="note">ONE POST PER VIDEO</span>
       </div>
@@ -739,7 +921,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
       </div>
       <div class="grid">
 
-        <a class="tag-card" data-cat="culture" href="/grand-classic-ballet-tickets-germany">
+        <a class="tag-card reveal" data-cat="culture" href="/grand-classic-ballet-tickets-germany">
           <span class="tag-hole"></span>
           <span class="tag-topic">Culture</span>
           <h3>Grand Classic Ballet 2026/27: Swan Lake and The Nutcracker Tickets in Germany</h3>
@@ -750,7 +932,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="insurance" href="/best-car-insurance-germany">
+        <a class="tag-card reveal" data-cat="insurance" href="/best-car-insurance-germany">
           <span class="tag-hole"></span>
           <span class="tag-topic">Insurance</span>
           <h3>The Best Car Insurance in Germany for Expats (AXA vs Feather vs DEVK)</h3>
@@ -761,7 +943,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="salary" href="/70k-euro-german-payslip">
+        <a class="tag-card reveal" data-cat="salary" href="/70k-euro-german-payslip">
           <span class="tag-hole"></span>
           <span class="tag-topic">Salary</span>
           <h3>Inside a 70k Euro German Payslip: Where Your Salary Goes</h3>
@@ -772,7 +954,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="insurance" href="/best-dental-insurance-germany">
+        <a class="tag-card reveal" data-cat="insurance" href="/best-dental-insurance-germany">
           <span class="tag-hole"></span>
           <span class="tag-topic">Insurance</span>
           <h3>The Best Dental Insurance in Germany (and Why You Actually Need It)</h3>
@@ -783,7 +965,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="housing" href="/buying-a-house-in-germany">
+        <a class="tag-card reveal" data-cat="housing" href="/buying-a-house-in-germany">
           <span class="tag-hole"></span>
           <span class="tag-topic">Housing</span>
           <h3>Buying a House in Germany: What It Really Costs</h3>
@@ -794,7 +976,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="pensions" href="/why-nobody-riots-over-the-german-pension">
+        <a class="tag-card reveal" data-cat="pensions" href="/why-nobody-riots-over-the-german-pension">
           <span class="tag-hole"></span>
           <span class="tag-topic">Pensions</span>
           <h3>Why Nobody Riots Over the German Pension Bill</h3>
@@ -805,7 +987,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="investing" href="/investing-as-an-expat-in-germany">
+        <a class="tag-card reveal" data-cat="investing" href="/investing-as-an-expat-in-germany">
           <span class="tag-hole"></span>
           <span class="tag-topic">Investing</span>
           <h3>Why Investing Is So Hard for Expats</h3>
@@ -816,7 +998,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="investing" href="/german-retirement-accounts-explained">
+        <a class="tag-card reveal" data-cat="investing" href="/german-retirement-accounts-explained">
           <span class="tag-hole"></span>
           <span class="tag-topic">Investing</span>
           <h3>Germany's New Retirement Account + 4 Others Nobody Explains</h3>
@@ -827,7 +1009,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="politics" href="/eu-dsa-censorship-machine">
+        <a class="tag-card reveal" data-cat="politics" href="/eu-dsa-censorship-machine">
           <span class="tag-hole"></span>
           <span class="tag-topic">Politics</span>
           <h3>Inside the EU “Censorship Machine” (The Police Raid Didn’t Come From Brussels)</h3>
@@ -838,7 +1020,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="politics" href="/afd-bot-chart-fact-check">
+        <a class="tag-card reveal" data-cat="politics" href="/afd-bot-chart-fact-check">
           <span class="tag-hole"></span>
           <span class="tag-topic">Politics</span>
           <h3>How a Chart About Search Crawlers Became “Proof” of an AfD Bot Collapse</h3>
@@ -849,7 +1031,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="politics" href="/eu-disinfo-lab-funding">
+        <a class="tag-card reveal" data-cat="politics" href="/eu-disinfo-lab-funding">
           <span class="tag-hole"></span>
           <span class="tag-topic">Politics</span>
           <h3>Nobody Is Showing You What the EU Actually Paid Disinfo Lab (4 Projects, 8 Years)</h3>
@@ -860,7 +1042,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="cost-of-living" href="/german-gas-prices-vs-usa">
+        <a class="tag-card reveal" data-cat="cost-of-living" href="/german-gas-prices-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Cost of Living</span>
           <h3>Why German Gas Is Still 2.1x More Expensive Than The US</h3>
@@ -871,7 +1053,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="salary" href="/minimum-wage-germany-vs-usa">
+        <a class="tag-card reveal" data-cat="salary" href="/minimum-wage-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Salary</span>
           <h3>Can You Actually Survive on Minimum Wage in Germany?</h3>
@@ -882,7 +1064,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="childcare" href="/cost-of-having-a-baby-germany-vs-usa">
+        <a class="tag-card reveal" data-cat="childcare" href="/cost-of-having-a-baby-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Childcare</span>
           <h3>The $19,000 Baby Bill Nobody Warns Americans About (Germany Pays $0)</h3>
@@ -893,7 +1075,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="politics" href="/germany-chancellor-crisis-cost">
+        <a class="tag-card reveal" data-cat="politics" href="/germany-chancellor-crisis-cost">
           <span class="tag-hole"></span>
           <span class="tag-topic">Politics</span>
           <h3>The Hidden Bill Behind Germany's Chancellor Crisis</h3>
@@ -904,7 +1086,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="politics" href="/berlin-seize-240000-apartments">
+        <a class="tag-card reveal" data-cat="politics" href="/berlin-seize-240000-apartments">
           <span class="tag-hole"></span>
           <span class="tag-topic">Politics</span>
           <h3>Inside Berlin's €36 Billion Plan to Seize 240,000 Apartments</h3>
@@ -915,7 +1097,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="politics" href="/us-missile-deal-german-tax-bill">
+        <a class="tag-card reveal" data-cat="politics" href="/us-missile-deal-german-tax-bill">
           <span class="tag-hole"></span>
           <span class="tag-topic">Politics</span>
           <h3>How a US Missile Deal Ends Up on a German Teacher's Tax Bill</h3>
@@ -926,7 +1108,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="politics" href="/heating-bill-germany-afd-surge">
+        <a class="tag-card reveal" data-cat="politics" href="/heating-bill-germany-afd-surge">
           <span class="tag-hole"></span>
           <span class="tag-topic">Politics</span>
           <h3>How a Heating Bill Is Driving Germany's Far-Right Surge (Not Immigration)</h3>
@@ -937,7 +1119,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="politics" href="/why-germany-voted-afd">
+        <a class="tag-card reveal" data-cat="politics" href="/why-germany-voted-afd">
           <span class="tag-hole"></span>
           <span class="tag-topic">Politics</span>
           <h3>The Real Reason Germany Voted AfD (America Already Did It)</h3>
@@ -948,7 +1130,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="economy" href="/east-vs-west-germany-divide">
+        <a class="tag-card reveal" data-cat="economy" href="/east-vs-west-germany-divide">
           <span class="tag-hole"></span>
           <span class="tag-topic">Economy</span>
           <h3>Inside Germany's Real East vs West Divide (It's Not Income)</h3>
@@ -959,7 +1141,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="childcare" href="/cost-of-raising-a-child-germany-vs-usa">
+        <a class="tag-card reveal" data-cat="childcare" href="/cost-of-raising-a-child-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Childcare</span>
           <h3>The True Cost of Raising a Kid: Germany vs the US (18 Years)</h3>
@@ -970,7 +1152,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="politics" href="/drone-cost-germany-billions">
+        <a class="tag-card reveal" data-cat="politics" href="/drone-cost-germany-billions">
           <span class="tag-hole"></span>
           <span class="tag-topic">Politics</span>
           <h3>How a €3,000 Drone Cost Germany Billions, And Who Really Pays</h3>
@@ -981,7 +1163,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="insurance" href="/freelancers-pensions-germany-vs-usa">
+        <a class="tag-card reveal" data-cat="insurance" href="/freelancers-pensions-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Insurance</span>
           <h3>Germany Might Force Freelancers Into Pensions, America Already Did</h3>
@@ -992,7 +1174,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="insurance" href="/unemployment-benefits-germany-vs-usa">
+        <a class="tag-card reveal" data-cat="insurance" href="/unemployment-benefits-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Insurance</span>
           <h3>Laid Off in Germany vs the US: What Nobody Tells Americans</h3>
@@ -1003,7 +1185,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="investing" href="/why-germans-dont-invest">
+        <a class="tag-card reveal" data-cat="investing" href="/why-germans-dont-invest">
           <span class="tag-hole"></span>
           <span class="tag-topic">Investing</span>
           <h3>Why Germans Don't Invest and Still Retire Just Fine</h3>
@@ -1014,7 +1196,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="salary" href="/germany-10-billion-tax-cut">
+        <a class="tag-card reveal" data-cat="salary" href="/germany-10-billion-tax-cut">
           <span class="tag-hole"></span>
           <span class="tag-topic">Salary</span>
           <h3>Inside Germany's €10 Billion "Tax Cut" (It's Not Free Money)</h3>
@@ -1025,7 +1207,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="economy" href="/the-end-of-made-in-germany">
+        <a class="tag-card reveal" data-cat="economy" href="/the-end-of-made-in-germany">
           <span class="tag-hole"></span>
           <span class="tag-topic">Economy</span>
           <h3>The End of 'Made in Germany'? Why the Economic Engine is Breaking</h3>
@@ -1036,7 +1218,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="politics" href="/what-an-afd-win-costs-germany">
+        <a class="tag-card reveal" data-cat="politics" href="/what-an-afd-win-costs-germany">
           <span class="tag-hole"></span>
           <span class="tag-topic">Politics</span>
           <h3>What an AfD Win Really Costs Germany</h3>
@@ -1047,7 +1229,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="parental-leave" href="/parental-leave-germany-vs-usa">
+        <a class="tag-card reveal" data-cat="parental-leave" href="/parental-leave-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Parental Leave</span>
           <h3>Germany Paid Her €1,200 a Month. America Paid Her $0.</h3>
@@ -1058,7 +1240,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="cost-of-living" href="/why-german-electricity-costs-2x-the-us">
+        <a class="tag-card reveal" data-cat="cost-of-living" href="/why-german-electricity-costs-2x-the-us">
           <span class="tag-hole"></span>
           <span class="tag-topic">Cost of Living</span>
           <h3>Why German Electricity Costs 2x the US (It's Not the Solar Panels)</h3>
@@ -1069,7 +1251,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="cost-of-living" href="/ev-charging-cost-germany-vs-usa">
+        <a class="tag-card reveal" data-cat="cost-of-living" href="/ev-charging-cost-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Cost of Living</span>
           <h3>I Paid $50 to Charge My EV in Germany. My Friend Paid $11 in Texas.</h3>
@@ -1080,7 +1262,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="healthcare" href="/why-peptides-cost-more-in-the-usa-than-germany">
+        <a class="tag-card reveal" data-cat="healthcare" href="/why-peptides-cost-more-in-the-usa-than-germany">
           <span class="tag-hole"></span>
           <span class="tag-topic">Healthcare</span>
           <h3>Why Peptides Cost Up to 20x More in the USA Than Germany (Wegovy, Zepbound &amp; BPC-157)</h3>
@@ -1091,7 +1273,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="cost-of-living" href="/the-real-cost-of-owning-a-car-in-germany-vs-the-usa">
+        <a class="tag-card reveal" data-cat="cost-of-living" href="/the-real-cost-of-owning-a-car-in-germany-vs-the-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Cost of Living</span>
           <h3>The REAL Cost of Owning a Car in Germany vs the USA</h3>
@@ -1102,7 +1284,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="cost-of-living" href="/is-germany-cheaper-than-america">
+        <a class="tag-card reveal" data-cat="cost-of-living" href="/is-germany-cheaper-than-america">
           <span class="tag-hole"></span>
           <span class="tag-topic">Cost of Living</span>
           <h3>Is Germany Cheaper Than America? The Honest Numbers</h3>
@@ -1113,7 +1295,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="education" href="/study-in-germany-vs-usa">
+        <a class="tag-card reveal" data-cat="education" href="/study-in-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Education</span>
           <h3>Study in Germany vs. USA: Is the Debt Worth It?</h3>
@@ -1124,7 +1306,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="salary" href="/salary-in-germany-vs-usa">
+        <a class="tag-card reveal" data-cat="salary" href="/salary-in-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Salary</span>
           <h3>The German Salary Trap: Why Your Gross Pay Is A Lie</h3>
@@ -1135,7 +1317,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="culture" href="/emotional-tax-germany">
+        <a class="tag-card reveal" data-cat="culture" href="/emotional-tax-germany">
           <span class="tag-hole"></span>
           <span class="tag-topic">Culture</span>
           <h3>The Emotional Tax of Living in Germany</h3>
@@ -1146,7 +1328,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="childcare" href="/daycare-in-germany-vs-usa">
+        <a class="tag-card reveal" data-cat="childcare" href="/daycare-in-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Childcare</span>
           <h3>"Free" Daycare in Germany? The Real Cost, State by State</h3>
@@ -1157,7 +1339,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="relocation" href="/moving-to-germany-cost">
+        <a class="tag-card reveal" data-cat="relocation" href="/moving-to-germany-cost">
           <span class="tag-hole"></span>
           <span class="tag-topic">Relocation</span>
           <h3>What Moving to Germany Actually Costs: $8,000 vs. $19,000</h3>
@@ -1168,7 +1350,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="insurance" href="/insurance-in-germany-vs-usa">
+        <a class="tag-card reveal" data-cat="insurance" href="/insurance-in-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Insurance</span>
           <h3>This Cheap German Insurance Could Save You From Bankruptcy</h3>
@@ -1179,7 +1361,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
           </div>
         </a>
 
-        <a class="tag-card" data-cat="housing" href="/renting-in-germany-vs-usa">
+        <a class="tag-card reveal" data-cat="housing" href="/renting-in-germany-vs-usa">
           <span class="tag-hole"></span>
           <span class="tag-topic">Housing</span>
           <h3>Renting in Germany vs. USA: Why Your Rent Never Changes</h3>
@@ -1200,7 +1382,7 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
 
   <section class="kit-banner-wrap">
     <div class="shell">
-      <a class="kit-banner" href="/letter-kit">
+      <a class="kit-banner reveal" href="/letter-kit">
         <img src="/assets/letter-kit-promo.png" width="900" height="675" alt="The Germany Letter Kit: 25 German letters you can fill in and send" loading="lazy">
         <div>
           <span class="kb-eyebrow">New template kit</span>
@@ -1213,60 +1395,42 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
     </div>
   </section>
 
-  <section class="newsletter-wrap">
+  <section class="resources" id="resources">
     <div class="shell">
-      <div class="tpog-newsletter" data-tag="Free guides" data-title="Get the free guides" data-text="Subscribe and confirm your email to open every free download: the German citizenship checklist, the tax accounts cheat sheet, the expat investing checklist, the take home pay worksheet and new guides as I add them. You will also get new videos, guides and cost breakdowns about life in Germany. No spam, and you can unsubscribe any time."></div>
-    </div>
-  </section>
-
-  <section class="cheat-sheet-wrap">
-    <div class="shell">
-      <div class="cs-box">
-        <div class="cs-card">
-          <span class="cs-tag">Free cheat sheet</span>
-          <h3>Get the free Tax-Advantaged Accounts Cheat Sheet</h3>
-          <p>One page that explains Germany's five tax-advantaged accounts in English: bAV, Basisrente, ETF savings plan, VL and the new Altersvorsorgedepot, with the 2026 numbers. Free, just confirm your email.</p>
-          <a class="cs-btn" href="/cheat-sheet">Get the cheat sheet</a>
-          <p class="cs-note"><a href="/free-guides">See all free guides</a></p>
-          <p class="cs-note">General information, not tax or financial advice.</p>
+      <div class="res-intro reveal">
+        <h2>Free guides &amp; tools</h2>
+        <p>Plain-English guides to the German systems that quietly cost you money. Subscribe once to unlock every download, or grab them individually.</p>
+      </div>
+      <div class="res-grid">
+        <div class="res-card reveal">
+          <span class="rc-tag">Cheat sheet</span>
+          <h3>Tax-Advantaged Accounts Cheat Sheet</h3>
+          <p>Germany's five tax-advantaged accounts in English, with the 2026 numbers: bAV, Basisrente, ETF savings plan, VL and the new Altersvorsorgedepot.</p>
+          <a class="rc-btn" href="/cheat-sheet">Get the cheat sheet &rarr;</a>
+        </div>
+        <div class="res-card reveal">
+          <span class="rc-tag">Checklist</span>
+          <h3>Expat Investing Checklist</h3>
+          <p>The 7 hurdles, the 2026 tax basics, questions for your broker and adviser, and the extra traps for Americans who invest from Germany.</p>
+          <a class="rc-btn" href="/investing-checklist">Get the checklist &rarr;</a>
+        </div>
+        <div class="res-card reveal">
+          <span class="rc-tag">Worksheet</span>
+          <h3>Take-Home Pay Worksheet</h3>
+          <p>From gross salary to net pay in Germany: the 2026 rates, the tax formula and a column for your own numbers.</p>
+          <a class="rc-btn" href="/take-home-pay-worksheet">Get the worksheet &rarr;</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="cheat-sheet-wrap">
-    <div class="shell">
-      <div class="cs-box">
-        <div class="cs-card">
-          <span class="cs-tag">Free checklist</span>
-          <h3>Get the free Expat Investing Checklist</h3>
-          <p>One page for expats who want to invest in Germany: the 7 hurdles, the 2026 tax basics, questions for your broker and adviser, and the extra traps for Americans. Free, just confirm your email.</p>
-          <a class="cs-btn" href="/investing-checklist">Get the checklist</a>
-          <p class="cs-note"><a href="/free-guides">See all free guides</a></p>
-          <p class="cs-note">General information, not tax or financial advice.</p>
-        </div>
+      <div class="newsletter-wrap" style="margin-top: 28px;">
+        <div class="tpog-newsletter" data-tag="Free guides" data-title="Unlock every free download" data-text="Subscribe and confirm your email to open every free guide: the German citizenship checklist, the tax accounts cheat sheet, the expat investing checklist, the take home pay worksheet and new guides as I add them. You will also get new videos, guides and cost breakdowns about life in Germany. No spam, and you can unsubscribe any time."></div>
       </div>
-    </div>
-  </section>
-
-  <section class="cheat-sheet-wrap">
-    <div class="shell">
-      <div class="cs-box">
-        <div class="cs-card">
-          <span class="cs-tag">Free worksheet</span>
-          <h3>Get the free Take Home Pay Worksheet</h3>
-          <p>One page that takes you from gross salary to net pay in Germany: the 2026 rates, the tax formula and a column for your own numbers. Free, just confirm your email.</p>
-          <a class="cs-btn" href="/take-home-pay-worksheet">Get the worksheet</a>
-          <p class="cs-note"><a href="/free-guides">See all free guides</a></p>
-          <p class="cs-note">General information, not tax or financial advice.</p>
-        </div>
-      </div>
+      <p class="res-foot"><a href="/free-guides">See all free guides</a> &middot; General information, not tax or financial advice.</p>
     </div>
   </section>
 
   <section class="about" id="about">
     <div class="shell">
-      <div class="about-card">
+      <div class="about-card reveal">
         <div class="avatar"><img src="assets/justin-photo.jpg" alt="Justin, host of The Price of Germany"></div>
         <div>
           <h2>Hi, I'm Justin</h2>
@@ -1337,6 +1501,91 @@ h1 .hl::after{ background:var(--red)!important; height:0.26em!important; bottom:
     });
 
     render();
+  })();
+</script>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        var isDark = root.getAttribute('data-theme') === 'dark'
+          || (!root.hasAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        var next = isDark ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('tpog-theme', next); } catch (e) {}
+      });
+    }
+    var navToggle = document.getElementById('nav-toggle');
+    var navLinks = document.getElementById('nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', function () {
+        var open = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navLinks.addEventListener('click', function (e) {
+        if (e.target.closest('a')) {
+          navLinks.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  })();
+</script>
+<script>
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reveals = document.querySelectorAll('.reveal');
+
+    function animateCount(el) {
+      if (el.dataset.counted) return;
+      el.dataset.counted = '1';
+      var target = parseFloat(el.getAttribute('data-count')) || 0;
+      var suffix = el.getAttribute('data-suffix') || '';
+      if (reduce) { el.textContent = target + suffix; return; }
+      var dur = 1100, start = null;
+      el.classList.add('counting');
+      function tick(now) {
+        if (start === null) start = now;
+        var p = Math.min((now - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (p < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = target + suffix;
+          el.classList.remove('counting');
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
+    function show(el) {
+      var delay = el.getAttribute('data-reveal-delay');
+      if (delay == null && el.parentElement) {
+        var idx = Array.prototype.indexOf.call(el.parentElement.children, el);
+        delay = Math.min(idx, 6) * 60;
+      }
+      el.style.animationDelay = (delay || 0) + 'ms';
+      el.classList.add('in');
+      el.querySelectorAll('[data-count]').forEach(animateCount);
+    }
+
+    if (reduce || !('IntersectionObserver' in window)) {
+      reveals.forEach(function (el) {
+        el.classList.add('in');
+        el.querySelectorAll('[data-count]').forEach(animateCount);
+      });
+      return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { show(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(function (el) { io.observe(el); });
   })();
 </script>
 </body>
