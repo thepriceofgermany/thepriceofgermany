@@ -798,15 +798,16 @@
     animation: tpog-reveal 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
   }
   .proof .pf b.counting { color: var(--red); }
-  /* euro <-> dollar coin flip */
+  /* euro <-> dollar coin: same font/size as the numbers, flips fast only while they count up */
   .proof .pf b.flip-coin { perspective: 300px; display: inline-block; }
   .proof .pf b.flip-coin .coin {
     position: relative;
     display: inline-block;
     transform-style: preserve-3d;
-    animation: coin-flip 3s ease-in-out infinite;
+    font: inherit; /* match the number b (overrides the broad .proof .pf span label style) */
   }
-  .proof .pf b.flip-coin .coin-face { backface-visibility: hidden; display: inline-block; }
+  .proof .pf b.flip-coin.flipping .coin { animation: coin-flip 0.4s linear infinite; }
+  .proof .pf b.flip-coin .coin-face { backface-visibility: hidden; display: inline-block; font: inherit; }
   .proof .pf b.flip-coin .coin-back {
     position: absolute;
     left: 0;
@@ -815,12 +816,11 @@
     color: var(--red);
   }
   @keyframes coin-flip {
-    0%, 38%  { transform: rotateY(0deg); }
-    50%, 88% { transform: rotateY(180deg); }
-    100%     { transform: rotateY(360deg); }
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(360deg); }
   }
   @media (prefers-reduced-motion: reduce) {
-    .proof .pf b.flip-coin .coin { animation: none; }
+    .proof .pf b.flip-coin.flipping .coin { animation: none; }
   }
   @media (prefers-reduced-motion: reduce) {
     html.js .reveal { opacity: 1 !important; }
@@ -1584,6 +1584,19 @@
       requestAnimationFrame(tick);
     }
 
+    function fireCounters(el) {
+      var counters = el.querySelectorAll('[data-count]');
+      if (!counters.length) return;
+      counters.forEach(animateCount);
+      // flip the euro/dollar coin quickly, only while the numbers are moving
+      var coin = el.querySelector('.flip-coin');
+      if (coin && !reduce && !coin.dataset.flipped) {
+        coin.dataset.flipped = '1';
+        coin.classList.add('flipping');
+        setTimeout(function () { coin.classList.remove('flipping'); }, 1200);
+      }
+    }
+
     function show(el) {
       var delay = el.getAttribute('data-reveal-delay');
       if (delay == null && el.parentElement) {
@@ -1592,13 +1605,13 @@
       }
       el.style.animationDelay = (delay || 0) + 'ms';
       el.classList.add('in');
-      el.querySelectorAll('[data-count]').forEach(animateCount);
+      fireCounters(el);
     }
 
     if (reduce || !('IntersectionObserver' in window)) {
       reveals.forEach(function (el) {
         el.classList.add('in');
-        el.querySelectorAll('[data-count]').forEach(animateCount);
+        fireCounters(el);
       });
       return;
     }
