@@ -6,7 +6,17 @@
     <atom:link href="https://thepriceofgermany.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Videos, guides and cost breakdowns about life and money in Germany.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Nov 2026 13:52:32 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 12:33:21 GMT</lastBuildDate>
+    <item>
+      <title>Techno Was Born in Detroit. Now Berlin's Clubs Are Losing Money</title>
+      <link>https://thepriceofgermany.com/techno-detroit-berlin-clubs-losing-money</link>
+      <guid isPermaLink="true">https://thepriceofgermany.com/techno-detroit-berlin-clubs-losing-money</guid>
+      <pubDate>Wed, 18 Nov 2026 08:00:00 GMT</pubDate>
+      <category>Culture</category>
+      <description>Germany did not invent techno. Detroit did. But Germany is where techno became a culture, an industry and now a problem. The story from Detroit to Berlin, what Germany makes from it, and what a 2026 study says about the clubs, with Kevin Saunderson.</description>
+      <media:content url="https://thepriceofgermany.com/assets/techno-thumbnail-brand.jpg" medium="image" />
+      <enclosure url="https://thepriceofgermany.com/assets/techno-thumbnail-brand.jpg" type="image/jpeg" length="0" />
+    </item>
     <item>
       <title>The Best Car Insurance in Germany for Expats (AXA vs Feather vs DEVK)</title>
       <link>https://thepriceofgermany.com/best-car-insurance-germany</link>
@@ -296,16 +306,6 @@
       <description>Same job title, same salary, due dates 11 days apart. Megan came home to $0. Julia came home to two-thirds of her paycheck, automatically, for over a year.</description>
       <media:content url="https://i.ytimg.com/vi/uyJ7ZYZCn1I/maxresdefault.jpg" medium="image" />
       <enclosure url="https://i.ytimg.com/vi/uyJ7ZYZCn1I/maxresdefault.jpg" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Why German Electricity Costs 2x the US (It's Not the Solar Panels)</title>
-      <link>https://thepriceofgermany.com/why-german-electricity-costs-2x-the-us</link>
-      <guid isPermaLink="true">https://thepriceofgermany.com/why-german-electricity-costs-2x-the-us</guid>
-      <pubDate>Fri, 14 Aug 2026 08:00:00 GMT</pubDate>
-      <category>Cost of Living</category>
-      <description>Kevin in Phoenix pays $187 and shrugs. Lena in Leipzig watches her bill climb without touching the thermostat. Here is where German electricity money really goes.</description>
-      <media:content url="https://i.ytimg.com/vi/zX7Ygqoqt90/maxresdefault.jpg" medium="image" />
-      <enclosure url="https://i.ytimg.com/vi/zX7Ygqoqt90/maxresdefault.jpg" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>

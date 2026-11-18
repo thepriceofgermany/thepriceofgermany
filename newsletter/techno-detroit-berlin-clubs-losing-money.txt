@@ -1,0 +1,11 @@
+NEWSLETTER FOR: Techno Was Born in Detroit. Now Berlin's Clubs Are Losing Money
+Post: https://thepriceofgermany.com/techno-detroit-berlin-clubs-losing-money  (written 2026-11-18, NOT deployed)
+Video: https://youtu.be/Jb0Dklcj8Ps   (private when the post was written, check it is public before sending)
+
+MailerLite DRAFT campaign id 204477214342775932 (group "Website subscribers", 16 active). NOT scheduled, NOT sent.
+Subject line:    Detroit invented techno. Berlin's clubs are now losing money
+Preview text:    Germany did not invent techno. A 2026 study says almost four in ten Berlin clubs lost money. My Kevin Saunderson interview, plus the latest posts.
+Image: https://thepriceofgermany.com/assets/techno-thumbnail-brand.jpg (live after the site is deployed)
+Latest posts in the email: best-car-insurance-germany, 70k-euro-german-payslip, best-dental-insurance-germany (affiliate note added).
+
+BEFORE YOU SEND: deploy the site first (post, thumbnail image and library page must be live), wait until the video is public, send a test email, check every link. Title and date of the post assume the recommended title and today's date: change them if the YouTube title or publish date differ.
